@@ -1,0 +1,10 @@
+{
+    "name": "Meta",
+    "alias": "meta",
+    "description": "Meta data management",
+    "active": 1,
+    "order": 110,
+    "providers": [
+        "Modules\\Meta\\Providers\\MetaServiceProvider"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Payment",
+    "alias": "payment",
+    "description": "The FleetCart Payment Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Payment\\Providers\\GatewayServiceProvider"
+    ]
+}

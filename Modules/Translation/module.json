@@ -1,0 +1,12 @@
+{
+    "name": "Translation",
+    "alias": "translation",
+    "description": "Module containing all FleetCart translations",
+    "version": "1.0.0",
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Translation\\Providers\\TranslationServiceProvider",
+        "Modules\\Translation\\Providers\\RouteServiceProvider"
+    ]
+}

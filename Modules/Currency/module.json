@@ -1,0 +1,14 @@
+{
+    "name": "Currency",
+    "alias": "currency",
+    "description": "The FleetCart Currency Module.",
+    "version": "1.0.0",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Currency\\Providers\\CurrencyServiceProvider",
+        "Modules\\Currency\\Providers\\RouteServiceProvider",
+        "Modules\\Currency\\Providers\\EventServiceProvider",
+        "Modules\\Currency\\Providers\\CurrencyExchangeRateServiceProvider"
+    ]
+}

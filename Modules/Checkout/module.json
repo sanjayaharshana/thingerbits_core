@@ -1,0 +1,11 @@
+{
+    "name": "Checkout",
+    "alias": "checkout",
+    "description": "The FleetCart Checkout Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Checkout\\Providers\\RouteServiceProvider",
+        "Modules\\Checkout\\Providers\\EventServiceProvider"
+    ]
+}

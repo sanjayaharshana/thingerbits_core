@@ -1,0 +1,611 @@
+div, a {
+    &:active, &:focus, &:visited {
+        outline: 0;
+    }
+}
+
+a {
+    transition: 200ms ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-rubik;
+    font-weight: 400;
+
+    @include themify {
+        color: themed('black');
+    }
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 44px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 29px;
+}
+
+h4 {
+    font-size: 21px;
+    line-height: 26px;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+
+    @include themify {
+        color: themed('gray-dark');
+    }
+}
+
+button {
+    font-family: $font-rubik;
+    outline: 0;
+}
+
+label {
+    font-family: $font-opensans;
+    font-weight: 600;
+    font-size: 16px;
+
+    @include themify {
+        color: themed('black');
+    }
+
+    span {
+        margin-left: 4px;
+
+        @include themify {
+            color: themed('danger');
+        }
+    }
+
+    i {
+        margin-left: 5px;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+    }
+
+    &:hover {
+        i {
+            @include themify {
+                color: themed('primary');
+            }
+        }
+    }
+}
+
+.form-group {
+    select {
+       height: 44px;
+       width: 100%;
+       padding-left: 15px;
+    }
+}
+
+.form-control {
+    @include themify {
+        border-color: themed('default');
+    }
+
+    & + .input-icon {
+        position: absolute;
+        font-size: 21px;
+        left: 5px;
+        top: 33px;
+        width: 30px;
+        text-align: center;
+        transition: 200ms ease-in-out;
+
+        @include themify {
+            color: themed('black');
+        }
+    }
+
+    &:focus {
+        box-shadow: none;
+
+        @include themify {
+            border-color: themed('primary');
+        }
+
+        & + .input-icon {
+            @include themify {
+                color: themed('primary');
+            }
+        }
+    }
+}
+
+.has-error {
+    .form-control,
+    .form-control:focus,
+    input,
+    input:focus,
+    select,
+    select:focus,
+    textarea,
+    textarea:focus {
+        @include themify {
+            border-color: themed('danger');
+        }
+    }
+
+    .form-control + .input-icon {
+        @include themify {
+            color: themed('danger');
+        }
+    }
+
+    .help-block {
+        margin-bottom: 0;
+
+        @include themify {
+            color: themed('danger');
+        }
+    }
+}
+
+.help-block {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+input:not([type="checkbox"]):not([type="select-multiple"]) {
+    font-size: 16px;
+    height: 44px !important;
+}
+
+input,
+select,
+textarea {
+    box-shadow: none !important;
+    border-radius: $radius-default !important;
+
+    @include themify {
+        border: 1px solid themed('default');
+    }
+
+    &:focus {
+        outline: 0;
+
+        @include themify {
+            border-color: themed('primary');
+        }
+    }
+}
+
+.theme-red,
+.theme-pink {
+    .form-control,
+    input,
+    select,
+    textarea {
+        &:focus {
+            border-color: #9a9a9a;
+        }
+    }
+}
+
+textarea {
+    font-size: 16px;
+    padding: 6px 12px;
+    resize: vertical;
+    width: 100%;
+    border-radius: $radius-default;
+    vertical-align: bottom;
+    transition: border 150ms ease-in-out;
+}
+
+select {
+    text-align: left !important;
+    background: #ffffff;
+    padding-right: 26px;
+}
+
+.alert {
+    font-family: $font-opensans;
+    border: none;
+    border-radius: $radius-default;
+    color: #ffffff;
+
+    .close {
+        font-weight: normal;
+        color: #ffffff;
+        opacity: 0.7;
+        text-shadow: none;
+        transition: 200ms ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.alert-success {
+    @include themify {
+        background: themed('success');
+    }
+}
+
+.alert-danger {
+    @include themify {
+        background: themed('danger');
+    }
+}
+
+.custom-select-white {
+    appearance: none;
+    background: transparent url('../images/arrow-white.png') no-repeat right 8px center;
+    background-size: 12px;
+}
+
+.custom-select-black {
+    @extend .custom-select-white;
+
+    background: transparent url('../images/arrow-black.png') no-repeat right 8px center;
+}
+
+::-webkit-input-placeholder {
+   font-size: 15px !important;
+}
+
+:-moz-placeholder {
+      font-size: 15px !important;
+}
+
+::-moz-placeholder {
+      font-size: 15px !important;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #999999 !important;
+}
+
+textarea:-moz-placeholder {
+    color: #999999 !important;
+}
+
+textarea::-moz-placeholder {
+    color: #999999 !important;
+}
+
+textarea:-ms-input-placeholder {
+    color: #999999 !important;
+}
+
+.checkbox {
+    label {
+        @include themify {
+            color: themed('gray-dark');
+        }
+    }
+
+    [type="checkbox"] {
+        &:checked, &:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+
+        &:checked + label, &:not(:checked) + label {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: left;
+        }
+
+        &:checked + label:before, &:not(:checked) + label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 17px;
+            height: 17px;
+            border-radius: $radius-default;
+            transition: 200ms ease-in-out;
+
+            @include themify {
+                background: themed('gray-lite');
+            }
+        }
+
+        &:checked + label:after, &:not(:checked) + label:after {
+            content: "\f00c";
+            font-family: FontAwesome;
+            font-size: 13px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: #ffffff;
+            transition: 200ms ease-in-out;
+
+            @include themify {
+                -webkit-text-stroke: 1px themed('primary');
+            }
+        }
+
+        &:checked + label:before {
+            @include themify {
+                background: themed('primary');
+            }
+        }
+
+        &:not(:checked) + label:after {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        &:checked + label:after {
+            opacity: 1;
+            transform: scale(1);
+
+            @include themify {
+                -webkit-text-stroke: 1px themed('primary');
+            }
+        }
+    }
+}
+
+.radio {
+    text-align: left;
+
+    input:not([type="checkbox"]):not([type="select-multiple"]) {
+        height: auto !important;
+    }
+
+    label {
+        @include themify {
+            color: themed('gray-dark');
+        }
+    }
+
+    [type=radio] {
+        &:checked, &:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+
+        &:checked + label, &:not(:checked) + label {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            line-height: 22px;
+            display: inline-block;
+        }
+
+        &:checked + label:before, &:not(:checked) + label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 19px;
+            height: 19px;
+            border-radius: 100%;
+            background: #ffffff;
+
+            @include themify {
+                border: 1px solid themed('default');
+            }
+        }
+
+        &:checked + label:after {
+            content: "";
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            top: 5px;
+            left: 3px;
+            border-radius: 100%;
+            transition: 200ms ease-in-out;
+
+            @include themify {
+                background: themed('primary');
+            }
+        }
+
+        &:not(:checked) + label:after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            border-radius: 100%;
+            transition: 200ms ease-in-out;
+            opacity: 0;
+            transform: scale(0);
+
+            @include themify {
+                background: themed('primary');
+            }
+        }
+
+        &:checked + label:after {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+.nav-tabs {
+    @include themify {
+        border-bottom-color: themed('default');
+    }
+
+    > li {
+        > a {
+            position: relative;
+            font-size: 16px;
+            background: transparent;
+            margin: 0;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 0;
+            transition: 200ms ease-in-out;
+
+            @include themify {
+                color: themed('gray-dark');
+            }
+
+            &:hover {
+                background: transparent;
+
+                @include themify {
+                    color: themed('black-lite');
+                }
+
+                &:after {
+                    width: 60%;
+                }
+            }
+
+            &:focus {
+                background: transparent;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: 0;
+                height: 1px;
+                transition: 200ms ease-in-out;
+
+                @include themify {
+                    background: themed('primary');
+                }
+            }
+        }
+    }
+
+    > li.active > a {
+        border: none !important;
+
+        @include themify {
+            color: themed('black-lite');
+        }
+
+        &:after {
+            width: 100%;
+        }
+    }
+
+    > li.active.error > a {
+        @include themify {
+            color: themed('danger');
+        }
+
+        &:after {
+            @include themify {
+                background: themed('danger');
+            }
+        }
+    }
+}
+
+.cross-button {
+    position: absolute;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    padding: 0;
+    background: transparent;
+    border: none;
+
+    &:focus {
+        outline: 0;
+    }
+
+    > i {
+        font-size: 18px;
+        -webkit-text-stroke: 1px #ffffff;
+        transition: 200ms ease-in-out;
+
+        @include themify {
+            color: themed('black');
+        }
+
+        &:hover {
+            @include themify {
+                color: themed('danger');
+            }
+        }
+    }
+}
+
+.edit-button {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    transition: 200ms ease-in-out;
+
+    @include themify {
+        color: themed('black');
+    }
+
+    &:hover {
+        @include themify {
+            color: themed('primary');
+        }
+    }
+}
+
+.table {
+    margin-bottom: 0;
+
+    > thead > tr > th {
+        font-family: $font-opensans;
+        font-weight: 600;
+        font-size: 16px;
+
+        @include themify {
+            border-bottom: 1px solid themed('gray-lite');
+            color: themed('gray-dark');
+        }
+    }
+}
+
+.table-responsive {
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        border: none !important;
+    }
+}
+
+.dropdown-backdrop {
+    display: none;
+}

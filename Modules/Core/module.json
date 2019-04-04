@@ -1,0 +1,15 @@
+{
+    "name": "Core",
+    "alias": "core",
+    "description": "The FleetCart Core Module.",
+    "version": "1.0.0",
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Core\\Providers\\CoreServiceProvider",
+        "Modules\\Core\\Providers\\ThemeServiceProvider",
+        "Modules\\Core\\Providers\\AssetServiceProvider",
+        "Modules\\Core\\Providers\\EventServiceProvider",
+        "Modules\\Core\\Providers\\SearchEngineServiceProvider"
+    ]
+}

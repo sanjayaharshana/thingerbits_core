@@ -1,0 +1,16 @@
+{
+    "name": "Admin",
+    "alias": "admin",
+    "description": "The FleetCart Admin Module.",
+    "active": 1,
+    "order": 10,
+    "providers": [
+        "Maatwebsite\\Sidebar\\SidebarServiceProvider",
+        "Modules\\Admin\\Providers\\RouteServiceProvider",
+        "Modules\\Admin\\Providers\\AdminServiceProvider",
+        "Modules\\Admin\\Providers\\SidebarServiceProvider"
+    ],
+    "aliases": {
+        "Form": "Modules\\Admin\\Ui\\Facades\\Form"
+    }
+}

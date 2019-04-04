@@ -1,0 +1,11 @@
+{
+    "name": "Compare",
+    "alias": "compare",
+    "description": "The FleetCart Compare Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Compare\\Providers\\CompareServiceProvider",
+        "Modules\\Compare\\Providers\\RouteServiceProvider"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Coupon",
+    "alias": "coupon",
+    "description": "Coupon management",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Coupon\\Providers\\CouponServiceProvider",
+        "Modules\\Coupon\\Providers\\RouteServiceProvider"
+    ]
+}

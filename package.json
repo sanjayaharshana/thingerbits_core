@@ -1,0 +1,26 @@
+{
+    "name": "fleetcart",
+    "private": true,
+    "scripts": {
+        "rtlcss": "rtlcss",
+        "postinstall": "lerna bootstrap",
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "cross-env": "^5.2.0",
+        "eslint": "^4.9.0",
+        "eslint-config-spatie": "^2.0.3",
+        "eslint-plugin-import": "^2.7.0",
+        "glob": "^7.1.2",
+        "laravel-mix": "^2.1.0",
+        "lerna": "^2.9.0",
+        "rtlcss": "^2.4.0",
+        "webpack-shell-plugin": "^0.5.0"
+    },
+    "dependencies": {}
+}

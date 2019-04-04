@@ -1,0 +1,14 @@
+{
+    "name": "Option",
+    "alias": "option",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Option\\Providers\\OptionServiceProvider",
+        "Modules\\Option\\Providers\\RouteServiceProvider",
+        "Modules\\Option\\Providers\\EventServiceProvider"
+    ],
+    "files": [
+        "helpers.php"
+    ]
+}

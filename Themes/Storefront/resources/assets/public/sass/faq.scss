@@ -1,0 +1,86 @@
+.faq-header {
+	@extend .terms-and-conditions-header;
+}
+
+.faq-accordion {
+	.panel-group {
+		margin: 0;
+
+		.panel {
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+
+	.panel-heading {
+		padding: 0;
+		border-radius: 0;
+		background: transparent;
+
+		a {
+			display: block;
+			padding: 10px 0;
+			text-decoration: none;
+
+			@include themify {
+				color: themed('black');
+				border-bottom: 1px solid themed('gray-lite');
+			}
+
+			&:hover {
+				@include themify {
+					color: themed('primary');
+				}
+
+				i {
+					transition: 200ms ease-in-out;
+
+					@include themify {
+						color: themed('primary');
+					}
+				}
+			}
+
+			&:focus {
+				@include themify {
+					color: themed('primary');
+				}
+			}
+
+			&.collapsed {
+
+				i {
+					transform: rotate(45deg);
+					transition: 200ms ease-in-out;
+				}
+			}
+
+			i {
+				margin-right: 10px;
+				-webkit-text-stroke: 1px #ffffff;
+				transform: rotate(0deg);
+				transition: 0ms ease-in-out;
+			}
+		}
+	}
+
+	.panel-body {
+		padding: 15px 0;
+		border: none !important;
+	}
+}
+
+.faq-right {
+	@extend .terms-and-conditions-right;
+}
+
+@media screen and (max-width: $md) {
+	.faq-right {
+		padding: 30px 15px;
+	}
+
+	.faq-accordion {
+		margin-top: 30px;
+	}
+}

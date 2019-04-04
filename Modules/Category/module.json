@@ -1,0 +1,11 @@
+{
+    "name": "Category",
+    "alias": "category",
+    "description": "The category module is responsible for managing categories.",
+    "active": 1,
+    "order": 70,
+    "providers": [
+        "Modules\\Category\\Providers\\CategoryServiceProvider",
+        "Modules\\Category\\Providers\\RouteServiceProvider"
+    ]
+}

@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class Create$ENTITY_NAME$TranslationsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('$SNAKE_CASE_ENTITY_NAME$_translations', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('$SNAKE_CASE_ENTITY_NAME$_id');
+
+            $table->string('locale');
+
+            $table->unique(['$SNAKE_CASE_ENTITY_NAME$_id', 'locale']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('$SNAKE_CASE_ENTITY_NAME$_translations');
+    }
+}

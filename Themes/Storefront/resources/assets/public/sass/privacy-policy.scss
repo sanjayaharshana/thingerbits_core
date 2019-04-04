@@ -1,0 +1,23 @@
+.privacy-policy-header {
+	@extend .terms-and-conditions-header;
+}
+
+.privacy-policy-box {
+	@extend .terms-and-conditions-box;
+}
+
+.privacy-policy-right {
+	@extend .terms-and-conditions-right;
+}
+
+@media screen and (max-width: $md) {
+	.privacy-policy {
+		.col-md-5 {
+			margin-bottom: 30px;
+		}
+
+		.privacy-policy-right {
+			padding: 30px 15px;
+		}
+	}
+}

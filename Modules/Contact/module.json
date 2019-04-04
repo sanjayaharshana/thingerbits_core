@@ -1,0 +1,10 @@
+{
+    "name": "Contact",
+    "alias": "contact",
+    "description": "The FleetCart Contact Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Contact\\Providers\\RouteServiceProvider"
+    ]
+}

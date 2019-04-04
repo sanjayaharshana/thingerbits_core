@@ -1,0 +1,13 @@
+{
+    "name": "Menu",
+    "alias": "menu",
+    "description": "Managing menus.",
+    "version": "1.0.0",
+    "active": 1,
+    "order": 90,
+    "providers": [
+        "Modules\\Menu\\Providers\\MenuServiceProvider",
+        "Modules\\Menu\\Providers\\RouteServiceProvider",
+        "Modules\\Menu\\Providers\\EventServiceProvider"
+    ]
+}

@@ -1,0 +1,99 @@
+.compare {
+	margin-top: 30px;
+
+	.table-responsive {
+        margin-bottom: 0;
+        border-radius: $radius-default;
+	}
+
+	.table {
+		tr {
+			td {
+				font-size: 15px;
+				padding: 15px;
+
+				@include themify {
+				    border-color: themed('gray-lite');
+				}
+
+			}
+
+			p {
+				font-size: 15px;
+			}
+
+			td:first-child {
+				font-family: $font-rubik;
+				font-weight: 500;
+				font-size: 15px;
+				text-align: right;
+				width: 200px;
+			}
+
+			.previous-price {
+				font-size: 14px;
+			}
+		}
+
+		.product-overview {
+			position: relative;
+
+			img {
+				max-width: 100%;
+			}
+
+			h5 {
+                margin-top: 15px;
+
+                a {
+                    color: inherit;
+                }
+			}
+
+			.cross-button {
+				right: 8px;
+				top: 8px;
+			}
+		}
+
+		.image-placeholder {
+			height: 165px;
+			width: 190px;
+			border-radius: $radius-default;
+
+			@include themify {
+			    border: 1px solid themed('gray-lite');
+			}
+
+			> i {
+				font-size: 70px;
+			}
+		}
+
+		.image-holder {
+			height: 165px;
+			width: 190px;
+		}
+	}
+}
+
+@media screen and (max-width: $sm) {
+	.compare {
+		.table-responsive .table {
+			tbody tr td {
+		        white-space: normal !important;
+		        min-width: 240px !important;
+
+		        &:first-child {
+		        	min-width: auto !important;
+		        }
+		    }
+		}
+
+		.table-bordered {
+			@include themify {
+			    border: 1px solid themed('gray-lite');
+			}
+		}
+	}
+}

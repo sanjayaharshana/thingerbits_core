@@ -1,0 +1,99 @@
+.my-dashboard {
+    .table {
+        > thead > tr > th:first-child {
+            padding-left: 0;
+        }
+
+        > tbody > tr > td {
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .recent-orders {
+        border-radius: $radius-default;
+        padding: 15px 15px 5px;
+
+        @include themify {
+            border: 1px solid themed('gray-lite');
+        }
+
+        h4 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+
+            @include themify {
+                border-bottom: 1px solid themed('default');
+            }
+
+            > a {
+                font-family: $font-opensans;
+                font-weight: 400;
+                font-size: 15px;
+                transition: 200ms ease-in-out;
+
+                @include themify {
+                    color: themed('primary');
+                }
+
+                &:hover {
+                    @include themify {
+                        color: themed('primary-hover');
+                    }
+                }
+            }
+        }
+
+        span {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+
+    .account-information {
+        border-radius: $radius-default;
+        margin-top: 30px;
+        padding: 15px;
+
+        @include themify {
+            border: 1px solid themed('gray-lite');
+        }
+
+        h4 {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+
+            @include themify {
+                border-bottom: 1px solid themed('default');
+            }
+        }
+
+        span {
+            font-size: 16px;
+            display: block;
+            padding: 4px 0;
+        }
+
+        a {
+            display: table;
+            padding: 4px 0;
+            transition: 200ms ease-in-out;
+
+            @include themify {
+                color: themed('primary');
+            }
+
+            &:hover {
+                @include themify {
+                    color: themed('primary-hover');
+                }
+            }
+        }
+    }
+}

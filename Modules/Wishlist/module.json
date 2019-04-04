@@ -1,0 +1,11 @@
+{
+    "name": "Wishlist",
+    "alias": "wishlist",
+    "description": "The FleetCart Wishlist Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Wishlist\\Providers\\WishlistServiceProvider",
+        "Modules\\Wishlist\\Providers\\RouteServiceProvider"
+    ]
+}

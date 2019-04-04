@@ -1,0 +1,11 @@
+{
+    "name": "Slider",
+    "alias": "slider",
+    "description": "The FleetCart Slider Module.",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Slider\\Providers\\SliderServiceProvider",
+        "Modules\\Slider\\Providers\\RouteServiceProvider"
+    ]
+}

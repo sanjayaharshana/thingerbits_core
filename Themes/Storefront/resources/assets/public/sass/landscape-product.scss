@@ -1,0 +1,92 @@
+.landscape-products-wrapper {
+	margin-top: 50px;
+
+    .single-product {
+        position: relative;
+        display: block;
+        border-radius: $radius-default;
+        transition: 200ms ease-in-out;
+
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        .single-product-details {
+            margin-left: 90px;
+            overflow: hidden;
+            padding-right: 15px;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+
+        .product-name {
+            font-size: 15px;
+            transition: 200ms ease-in-out;
+
+            @include themify {
+                color: themed('gray-dark');
+            }
+
+            &:hover {
+                text-decoration: underline;
+
+                @include themify {
+                    color: themed('black-lite');
+                }
+            }
+        }
+
+        .product-price {
+            font-size: 16px;
+            display: block;
+            margin-top: 5px;
+
+            .previous-price {
+                font-size: 15px;
+            }
+        }
+
+        .star-rating {
+            display: block;
+            margin-top: 5px;
+        }
+    }
+
+    .image-holder {
+        float: left;
+        height: 70px;
+        width: 75px;
+    }
+
+    .image-placeholder {
+        float: left;
+        height: 70px;
+        width: 75px;
+        border-radius: $radius-default;
+
+        @include themify {
+            border: 1px solid themed('gray-lite');
+        }
+
+        > i {
+            font-size: 35px;
+        }
+    }
+}
+
+.landscape-products {
+    margin-top: 20px;
+
+    .slick-active .single-product {
+        &:before {
+            height: 60px;
+        }
+    }
+}

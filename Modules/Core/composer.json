@@ -1,0 +1,33 @@
+{
+    "name": "fleetcartA /core",
+    "description": "The FleetCart Core Module.",
+    "authors": [
+        {
+            "name": "Mehedi Hassan",
+            "email": "MehediDracula@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "algolia/algoliasearch-client-php": "^1.25",
+        "laravel/scout": "^5.0",
+        "league/flysystem-aws-s3-v3": "~1.0",
+        "mcamara/laravel-localization": "^1.3",
+        "predis/predis": "^1.1",
+        "tightenco/ziggy": "^0.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

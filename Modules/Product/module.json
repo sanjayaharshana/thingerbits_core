@@ -1,0 +1,16 @@
+{
+    "name": "Product",
+    "alias": "product",
+    "description": "The product module is responsible for managing products.",
+    "version": "1.0.0",
+    "active": 1,
+    "order": 100,
+    "providers": [
+        "Modules\\Product\\Providers\\ProductServiceProvider",
+        "Modules\\Product\\Providers\\EventServiceProvider",
+        "Modules\\Product\\Providers\\RouteServiceProvider"
+    ],
+    "files": [
+        "helpers.php"
+    ]
+}

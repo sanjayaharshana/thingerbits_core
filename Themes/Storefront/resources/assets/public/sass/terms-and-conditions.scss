@@ -1,0 +1,45 @@
+.terms-and-conditions-header {
+	padding: 60px 0;
+	margin-bottom: 40px;
+
+	@include themify {
+		background: themed('white');
+	}
+}
+
+.terms-and-conditions-box {
+	margin-bottom: 30px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	h4 {
+		margin-bottom: 10px;
+	}
+}
+
+.terms-and-conditions-right {
+	padding: 30px;
+	border-radius: $radius-default;
+
+	@include themify {
+		background: themed('white');
+	}
+
+	h4 {
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: $md) {
+	.terms-and-conditions {
+		.col-md-5 {
+			margin-bottom: 30px;
+		}
+
+		.terms-and-conditions-right {
+			padding: 30px 15px;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+<?php
+
+return [
+    'customer_reviews' => 'customer reviews',
+    'availability' => 'Availability',
+    'in_stock' => 'In Stock',
+    'out_of_stock' => 'Out of Stock',
+    'sku' => 'SKU',
+    'qty' => 'Qty',
+    'add_to_cart' => 'Add to cart',
+    'add_to_wishlist' => '+ Add to Wishlist',
+    'add_to_compare' => '+ Add to Compare',
+    'options' => [
+        'choose_an_option' => 'Choose an option',
+    ],
+    'tabs' => [
+        'description' => 'Description',
+        'additional_information' => 'Additional Information',
+        'reviews' => 'Reviews',
+    ],
+    'reviews' => [
+        'out_of_5' => 'out of 5',
+        '5_star' => '5 star',
+        '4_star' => '4 star',
+        '3_star' => '3 star',
+        '2_star' => '2 star',
+        '1_star' => '1 star',
+        'there_are_no_reviews_for_this_product' => 'There are no reviews for this product.',
+        'add_a_review' => 'Add a Review',
+        'your_rating' => 'Your Rating',
+        'star' => ':count star',
+        'reviewer_name' => 'Name',
+        'your_review' => 'Your Review',
+        'add_review' => 'Add Review',
+        'note' => 'Note:',
+        'html_is_not_translated' => 'HTML is not translated!',
+    ],
+    'related_products' => 'Related Products',
+    'you_might_also_like' => 'You might also like',
+];
