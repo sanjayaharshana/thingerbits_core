@@ -12,6 +12,23 @@
 <link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/custom.css')) }}">
 </head>
 
+@extends('public.layout')
+
+<style>
+.sidebar {
+    display: none;
+}
+.header-inner {
+    display: none;
+}
+.header-wrapper {
+    display: none;
+}
+.top-nav {
+    display: none;
+}
+</style>
+
 <body>
 <div id="header-holder" class="main-header">
     <div class="bg-animation">
@@ -22,6 +39,7 @@
             <img class="img img3" src="{{ (Theme::url('public/HomeLand/images/graphic3.png')) }}" alt="">
         </div>
     </div>
+    
     <nav id="nav" class="navbar navbar-default navbar-full">
         <div class="container-fluid">
             <div class="container container-nav">
@@ -34,7 +52,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="logo-holder" href="index.html">
-                                <div class="logo" style="width:62px;height:18px"></div>
+                                <div>{{ setting('store_name') }}</div>
                             </a>
                         </div>
                         <div style="height: 1px;" role="main" aria-expanded="false" class="navbar-collapse collapse" id="bs">
@@ -325,158 +343,7 @@ atque corrupti quos dolores et quas molestias.</p>
         </div>
     </div>
 </div>
-<div id="custom-plan" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h4>Create your plan</h4>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum div atque corrupti quos dolores et quas molestias.</p>
-                <div class="custom-plan-box">
-                    <input id="c-plan" type="text" data-slider-min="100" data-slider-max="10000" data-slider-step="100" data-slider-value="5000" data-currency="$" data-unit="GB">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="custom-plan-info-box">
-                    <div class="title">Your custom plan</div>
-                    <div class="details">
-                        <div class="feature feature1"><span>5</span> GB</div>
-                        <div class="feature feature2"><span>20</span> GB Bandwidth</div>
-                        <div class="feature feature3">E-mail accounts</div>
-                        <div class="feature feature4">Unlimited other features</div>
-                    </div>
-                    <div class="price">$250</div>
-                    <div class="btn-holder">
-                        <a href="signup.html" class="ybtn ybtn-accent-color">Order now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="features" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row-title">Our hosting features</div>
-                <div class="row-subtitle"></div>
-            </div>
-        </div>
-        <div class="row rtl-cols">
-            <div class="col-sm-12 col-md-6">
-                <div id="features-links-holder">
-                    <div class="icons-axis">
-                        <img src="images/features-icon.png" alt="">
-                    </div>
-                    <div class="feature-icon-holder feature-icon-holder1 opened" data-id="1">
-                        <div class="animation-holder"><div class="special-gradiant"></div></div>
-                        <div class="feature-icon"><i class="htfy htfy-worldwide"></i></div>
-                        <div class="feature-title">%99 Uptime</div>
-                    </div>
-                    <div class="feature-icon-holder feature-icon-holder2" data-id="2">
-                        <div class="animation-holder"><div class="special-gradiant"></div></div>
-                        <div class="feature-icon"><i class="htfy htfy-cogwheel"></i></div>
-                        <div class="feature-title">Easy control panel</div>
-                    </div>
-                    <div class="feature-icon-holder feature-icon-holder3" data-id="3">
-                        <div class="animation-holder"><div class="special-gradiant"></div></div>
-                        <div class="feature-icon"><i class="htfy htfy-location"></i></div>
-                        <div class="feature-title">Email Marketing</div>
-                    </div>
-                    <div class="feature-icon-holder feature-icon-holder4" data-id="4">
-                        <div class="animation-holder"><div class="special-gradiant"></div></div>
-                        <div class="feature-icon"><i class="htfy htfy-download"></i></div>
-                        <div class="feature-title">1CLICK Script Installs</div>
-                    </div>
-                    <div class="feature-icon-holder feature-icon-holder5" data-id="5">
-                        <div class="animation-holder"><div class="special-gradiant"></div></div>
-                        <div class="feature-icon"><i class="htfy htfy-like"></i></div>
-                        <div class="feature-title">7/24 Support</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div id="features-holder">
-                    <div class="feature-box feature-d1 show-details">
-                        <div class="feature-title-holder">
-                            <span class="feature-icon"><i class="htfy htfy-worldwide"></i></span>
-                            <span class="feature-title">%99 Uptime</span>
-                        </div>
-                        <div class="feature-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos
-                                ducimus qui blanditiis praesentium voluptatum div
-                                atque corrupti quos dolores et quas molestias.</p>
 
-                            <p>dignissimos ducimus qui blanditiis praesentium
-                                voluptatum div atque corrupti quos dolores et quas
-                                unimo molestias.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box feature-d2">
-                        <div class="feature-title-holder">
-                            <span class="feature-icon"><i class="htfy htfy-cogwheel"></i></span>
-                            <span class="feature-title">Easy control panel</span>
-                        </div>
-                        <div class="feature-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos
-                                ducimus qui blanditiis praesentium voluptatum div
-                                atque corrupti quos dolores et quas molestias.</p>
-
-                            <p>dignissimos ducimus qui blanditiis praesentium
-                                voluptatum div atque corrupti quos dolores et quas
-                                unimo molestias.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box feature-d3">
-                        <div class="feature-title-holder">
-                            <span class="feature-icon"><i class="htfy htfy-location"></i></span>
-                            <span class="feature-title">Email Marketing</span>
-                        </div>
-                        <div class="feature-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos
-                                ducimus qui blanditiis praesentium voluptatum div
-                                atque corrupti quos dolores et quas molestias.</p>
-
-                            <p>dignissimos ducimus qui blanditiis praesentium
-                                voluptatum div atque corrupti quos dolores et quas
-                                unimo molestias.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box feature-d4">
-                        <div class="feature-title-holder">
-                            <span class="feature-icon"><i class="htfy htfy-download"></i></span>
-                            <span class="feature-title">1CLICK Script Installs</span>
-                        </div>
-                        <div class="feature-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos
-                                ducimus qui blanditiis praesentium voluptatum div
-                                atque corrupti quos dolores et quas molestias.</p>
-
-                            <p>dignissimos ducimus qui blanditiis praesentium
-                                voluptatum div atque corrupti quos dolores et quas
-                                unimo molestias.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box feature-d5">
-                        <div class="feature-title-holder">
-                            <span class="feature-icon"><i class="htfy htfy-like"></i></span>
-                            <span class="feature-title">7/24 Support</span>
-                        </div>
-                        <div class="feature-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos
-                                ducimus qui blanditiis praesentium voluptatum div
-                                atque corrupti quos dolores et quas molestias.</p>
-
-                            <p>dignissimos ducimus qui blanditiis praesentium
-                                voluptatum div atque corrupti quos dolores et quas
-                                unimo molestias.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div id="testimonials" class="container-fluid">
     <div class="bg-color"></div>
     <div class="container">
@@ -564,66 +431,7 @@ atque corrupti quos dolores et quas molestias.</p>
         </div>
     </div>
 </div>
-<div id="footer" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-sm-4 col-md-3">
-                <div class="address-holder">
-                    <div class="phone"><i class="fas fa-phone"></i> 00 285 900 38502</div>
-                    <div class="email"><i class="fas fa-envelope"></i> hello@hostify.com</div>
-                    <div class="address">
-                        <i class="fas fa-map-marker"></i> 
-                        <div>City Avenue, Office 64,<br>
-                            Floor 6,  Milbourne,<br>
-                            Australia.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-2 col-md-2">
-                <div class="footer-menu-holder">
-                    <h4>Company</h4>
-                    <ul class="footer-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="blog.html">News</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-2 col-md-3">
-                <div class="footer-menu-holder">
-                    <h4>Services</h4>
-                    <ul class="footer-menu">
-                        <li><a href="webhosting.html">Web Hosting</a></li>
-                        <li><a href="cloudhosting.html">Cloud Hosting</a></li>
-                        <li><a href="vpshosting.html">VPS Servers</a></li>
-                        <li><a href="domains.html">Domain Names</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-3 col-md-3">
-                <div class="footer-menu-holder">
-                    <h4>Others</h4>
-                    <ul class="footer-menu">
-                        <li><a href="#">Transfer domains</a></li>
-                        <li><a href="portal.html">Customer Portal</a></li>
-                        <li><a href="#">Support Portal</a></li>
-                        <li><a href="#">Video Tutorials</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-1 col-md-1">
-                <div class="social-menu-holder">
-                    <ul class="social-menu">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <script src="{{ (Theme::url('public/HomeLand/js/jquery.min.js')) }}"></script>
 <script src="{{ (Theme::url('public/HomeLand/js/bootstrap.min.js')) }}"></script>
 <script src="{{ (Theme::url('public/HomeLand/js/bootstrap-slider.min.js')) }}"></script>

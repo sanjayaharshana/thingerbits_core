@@ -1,9 +1,21 @@
 <nav class="navbar navbar-static-top clearfix">
     <ul class="nav navbar-nav clearfix">
         <li class="visit-store hidden-sm hidden-xs">
-            <a href="{{ route('home') }}" target="_blank">
+            <a href="/shopcenter" target="_blank">
                 <i class="fa fa-desktop"></i>
                 {{ trans('admin::admin.visit_store') }}
+            </a>
+        </li>
+        <li class="visit-store hidden-sm hidden-xs">
+            <a href="/" target="_blank">
+                <i class="fa fa-desktop"></i>
+                Home Page
+            </a>
+        </li>
+        <li class="visit-store hidden-sm hidden-xs">
+            <a href="/lm" target="_blank">
+                <i class="fa fa-desktop"></i>
+                Learning Center
             </a>
         </li>
 

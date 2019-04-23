@@ -6,12 +6,13 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>
-            @yield('title') - FleetCart Admin
+            @yield('title') - Thingerbits Core
         </title>
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto:400,500" rel="stylesheet">
+        <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
 
         @foreach ($assets->allCss() as $css)
             <link media="all" type="text/css" rel="stylesheet" href="{{ v($css) }}">

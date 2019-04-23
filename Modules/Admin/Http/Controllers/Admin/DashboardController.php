@@ -8,10 +8,13 @@ use Illuminate\Routing\Controller;
 use Modules\Review\Entities\Review;
 use Modules\Product\Entities\Product;
 use Modules\Product\Entities\SearchTerm;
+use Illuminate\Http\Request; 
 use DB;
+use Log;
 
 class DashboardController extends Controller
 {
+    private $x;
     /**
      * Display the dashboard with its widgets.
      *
@@ -111,12 +114,13 @@ class DashboardController extends Controller
     }
 
     public function lessoneditor( $lessonid) {
-        return view('admin::rashpanel.lesson_editor');
+       // return view('admin::rashpanel.lesson_editor');
         $data['data'] = DB::table('lessons')->where('lesson_id', $lessonid)->get();
+        $this->x = $lessonid;
 
         if(count($data) > 0)
         {
-            return view('admin::rashpanel.listgroup',$data);
+            return view('admin::rashpanel.lesson_editor',$data);
         }
         else
         {
@@ -127,18 +131,61 @@ class DashboardController extends Controller
 
     }
 
-    public function updatelesson (Request  $request) 
+    public function updatelesson (Request $req) 
     {
         
-       
+        $lesson_id = $req->input('lesson_id');
+        $course_id = $req->input('course_id');
+        $lesson_title = $req->input('lesson_title');
+        $lesson_body = $req->input('lesson_body');
+        
+       // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
+       DB::table('lessons')->where('lesson_id', $lesson_id )->update(['lesson_title' => $lesson_title,'lesson_body' => $lesson_body,]);
 
-        $lesson_title = $request->input('lesson_title');
-        $lesson_body = $request->input('lesson_body');
-        
-        echo $lesson_title;
-        echo $lesson_body;
-        
+        //echo $lesson_id;
+        return redirect()->route('courseopenerrc',$course_id);        
 
         //echo $request->lesson_title;
+
+    }
+
+    public function deletelesson($valueid)
+    {
+        DB::table('lessons')->where('lesson_id', $valueid )->delete();
+
+        return back(); 
+
+    } 
+
+    public function addlesson ($cour_id) 
+    {
+        echo $cour_id;
+        return view('admin::rashpanel.insertlesson');
+    }
+
+    public function insertles(Request $reql) 
+    {
+        $course_id = '1';
+        $lesson_title = $reql->input('lesson_title');
+        $lesson_body = $reql->input('lesson_body');
+        $user_id = $reql->input('user_id');
+        $l_order = $reql->input('l_order');
+        $is_ok = $reql->input('is_ok');
+
+        $data = array(
+            'course_id' => $course_id,
+            'lesson_title'=>$lesson_title,
+            'lesson_body'=>$lesson_body,
+            'user_id'=>$user_id,
+            'l_order'=>$l_order,
+            'is_ok' => $is_ok,
+        );
+
+        DB::table('lessons')->insert($data);
+
+        return view('admin::rashpanel.insertlesson');
+
+        //echo "dfsd";
+   
     }
 }

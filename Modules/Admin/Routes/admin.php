@@ -19,3 +19,13 @@ Route::get('/parellel/{lessonid}', 'DashboardController@lessoneditor')->name('le
 
 Route::post('/parellel/update', 'DashboardController@updatelesson')->name('lesupdate');
 
+Route::get('/parellel/delete/{valueid}', 'DashboardController@deletelesson')->name('lesdelete');
+
+Route::get('/addles/add/{cour_id}', 'DashboardController@addlesson')->name('addlesadd');
+
+Route::post('/addles/insert', 'DashboardController@insertles')->name('adleson');
+
+
+
+
+

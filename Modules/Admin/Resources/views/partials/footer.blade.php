@@ -27,5 +27,5 @@
         <i class="fa fa-keyboard-o"></i>
     </a>&nbsp;
 
-    <span>Copyright &copy; {{ date('Y')}} <a href="http://envaysoft.com/fleetcart" target="_blank">FleetCart</a></span>
+    <span>Copyright &copy; {{ date('Y')}} <a href="developer.thingerbits.com/thingerbitscore" target="_blank">ThingerBits Core</a></span>
 </footer>
