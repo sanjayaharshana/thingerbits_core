@@ -14,7 +14,7 @@ use Log;
 
 class DashboardController extends Controller
 {
-    private $x;
+    public $x;
     /**
      * Display the dashboard with its widgets.
      *
@@ -159,13 +159,15 @@ class DashboardController extends Controller
 
     public function addlesson ($cour_id) 
     {
-        echo $cour_id;
-        return view('admin::rashpanel.insertlesson');
+        
+
+        return view('admin::rashpanel.insertlesson',['course_id' => $cour_id]);
     }
 
     public function insertles(Request $reql) 
     {
-        $course_id = '1';
+        // dd($reql->all());
+        $course_id =  $reql->input('apple');
         $lesson_title = $reql->input('lesson_title');
         $lesson_body = $reql->input('lesson_body');
         $user_id = $reql->input('user_id');
@@ -182,8 +184,8 @@ class DashboardController extends Controller
         );
 
         DB::table('lessons')->insert($data);
-
-        return view('admin::rashpanel.insertlesson');
+       // return view('admin::rashpanel.insertlesson');
+       return view('admin::rashpanel.insertlesson',['course_id' => $course_id]);
 
         //echo "dfsd";
    

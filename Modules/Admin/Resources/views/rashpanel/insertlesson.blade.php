@@ -31,7 +31,12 @@
   <input type="text" class="form-control" placeholder="Title" name="user_id" style="display:none;" value="1">
   <input type="text" class="form-control" placeholder="Title" name="l_order" style="display:none;" value="1">
   <input type="text" class="form-control" placeholder="Title" name="is_ok" style="display:none;" value="1">
- 
+  
+  <input type="text" class="form-control" placeholder="Title" name="apple" style="" value="{{ $course_id }}">
+
+
+
+
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
 
