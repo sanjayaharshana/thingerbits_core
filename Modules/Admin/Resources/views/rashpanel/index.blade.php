@@ -19,11 +19,18 @@
         <div class="dashboard-panel"><br>
                <h4>{{ $value->course_title }}</h4><br><br>
                <a href="admin/lessonpanel/{{ $value->course_id }}" class="btn btn-primary">Edit Course</a><br><br>
-            </div>
-        </div>   
-        
- 
+        </div>
+</div>  
 @endforeach
+
+<div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="dashboard-panel" style="border: #898989;background: #f1f3f7;box-shadow: none;border-style: dashed;
+        border-color: #9e9e9e;
+        text-align: center;"><br>
+               <h4 style="color: #9e9e9e;">Add Course</h4><br>
+               <i class="fa fa-plus" style="font-size: 60px; color:#9e9e9e;"></i><br><br>
+        </div>
+</div> 
 </div> 
 
 
