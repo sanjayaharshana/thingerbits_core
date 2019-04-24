@@ -28,7 +28,9 @@
         border-color: #9e9e9e;
         text-align: center;"><br>
                <h4 style="color: #9e9e9e;">Add Course</h4><br>
-               <i class="fa fa-plus" style="font-size: 60px; color:#9e9e9e;"></i><br><br>
+               <a href="admin/createcourse">
+                <i class="fa fa-plus" style="font-size: 60px; color:#9e9e9e;"></i><br><br>
+                </a>
         </div>
 </div> 
 </div> 

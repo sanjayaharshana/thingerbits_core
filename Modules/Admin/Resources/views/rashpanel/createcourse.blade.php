@@ -3,7 +3,7 @@
 @section('title', trans('admin::dashboard.dashboard'))
 
 @section('content_header')   
-<h3>Add Lession</h3>
+<h3>Create Course</h3>
 @endsection
 
 <style>
@@ -12,6 +12,39 @@
 
 @section('content')
 
+<form method="POST" action="{{ route('insertcourse') }}">
+    {{ csrf_field() }}    
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Course Title</label>
+        <input type="text" class="form-control" placeholder="Title" name="course_title" style="" value="">
+    </div>
 
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Slugg</label>
+        <input type="text" class="form-control" placeholder="Title" name="slg" style="" value="">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Course Image</label>
+        <input type="text" class="form-control" placeholder="Title" name="course_img" style=";" value="">   
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Course Intro</label>
+        <input type="text" class="form-control" placeholder="Title" name="course_intros" style="" value="">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Course Decription</label>
+        <input type="text" class="form-control" placeholder="Title" name="cours_discrip" style="" value="">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Recommand Products</label>
+        <input type="text" class="form-control" placeholder="Title" name="rcmmand" style="" value="">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
 
 @endsection

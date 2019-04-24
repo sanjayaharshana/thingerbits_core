@@ -27,6 +27,7 @@ Route::post('/addles/insert', 'DashboardController@insertles')->name('adleson');
 
 Route::get('/createcourse', 'DashboardController@createcourse')->name('createcourserout');
 
+Route::post('/createcourse/instert', 'DashboardController@courseinsert')->name('insertcourse');
 
 
 

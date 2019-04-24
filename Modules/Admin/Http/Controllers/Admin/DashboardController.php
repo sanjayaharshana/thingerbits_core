@@ -195,4 +195,53 @@ class DashboardController extends Controller
 
         //echo 'appe';
     }
+
+    function courseinsert(Request $reql) 
+    {
+        
+        $user_id =  '1';
+        $course_title = $reql->input('course_title');
+        $slag = $reql->input('slg');
+        $course_image = $reql->input('course_img');
+        $course_intro = $reql->input('course_intros');
+        $course_discription = $reql->input('cours_discrip');
+        $reccomandproduct_id = $reql->input('rcmmand');
+
+     
+        
+        
+
+        $id = DB::table('course_list')->insertGetId(
+            array(
+                'user_id' => $user_id,
+                'course_title'=>$course_title,
+                'slag'=>$slag,
+                'course_image'=>$course_image,
+                'course_intro'=>$course_intro,
+                'course_discription' => $course_discription,
+                'reccomandproduct_id' => $reccomandproduct_id,
+            )
+        );
+
+        
+
+        $lesdata = array(
+            'user_id' => '1',
+            'lesson_title'=>'Example Lesson',
+            'lesson_body'=>'Hellow WOrd',
+            'l_order'=>'1',
+            'course_id'=> $id,
+            'is_ok' => '1',
+        );
+
+       DB::table('lessons')->insert($lesdata);
+       
+        // return view('admin::rashpanel.insertlesson');
+
+
+
+        return view('admin::rashpanel.createcourse');
+
+
+    }
 }
