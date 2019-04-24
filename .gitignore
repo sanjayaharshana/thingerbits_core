@@ -1,18 +1,12 @@
-.idea/
-.phpintel/
-*.sublime-project
 
-node_modules/
-/vendor
+/node_modules
+/public/hot
 /public/storage
-/public/media
-/public/modules
-/public/themes
-/Modules/*/Assets
-/Themes/*/assets
-mix-manifest.json
+/storage/*.key
+/vendor
+.env
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
 npm-debug.log
 yarn-error.log
-tags
-*.map
-.env
