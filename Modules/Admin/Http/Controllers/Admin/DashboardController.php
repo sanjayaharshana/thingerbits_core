@@ -107,6 +107,7 @@ class DashboardController extends Controller
         }
         else
         {
+            $data['data'] = ('dsfsd');
             return view('admin::rashpanel.listgroup');
         }
 
@@ -159,8 +160,7 @@ class DashboardController extends Controller
 
     public function addlesson ($cour_id) 
     {
-        
-
+    
         return view('admin::rashpanel.insertlesson',['course_id' => $cour_id]);
     }
 
