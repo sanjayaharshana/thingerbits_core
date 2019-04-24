@@ -107,7 +107,6 @@ class DashboardController extends Controller
         }
         else
         {
-            $data['data'] = ('dsfsd');
             return view('admin::rashpanel.listgroup');
         }
 
@@ -189,5 +188,11 @@ class DashboardController extends Controller
 
         //echo "dfsd";
    
+    }
+
+    function createcourse() {
+        return view('admin::rashpanel.createcourse');
+
+        //echo 'appe';
     }
 }
