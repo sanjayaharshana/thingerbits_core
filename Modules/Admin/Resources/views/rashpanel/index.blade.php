@@ -14,6 +14,8 @@
 
 
 <div class="row">
+        <div class="container">
+
 @foreach ($data as $value)
 <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="dashboard-panel"><br>
@@ -34,6 +36,7 @@
         </div>
 </div> 
 </div> 
-
+</div>
 
 @endsection
+
