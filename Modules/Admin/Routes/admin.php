@@ -29,6 +29,7 @@ Route::get('/createcourse', 'DashboardController@createcourse')->name('createcou
 
 Route::post('/createcourse/instert', 'DashboardController@courseinsert')->name('insertcourse');
 
+Route::get('deletecourse/{course_id}', 'DashboardController@deletecourse')->name('deletecoursefull');
 
 
 

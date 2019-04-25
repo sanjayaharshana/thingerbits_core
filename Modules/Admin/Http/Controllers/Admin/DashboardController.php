@@ -234,14 +234,18 @@ class DashboardController extends Controller
             'is_ok' => '1',
         );
 
-       DB::table('lessons')->insert($lesdata);
-       
+       DB::table('lessons')->insert($lesdata);       
         // return view('admin::rashpanel.insertlesson');
-
-
-
         return view('admin::rashpanel.createcourse');
 
 
+    }
+
+    function deletecourse ($course_id) 
+    {
+        DB::table('lessons')->where('course_id', $valueid )->delete();
+        DB::table('course_list')->where('course_id', $valueid )->delete();
+
+        return back(); 
     }
 }
