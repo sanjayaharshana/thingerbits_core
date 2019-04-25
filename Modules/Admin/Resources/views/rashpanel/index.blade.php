@@ -40,6 +40,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="admin/deletecourse/{{ $value->course_id }}" class="btn btn-default">Delete</a>
             </div>
           </div>
           
