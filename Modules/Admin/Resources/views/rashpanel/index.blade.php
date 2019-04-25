@@ -20,10 +20,33 @@
 <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="dashboard-panel"><br>
                <h4>{{ $value->course_title }}</h4><br><br>
-               <a href="admin/lessonpanel/{{ $value->course_id }}" class="btn btn-primary">Edit Course</a><br><br>
+               <a href="admin/lessonpanel/{{ $value->course_id }}" class="btn btn-default">Edit Course</a>
+               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash"></i></button>
+               <br><br>
         </div>
-</div>  
+</div>      
 @endforeach
+
+<div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"> Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+              <h3>{{ $value->course_title }}</h3>
+              <p>{{ $value->course_intro }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+</div>
 
 <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="dashboard-panel" style="border: #898989;background: #f1f3f7;box-shadow: none;border-style: dashed;
