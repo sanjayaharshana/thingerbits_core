@@ -21,13 +21,11 @@
         <div class="dashboard-panel"><br>
                <h4>{{ $value->course_title }}</h4><br><br>
                <a href="admin/lessonpanel/{{ $value->course_id }}" class="btn btn-default">Edit Course</a>
-               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash"></i></button>
+               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal{{ $value->course_id }}"><i class="fa fa-trash"></i></button>
                <br><br>
         </div>
-</div>      
-@endforeach
-
-<div class="modal fade" id="myModal" role="dialog">
+</div>
+<div class="modal fade" id="myModal{{ $value->course_id }}" role="dialog">
         <div class="modal-dialog">
         
           <!-- Modal content-->
@@ -47,6 +45,8 @@
           
         </div>
 </div>
+      
+@endforeach
 
 <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="dashboard-panel" style="border: #898989;background: #f1f3f7;box-shadow: none;border-style: dashed;
