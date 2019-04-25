@@ -41,6 +41,8 @@ class SettingTabs extends Tabs
             ->add($this->stripe())
             ->add($this->cod())
             ->add($this->bankTransfer())
+            // Create Custom Getway Function
+            ->add($this->boondipayment())
             ->add($this->checkPayment());
     }
 
@@ -270,6 +272,27 @@ class SettingTabs extends Tabs
             $tab->view('setting::admin.settings.tabs.bank_transfer');
         });
     }
+
+    //custom payment getway
+    
+    private function boondipayment()
+    {
+        return tap(new Tab('boondi_transfer', 'Boodi Tranfer'), function (Tab $tab) {
+            $tab->weight(70);
+
+            $tab->fields([
+                'boondipayment_enabled',
+                'translatable.boondi_transfer_label',
+                'translatable.boondi_transfer_description',
+                'translatable.boondi_transfer_instructions',
+            ]);
+
+            $tab->view('setting::admin.settings.tabs.boondi_transfer');
+        });
+    }
+
+    
+    //---------------
 
     private function checkPayment()
     {
