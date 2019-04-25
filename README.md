@@ -1,6 +1,7 @@
 # thingerbits_core
 
-Thingerbits core is our company website, this is devided into Thingerbits shop, LMS, - (Learning Management System),Development Platfom and Landing.
+Thingerbits electronic shopping platform, this is devided into Thingerbits shop, LMS(Learning Management System),Development Platfom and Landing.
+
 Thingerbits core has been developed by based on module so anyone can easily develop this with 
 PHP 7, Javasccript (V8 engine and Chakra), Json, Ajax technolgies.
 
