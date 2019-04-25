@@ -25,6 +25,11 @@ Route::get('/addles/add/{cour_id}', 'DashboardController@addlesson')->name('addl
 
 Route::post('/addles/insert', 'DashboardController@insertles')->name('adleson');
 
+Route::get('/createcourse', 'DashboardController@createcourse')->name('createcourserout');
+
+Route::post('/createcourse/instert', 'DashboardController@courseinsert')->name('insertcourse');
+
+Route::get('deletecourse/{course_id}', 'DashboardController@deletecourse')->name('deletecoursefull');
 
 
 
