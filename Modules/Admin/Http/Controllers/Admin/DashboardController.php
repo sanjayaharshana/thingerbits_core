@@ -243,8 +243,8 @@ class DashboardController extends Controller
 
     function deletecourse ($course_id) 
     {
-        DB::table('lessons')->where('course_id', $valueid )->delete();
-        DB::table('course_list')->where('course_id', $valueid )->delete();
+        DB::table('lessons')->where('course_id', $course_id )->delete();
+        DB::table('course_list')->where('course_id', $course_id )->delete();
 
         return back(); 
     }
