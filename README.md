@@ -1,4 +1,4 @@
-# thingerbits_core
+# thingerbits_core apple apple
 
 Thingerbits electronic shopping platform, this is devided into Thingerbits shop, LMS(Learning Management System),Development Platfom and Landing.
 
