@@ -130,7 +130,7 @@ class AccountDashboardController extends Controller
 
         if(count($data) > 0)
         {
-            return view('public.account.coursecenter.index',$data,$oler,);
+            return view('public.account.coursecenter.index',$data,$oler);
         }
         else
         {   
