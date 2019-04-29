@@ -18,6 +18,9 @@
 .a:focus, a:hover{
     text-decoration: none;
 }
+.megamenu-wrapper hidden-xs {
+    display: none;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/style.css')) }}">
 <link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/fontawesome-all.min.css')) }}">
