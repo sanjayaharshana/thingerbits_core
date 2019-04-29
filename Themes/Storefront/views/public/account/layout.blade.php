@@ -54,8 +54,8 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="logo-holder" href="index.html">
-                                <div class="logo" style="width:62px;height:18px"></div>
+                            <a class="logo-holder" href="">
+                                <p style="color:white;"><strong>Thingerbits</strong></p> 
                             </a>
                         </div>
                         <div style="height: 1px;" role="main" aria-expanded="false" class="navbar-collapse collapse" id="bs">
