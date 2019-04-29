@@ -155,7 +155,6 @@
     <a href="{{ route('account.wishlist.index') }}" li class="w3-bar-item w3-button" >Product Wishlist</a>
     <a href="{{ route('account.reviews.index') }}" li class="w3-bar-item w3-button" > {{ trans('storefront::account.links.my_reviews') }}</a>
     <a href="{{ route('account.profile.edit') }}" li class="w3-bar-item w3-button" >Profile</a>
-    <h3 class="w3-bar-item">Lessons</h3>  
 </div>
 
 <div style="margin-left:25%">           
