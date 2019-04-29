@@ -15,7 +15,7 @@
         <li class="" style="font-size: small;padding-top: 10px;padding-bottom: 10px;padding-right: 17px;">
             <a href="admin/lessonpanel" class="">
                 <i class="fa fa-cogs"></i>
-                <span style="padding-left: 09px;">Visual Blog Post</span>
+                <span style="padding-left: 09px;">Courses</span>
             </a>
         </li>
       
