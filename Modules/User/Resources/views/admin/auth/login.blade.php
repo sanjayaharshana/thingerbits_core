@@ -9,7 +9,7 @@
         </div>
 
         <div class="form-inner clearfix">
-            <h3 class="text-center">FleetCart</h3>
+            <h3 class="text-center">Thingerbits Core</h3>
 
             <form method="POST" action="{{ route('admin.login.post') }}">
                 {{ csrf_field() }}
