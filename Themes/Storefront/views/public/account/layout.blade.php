@@ -102,7 +102,7 @@
                                                 </a>
                                             </li>                                            
                                             <li>
-                                                <a class="unity-link" href="/shopcenter">
+                                                <a class="unity-link" href="/shop">
                                                     <div class="unity-box">
                                                         <div class="unity-icon">
                                                             <img src="{{ (Theme::url('public/HomeLand/images/service-icon3.svg')) }}" alt="">

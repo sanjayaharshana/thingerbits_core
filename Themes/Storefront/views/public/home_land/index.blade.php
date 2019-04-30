@@ -144,7 +144,7 @@
                                  @endauth
                                
                                 <li class="support-button-holder support-dropdown">
-                                    <a class="support-button" href="/shopcenter">Shop</a>                                   
+                                    <a class="support-button" href="/shop">Shop</a>                                   
                                 </li>                                
                             </ul>
                         </div>
