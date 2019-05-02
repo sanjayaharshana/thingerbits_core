@@ -248,4 +248,17 @@ class DashboardController extends Controller
 
         return back(); 
     }
+
+    //PackGenetro
+
+    function packgenerator()
+    {
+        return view('admin::packs.index');
+
+    }
+
+    function packgrenerator_insertpack()
+    {
+        
+    }
 }

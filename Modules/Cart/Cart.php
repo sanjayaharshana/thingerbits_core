@@ -10,6 +10,7 @@ use Modules\Product\Entities\Product;
 use Modules\Shipping\Facades\ShippingMethod;
 use Darryldecode\Cart\Cart as DarryldecodeCart;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use DB;
 
 class Cart extends DarryldecodeCart
 {
@@ -138,7 +139,35 @@ class Cart extends DarryldecodeCart
     public function reduceStock()
     {
         $this->manageStock(function ($cartItem) {
+           // $cartItem->product->decrement('qty', $cartItem->qty);
+           // $query = DB::table('sol_packitem')->select('product_id');
+           $contra = $cartItem->product->id;
+
+           $prod = DB::table('products')->where('id', $contra)->first();          
+
+
+
+         if($prod->is_pack == '1'){
+
+            $solItems = DB::table('sol_packitem')->select('*')->where('product_id',$contra)->get();
+
+            foreach($solItems as $items)
+            {             
+                 $subProd =   DB::table('products')->where('id', $items->product_item_id)->first();
+             
+                 $updateQuan = $subProd->qty - $items->qty;
+                 
+                 DB::table('products')
+                 ->where('id', $items->product_item_id)
+                 ->update(['qty' => $updateQuan]);
+            }
+         } else
+
+         {
             $cartItem->product->decrement('qty', $cartItem->qty);
+
+         }     
+
         });
     }
 

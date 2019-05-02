@@ -10,6 +10,7 @@ class CartItem
     public $qty;
     public $product;
     public $options;
+    public $is_pack;
 
     public function __construct($item)
     {
@@ -17,6 +18,8 @@ class CartItem
         $this->qty = $item->quantity;
         $this->product = $item->attributes['product'];
         $this->options = $item->attributes['options'];
+        $this->is_pack = $item->is_pack;
+
     }
 
     public function unitPrice()
