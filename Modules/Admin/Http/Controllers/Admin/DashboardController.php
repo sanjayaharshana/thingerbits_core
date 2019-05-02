@@ -257,8 +257,9 @@ class DashboardController extends Controller
 
     }
 
-    function packgrenerator_insertpack()
+    function createpackage()
     {
-        
+        return view('admin::packs.createpack');
+
     }
 }
