@@ -38,5 +38,7 @@ Route::get('/packgenerator', 'DashboardController@packgenerator')->name('packgen
 Route::get('/createpackage', 'DashboardController@createpackage')->name('createpackage');
 Route::post('/createpackage/instert', 'DashboardController@createpackageinsert')->name('createpackageinsert');
 
+Route::get('/addpackitems', 'DashboardController@addpackitems')->name('addpackitems');
+
 
 

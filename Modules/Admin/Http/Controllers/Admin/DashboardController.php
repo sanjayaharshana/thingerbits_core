@@ -253,7 +253,17 @@ class DashboardController extends Controller
 
     function packgenerator()
     {
-        return view('admin::packs.index');
+        $data['data'] = DB::table('sol_packtable')->get();
+        if(count($data) > 0)
+        {
+            return view('admin::packs.index',$data);
+        }
+        else
+        {
+            return view('admin::packs.index');
+        }      
+    
+       
 
     }
 
@@ -261,7 +271,7 @@ class DashboardController extends Controller
     {
         //Tempory Deativated This code
       
-        $data['data'] = DB::table('products')->get();
+        $data['data'] = DB::table('products')->where('is_pack', '0')->get();
 
         if(count($data) > 0)
         {
@@ -291,5 +301,10 @@ class DashboardController extends Controller
 
        // return view('admin::rashpanel.insertlesson');
        return redirect()->route('packgenerator');
+    }
+
+    function addpackitems () 
+    {
+        
     }
 }
