@@ -35,7 +35,8 @@ Route::get('deletecourse/{course_id}', 'DashboardController@deletecourse')->name
 
 //Pack Production Generation Route
 Route::get('/packgenerator', 'DashboardController@packgenerator')->name('packgenerator');
-Route::get('/createpackage', 'DashboardController@createpackage')->name('packgenerator');
+Route::get('/createpackage', 'DashboardController@createpackage')->name('createpackage');
+Route::post('/createpackage/instert', 'DashboardController@createpackageinsert')->name('createpackageinsert');
 
 
 

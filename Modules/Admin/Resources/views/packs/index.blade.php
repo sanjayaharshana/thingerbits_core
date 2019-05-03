@@ -6,7 +6,6 @@
 <h3>Product Package</h3><br><br>
 <a href="admin/createpackage" class="btn btn-primary">Create Package</a>
 
-
 @endsection
 
 

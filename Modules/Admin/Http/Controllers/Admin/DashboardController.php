@@ -259,7 +259,37 @@ class DashboardController extends Controller
 
     function createpackage()
     {
-        return view('admin::packs.createpack');
+        //Tempory Deativated This code
+      
+        $data['data'] = DB::table('products')->get();
 
+        if(count($data) > 0)
+        {
+            return view('admin::packs.createpack',$data);
+        }
+        else
+        {
+            return view('admin::packs.createpack');
+        }      
+    
+
+        return view('admin::packs.createpack');
+    }
+
+    function createpackageinsert (Request $reql)
+    {
+        $package_name =  $reql->input('package_name');
+        $product_name = $reql->input('product_name');
+
+        $data = array(
+            'pack_name' => $package_name,
+            'product_id'=>$product_name,            
+        );
+
+        DB::table('sol_packtable')->insert($data);
+        DB::table('products')->where('id', $product_name )->update(['is_pack' => '1']);
+
+       // return view('admin::rashpanel.insertlesson');
+       return redirect()->route('packgenerator');
     }
 }
