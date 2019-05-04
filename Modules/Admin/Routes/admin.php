@@ -40,5 +40,7 @@ Route::post('/createpackage/instert', 'DashboardController@createpackageinsert')
 
 Route::get('/addpackitems', 'DashboardController@addpackitems')->name('addpackitems');
 
+Route::get('/packagercreator/{packid}', 'DashboardController@addpackitems')->name('packitems');
+
 
 

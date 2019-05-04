@@ -303,8 +303,9 @@ class DashboardController extends Controller
        return redirect()->route('packgenerator');
     }
 
-    function addpackitems () 
+    function addpackitems ($packid) 
     {
-        
+        DB::table('sol_packitem')->where('pack_id', $packid )->get();
+
     }
 }
