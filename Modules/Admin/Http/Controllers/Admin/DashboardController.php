@@ -305,7 +305,17 @@ class DashboardController extends Controller
 
     function addpackitems ($packid) 
     {
-        DB::table('sol_packitem')->where('pack_id', $packid )->get();
+        $data = DB::table('sol_packitem')->where('pack_id', $packid)->get();
+      
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.pack_items',['data' => $data]);
+        }
+        else
+        {
+            return view('admin::packs.pack_items');
+        }      
 
     }
 }

@@ -9,8 +9,16 @@
 
     <div class="row">
         <div class="container" style="width: 1050px;">
-                <h3>Product Items</h3><br><br>                
-               
+                <h3>Product Items</h3><br><br>  
+                @foreach ($data as $packitems)
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="dashboard-panel"><br>
+                        <h4>{{ $packitems->pack_id }}</h4><br>
+                        <a href="admin/packagercreator/{{ $packitems->qty }}" class="btn btn-secondary">Edit</a>
+                        <button type="button" class="btn btn-danger">Delete</button><br><br><br>              
+                    </div> 
+                </div>        
+                @endforeach 
         </div>
         
     </div>
