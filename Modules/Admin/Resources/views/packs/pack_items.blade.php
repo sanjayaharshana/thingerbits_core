@@ -12,6 +12,10 @@
     @endforeach
 </ul>
 
+<a href="admin/parellel/" style="btn btn-success">Insert Items</a>
+
+
+
 
 @endsection
 
