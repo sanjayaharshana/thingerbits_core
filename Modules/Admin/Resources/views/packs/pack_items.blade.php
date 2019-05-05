@@ -6,23 +6,12 @@
 </style>
 @section('content_header')
 
+<ul class="list-group">
+    @foreach ($data as $packitems)  
+    <li class="list-group-item" style="height:60px">{{ $packitems->product_item_name }} <span></span> <a href="admin/parellel/{{$packitems->product_id }}" style="float: right;margin: 0px 10px;" class="btn btn-success">Edit</a> <span> </span>
+    @endforeach
+</ul>
 
-    <div class="row">
-        <div class="container" style="width: 1050px;">
-                <h3>Product Items</h3><br><br>  
-                @foreach ($data as $packitems)
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="dashboard-panel"><br>
-                        <h4>{{ $packitems->pack_id }}</h4><br>
-                        <a href="admin/packagercreator/{{ $packitems->qty }}" class="btn btn-secondary">Edit</a>
-                        <button type="button" class="btn btn-danger">Delete</button><br><br><br>              
-                    </div> 
-                </div>        
-                @endforeach 
-        </div>
-        
-    </div>
-    
 
 @endsection
 
