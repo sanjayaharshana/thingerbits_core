@@ -319,4 +319,10 @@ class DashboardController extends Controller
         }      
 
     }
+
+    function insertitems ($packid) 
+    {
+         
+
+    }
 }
