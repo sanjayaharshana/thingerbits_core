@@ -6,13 +6,13 @@
 </style>
 @section('content_header')
 
-<ul class="list-group">
-    @foreach ($data as $packitems)  
-    <li class="list-group-item" style="height:60px">{{ $packitems->product_item_name }} <span></span> <a href="admin/parellel/{{$packitems->product_id }}" style="float: right;margin: 0px 10px;" class="btn btn-success">Edit</a> <span> </span>
-    @endforeach
+<ul class="list-group">  
+        @foreach ($data as $packitems)  
+         <li class="list-group-item" style="height:60px">{{ $packitems->product_item_name }} <span></span> <a href="admin/parellel/{{$packitems->product_id }}" style="float: right;margin: 0px 10px;" class="btn btn-success">Edit</a> <span> </span>
+        @endforeach       
 </ul>
 
-<a href="admin/parellel/" style="btn btn-success">Insert Items</a>
+<a href="admin/insertitems/{{ $packid }}/{{ $productid }}" style="btn btn-success">Insert Items</a>
 
 
 

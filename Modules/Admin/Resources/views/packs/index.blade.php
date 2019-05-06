@@ -14,7 +14,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="dashboard-panel"><br>
                         <h4>{{ $pack->pack_name }}</h4><br>
-                        <a href="admin/packagercreator/{{ $pack->pack_id }}" class="btn btn-secondary">Edit</a>
+                        <a href="admin/packagercreator/{{ $pack->pack_id }}/{{ $pack->product_id }}" class="btn btn-secondary">Edit</a>
                         <button type="button" class="btn btn-danger">Delete</button><br><br><br>              
                     </div> 
                 </div>        
@@ -23,7 +23,7 @@
                         <div class="dashboard-panel" style="border: #898989;background: #f1f3f7;box-shadow: none;border-style: dashed;
                         border-color: #9e9e9e;
                         text-align: center;"><br><br><br>
-                        <p>Add Package</p><br><br><br>
+                        <a href="admin/createpackage/">Pack</a><br><br><br>
                         </div>
                 </div> 
         </div>

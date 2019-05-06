@@ -40,8 +40,10 @@ Route::post('/createpackage/instert', 'DashboardController@createpackageinsert')
 
 Route::get('/addpackitems', 'DashboardController@addpackitems')->name('addpackitems');
 
-Route::get('/packagercreator/{packid}', 'DashboardController@addpackitems')->name('packitems');
-Route::get('/insertitems/{packid}', 'DashboardController@insertitems')->name('insertitemse');
+Route::get('/packagercreator/{packid}/{productid}', 'DashboardController@addpackitems')->name('packitems');
+Route::get('/insertitems/{packid}/{productid}', 'DashboardController@insertitems')->name('insertitemse');
+Route::post('/additem', 'DashboardController@insertadditem')->name('createpackageinsert');
+
 
 
 

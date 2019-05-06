@@ -283,7 +283,7 @@ class DashboardController extends Controller
         }      
     
 
-        return view('admin::packs.createpack');
+      //  return view('admin::packs.createpack');
     }
 
     function createpackageinsert (Request $reql)
@@ -303,7 +303,7 @@ class DashboardController extends Controller
        return redirect()->route('packgenerator');
     }
 
-    function addpackitems ($packid) 
+    function addpackitems ($packid,$productid) 
     {
         $data = DB::table('sol_packitem')->where('pack_id', $packid)->get();
 
@@ -311,18 +311,29 @@ class DashboardController extends Controller
 
         if(count($data) > 0)
         {
-            return view('admin::packs.pack_items',['data' => $data,'product_info' => $product_info]);
+            return view('admin::packs.pack_items',['data' => $data,'product_info' => $product_info,'packid'=>$packid,'productid'=>$productid]);
         }
         else
         {
-            return view('admin::packs.pack_items');
+            return view('admin::packs.pack_items',['data' => $data,'product_info' => $product_info,'packid'=>$packid,'productid'=>$productid]);
         }      
 
     }
 
-    function insertitems ($packid) 
+    function insertitems ($packid,$productid) 
     {
-         
+        $data = DB::table('products')->where('is_pack', '0')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.add_product_item',['packid' => $packid,'productid'=>$productid,'data' => $data]);
+        }
+        else
+        {
+            return view('admin::packs.add_product_item',['packid' => $packid,'productid'=>$productid,'data' => $data]);
+        }      
+
+       
 
     }
 }
