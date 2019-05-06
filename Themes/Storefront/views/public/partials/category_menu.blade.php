@@ -1,4 +1,4 @@
-<div class="category-menu-wrapper pull-left hidden-sm {{ $shouldExpandCategoryMenu ? 'visible' : '' }}">
+<div class="category-menu-wrapper pull-left hidden-sm open">
     <div class="category-menu-dropdown dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-bars" aria-hidden="true"></i>
         {{ setting('storefront_category_menu_title') }}

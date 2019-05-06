@@ -344,14 +344,14 @@ class DashboardController extends Controller
         $product_item_name = 'ProductName';
         $qty = $req->input('qty');
 
-        $dot = DB::table('products')->where('id', )->get();
+        $dot = DB::table('products')->where('id', $product_item_id )->value('slug');
 
         $data = array(
             'user_id'=>$user_id,
             'pack_id' => $pack_id,
             'product_id'=>$main_product_id, 
             'product_item_id' => $product_item_id,
-            'product_item_name'=>$dot->slug,   
+            'product_item_name'=>$dot,   
             'qty'=>$qty, 
         );
 

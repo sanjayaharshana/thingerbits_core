@@ -9,20 +9,22 @@
 <form autocomplete="off" method="POST" action="{{ route('insertadditemr') }}">
     {{ csrf_field() }}
     <div class="form-group">
-        <label for="email">Product Name:</label>             
+        <label for="email">Product Name:</label> 
+        <select id="n1" class="form-control" onChange="" name="product_item_id">
+                @foreach ($data as $product)  
+                    <option value="{{ $product->id }}">{{ $product->slug }}</option>                
+                @endforeach           
+        </select>            
     </div> 
-    <input type="number" class="form-control" id="number" name="pack_id" value="{{ $packid }}"><br>
-    <input type="number" class="form-control" id="number" name="product_id" value="{{ $productid }}"><br>
-    <select id="n1" class="form-control" onChange="" name="product_item_id">
-        @foreach ($data as $product)  
-            <option value="{{ $product->id }}">{{ $product->slug }}</option>                
-        @endforeach           
-    </select>
-    <br>
     <div class="form-group">
-        <label for="email">QTY:</label>
-        <input type="number" class="form-control" id="number" name="qty">
-      </div> 
+            <label for="email">QTY:</label>
+            <input type="number" class="form-control" id="number" name="qty">
+    </div> 
+    <input type="number" class="form-control" style="display:none;" id="number" name="pack_id" value="{{ $packid }}"><br>
+    <input type="number" class="form-control" style="display:none;" id="number" name="product_id" value="{{ $productid }}"><br>
+   
+    <br>
+    
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
