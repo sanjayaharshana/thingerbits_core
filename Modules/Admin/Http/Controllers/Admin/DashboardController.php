@@ -331,9 +331,32 @@ class DashboardController extends Controller
         else
         {
             return view('admin::packs.add_product_item',['packid' => $packid,'productid'=>$productid,'data' => $data]);
-        }      
-
-       
+        }           
 
     }
+
+    function postadditem(Request $req) 
+    {
+        $user_id =  '1';
+        $pack_id = $req->input('pack_id');
+        $main_product_id = $req->input('product_id');
+        $product_item_id = $req->input('product_item_id');
+        $product_item_name = 'ProductName';
+        $qty = $req->input('qty');
+
+        $dot = DB::table('products')->where('id', )->get();
+
+        $data = array(
+            'user_id'=>$user_id,
+            'pack_id' => $pack_id,
+            'product_id'=>$main_product_id, 
+            'product_item_id' => $product_item_id,
+            'product_item_name'=>$dot->slug,   
+            'qty'=>$qty, 
+        );
+
+        DB::table('sol_packitem')->insert($data);       
+        // return view('admin::rashpanel.insertlesson');
+        return redirect()->route('packgenerator');
+    }        
 }

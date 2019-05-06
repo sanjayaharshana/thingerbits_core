@@ -6,22 +6,14 @@
 </style>
 @section('content_header')
 
-<form autocomplete="off" method="POST" action="{{ route('createpackageinsert') }}">
-    {{ csrf_field() }} 
-
-
-    
+<form autocomplete="off" method="POST" action="{{ route('insertadditemr') }}">
+    {{ csrf_field() }}
     <div class="form-group">
         <label for="email">Product Name:</label>             
-    </div>  
-
-    
-    <input type="number" class="form-control" id="number" name="qty" value="{{ $packid }}"><br>
-    <input type="number" class="form-control" id="number" name="qty" value="{{ $productid }}"><br>
-    <input type="text" class="form-control" id="jkl" name="qty" value=""><br>
-
-
-    <select id="n1" class="form-control" onChange="" name="product_id">
+    </div> 
+    <input type="number" class="form-control" id="number" name="pack_id" value="{{ $packid }}"><br>
+    <input type="number" class="form-control" id="number" name="product_id" value="{{ $productid }}"><br>
+    <select id="n1" class="form-control" onChange="" name="product_item_id">
         @foreach ($data as $product)  
             <option value="{{ $product->id }}">{{ $product->slug }}</option>                
         @endforeach           
