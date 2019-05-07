@@ -17,7 +17,7 @@
                 <i class="fa fa-desktop"></i>
                 Learning Center
             </a>
-        </li>
+        </li>        
 
         <li class="dropdown top-nav-menu pull-right">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,6 +28,12 @@
                 <li><a href="{{ route('admin.profile.edit') }}">{{ trans('user::users.profile') }}</a></li>
                 <li><a href="{{ route('admin.logout') }}">{{ trans('user::auth.logout') }}</a></li>
             </ul>
+        </li>
+
+        <li class="visit-store hidden-sm hidden-xs pull-right">
+            <a href="/lm" target="_blank">
+                <i class="fa fa-paint-brush"></i>                 
+            </a>
         </li>
 
         @if (count(supported_locales()) > 1)

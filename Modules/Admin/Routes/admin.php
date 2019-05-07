@@ -46,6 +46,9 @@ Route::get('/insertitems/{packid}/{productid}', 'DashboardController@insertitems
 Route::post('/additem', 'DashboardController@postadditem')->name('insertadditemr');
 Route::get('/deleteitem/{productidt}', 'DashboardController@deletepack')->name('deletepack');
 
+Route::get('/editpack', 'DashboardController@editpack')->name('editpacker');
+
+
 
 
 
