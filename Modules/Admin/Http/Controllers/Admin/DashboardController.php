@@ -373,4 +373,9 @@ class DashboardController extends Controller
 
         return back(); 
     }
+
+    function editpack($pack_id,$productid)
+    {
+        
+    }
 }
