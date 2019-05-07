@@ -33,4 +33,20 @@ Route::get('deletecourse/{course_id}', 'DashboardController@deletecourse')->name
 
 
 
+//Pack Production Generation Route
+Route::get('/packgenerator', 'DashboardController@packgenerator')->name('packgenerator');
+Route::get('/createpackage', 'DashboardController@createpackage')->name('createpackage');
+Route::post('/createpackage/instert', 'DashboardController@createpackageinsert')->name('createpackageinsert');
+
+Route::get('/addpackitems', 'DashboardController@addpackitems')->name('addpackitems');
+
+Route::get('/packagercreator/{packid}/{productid}', 'DashboardController@addpackitems')->name('packitems');
+Route::get('/insertitems/{packid}/{productid}', 'DashboardController@insertitems')->name('insertitemse');
+
+Route::post('/additem', 'DashboardController@postadditem')->name('insertadditemr');
+Route::get('/deleteitem/{productidt}', 'DashboardController@deletepack')->name('deletepack');
+
+
+
+
 

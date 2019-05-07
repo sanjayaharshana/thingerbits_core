@@ -248,4 +248,127 @@ class DashboardController extends Controller
 
         return back(); 
     }
+
+    //PackGenetro
+
+    function packgenerator()
+    {
+        $data['data'] = DB::table('sol_packtable')->get();
+        if(count($data) > 0)
+        {
+            return view('admin::packs.index',$data);
+        }
+        else
+        {
+            return view('admin::packs.index');
+        }      
+    
+       
+
+    }
+
+    function createpackage()
+    {
+        //Tempory Deativated This code
+      
+        $data['data'] = DB::table('products')->where('is_pack', '0')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.createpack',$data);
+        }
+        else
+        {
+            return view('admin::packs.createpack');
+        }      
+    
+
+      //  return view('admin::packs.createpack');
+    }
+
+    function createpackageinsert (Request $reql)
+    {
+        $package_name =  $reql->input('package_name');
+        $product_name = $reql->input('product_name');
+
+        $data = array(
+            'pack_name' => $package_name,
+            'product_id'=>$product_name,            
+        );
+
+       
+
+       $pack_id = DB::table('sol_packtable')->insertGetId($data);
+
+        DB::table('products')->where('id', $product_name )->update(['is_pack' => '1']);
+
+       // return view('admin::rashpanel.insertlesson');
+       return redirect()->route('insertitemse',[$pack_id,$product_name]);   
+      // return redirect()->route('packgenerator');
+    }
+
+    function addpackitems ($packid,$productid) 
+    {
+        $data = DB::table('sol_packitem')->where('pack_id', $packid)->get();
+
+        $product_info = DB::table('products')->where('id', $packid)->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.pack_items',['data' => $data,'product_info' => $product_info,'packid'=>$packid,'productid'=>$productid]);
+        }
+        else
+        {
+            return view('admin::packs.pack_items',['data' => $data,'product_info' => $product_info,'packid'=>$packid,'productid'=>$productid]);
+        }      
+
+    }
+
+    function insertitems ($packid,$productid) 
+    {
+        $data = DB::table('products')->where('is_pack', '0')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.add_product_item',['packid' => $packid,'productid'=>$productid,'data' => $data]);
+        }
+        else
+        {
+            return view('admin::packs.add_product_item',['packid' => $packid,'productid'=>$productid,'data' => $data]);
+        }           
+
+    }
+
+    function postadditem(Request $req) 
+    {
+        $user_id =  '1';
+        $pack_id = $req->input('pack_id');
+        $main_product_id = $req->input('product_id');
+        $product_item_id = $req->input('product_item_id');
+        $product_item_name = 'ProductName';
+        $qty = $req->input('qty');
+
+        $dot = DB::table('products')->where('id', $product_item_id )->value('slug');
+
+        $data = array(
+            'user_id'=>$user_id,
+            'pack_id' => $pack_id,
+            'product_id'=>$main_product_id, 
+            'product_item_id' => $product_item_id,
+            'product_item_name'=>$dot,   
+            'qty'=>$qty, 
+        );
+
+        DB::table('sol_packitem')->insert($data);       
+        // return view('admin::rashpanel.insertlesson');
+        return redirect()->route('packgenerator');
+    }    
+    
+    function deletepack($productidt)
+    {
+        DB::table('sol_packitem')->where('product_id', $productidt )->delete();
+        DB::table('sol_packtable')->where('product_id', $productidt )->delete();
+
+        return back(); 
+    }
 }

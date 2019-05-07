@@ -1,7 +1,7 @@
 <nav class="navbar navbar-static-top clearfix">
     <ul class="nav navbar-nav clearfix">
         <li class="visit-store hidden-sm hidden-xs">
-            <a href="/shopcenter" target="_blank">
+            <a href="/shop" target="_blank">
                 <i class="fa fa-desktop"></i>
                 {{ trans('admin::admin.visit_store') }}
             </a>

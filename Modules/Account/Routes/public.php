@@ -30,4 +30,8 @@ Route::middleware('auth')->group(function () {
   // Route::get('account/skull/rollingcontroller/entercourse/{core}/{apple}', 'AccountDashboardController@lesson')->name('golesson');
 
 
+
+
+  
+
 });

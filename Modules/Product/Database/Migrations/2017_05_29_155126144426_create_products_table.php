@@ -29,6 +29,7 @@ class CreateProductsTable extends Migration
             $table->boolean('is_active');
             $table->datetime('new_from')->nullable();
             $table->datetime('new_to')->nullable();
+            $table->interger('is_pack')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
