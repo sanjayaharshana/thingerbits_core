@@ -303,7 +303,7 @@ class DashboardController extends Controller
         DB::table('products')->where('id', $product_name )->update(['is_pack' => '1']);
 
        // return view('admin::rashpanel.insertlesson');
-       return redirect()->route('insertitemse',[$pack_id,$product_name]);   
+       return redirect()->route('packitems',[$pack_id,$product_name]);   
       // return redirect()->route('packgenerator');
     }
 
@@ -361,13 +361,15 @@ class DashboardController extends Controller
 
         DB::table('sol_packitem')->insert($data);       
         // return view('admin::rashpanel.insertlesson');
-        return redirect()->route('packgenerator');
+        return redirect()->route('packitems',[$pack_id,$main_product_id]);   
     }    
     
     function deletepack($productidt)
     {
         DB::table('sol_packitem')->where('product_id', $productidt )->delete();
         DB::table('sol_packtable')->where('product_id', $productidt )->delete();
+        DB::table('products')->where('id', $productidt )->update(['is_pack' => '0']);
+
 
         return back(); 
     }
