@@ -26,7 +26,7 @@
         <div class="container" style="width: 1100px;">
             <h3>Package</h3><br><br>
             <a href="admin/insertitems/{{ $packid }}/{{ $productid }}" class="btn btn-primary left">Add Item</a>
-            <a href="admin/insertitems/{{ $packid }}/{{ $productid }}" class="btn btn-primary left">Package Manager</a><br><br>
+            <a href="admin/packgenerator" class="btn btn-primary left">Package Manager</a><br><br>
 
             <table id="table_id" class="display">
                 <thead>
@@ -38,7 +38,7 @@
                 <tbody>
                     @foreach ($data as $pack)
                         <tr>
-                            <td>{{ $pack->product_item_name }}</td>
+                            <td><i class="fa fa-cube"></i> {{ $pack->product_item_name }}</td>
                             <td style="text-align: end;"><a href="admin/packagercreator/{{ $pack->pack_id }}/{{ $pack->product_id }}" class="btn btn-primary">Edit</a><span>  </span><a href="admin/deleteitem/{{ $pack->product_id }}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     @endforeach
