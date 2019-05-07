@@ -296,11 +296,15 @@ class DashboardController extends Controller
             'product_id'=>$product_name,            
         );
 
-        DB::table('sol_packtable')->insert($data);
+       
+
+       $pack_id = DB::table('sol_packtable')->insertGetId($data);
+
         DB::table('products')->where('id', $product_name )->update(['is_pack' => '1']);
 
        // return view('admin::rashpanel.insertlesson');
-       return redirect()->route('packgenerator');
+       return redirect()->route('insertitemse',[$pack_id,$product_name]);   
+      // return redirect()->route('packgenerator');
     }
 
     function addpackitems ($packid,$productid) 
@@ -358,5 +362,13 @@ class DashboardController extends Controller
         DB::table('sol_packitem')->insert($data);       
         // return view('admin::rashpanel.insertlesson');
         return redirect()->route('packgenerator');
-    }        
+    }    
+    
+    function deletepack($productidt)
+    {
+        DB::table('sol_packitem')->where('product_id', $productidt )->delete();
+        DB::table('sol_packtable')->where('product_id', $productidt )->delete();
+
+        return back(); 
+    }
 }
