@@ -33,7 +33,10 @@
 
 <script type="text/javascript">
     function ShowHideDiv(chkPassport) {
-        var dvPassport = document.getElementById("boondi_transfer");
-       console.log('adasd');
+        var dvPassport = document.getElementById("boondi_transfer")[0].id;
+        console.log(dvPassport);               
+       if (20 == 20) {
+        console.log(dvPassport);
+        }
     }
 </script>
