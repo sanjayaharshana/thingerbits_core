@@ -40,6 +40,10 @@ $('#bank_transfer_enabled').on('change', () => {
     $('#bank-transfer-fields').toggleClass('hide');
 });
 
+$('#boondi_transfer_enabled').on('change', () => {
+    $('#boondi-transfer-fields').toggleClass('hide');
+});
+
 $('#check_payment_enabled').on('change', () => {
     $('#check-payment-fields').toggleClass('hide');
 });

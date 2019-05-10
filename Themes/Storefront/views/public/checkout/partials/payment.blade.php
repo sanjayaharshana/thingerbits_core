@@ -8,7 +8,7 @@
             @forelse ($gateways as $name => $gateway)
                 <li>
                     <div class="form-group radio">
-                        <input type="radio" name="payment_method" value="{{ $name }}" id="{{ $name }}" {{ $loop->first ? 'checked' : '' }} {{ old('payment_method') === $name ? 'checked' : '' }}>
+                        <input type="radio" name="payment_method" onclick="ShowHideDiv(this)" value="{{ $name }}" id="{{ $name }}" {{ $loop->first ? 'checked' : '' }} {{ old('payment_method') === $name ? 'checked' : '' }}>
                         <label for="{{ $name }}">{{ $gateway->label }}</label>
                     </div>
 
@@ -30,3 +30,10 @@
         </button>
     </div>
 </div>
+
+<script type="text/javascript">
+    function ShowHideDiv(chkPassport) {
+        var dvPassport = document.getElementById("boondi_transfer");
+       console.log('adasd');
+    }
+</script>

@@ -155,9 +155,10 @@ class Cart extends DarryldecodeCart
             {             
                  $subProd =   DB::table('products')->where('id', $items->product_item_id)->first();
              
+
                  $updateQuan = $subProd->qty - $items->qty;
                  
-                 DB::table('products')
+                 DB::table('products') 
                  ->where('id', $items->product_item_id)
                  ->update(['qty' => $updateQuan]);
             }

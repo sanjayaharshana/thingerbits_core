@@ -32,14 +32,16 @@
                 <thead>
                     <tr>
                         <th style="font-weight: 500;>Package Name">Package Name</th>
-                        <th style="font-weight: 500;>Package Name">Oparations</th>
+                        <th style="font-weight: 500;>Package Name">QTY</th>
+                        <th style="font-weight: 500;>Package Name">Oparaion</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($data as $pack)
                         <tr>
                             <td><i class="fa fa-cube"></i> {{ $pack->product_item_name }}</td>
-                            <td style="text-align: end;"><a href="admin/packagercreator/{{ $pack->pack_id }}/{{ $pack->product_id }}" class="btn btn-primary">Edit</a><span>  </span><a href="admin/deleteitem/{{ $pack->product_id }}" class="btn btn-danger">Delete</a></td>
+                            <td> {{ $pack->qty }}</td>
+                            <td style="text-align: end;"><a href="admin/edit_tem/{{ $pack->product_id }}" class="btn btn-primary">Edit</a><span>  </span><a href="admin/deleteitem/{{ $pack->product_id }}" class="btn btn-danger">Delete</a></td>
                         </tr>
                     @endforeach
                 </tbody>

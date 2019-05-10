@@ -277,13 +277,15 @@ class SettingTabs extends Tabs
     
     private function boondipayment()
     {
-        return tap(new Tab('boondi_transfer', 'Boodi Tranfer'), function (Tab $tab) {
+        return tap(new Tab('boondi_transfer', 'Directpay Transfer'), function (Tab $tab) {
             $tab->weight(70);
 
             $tab->fields([
                 'boondipayment_enabled',
-                'translatable.boondi_transfer_label',
-                'translatable.boondi_transfer_description',
+                'translatable.mode',
+                'translatable.merchantId',
+                'translatable.apiKey',
+                'translatable.currency',
                 'translatable.boondi_transfer_instructions',
             ]);
 

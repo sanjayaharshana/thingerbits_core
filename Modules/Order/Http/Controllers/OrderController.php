@@ -25,4 +25,9 @@ class OrderController extends Controller
     {
         return view('order::show');
     }
+
+    public function openlineer()
+    {
+        echo 'sfdsdfsd';
+    }
 }

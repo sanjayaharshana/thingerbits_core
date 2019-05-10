@@ -376,6 +376,60 @@ class DashboardController extends Controller
 
     function editpack($pack_id,$productid)
     {
-        
+        $datarol = DB::table('sol_packtable')->where('pack_id', $pack_id)->first();
+        $productman = DB::table('products')->where('id', $datarol->product_id)->first();
+        $data= DB::table('products')->where('is_pack', '0')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.edit_pack',['data' => $data,'packagedit' => $datarol,'normalpc' => $productman,'packid' => $pack_id]);
+        }
+        else
+        {
+            return view('admin::packs.edit_pack');
+        }      
+    }
+
+    function editpack_save(Request $reql )
+    {
+        $package_name =  $reql->input('package_name');
+        $product_name = $reql->input('product_name');
+        $pack_id = $reql->input('pack_id');
+
+        $data = array(
+            'pack_name' => $package_name,
+            'product_id'=>$product_name,            
+        );
+
+       
+
+
+        DB::table('sol_packtable')->where('pack_id', $pack_id )->update($data);
+
+       // return view('admin::rashpanel.insertlesson');
+       return redirect()->route('packitems',[$pack_id,$product_name]);   
+    }
+
+    function deletepol($productidt)
+    {
+        DB::table('sol_packitem')->where('product_id', $productidt )->delete();
+
+        return back(); 
+
+    }
+
+    function edititems($productidt)
+    {
+       
+        $data= DB::table('products')->where('is_pack', '0')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::packs.edit_item',['data' => $data]);
+        }
+        else
+        {
+            return view('admin::packs.edit_item');
+        }      
     }
 }

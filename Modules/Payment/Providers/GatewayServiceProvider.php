@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider;
 use Modules\Payment\Gateways\BankTransfer;
 use Modules\Payment\Gateways\CheckPayment;
 use Modules\Payment\Gateways\PayPalExpress;
+use Modules\Payment\Gateways\BoondiTranfer;
 
 class GatewayServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,7 @@ class GatewayServiceProvider extends ServiceProvider
         $this->registerCashOnDelivery();
         $this->registerBankTransfer();
         $this->registerCheckPayment();
+        $this->registerBoondiPayment();
     }
 
     private function registerPayPalExpress()
@@ -62,6 +64,14 @@ class GatewayServiceProvider extends ServiceProvider
     {
         if (setting('check_payment_enabled')) {
             Gateway::register('check_payment', new CheckPayment);
+        }
+    }
+
+    //Custom Getway
+    private function registerBoondiPayment()
+    {
+        if (setting('boondipayment_enabled')) {
+            Gateway::register('boondi_transfer', new BoondiTranfer);
         }
     }
 }

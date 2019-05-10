@@ -1,7 +1,9 @@
 <?php
 
 namespace Modules\Payment\Gateways;
-
+use Omnipay\Omnipay;
+use Modules\Cart\Facades\Cart;
+use Omnipay\Common\CreditCard;
 use Modules\Payment\NullResponse;
 
 class BoondiTranfer
@@ -11,11 +13,18 @@ class BoondiTranfer
 
     public function __construct()
     {
-        $this->label = setting('bank_transfer_label');
-        $this->description = setting('bank_transfer_description');
+        $this->label = "DirectPay® Getway";
+        $this->description = "sdfsdfsdf";
     }
 
-    public function purchase()
+    public function gateway()
+    {
+        return tap(Omnipay::create('Stripe'), function ($gateway) {
+            $gateway->setApiKey(setting('stripe_secret_key'));
+        });
+    }
+
+    public function purchase($order, $request)
     {
         return new NullResponse;
     }
