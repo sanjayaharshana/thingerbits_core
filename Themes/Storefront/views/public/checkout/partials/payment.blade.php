@@ -62,9 +62,14 @@
         });
 
         //Invoked when payment has been completed.
-        function responseCallback(result) {       
-            console.log("responseCallback-Client", result.description);
-            alert("data: " + result + "\nStatus: " + status);
+        function responseCallback(result) {
+            var user_respond = result.data.description;
+            console.log("responseCallback-Client", user_respond);
+            if (user_respond == "User Cancel"){
+                console.log("fdasdasd");
+            } else {
+                console.log("fuckfuckfuck");
+            }
         }
 
     </script>

@@ -37,8 +37,8 @@ class CheckoutController extends Controller
         $gateways = Gateway::all();
         $termsPageURL = Page::urlForPage(setting('storefront_terms_page'));
         
-        $number = rand(10,100);
-        
+        $number = 12312312;
+
         // better than rand()
 
          // call the same function if the barcode exists already
