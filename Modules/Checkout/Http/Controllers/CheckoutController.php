@@ -36,8 +36,15 @@ class CheckoutController extends Controller
         $countries = Country::supported();
         $gateways = Gateway::all();
         $termsPageURL = Page::urlForPage(setting('storefront_terms_page'));
+        
+        $number = rand(10,100);
+        
+        // better than rand()
 
-        return view('public.checkout.create', compact('cart', 'countries', 'gateways', 'termsPageURL'));
+         // call the same function if the barcode exists already
+       
+
+        return view('public.checkout.create', compact('cart', 'countries', 'gateways', 'termsPageURL','number'));
     }
 
     /**

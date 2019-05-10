@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <div id="payment" class="tab-pane" role="tabpanel">
     <div class="box-wrapper payment clearfix">
         <div class="box-header">
@@ -32,11 +33,40 @@
 </div>
 
 <script type="text/javascript">
-    function ShowHideDiv(chkPassport) {
-        var dvPassport = document.getElementById("boondi_transfer")[0].id;
-        console.log(dvPassport);               
-       if (20 == 20) {
-        console.log(dvPassport);
-        }
-    }
+   $( "#boondi_transfer" ).click(function() {
+    DirectPayCheckout.openPaymentModel()
+    });
 </script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.directpay.lk/dev/v1/directpayCheckout.js?v=1"></script> 
+
+
+
+
+
+
+    <script>      
+
+        DirectPayCheckout.init({
+            mode: 'development', //development //production
+            merchantId: 'TS00960', //your merchant_id
+            amount: {{ Cart::total()->round()->amount() }},
+            refCode: {{ $number }}, //unique reference code
+            description: 'Ordered goods',
+            responseCallback: responseCallback,
+            currency: 'LKR',
+            logo: 'https://s3.us-east-2.amazonaws.com/directpay-ipg/directpay_logo.png',    
+            apiKey: 'lbVbbRSds18afljTIWkKT4wZPDPoB7qY6r2ByNEf' //your merchant_id
+        });
+
+        //Invoked when payment has been completed.
+        function responseCallback(result) {       
+            console.log("responseCallback-Client", result.description);
+            alert("data: " + result + "\nStatus: " + status);
+        }
+
+    </script>
+
+
