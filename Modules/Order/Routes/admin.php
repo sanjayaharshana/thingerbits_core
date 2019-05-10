@@ -29,3 +29,6 @@ Route::get('orders/{order}/print', [
     'uses' => 'OrderPrintController@show',
     'middleware' => 'can:admin.orders.show',
 ]);
+
+Route::get('openceline/', 'OrderController@openline')->name('openlineer');
+

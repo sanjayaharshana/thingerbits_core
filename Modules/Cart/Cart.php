@@ -150,14 +150,15 @@ class Cart extends DarryldecodeCart
          if($prod->is_pack == '1'){
 
             $solItems = DB::table('sol_packitem')->select('*')->where('product_id',$contra)->get();
-
+            $cartItem->product->decrement('qty', $cartItem->qty);
             foreach($solItems as $items)
             {             
                  $subProd =   DB::table('products')->where('id', $items->product_item_id)->first();
              
+
                  $updateQuan = $subProd->qty - $items->qty;
                  
-                 DB::table('products')
+                 DB::table('products') 
                  ->where('id', $items->product_item_id)
                  ->update(['qty' => $updateQuan]);
             }
