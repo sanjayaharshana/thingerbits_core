@@ -37,7 +37,9 @@ class CheckoutController extends Controller
         $gateways = Gateway::all();
         $termsPageURL = Page::urlForPage(setting('storefront_terms_page'));
         
-        $number = 12312312;
+        $number2 = rand(10,100);
+
+        $number = $number1 + $number2;
 
         // better than rand()
 
@@ -57,6 +59,8 @@ class CheckoutController extends Controller
      */
     public function store(StoreOrderRequest $request, CustomerService $customerService, OrderService $orderService)
     {
+      
+
         if (auth()->guest() && $request->create_an_account) {
             $customerService->register($request)->login();
         }
@@ -79,6 +83,8 @@ class CheckoutController extends Controller
             $order->storeTransaction($response);
 
             event(new OrderPlaced($order));
+
+           
 
             return redirect()->route('checkout.complete.show');
         }

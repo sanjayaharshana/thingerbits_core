@@ -131,7 +131,7 @@
                                 </label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-checkout {{ $cart->hasNoAvailableShippingMethod() ? 'disabled' : '' }}" data-loading disabled>
+                            <button type="submit" id="ordermat" class="btn btn-primary btn-checkout {{ $cart->hasNoAvailableShippingMethod() ? 'disabled' : '' }}" data-loading disabled>
                                 {{ trans('storefront::checkout.place_order') }}
                             </a>
                         </div>
@@ -143,6 +143,13 @@
 @endsection
 
 @push('scripts')
+<script>
+    $('#paymentonty').click(function() {
+    if($('#boondi_transfer').is(':checked')) { 
+       DirectPayCheckout.openPaymentModel()
+         }
+    });
+</script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="{{ v(Theme::url('public/js/stripe.js')) }}"></script>
 @endpush

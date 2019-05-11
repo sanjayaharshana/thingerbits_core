@@ -22,7 +22,7 @@
             {!! $errors->first('payment_method','<span class="error-message">:message</span>') !!}
         </ul>
 
-        <button type="button" class="btn btn-primary next-step pull-right" {{ $gateways->isEmpty() ? 'disabled' : '' }}>
+        <button type="button" id="paymentonty" class="btn btn-primary next-step pull-right" {{ $gateways->isEmpty() ? 'disabled' : '' }}>
             {{ trans('storefront::checkout.continue') }}
         </button>
 
@@ -32,9 +32,12 @@
     </div>
 </div>
 
+
+
+
 <script type="text/javascript">
    $( "#boondi_transfer" ).click(function() {
-    DirectPayCheckout.openPaymentModel()
+    
     });
 </script>
 
@@ -47,8 +50,7 @@
 
 
 
-    <script>      
-
+<script>     
         DirectPayCheckout.init({
             mode: 'development', //development //production
             merchantId: 'TS00960', //your merchant_id
@@ -65,13 +67,19 @@
         function responseCallback(result) {
             var user_respond = result.data.description;
             console.log("responseCallback-Client", user_respond);
-            if (user_respond == "User Cancel"){
-                console.log("fdasdasd");
+            if (user_respond == "User Cancel"){                
+                console.log("User Canceled");
+                location.reload();
+            } else if (user_respond == "APPROVED:Approved") {
+                console.log("Transection Sucess");                
             } else {
-                console.log("fuckfuckfuck");
+                $("#myModal").modal();
+                console.log("Something Wrong");
+                alert("Something Wrong with Payment getways.Please Refresh your payment");
+                location.reload();
+
             }
         }
-
-    </script>
+</script>
 
 

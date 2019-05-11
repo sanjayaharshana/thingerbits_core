@@ -174,7 +174,7 @@
                                 <span class="error-message text-center">{{ trans('storefront::cart.no_shipping_method_is_available') }}</span>
                             @endif
 
-                            <a href="{{ route('checkout.create') }}" class="btn btn-primary btn-checkout {{ $cart->hasNoAvailableShippingMethod() ? 'disabled' : '' }}" data-loading>
+                            <a href="" id="#ordermat" class="btn btn-primary btn-checkout {{ $cart->hasNoAvailableShippingMethod() ? 'disabled' : '' }}" data-loading>
                                 {{ trans('storefront::cart.checkout') }}
                             </a>
                         </div>
@@ -183,6 +183,44 @@
             @endif
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.directpay.lk/dev/v1/directpayCheckout.js?v=1"></script>
+
+    <script>
+        $('#paymentonty').click(function() {
+        if($('#boondi_transfer').is(':checked')) {
+            DirectPayCheckout.openPaymentModel()
+            location.replace("{{ route('checkout.create') }}")
+            }
+        });
+    </script>
+
+    <script>     
+        DirectPayCheckout.init({
+            mode: 'development', //development //production
+            merchantId: 'TS00960', //your merchant_id
+            amount: {{ Cart::total()->round()->amount() }},
+            refCode: {{ $number }}, //unique reference code
+            description: 'Ordered goods',
+            responseCallback: responseCallback,
+            currency: 'LKR',
+            logo: 'https://s3.us-east-2.amazonaws.com/directpay-ipg/directpay_logo.png',    
+            apiKey: 'lbVbbRSds18afljTIWkKT4wZPDPoB7qY6r2ByNEf' //your merchant_id
+        });
+
+        //Invoked when payment has been completed.
+        function responseCallback(result) {
+            var user_respond = result.data.description;
+            console.log("responseCallback-Client", user_respond);
+            if (user_respond == "User Cancel"){
+                console.log("fdasdasd");
+            } else {
+                console.log("fuckfuckfuck");
+            }
+        }
+    </script>
 
     @include('public.products.partials.landscape_products', [
         'title' => trans('storefront::product.you_might_also_like'),
