@@ -37,6 +37,7 @@ class CheckoutController extends Controller
         $gateways = Gateway::all();
         $termsPageURL = Page::urlForPage(setting('storefront_terms_page'));
         
+        $number1 = rand(10,100);
         $number2 = rand(10,100);
 
         $number = $number1 + $number2;
