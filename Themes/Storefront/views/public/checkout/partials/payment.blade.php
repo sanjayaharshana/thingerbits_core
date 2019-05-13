@@ -1,8 +1,10 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<h3></h3>
 <div id="payment" class="tab-pane" role="tabpanel">
     <div class="box-wrapper payment clearfix">
         <div class="box-header">
             <h4>{{ trans('storefront::checkout.tabs.payment.payment_method') }}</h4>
+            <h2>{{ setting('cod_label') }}</h2>
         </div>
 
         <ul class="list-inline payment-method clearfix">
@@ -52,15 +54,15 @@
 
 <script>     
         DirectPayCheckout.init({
-            mode: 'development', //development //production
-            merchantId: 'TS00960', //your merchant_id
+            mode: '{{ setting('boondi_mode')  }}', //development //production
+            merchantId: '{{ setting('boondi_merchantId') }}', //your merchant_id
             amount: {{ Cart::total()->round()->amount() }},
             refCode: {{ $number }}, //unique reference code
             description: 'Ordered goods',
             responseCallback: responseCallback,
-            currency: 'LKR',
+            currency: '{{ setting('boondi_currency') }}',
             logo: 'https://s3.us-east-2.amazonaws.com/directpay-ipg/directpay_logo.png',    
-            apiKey: 'lbVbbRSds18afljTIWkKT4wZPDPoB7qY6r2ByNEf' //your merchant_id
+            apiKey: '{{ setting('boondi_apiKey') }}'
         });
 
         //Invoked when payment has been completed.
@@ -71,7 +73,9 @@
                 console.log("User Canceled");
                 location.reload();
             } else if (user_respond == "APPROVED:Approved") {
-                console.log("Transection Sucess");                
+                console.log("Transection Sucess");
+                document.getElementById("p1").style.color = "red"; 
+                document.getElementById("p1").innerHTML = "Payment Success, Do not refresh the website.until you complete the order";
             } else {
                 $("#myModal").modal();
                 console.log("Something Wrong");

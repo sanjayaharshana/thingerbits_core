@@ -29,9 +29,9 @@ class BoondiTranfer
     public function purchase($order, $request)
     {
         $micro_payment = array(
-            'order_id' => '1',
+            'order_id' => $order->id,
             'transaction_id'=>'1',
-            'payment_method'=>'1'            
+            'payment_method'=>'Direct Pay'            
         );
 
        DB::table('transactions')->insert($micro_payment);
