@@ -78,9 +78,10 @@
                 document.getElementById("p1").innerHTML = "Payment Success, Do not refresh the website.until you complete the order";
             } else {
                 $("#myModal").modal();
-                console.log("Something Wrong");
-                alert("Something Wrong with Payment getways.Please Refresh your payment");
-                location.reload();
+                console.log(user_respond);
+                //alert("Something Wrong with Payment getways.Please Refresh your payment");
+                alert(user_respond);
+                //location.reload();
 
             }
         }

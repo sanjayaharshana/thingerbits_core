@@ -40,7 +40,7 @@ class CheckoutController extends Controller
         $number1 = rand(10,100);
         $number2 = rand(10,100);
 
-        $number = $number1 + $number2;
+        $number = $number1 . $number2;
 
         // better than rand()
 
