@@ -13,7 +13,8 @@ class AuthController extends BaseAuthController
      */
     protected function redirectTo()
     {
-        return route('admin.dashboard.index');
+       return route('admin.dashboard.index');
+       //return redirect('admin/staff_adminer');
     }
 
     /**
