@@ -83,7 +83,8 @@
                 </div>
             </div>
             
-                      
+        @include('admin::staff_admin.components.searchbar')
+            
         @include('admin::staff_admin.components.profile_items')
                
         @include('admin::staff_admin.components.notify_items')
