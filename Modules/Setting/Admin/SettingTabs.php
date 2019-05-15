@@ -282,10 +282,10 @@ class SettingTabs extends Tabs
 
             $tab->fields([
                 'boondipayment_enabled',
-                'translatable.mode',
-                'translatable.merchantId',
-                'translatable.apiKey',
-                'translatable.currency',
+                'boondi_mode',
+                'boondi_merchantId',
+                'boondi_apiKey',
+                'boondi_currency',
                 'translatable.boondi_transfer_instructions',
             ]);
 

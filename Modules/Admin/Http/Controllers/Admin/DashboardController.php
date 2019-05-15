@@ -432,4 +432,16 @@ class DashboardController extends Controller
             return view('admin::packs.edit_item');
         }      
     }
+
+    function staff_admin()
+    {
+        return view('admin::staff_admin.index');
+
+    }
+
+    function pruches_order()
+    {
+        return view('admin::staff_admin.purches_order');
+ 
+    }
 }

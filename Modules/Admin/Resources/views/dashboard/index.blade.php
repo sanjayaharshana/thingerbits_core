@@ -5,7 +5,7 @@
 @section('content_header')
     <h2 class="pull-left">{{ trans('admin::dashboard.dashboard') }}</h2> 
     <span>    </span>
-    <button type="button" class="btn btn-primary pull-right">Primary</button>
+    <a href="admin/staff_admin" class="btn btn-primary pull-right">User Admin</a>
 
 @endsection
 

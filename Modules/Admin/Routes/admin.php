@@ -56,6 +56,11 @@ Route::get('/deletepol/{productidt}', 'DashboardController@deletepol')->name('de
 Route::get('/edit_tem/{productidt}', 'DashboardController@edititems')->name('edititems');
 
 
+//Staff Profile Routes
+Route::get('/staff_admin', 'DashboardController@staff_admin')->name('staff_adminer');
+Route::get('/staff_admin/pruches_order', 'DashboardController@pruches_order')->name('pruches_order');
+
+
 
 
 

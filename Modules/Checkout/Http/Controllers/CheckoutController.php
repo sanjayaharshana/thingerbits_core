@@ -36,8 +36,18 @@ class CheckoutController extends Controller
         $countries = Country::supported();
         $gateways = Gateway::all();
         $termsPageURL = Page::urlForPage(setting('storefront_terms_page'));
+        
+        $number1 = rand(10,100);
+        $number2 = rand(10,100);
 
-        return view('public.checkout.create', compact('cart', 'countries', 'gateways', 'termsPageURL'));
+        $number = $number1 . $number2;
+
+        // better than rand()
+
+         // call the same function if the barcode exists already
+       
+
+        return view('public.checkout.create', compact('cart', 'countries', 'gateways', 'termsPageURL','number'));
     }
 
     /**
@@ -50,6 +60,8 @@ class CheckoutController extends Controller
      */
     public function store(StoreOrderRequest $request, CustomerService $customerService, OrderService $orderService)
     {
+      
+
         if (auth()->guest() && $request->create_an_account) {
             $customerService->register($request)->login();
         }
@@ -72,6 +84,8 @@ class CheckoutController extends Controller
             $order->storeTransaction($response);
 
             event(new OrderPlaced($order));
+
+           
 
             return redirect()->route('checkout.complete.show');
         }

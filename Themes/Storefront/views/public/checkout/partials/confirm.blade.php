@@ -1,4 +1,8 @@
+
 <div id="confirm" class="tab-pane" role="tabpanel">
+        <br>
+            amount: {{ Cart::total()->round()->amount() }},
+        <h2 id="p1"></h2>
     <div class="box-wrapper confirm clearfix">
         <div class="box-header">
             <h4>{{ trans('storefront::checkout.tabs.confirm.item_list') }}</h4>
