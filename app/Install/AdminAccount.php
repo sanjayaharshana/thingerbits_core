@@ -33,16 +33,21 @@ class AdminAccount
             'admin.users.create' => true,
             'admin.users.edit' => true,
             'admin.users.destroy' => true,
+
             // roles
             'admin.roles.index' => true,
             'admin.roles.create' => true,
             'admin.roles.edit' => true,
             'admin.roles.destroy' => true,
+
             // products
             'admin.products.index' => true,
             'admin.products.create' => true,
             'admin.products.edit' => true,
             'admin.products.destroy' => true,
+            'admin.products.purchesorder' =>true,
+            
+
             // attributes
             'admin.attributes.index' => true,
             'admin.attributes.create' => true,

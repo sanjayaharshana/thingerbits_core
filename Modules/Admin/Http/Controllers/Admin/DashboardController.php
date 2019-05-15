@@ -438,4 +438,10 @@ class DashboardController extends Controller
         return view('admin::staff_admin.index');
 
     }
+
+    function pruches_order()
+    {
+        return view('admin::staff_admin.purches_order');
+ 
+    }
 }

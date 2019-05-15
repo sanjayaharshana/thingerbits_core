@@ -6,5 +6,6 @@ return [
         'create' => 'product::permissions.create',
         'edit' => 'product::permissions.edit',
         'destroy' => 'product::permissions.destroy',
+        'purchesoder' => 'Puchese Order',
     ],
 ];

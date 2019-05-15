@@ -33,6 +33,15 @@ class SidebarExtender extends BaseSidebarExtender
                         $this->auth->hasAccess('admin.products.index')
                     );
                 });
+                
+                //Adding Engine
+                $item->item('Purchase Order', function (Item $item) {
+                    $item->weight(5);
+                    $item->route('admin.products.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('admin.products.purchesoder')
+                    );
+                });
             });
         });
     }
