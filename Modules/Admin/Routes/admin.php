@@ -57,8 +57,7 @@ Route::get('/edit_tem/{productidt}', 'DashboardController@edititems')->name('edi
 
 
 //Staff Profile Routes
-Route::get('/staff_admin', 'DashboardController@staff_admin')->name('staff_adminer');
-Route::get('/staff_admin/pruches_order', 'DashboardController@pruches_order')->name('pruches_order');
+Route::get('/purchase_oder', 'DashboardController@purchase_oder')->name('purchase_oder');
 
 
 

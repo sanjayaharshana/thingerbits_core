@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
 
   // Route::get('account/skull/rollingcontroller/entercourse/{core}/{apple}', 'AccountDashboardController@lesson')->name('golesson');
 
-
+  Route::get('account/core', 'ProductController@poengine')->name('poengine');
 
 
   

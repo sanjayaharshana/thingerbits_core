@@ -120,14 +120,9 @@ class AccountDashboardController extends Controller
     }
 
     public function entercourse($sharp,$margin) {
-      
         //want to add anable where bool
         $data['data'] = DB::table('exam_list')->where('course_id', $sharp)->get();
-
         $oler['oler'] = DB::table('lessons')->where('course_id',$sharp)->get();
-
-        
-
         if(count($data) > 0)
         {
             return view('public.account.coursecenter.index',$data,$oler);
@@ -136,9 +131,11 @@ class AccountDashboardController extends Controller
         {   
             return view('public.account.coursecenter.index');
         }
+    }
 
-
-
+    public function poengine() 
+    {
+        echo "dasfs";
     }
 
     
