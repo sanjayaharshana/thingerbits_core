@@ -439,9 +439,8 @@ class DashboardController extends Controller
 
     }
 
-    function pruches_order()
+    function purchase_oder()
     {
-        return view('admin::staff_admin.purches_order');
- 
+        return view('admin::purches_order.purches_order');
     }
 }
