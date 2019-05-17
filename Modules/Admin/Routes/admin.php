@@ -66,6 +66,8 @@ Route::get('/purchase_oder/create_po_return/{id}', 'DashboardController@purchase
 
 Route::post('/orderdata', 'DashBoardController@addpo_items');
 Route::get('/orderdata/getdata/{id}', 'DashboardController@add_po_getdata')->name('add_po_getdata');
+Route::get('/orderdata/delete/{id}', 'DashboardController@deletepo')->name('deletepo');
+
 
 
 

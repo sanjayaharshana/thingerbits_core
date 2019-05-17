@@ -501,5 +501,13 @@ class DashboardController extends Controller
         return Response::json($dataArr);
     }
 
+    public function deletepo($id)
+    {
+        DB::table('sol_po_table')->where('po_id', $id )->delete();
+        DB::table('sol_po_items')->where('po_id', $id )->delete();
+
+        return back(); 
+    }
+
     
 }

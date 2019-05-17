@@ -32,14 +32,18 @@
         <label for="exampleInputPassword1">Supplier</label>
         <input type="text" class="form-control" id="referenceno" placeholder="Supplier">
     </div>
-   
-    <ul class="list-group" id="myList">
-        
-    </ul>
-
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
-    <button type="submit" class="btn btn-primary">Submit</button>
-      
+    <br><br><br>
+
+    <div style="width: 100%; height: 300px; overflow-y: scroll;">
+        <ul class="list-group" id="myList">
+            
+        </ul>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Make a Purches Order</button> 
+    <button type="submit" class="btn btn-primary">Close</button> 
+
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -110,7 +114,7 @@
             var node = document.createElement("LIL");
             node.setAttribute('class','list-group-item');
             node.setAttribute('id','olian');
-            var textnode = document.createTextNode($("#product_id").val());
+            var textnode = document.createTextNode($("#product_id option:selected").text()+$("#qty").text());
             node.appendChild(textnode);
             document.getElementById("myList").appendChild(node);    
            // alert(data.success);
