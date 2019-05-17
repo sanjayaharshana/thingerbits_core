@@ -11,6 +11,7 @@ use Modules\Product\Entities\SearchTerm;
 use Illuminate\Http\Request; 
 use DB;
 use Log;
+use Response;
 
 class DashboardController extends Controller
 {
@@ -443,4 +444,48 @@ class DashboardController extends Controller
     {
         return view('admin::purches_order.purches_order');
     }
+
+    public function purchase_oder_return($id)
+    {
+        return view('admin::purches_order.create_po',['po_id' => $id]);
+
+        echo "DSfsd";
+    }
+
+    function create_po()
+    {
+        $id = DB::table('sol_po_table')->insertGetId(
+            array(
+                'title' => 'untitle',
+                'suppler_id'=> 'unknown',
+                'adress'=> 'adress',
+                'date'=>'date',
+                'product_item_id'=>'id',
+            )
+        );
+
+        //return view('admin::purches_order.purches_order');
+        return redirect()->route('purchase_oder_return',['po_id' => $id]); 
+    }
+
+    //Controller     
+    public function addpo_items(Request $request){
+     
+        $data = array(
+            "po_id"=>$request->po_id,
+            "product_id"=> $request->product_id,
+            "qty"=> $request->qty            
+        );
+        \Log::info( $data);
+        DB::table('sol_po_items')->insert($data);        
+        return $data;     
+    }
+
+    public function add_po_getdata($id)
+    {
+        $data = DB::table('sol_po_items')->where('po_id', $id)->get();
+        return Response::json($data);
+    }
+
+    
 }
