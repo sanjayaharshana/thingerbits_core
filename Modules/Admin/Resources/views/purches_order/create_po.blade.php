@@ -40,9 +40,9 @@
             
         </ul>
     </div>
-    
+
     <button type="submit" class="btn btn-primary">Make a Purches Order</button> 
-    <button type="submit" class="btn btn-primary">Close</button> 
+    <a href="admin/orderdata/delete/{{ $po_id }}" class="btn btn-primary">Close</a> 
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
