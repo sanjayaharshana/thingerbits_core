@@ -447,9 +447,8 @@ class DashboardController extends Controller
 
     public function purchase_oder_return($id)
     {
-        return view('admin::purches_order.create_po',['po_id' => $id]);
-
-        echo "DSfsd";
+        $data= DB::table('products')->where('is_pack', '0')->get();        
+        return view('admin::purches_order.create_po',['po_id' => $id,'data'=>$data]);
     }
 
     function create_po()
@@ -484,7 +483,22 @@ class DashboardController extends Controller
     public function add_po_getdata($id)
     {
         $data = DB::table('sol_po_items')->where('po_id', $id)->get();
-        return Response::json($data);
+        // $jelbrak = DB::table('sol_po_items')->where('po_id',$id)->get();
+        
+        $dataArr = array();
+        foreach($data as $itms){
+        // dd($itms->product_id);
+        $jelbrak = DB::table('products')->where('id',$itms->product_id)->first();
+        $data2 = [
+            'po_items' => $itms->po_items,
+            'po_id' => $itms->po_id,
+            'product_id' => $itms->product_id,
+            'product_name' => $jelbrak->slug,
+            'qty' => $itms->qty           
+        ];
+        array_push($dataArr,$data2);
+    }      
+        return Response::json($dataArr);
     }
 
     

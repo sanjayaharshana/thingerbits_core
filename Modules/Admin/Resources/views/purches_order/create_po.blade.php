@@ -50,16 +50,12 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-             <div class="form-group">
-                <label for="exampleInputPassword1">PO ID</label>
-                <input type="text" class="form-control" id="po_id">
-             </div>
+            <div class="modal-body">          
              <div class="form-group">
                 <select class="form-control" id="product_id">
-                    <option value="Complete">Complete</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Quate">Quate</option>>
+                    @foreach ($data as $Product)
+                    <option value="{{ $Product->id }}">{{ $Product->slug }}</option>                   
+                    @endforeach
                 </select>
              </div>
              <div class="form-group">
@@ -108,13 +104,16 @@
            url:'{{ url('/') }}/admin/orderdata',
            data:{po_id:"{{ $po_id }}", product_id:$("#product_id").val(), qty:$("#qty").val()},
            success:function(data){
+            var t = document.getElementById("product_id");
+            var selectedText = t.options[t.selectedIndex].text;
+
             var node = document.createElement("LIL");
             node.setAttribute('class','list-group-item');
             node.setAttribute('id','olian');
-            var textnode = document.createTextNode('23223');
+            var textnode = document.createTextNode($("#product_id").val());
             node.appendChild(textnode);
             document.getElementById("myList").appendChild(node);    
-            alert(data.success);
+           // alert(data.success);
            }
         }); 
     });
@@ -127,7 +126,7 @@
     
     function fetchRecords(){
        $.ajax({
-         url: 'http://127.0.0.1:8000/admin/orderdata/getdata/{{ $po_id }}',
+         url: '{{ url('/') }}/admin/orderdata/getdata/{{ $po_id }}',
          type: 'get',
          dataType: 'json',
          success: function(response){
@@ -140,7 +139,7 @@
             var node = document.createElement("LIL");
             node.setAttribute('class','list-group-item');
             node.setAttribute('id','olian');
-            var textnode = document.createTextNode(response[i].po_id);
+            var textnode = document.createTextNode(response[i].product_name);
             node.appendChild(textnode);
             document.getElementById("myList").appendChild(node);
                     
