@@ -14,15 +14,15 @@
 <form id="myFrame">
     <div class="form-group">
       <label for="exampleInputEmail1">Date</label>
-      <input type="text" class="form-control" id="date" aria-describedby="datehelp" placeholder="Enter The date">
+      <input type="text" class="form-control" name="date" id="date" aria-describedby="datehelp" placeholder="Enter The date">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Reference No</label>
-      <input type="text" class="form-control" id="referenceno" placeholder="Refrence">
+      <input type="text" class="form-control" name="referenceno" id="referenceno" placeholder="Refrence">
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Status</label>
-        <select class="form-control">
+        <select class="form-control" name="status">
                 <option value="Complete">Complete</option>
                 <option value="Pending">Pending</option>
                 <option value="Quate">Quate</option>>

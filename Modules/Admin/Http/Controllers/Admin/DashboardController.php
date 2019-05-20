@@ -543,10 +543,13 @@ class DashboardController extends Controller
 
     public function save_po(Requests $reql)
     {
-        $lesson_id = $req->input('lesson_id');
-        $course_id = $req->input('course_id');
-        $lesson_title = $req->input('lesson_title');
-        $lesson_body = $req->input('lesson_body');
+        $po_id = $req->input('referenceno');
+        $date = $req->input('date');
+        $suppler_id = $req->input('lesson_title');
+        $status = $req->input('status');
+        $status = $req->input('adress');
+
+
         
        // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
        DB::table('sol_po_table')->where('po_id', $lesson_id )->update(['lesson_title' => $lesson_title,'lesson_body' => $lesson_body,]);
