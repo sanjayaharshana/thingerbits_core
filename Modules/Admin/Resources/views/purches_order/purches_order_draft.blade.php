@@ -24,6 +24,7 @@
             <form action="{{ route('create_po') }}" method="post">
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" name="upvote" value="New" />
+                    <a href="{{ route('purchase_oder') }}" class="btn btn-primary">Back to PO</a> 
             </form>        
             <table id="table_id" class="display">
                 <thead>

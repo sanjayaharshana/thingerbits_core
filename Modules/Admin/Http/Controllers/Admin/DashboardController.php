@@ -443,7 +443,7 @@ class DashboardController extends Controller
     function purchase_oder()
     {
 
-        $data['data'] = DB::table('sol_po_table')->get();
+        $data['data'] = DB::table('sol_po_table')->where('draft', '0')->get();
 
         if(count($data) > 0)
         {
@@ -474,6 +474,7 @@ class DashboardController extends Controller
                 'date'=>'date',
                 'product_item_id'=>'id',
                 'status'=>'panding',
+                'draft'=>1,
             )
         );
 
@@ -539,5 +540,18 @@ class DashboardController extends Controller
         }
         
     }
-    
+
+    public function save_po(Requests $reql)
+    {
+        $lesson_id = $req->input('lesson_id');
+        $course_id = $req->input('course_id');
+        $lesson_title = $req->input('lesson_title');
+        $lesson_body = $req->input('lesson_body');
+        
+       // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
+       DB::table('sol_po_table')->where('po_id', $lesson_id )->update(['lesson_title' => $lesson_title,'lesson_body' => $lesson_body,]);
+
+        //echo $lesson_id;
+        return redirect()->route('courseopenerrc',$course_id);     
+    }    
 }
