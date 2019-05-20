@@ -545,14 +545,21 @@ class DashboardController extends Controller
     {
         $po_id = $req->input('referenceno');
         $date = $req->input('date');
-        $suppler_id = $req->input('lesson_title');
+        $title = $req->input('title');
+        $suppler_id = $req->input('spper_id');
         $status = $req->input('status');
-        $status = $req->input('adress');
+        $adress = $req->input('adress');
 
 
         
        // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
-       DB::table('sol_po_table')->where('po_id', $lesson_id )->update(['lesson_title' => $lesson_title,'lesson_body' => $lesson_body,]);
+       DB::table('sol_po_table')->where('po_id', $po_id )->update(
+           ['title' => $lesson_title,
+           'suppler_id' => $suppler_id,
+           'suppler_id' => $suppler_id,
+           'suppler_id' => $suppler_id,
+           'suppler_id' => $suppler_id,
+           ]);
 
         //echo $lesson_id;
         return redirect()->route('courseopenerrc',$course_id);     
