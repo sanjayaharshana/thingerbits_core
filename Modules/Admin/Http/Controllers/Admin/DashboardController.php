@@ -523,5 +523,21 @@ class DashboardController extends Controller
         return redirect()->route('purchase_oder'); 
     }
 
+    public function draft_oder()
+    {
+        $data['data'] = DB::table('sol_po_table')->where('draft', '1')->get();
+
+        //$data['data'] = DB::table('sol_po_table')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::purches_order.purches_order_draft',$data);
+        }
+        else
+        {
+            return view('admin::purches_order.purches_order_draft',$data);
+        }
+        
+    }
     
 }

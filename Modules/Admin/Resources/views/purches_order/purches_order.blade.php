@@ -24,7 +24,9 @@
             <form action="{{ route('create_po') }}" method="post">
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" name="upvote" value="New" />
-            </form>        
+                    <a href="admin/draft_oder" class="btn btn-primary">Draft</a>       
+
+            </form>
             <table id="table_id" class="display">
                 <thead>
                     <tr>
