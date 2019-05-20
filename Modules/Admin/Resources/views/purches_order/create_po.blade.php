@@ -11,7 +11,8 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 @section('content_header')
 <h2></h2>
-<form id="myFrame">
+<form id="myFrame" action="{{ route('save_po') }}" method="post">
+  {{ csrf_field() }}
     <div class="form-group">
       <label for="exampleInputEmail1">Date</label>
       <input type="text" class="form-control" name="date" id="date" aria-describedby="datehelp" placeholder="Enter The date">
@@ -34,7 +35,7 @@
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Supplier</label>
-        <input type="text" class="form-control" nama="supplier" id="supplier" placeholder="Supplier">
+        <input type="text" class="form-control" name="supplier" id="supplier" placeholder="Supplier">
     </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
     <br><br><br>

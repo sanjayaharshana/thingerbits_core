@@ -541,12 +541,12 @@ class DashboardController extends Controller
         
     }
 
-    public function save_po(Requests $reql)
+    public function save_po(Request $req)
     {
         $po_id = $req->input('referenceno');
         $date = $req->input('date');
         $title = $req->input('title');
-        $suppler_id = $req->input('spper_id');
+        $suppler_id = $req->input('supplier');
         $status = $req->input('status');
         $adress = $req->input('adress');
 
@@ -554,14 +554,15 @@ class DashboardController extends Controller
         
        // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
        DB::table('sol_po_table')->where('po_id', $po_id )->update(
-           ['title' => $lesson_title,
+           ['title' => $title,
            'suppler_id' => $suppler_id,
-           'suppler_id' => $suppler_id,
-           'suppler_id' => $suppler_id,
-           'suppler_id' => $suppler_id,
+           'adress' => 'null',
+           'date' => $date,
+           'status' => $status,
+           'draft' => '0',
            ]);
 
         //echo $lesson_id;
-        return redirect()->route('courseopenerrc',$course_id);     
+        return redirect()->route('draft_oder');     
     }    
 }
