@@ -36,15 +36,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach ($data as $hcl)
                         <tr>
-                            <td>dfgdfg</td>
-                            <td>dfgdfg</td>
-                            <td>dfgdfg</td>
-                            <td>dfgdfg</td>
-                            <td style="text-align: end;"><a href="admin/editpack/" class="btn btn-primary">Edit</a><span> <a href="admin/packagercreator/" class="btn btn-primary">Edit Items</a><span>  </span><a href="admin/deleteitem/" class="btn btn-danger">Print</a></td>
+                            <td>{{ $hcl->po_id }}</td>
+                            <td>{{ $hcl->title }}</td>
+                            <td>{{ $hcl->date }}</td>
+                            <td>{{ $hcl->status }}</td>
+                            <td style="text-align: end;"> <a href="admin/purchase_oder/create_po_return/{{ $hcl->po_id }}" class="btn btn-primary">Edit Items</a><span>  </span><a href="admin/orderdata/delete/{{ $hcl->po_id }}" class="btn btn-danger">Delete</a></td>
                         </tr>
-                  
+                    @endforeach
                 </tbody>
             </table>
         </div>        

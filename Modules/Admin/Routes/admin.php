@@ -58,6 +58,9 @@ Route::get('/edit_tem/{productidt}', 'DashboardController@edititems')->name('edi
 
 //Staff Profile Routes
 Route::get('/purchase_oder', 'DashboardController@purchase_oder')->name('purchase_oder');
+Route::get('/draft_oder', 'DashboardController@draft_oder')->name('draft_oder');
+
+
 Route::post('/purchase_oder/create_po', 'DashboardController@create_po')->name('create_po');
 
 Route::get('/purchase_oder/create_po_return/{id}', 'DashboardController@purchase_oder_return')->name('purchase_oder_return');

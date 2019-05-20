@@ -442,7 +442,20 @@ class DashboardController extends Controller
 
     function purchase_oder()
     {
-        return view('admin::purches_order.purches_order');
+
+        $data['data'] = DB::table('sol_po_table')->get();
+
+        if(count($data) > 0)
+        {
+            return view('admin::purches_order.purches_order',$data);
+        }
+        else
+        {
+            return view('admin::purches_order.purches_order',$data);
+        }
+        
+
+       // return view('admin::purches_order.purches_order');
     }
 
     public function purchase_oder_return($id)
@@ -460,6 +473,7 @@ class DashboardController extends Controller
                 'adress'=> 'adress',
                 'date'=>'date',
                 'product_item_id'=>'id',
+                'status'=>'panding',
             )
         );
 
