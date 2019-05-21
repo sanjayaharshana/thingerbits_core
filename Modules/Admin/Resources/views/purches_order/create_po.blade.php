@@ -131,7 +131,7 @@
             node.setAttribute('class','list-group-item');
             node.setAttribute('id',data);
             var apple = $("#qty").val();
-            node.innerHTML = '<a onclick="myiFunction('+ data + ')" id="removeitem" data-attrib="' + data  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="    padding: 0px 300px;">'+ apple + '</div>';
+            node.innerHTML = '<a onclick="myiFunction('+ data + ')" id="removeitem" data-attrib="' + data  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="padding: 0px 300px;">'+ apple + '</div>';
             console.log(data);
            
 
