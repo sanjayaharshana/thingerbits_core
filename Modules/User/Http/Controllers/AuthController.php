@@ -17,8 +17,8 @@ class AuthController extends BaseAuthController
     protected function redirectTo()
     {
        // echo "SDfs";
-        //return route('account.dashboard.index');
-        return route('staff_adminer');
+        return route('account.dashboard.index');
+        //return route('staff_adminer');
     }
 
     /**

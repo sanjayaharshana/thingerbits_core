@@ -9,9 +9,10 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 @section('content_header')
 <h2></h2>
-<form id="myFrame" action="{{ route('save_po') }}" method="post">
+<form id="myFrame" action="{{ route('save_po') }}" method="post" onsubmit="return validateForm()">
   {{ csrf_field() }}
     <div class="form-group">
       <label for="exampleInputEmail1">Date</label>
@@ -19,11 +20,11 @@
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input type="text" class="form-control" name="title" id="date" aria-describedby="datehelp" placeholder="Enter The date">
+      <input type="text" class="form-control" name="title" id="title" aria-describedby="datehelp" placeholder="Enter The Title">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Reference No</label>
-      <input type="text" class="form-control" name="referenceno" id="referenceno" placeholder="Refrence">
+      <input type="text" class="form-control" name="referenceno" id="referenceno" placeholder="Refrence" readonly value="{{ $po_id }}">
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Status</label>
@@ -91,10 +92,18 @@
 
 
 
+<script>
+
+</script>
+
+
+
 
 
   
 <script type="text/javascript">  
+
+
 
     window.onload = function () { 
         fetchRecords();  
@@ -119,9 +128,18 @@
             var node = document.createElement("LIL");
             node.setAttribute('class','list-group-item');
             node.setAttribute('id','olian');
-            var textnode = document.createTextNode($("#product_id option:selected").text()+$("#qty").text());
+            var apple = $("#qty").val();
+            node.innerHTML = '<a href="#remove" id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>';
+
+           
+
+            console.log(apple);
+
+            var textnode = document.createTextNode($("#product_id option:selected").text() + apple );
             node.appendChild(textnode);
-            document.getElementById("myList").appendChild(node);    
+            document.getElementById("myList").appendChild(node); 
+            
+           
            // alert(data.success);
            }
         }); 
@@ -148,13 +166,17 @@
             var node = document.createElement("LIL");
             node.setAttribute('class','list-group-item');
             node.setAttribute('id','olian');
+            node.innerHTML = '<a id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>';
+            
+            var database_var = node.getAttribute("data-attrib");
+            console.log(database_var);
+
+
             var textnode = document.createTextNode(response[i].product_name);
             node.appendChild(textnode);
-            document.getElementById("myList").appendChild(node);
-                    
-        }
-    }
-    
+            document.getElementById("myList").appendChild(node);       
+          }
+         }   
 });
      }
 </script>
