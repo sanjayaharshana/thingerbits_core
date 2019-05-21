@@ -60,7 +60,6 @@ Route::get('/edit_tem/{productidt}', 'DashboardController@edititems')->name('edi
 Route::get('/purchase_oder', 'DashboardController@purchase_oder')->name('purchase_oder');
 Route::get('/draft_oder', 'DashboardController@draft_oder')->name('draft_oder');
 
-
 Route::post('/purchase_oder/update', 'DashboardController@save_po')->name('save_po');
 
 
@@ -72,9 +71,11 @@ Route::get('/purchase_oder/create_po_return/{id}', 'DashboardController@purchase
 //Route::post('/purchase_oder/create_po/insert', 'DashboardController@insertData')->name('insertData');
 
 Route::post('/orderdata', 'DashBoardController@addpo_items');
+
 Route::get('/orderdata/getdata/{id}', 'DashboardController@add_po_getdata')->name('add_po_getdata');
 Route::get('/orderdata/delete/{id}', 'DashboardController@deletepo')->name('deletepo');
 
+Route::delete('/orderdata/deleteitem/{id}', 'DashboardController@deleteitem')->name('deleteitem');
 
 
 

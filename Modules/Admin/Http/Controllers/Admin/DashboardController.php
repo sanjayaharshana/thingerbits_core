@@ -491,8 +491,11 @@ class DashboardController extends Controller
             "qty"=> $request->qty            
         );
         \Log::info( $data);
-        DB::table('sol_po_items')->insert($data);        
-        return $data;     
+        
+        $id = DB::table('sol_po_items')->insertGetId($data);
+
+        //DB::table('sol_po_items')->insert($data);        
+        return $id;     
     }
 
     public function add_po_getdata($id)
@@ -565,4 +568,13 @@ class DashboardController extends Controller
         //echo $lesson_id;
         return redirect()->route('draft_oder');     
     }    
+
+    public function deleteitem($id)
+    {
+        DB::table('sol_po_items')->where('po_items', $id )->delete();
+        
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+    }
 }
