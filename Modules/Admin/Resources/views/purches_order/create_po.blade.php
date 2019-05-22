@@ -8,16 +8,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-  
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
 @section('content_header')
+
 <h2></h2>
 <form id="myFrame" action="{{ route('save_po') }}" method="post" onsubmit="return validateForm()">
   {{ csrf_field() }}
+  
+ 
     <div class="form-group">
       <label for="exampleInputEmail1">Date</label>
-      <input type="text" class="form-control" name="date" id="date" aria-describedby="datehelp" placeholder="Enter The date">
+      <div class="ui calendar" id="example2">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" name="date" placeholder="Date">
+        </div>
+      </div> 
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
@@ -93,9 +104,10 @@
 
 
 
-<script>
-
-</script>
+<script type="text/javascript">
+$('#example2').calendar({
+  type: 'date'
+});</script>  
 
 
 
@@ -190,7 +202,7 @@
             var node = document.createElement("LIL");
             node.setAttribute('class','list-group-item');
             node.setAttribute('id',response[i].po_items);
-            node.innerHTML = '<a onclick="myiFunction('+ response[i].po_items  +')" id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>';
+            node.innerHTML = '<a onclick="myiFunction('+ response[i].po_items  +')" id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="padding: 0px 300px;">'+ response[i].qty + '</div>';
             
             
 
