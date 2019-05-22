@@ -60,21 +60,16 @@
     <table id="table_id" class="display">
         <thead>
             <tr>
-                <th style="font-weight: 500;>Package Name">Purchase Order ID</th>
-                <th style="font-weight: 500;>Package Name">Name</th>
-                <th style="font-weight: 500;>Package Name">Date</th>
-                <th style="font-weight: 500;>Package Name">Status</th>
-                <th style="font-weight: 500;>Package Name">Oparations</th>
+                <th style="font-weight: 500;>Package Name">Product Name</th>
+                <th style="font-weight: 500;>Package Name">QTY</th>
+                <th style="font-weight: 500;>Package Name">Price</th>
+                <th style="font-weight: 500;>Package Name">Opration</th>
             </tr>
         </thead>
         <tbody id="myList">
-           <tr>
-                <td>gfhfghf</td>
-                <td>fghfgh</td>
-                <td>fghfgh</td>
-                <td>fghfg}</td>
-                <td style="text-align: end;"> <a href="admin/purchase_oder/create_po_return/" class="btn btn-primary">Edit Items</a><span>  </span><a href="admin/orderdata/delete/" class="btn btn-danger">Delete</a></td>
-            </tr>
+          <td style="display:none;">
+
+          </td>
         </tbody>
     </table>
 
@@ -160,11 +155,11 @@ $('#example2').calendar({
             var t = document.getElementById("product_id");
             var selectedText = t.options[t.selectedIndex].text;
 
-            var node = document.createElement("LIL");
-            node.setAttribute('class','list-group-item');
+            var node = document.createElement("tr");
+            node.setAttribute('class','');
             node.setAttribute('id',data);
             var apple = $("#qty").val();
-            node.innerHTML = '<a onclick="myiFunction('+ data + ')" id="removeitem" data-attrib="' + data  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="padding: 0px 300px;">'+ apple + '</div>';
+            node.innerHTML = '<td>'+ data +'</td> <td>dfs</td> <td>dfs</td> <td>dfs</td>';
             console.log(data);
            
 
@@ -220,16 +215,14 @@ $('#example2').calendar({
 
          for (i = 0; i < response.length; i++) {
             //removeElement('#olian');
-            var node = document.createElement("LIL");
-            node.setAttribute('class','list-group-item');
-            node.setAttribute('id',response[i].po_items);
-            node.innerHTML = '<a onclick="myiFunction('+ response[i].po_items  +')" id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="padding: 0px 300px;">'+ response[i].qty + '</div>';
-            console.log(response[i].product_price);
+            var node = document.createElement("tr");
             
+           // node.setAttribute('id',response[i].po_items);
+           // node.innerHTML = '<a onclick="myiFunction('+ response[i].po_items  +')" id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="padding: 0px 300px;">'+ response[i].qty + '</div>';
+           node.innerHTML = '<td>'+ response[i].product_name +'</td> <td>'+  response[i].qty +'</td> <td>'+ response[i].product_price +'</td>';
 
+            console.log(response[i].product_price);
 
-            var textnode = document.createTextNode(response[i].product_name);
-            node.appendChild(textnode);
             document.getElementById("myList").appendChild(node);       
           }
          }   

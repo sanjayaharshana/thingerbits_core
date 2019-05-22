@@ -81,7 +81,7 @@ class DashboardController extends Controller
         }
         else
         {
-            return view('admin::rashpanel.index');
+            return view('admin::rashpanel.index',$data);
         }
         
        
@@ -108,7 +108,7 @@ class DashboardController extends Controller
         }
         else
         {
-            return view('admin::rashpanel.listgroup');
+            return view('admin::rashpanel.listgroup',$data);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -125,7 +125,7 @@ class DashboardController extends Controller
         }
         else
         {
-            return view('admin::rashpanel.listgroup');
+            return view('admin::rashpanel.listgroup',$data);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -185,8 +185,8 @@ class DashboardController extends Controller
 
         DB::table('lessons')->insert($data);
        // return view('admin::rashpanel.insertlesson');
-       return view('admin::rashpanel.insertlesson',['course_id' => $course_id]);
-
+       //return view('admin::rashpanel.listgroup',['course_id' => $course_id]);
+       return redirect()->route('courseopenerrc',$course_id);  
         //echo "dfsd";
    
     }
@@ -200,16 +200,30 @@ class DashboardController extends Controller
     function courseinsert(Request $reql) 
     {
         
+
+     
         $user_id =  '1';
         $course_title = $reql->input('course_title');
         $slag = $reql->input('slg');
-        $course_image = $reql->input('course_img');
+        $course_image = $reql->file('course_img');
         $course_intro = $reql->input('course_intros');
         $course_discription = $reql->input('cours_discrip');
-        $reccomandproduct_id = $reql->input('rcmmand');
+        $reccomandproduct_id = $reql->input('Recommand_Products');
 
-     
-        
+        //$imageName = time().'.'.request()->image->getClientOriginalExtension();
+
+        //$image = $reql->file('course_img');
+        $name = str_slug($reql->input('course_img')).'_'.time();
+        $folder = '/uploads/images/';
+
+        $filePath = $folder . $name. '.' . $course_image->getClientOriginalExtension();
+
+        //$this->uploadOne($course_image, $folder, 'public', $name);
+
+        //This Par 6.36PM Create a Basic course image uploading to research thing 
+        //i will try my best to create own database.
+        //Visual Compact Server also fine
+
         
 
         $id = DB::table('course_list')->insertGetId(
@@ -217,14 +231,13 @@ class DashboardController extends Controller
                 'user_id' => $user_id,
                 'course_title'=>$course_title,
                 'slag'=>$slag,
-                'course_image'=>$course_image,
+                'course_image'=>$filePath,
                 'course_intro'=>$course_intro,
                 'course_discription' => $course_discription,
                 'reccomandproduct_id' => $reccomandproduct_id,
             )
         );
 
-        
 
         $lesdata = array(
             'user_id' => '1',
@@ -239,6 +252,8 @@ class DashboardController extends Controller
         // return view('admin::rashpanel.insertlesson');
         return view('admin::rashpanel.createcourse');
 
+      
+
 
     }
 
@@ -249,6 +264,14 @@ class DashboardController extends Controller
 
         return back(); 
     }
+
+
+    function imageUploadPost()
+    {
+        
+    }
+
+
 
     //PackGenetro
 

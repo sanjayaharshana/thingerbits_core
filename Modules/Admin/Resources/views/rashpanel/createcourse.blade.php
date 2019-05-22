@@ -47,12 +47,14 @@
 
 @section('content')
 
-<form autocomplete="off" method="POST" action="{{ route('insertcourse') }}">
+<form autocomplete="off" method="POST" action="{{ route('insertcourse') }}" enctype="multipart/form-data">
     {{ csrf_field() }}    
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Course Title</label>
         <input type="text" class="form-control" placeholder="Course Title" name="course_title" style="" value="">
     </div>
+
+    
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Slugg</label>
@@ -60,9 +62,15 @@
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Course Image</label>
-        <input type="text" class="form-control" placeholder="Course Image" name="course_img" style=";" value="">   
+        <div class="form-group-prepend">
+          <span class="form-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01" name="course_img"
+            aria-describedby="inputGroupFileAddon01">
+        </div>
     </div>
+
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Course Intro</label>
