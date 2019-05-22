@@ -460,8 +460,13 @@ class DashboardController extends Controller
 
     public function purchase_oder_return($id)
     {
-        $data= DB::table('products')->where('is_pack', '0')->get();        
-        return view('admin::purches_order.create_po',['po_id' => $id,'data'=>$data]);
+        $data= DB::table('products')->where('is_pack', '0')->get(); 
+        
+        //Enparine Purch Server
+        $micro_data = DB::table('sol_po_table')->where('po_id', $id)->first();  
+ 
+
+        return view('admin::purches_order.create_po',['po_id' => $id,'data'=>$data,'micro_data'=>$micro_data]);
     }
 
     function create_po()
@@ -512,6 +517,7 @@ class DashboardController extends Controller
             'po_id' => $itms->po_id,
             'product_id' => $itms->product_id,
             'product_name' => $jelbrak->slug,
+            'product_price' => $jelbrak->price,
             'qty' => $itms->qty           
         ];
         array_push($dataArr,$data2);

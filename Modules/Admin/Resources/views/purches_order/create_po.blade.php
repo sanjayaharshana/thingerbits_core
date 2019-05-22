@@ -14,32 +14,36 @@
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+    } );
+</script>
+
 @section('content_header')
 
 <h2></h2>
 <form id="myFrame" action="{{ route('save_po') }}" method="post" onsubmit="return validateForm()">
   {{ csrf_field() }}
-  
- 
     <div class="form-group">
       <label for="exampleInputEmail1">Date</label>
       <div class="ui calendar" id="example2">
         <div class="ui input left icon">
           <i class="calendar icon"></i>
-          <input type="text" name="date" placeholder="Date">
+          <input type="text" name="date" placeholder="Date" value="{{ $micro_data->date }}">
         </div>
       </div> 
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
-      <input type="text" class="form-control" name="title" id="title" aria-describedby="datehelp" placeholder="Enter The Title">
+      <input type="text" class="form-control" name="title" id="title" aria-describedby="datehelp" placeholder="Enter The Title" value="{{ $micro_data->title }}">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Reference No</label>
       <input type="text" class="form-control" name="referenceno" id="referenceno" placeholder="Refrence" readonly value="{{ $po_id }}">
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Status</label>
+        <label for="exampleInputPassword1">Status: {{ $micro_data->status  }} </label>
         <select class="form-control" name="status">
                 <option value="Complete">Complete</option>
                 <option value="Pending">Pending</option>
@@ -53,11 +57,28 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
     <br><br><br>
 
-    <div style="width: 100%; height: 300px; overflow-y: scroll;">
-        <ul class="list-group" id="myList">
-            
-        </ul>
-    </div>
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th style="font-weight: 500;>Package Name">Purchase Order ID</th>
+                <th style="font-weight: 500;>Package Name">Name</th>
+                <th style="font-weight: 500;>Package Name">Date</th>
+                <th style="font-weight: 500;>Package Name">Status</th>
+                <th style="font-weight: 500;>Package Name">Oparations</th>
+            </tr>
+        </thead>
+        <tbody id="myList">
+           <tr>
+                <td>gfhfghf</td>
+                <td>fghfgh</td>
+                <td>fghfgh</td>
+                <td>fghfg}</td>
+                <td style="text-align: end;"> <a href="admin/purchase_oder/create_po_return/" class="btn btn-primary">Edit Items</a><span>  </span><a href="admin/orderdata/delete/" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+   
 
     <button type="submit" class="btn btn-primary">Make a Purches Order</button> 
     <a href="{{ route('purchase_oder') }}" class="btn btn-primary">Close</a> 
@@ -203,7 +224,7 @@ $('#example2').calendar({
             node.setAttribute('class','list-group-item');
             node.setAttribute('id',response[i].po_items);
             node.innerHTML = '<a onclick="myiFunction('+ response[i].po_items  +')" id="removeitem" data-attrib="' + response[i].po_items  + '" class="btn btn-primary btn-sm pull-right" style="padding: 0px 20px;">Remove</a>'+'<div class="pull-right" style="padding: 0px 300px;">'+ response[i].qty + '</div>';
-            
+            console.log(response[i].product_price);
             
 
 
