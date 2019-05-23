@@ -10,18 +10,7 @@ Route::get('/sales-analytics', [
 
 
 //LMS Data
-Route::get('/lessonpanel', 'DashboardController@lessionpan')->name('lessonrout');
-Route::get('/addlesson', 'DashboardController@addles')->name('addlesson');
-Route::post('/intertlesson', 'DashboardController@insertlesson')->name('lessoninsert');
-Route::get('/lessonpanel/{courseid}', 'DashboardController@courseopener')->name('courseopenerrc');
-Route::get('/parellel/{lessonid}', 'DashboardController@lessoneditor')->name('lessonedit');
-Route::post('/parellel/update', 'DashboardController@updatelesson')->name('lesupdate');
-Route::get('/parellel/delete/{valueid}', 'DashboardController@deletelesson')->name('lesdelete');
-Route::get('/addles/add/{cour_id}', 'DashboardController@addlesson')->name('addlesadd');
-Route::post('/addles/insert', 'DashboardController@insertles')->name('adleson');
-Route::get('/createcourse', 'DashboardController@createcourse')->name('createcourserout');
-Route::post('/createcourse/instert', 'DashboardController@courseinsert')->name('insertcourse');
-Route::get('deletecourse/{course_id}', 'DashboardController@deletecourse')->name('deletecoursefull');
+Route::get('/lessonpanel', 'lms@lessionpan')->name('lessonrout');
 
 Route::get('/course/img-upload', 'DashboardController@imageUpload')->name('image.upload');
 Route::post('/course/img-upload-post', 'DashboardController@imageUploadPost')->name('image.upload.post');

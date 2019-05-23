@@ -9,6 +9,7 @@ use Modules\Review\Entities\Review;
 use Modules\Product\Entities\Product;
 use Modules\Product\Entities\SearchTerm;
 use Illuminate\Http\Request; 
+use File;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
 
@@ -237,7 +238,7 @@ class DashboardController extends Controller
             
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
          
-            $path = $reql->file('course_img')->    storeAs('public/course_img', $fileNameToStore);
+            $path = $reql->file('course_img')->    storeAs('course_img', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
@@ -287,11 +288,19 @@ class DashboardController extends Controller
     }
 
 
-    function imageUploadPost()
-    {
-        
-    }
 
+    function courseuser_image($course_id)
+    {
+        $data = DB::table('course_list')->where('course_id', $course_id)->first();
+        $path = storage_path('app/public/course_img/') . $data->course_image;    
+        if(!File::exists($path)) 
+            $path = storage_path('app/public/course_img/') . 'default.png';
+            $file = File::get($path);
+            $type = File::mimeType($path);
+            $response = Response::make($file, 200);
+            $response->header("Content-Type", $type);
+        return $response;
+    }
 
 
     //PackGenetro
@@ -630,4 +639,6 @@ class DashboardController extends Controller
             'success' => 'Record deleted successfully!'
         ]);
     }
+
+    
 }

@@ -20,8 +20,9 @@
 <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="dashboard-panel"><br>
                <h4>{{ $value->course_title }}</h4><br>
-               
-               <img src="storage\app\public\public\course_img\{{ $value->course_image  }}">
+               <div class="" style="background-image:url('admin/courseuser_image/{{ $value->course_id }}');background-size: cover; height:100px; background-position:center;">
+               </div>
+              
                <br><br>
                <a href="admin/lessonpanel/{{ $value->course_id }}" class="btn btn-default">Edit Course</a>
                
