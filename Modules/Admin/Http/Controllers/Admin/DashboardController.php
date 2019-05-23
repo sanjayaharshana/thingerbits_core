@@ -9,6 +9,11 @@ use Modules\Review\Entities\Review;
 use Modules\Product\Entities\Product;
 use Modules\Product\Entities\SearchTerm;
 use Illuminate\Http\Request; 
+use Illuminate\Foundation\Validation\ValidatesRequests;
+
+
+use Illuminate\Support\Facades\Storage;
+
 use DB;
 use Log;
 use Response;
@@ -210,19 +215,35 @@ class DashboardController extends Controller
         $course_discription = $reql->input('cours_discrip');
         $reccomandproduct_id = $reql->input('Recommand_Products');
 
+       
         //$imageName = time().'.'.request()->image->getClientOriginalExtension();
 
         //$image = $reql->file('course_img');
-        $name = str_slug($reql->input('course_img')).'_'.time();
-        $folder = '/uploads/images/';
+        //$name = str_slug($reql->input('course_img')).'course_'.time();
+       // $folder = '/uploads/images/';
 
-        $filePath = $folder . $name. '.' . $course_image->getClientOriginalExtension();
+        //$filePath = $folder . $name. '.' . $course_image->getClientOriginalExtension();
+   
 
-        //$this->uploadOne($course_image, $folder, 'public', $name);
+      
+        
+        if($reql->hasFile('course_img')) {
 
-        //This Par 6.36PM Create a Basic course image uploading to research thing 
-        //i will try my best to create own database.
-        //Visual Compact Server also fine
+            $filenameWithExt = $reql->file('course_img')->getClientOriginalName();
+          
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
+           
+            $extension = $reql->file('course_img')->getClientOriginalExtension();
+            
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
+         
+            $path = $reql->file('course_img')->    storeAs('public/course_img', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+        
+
+
 
         
 
@@ -231,7 +252,7 @@ class DashboardController extends Controller
                 'user_id' => $user_id,
                 'course_title'=>$course_title,
                 'slag'=>$slag,
-                'course_image'=>$filePath,
+                'course_image'=>$fileNameToStore,
                 'course_intro'=>$course_intro,
                 'course_discription' => $course_discription,
                 'reccomandproduct_id' => $reccomandproduct_id,
@@ -575,6 +596,9 @@ class DashboardController extends Controller
 
     public function save_po(Request $req)
     {
+        
+        // create Post
+
         $po_id = $req->input('referenceno');
         $date = $req->input('date');
         $title = $req->input('title');
