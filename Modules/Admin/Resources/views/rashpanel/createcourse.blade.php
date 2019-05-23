@@ -52,14 +52,14 @@
     {{ csrf_field() }}    
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Course Title</label>
-        <input type="text" class="form-control" placeholder="Course Title" name="course_title" style="" value="" required>
+        <input type="text" id="ctitle" class="form-control" placeholder="Course Title" name="course_title" style="" value="" required>
     </div>
 
     
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Slugg</label>
-        <input type="text" class="form-control" placeholder="Slugg" name="slg" style="" value="" required>
+        <input type="text" class="form-control" id="slugg" placeholder="Slugg" name="slg" style="" value="" required>
     </div>
 
     <div class="form-group">
@@ -104,7 +104,12 @@
 
 <script>
     $("#commentForm").validate();
+
+   
+
 </script>
+
+
 
 
 

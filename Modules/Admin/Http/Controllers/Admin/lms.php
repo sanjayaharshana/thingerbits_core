@@ -22,20 +22,9 @@ use Response;
 class lms extends Controller
 {
     public function lessionpan()
-    {
-        $data['data'] = DB::table('course_list')->get();
-
-        if(count($data) > 0)
-        {
-            return view('admin::rashpanel.index',$data);
-        }
-        else
-        {
-            return view('admin::rashpanel.index',$data);
-        }
-        
-       
-
+    {   
+        $data['data'] = DB::table('course_list')->get(); 
+        return view('admin::rashpanel.index',$data); 
     }
 
     public function addles() 
@@ -149,48 +138,23 @@ class lms extends Controller
 
     function courseinsert(Request $reql) 
     {
-        
-
-     
         $user_id =  '1';
         $course_title = $reql->input('course_title');
         $slag = $reql->input('slg');
         $course_image = $reql->file('course_img');
         $course_intro = $reql->input('course_intros');
         $course_discription = $reql->input('cours_discrip');
-        $reccomandproduct_id = $reql->input('Recommand_Products');
-
-       
-        //$imageName = time().'.'.request()->image->getClientOriginalExtension();
-
-        //$image = $reql->file('course_img');
-        //$name = str_slug($reql->input('course_img')).'course_'.time();
-       // $folder = '/uploads/images/';
-
-        //$filePath = $folder . $name. '.' . $course_image->getClientOriginalExtension();
-   
-
-      
+        $reccomandproduct_id = $reql->input('Recommand_Products');     
         
         if($reql->hasFile('course_img')) {
-
-            $filenameWithExt = $reql->file('course_img')->getClientOriginalName();
-          
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
-           
-            $extension = $reql->file('course_img')->getClientOriginalExtension();
-            
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
-         
+            $filenameWithExt = $reql->file('course_img')->getClientOriginalName();          
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);                       
+            $extension = $reql->file('course_img')->getClientOriginalExtension();            
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
             $path = $reql->file('course_img')->    storeAs('course_img', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
-        }
-        
-
-
-
-        
+        }      
 
         $id = DB::table('course_list')->insertGetId(
             array(
@@ -204,7 +168,6 @@ class lms extends Controller
             )
         );
 
-
         $lesdata = array(
             'user_id' => '1',
             'lesson_title'=>'Example Lesson',
@@ -215,12 +178,10 @@ class lms extends Controller
         );
 
        DB::table('lessons')->insert($lesdata);       
-        // return view('admin::rashpanel.insertlesson');
-        return view('admin::rashpanel.createcourse');
+       
+       return redirect()->route('login');
 
-      
-
-
+    //return view('admin::rashpanel.createcourse');
     }
 
     function deletecourse ($course_id) 
