@@ -3,26 +3,27 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href=""><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href=""><i class="menu-icon fa fa-laptop"></i>Course Explorer </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon ti-money"></i>Purches Order </a>
+                        <a href=""> <i class="menu-icon fa fa-book"></i>Get Courses </a>
                     </li>
-                    <li class="menu-title">Products</li>
+                    <li class="menu-title">Features</li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
+                        <a href="widgets.html"> <i class="menu-icon ti-book"></i>Get the Exam </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-cube"></i>Recommand Products </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i> Get the Help </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
+                        <a href="widgets.html"> <i class="menu-icon ti-rocket"></i>Achimenets </a>
+                    </li>
+                    <li class="menu-title">Community and Events</li>
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon fa fa-users"></i>Join our community </a>
                     </li>
                     <li>
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>

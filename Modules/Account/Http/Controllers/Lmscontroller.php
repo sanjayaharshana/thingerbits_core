@@ -11,6 +11,6 @@ class Lmscontroller extends Controller
 
     public function getcourses()
     {
-        return view('public.account.lms.index');
+        return view('public.account.lms.dashboard');
     }
 }
