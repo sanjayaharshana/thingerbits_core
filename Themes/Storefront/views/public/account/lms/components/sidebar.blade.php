@@ -3,10 +3,10 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="{{ route('staff_adminer') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href=""><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="{{ route('pruches_order') }}"> <i class="menu-icon ti-money"></i>Purches Order </a>
+                        <a href=""> <i class="menu-icon ti-money"></i>Purches Order </a>
                     </li>
                     <li class="menu-title">Products</li>
                     <li>

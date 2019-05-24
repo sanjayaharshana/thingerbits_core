@@ -68,7 +68,7 @@
 
 <body>
     <!-- Left Panel -->
-    @include('admin::staff_admin.components.sidebar')
+    @include('public.account.lms.components.sidebar')
 
     <!-- /#left-panel -->
     <!-- Right Panel -->
@@ -83,11 +83,11 @@
                 </div>
             </div>
             
-        @include('admin::staff_admin.components.searchbar')
+        @include('public.account.lms.components.searchbar')
             
-        @include('admin::staff_admin.components.profile_items')
+        @include('public.account.lms.components.profile_items')
                
-        @include('admin::staff_admin.components.notify_items')
+        @include('public.account.lms..components.notify_items')
 
 
                 </div>

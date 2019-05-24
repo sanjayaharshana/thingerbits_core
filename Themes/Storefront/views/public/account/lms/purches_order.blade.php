@@ -1,4 +1,4 @@
-@include('admin::staff_admin.components.head')
+@include('public.account.lms.components.head')
   
                 <div class="row">
                     <div class="col-lg-12">
@@ -110,4 +110,4 @@
                         </div>                    
                 </div>
 
-@include('admin::staff_admin.components.footer')
+@include('public.account.lms.components.footer')
