@@ -39,4 +39,14 @@ class Lmscontroller extends Controller
 
         return view('public.account.lms.dashboard',$data);
     }
+
+    function my_courses()
+    {
+      //  Auth::user()->id;
+      $data['data']= DB::table('course_list')->get();
+      
+      return view('public.account.lms.mycourse',$data);
+
+       echo auth()->user()->id;
+    }
 }

@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 
   Route::get('account/lms', 'Lmscontroller@getcourses')->name('getcourses');
   Route::get('account/sft/course_img/{course_id}', 'Lmscontroller@getcourse_img')->name('getcourse_img');
+  Route::get('account/lms/my_courses', 'Lmscontroller@my_courses')->name('my_courses');
 
 
 

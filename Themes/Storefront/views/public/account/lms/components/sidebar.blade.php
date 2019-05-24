@@ -3,10 +3,10 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href=""><i class="menu-icon fa fa-laptop"></i>Course Explorer </a>
+                        <a href="{{ route('getcourses') }}"><i class="menu-icon fa fa-laptop"></i>Course Explorer </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-book"></i>My Courses </a>
+                        <a href="{{ route('my_courses') }}"> <i class="menu-icon fa fa-book"></i>My Courses </a>
                     </li>
                     <li class="menu-title">Features</li>
                     <li>
