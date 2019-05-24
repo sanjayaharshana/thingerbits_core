@@ -179,7 +179,7 @@ class lms extends Controller
 
        DB::table('lessons')->insert($lesdata);       
        
-       return redirect()->route('login');
+       return redirect()->route('courseopenerrc',$id);
 
     //return view('admin::rashpanel.createcourse');
     }

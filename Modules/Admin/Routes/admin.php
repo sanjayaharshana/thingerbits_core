@@ -11,9 +11,21 @@ Route::get('/sales-analytics', [
 
 //LMS Data
 Route::get('/lessonpanel', 'lms@lessionpan')->name('lessonrout');
+Route::get('/addlesson', 'lms@addles')->name('addlesson');
+Route::post('/intertlesson', 'lms@insertlesson')->name('lessoninsert');
+Route::get('/lessonpanel/{courseid}', 'lms@courseopener')->name('courseopenerrc');
+Route::get('/parellel/{lessonid}', 'lms@lessoneditor')->name('lessonedit');
+Route::post('/parellel/update', 'lms@updatelesson')->name('lesupdate');
+Route::get('/parellel/delete/{valueid}', 'lms@deletelesson')->name('lesdelete');
+Route::get('/addles/add/{cour_id}', 'lms@addlesson')->name('addlesadd');
+Route::post('/addles/insert', 'lms@insertles')->name('adleson');
+Route::get('/createcourse', 'lms@createcourse')->name('createcourserout');
+Route::post('/createcourse/instert', 'lms@courseinsert')->name('insertcourse');
+Route::get('deletecourse/{course_id}', 'lms@deletecourse')->name('deletecoursefull');
 
-Route::get('/course/img-upload', 'DashboardController@imageUpload')->name('image.upload');
-Route::post('/course/img-upload-post', 'DashboardController@imageUploadPost')->name('image.upload.post');
+Route::get('courseuser_image/{course_id}', 'lms@courseuser_image');
+Route::get('/course/img-upload', 'lms@imageUpload')->name('image.upload');
+Route::post('/course/img-upload-post', 'lms@imageUploadPost')->name('image.upload.post');
 
 
 
@@ -45,7 +57,6 @@ Route::post('/orderdata', 'DashBoardController@addpo_items');
 Route::get('/orderdata/getdata/{id}', 'DashboardController@add_po_getdata')->name('add_po_getdata');
 Route::get('/orderdata/delete/{id}', 'DashboardController@deletepo')->name('deletepo');
 Route::delete('/orderdata/deleteitem/{id}', 'DashboardController@deleteitem')->name('deleteitem');
-
 
 
 
