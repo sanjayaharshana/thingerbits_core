@@ -43,10 +43,20 @@ class Lmscontroller extends Controller
     function my_courses()
     {
       //  Auth::user()->id;
-      $data['data']= DB::table('course_list')->get();
-      
-      return view('public.account.lms.mycourse',$data);
+     // $data['data']= DB::table('course_list')->get();
+      $data['data'] = array();
+      $my_course = DB::table('my_courses')->where('user_id', auth()->user()->id)->get();      
+      foreach ($my_course as  $value) {
+          array_push($data,DB::table('course_list')->where('course_id',$value->course_id )->first());        
+       }
 
-       echo auth()->user()->id;
+    //dd($data);
+
+    //   $data['data'] = DB::table('course_list')->where('course_id',$my_course->course_id ); 
+    //     echo $my_course;
+      //dd($data);
+     return view('public.account.lms.mycourse',$data);
+
+     //  echo auth()->user()->id;
     }
 }
