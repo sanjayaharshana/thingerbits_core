@@ -52,7 +52,7 @@
     {{ csrf_field() }}    
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Course Title</label>
-        <input type="text" id="ctitle" class="form-control" placeholder="Course Title" name="course_title" style="" value="" required>
+        <input type="text" pattern=".{12,}" required title="3 characters minimum" id="ctitle" class="form-control" placeholder="Course Title" name="course_title" style="" value="" required>
     </div>
 
     
@@ -75,12 +75,12 @@
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Course Intro</label>
-        <input type="text" class="form-control" placeholder="Course Intro" name="course_intros" style="" value="" required>
+        <input type="text" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Course Intro" name="course_intros" style="" value="" required>
     </div>
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Course Decription</label>
-        <input type="text" class="form-control" placeholder="Course Discription" name="cours_discrip" style="" value="" required>
+        <input type="text"  pattern=".{160,}" required title="160 characters minimum"  class="form-control" placeholder="Course Discription" name="cours_discrip" style="" value="" required>
     </div>
 
     <div class="form-group autocomplete" style="width:300px;">

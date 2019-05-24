@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
   //The besthing controller csharp
 
   Route::get('account/lms', 'Lmscontroller@getcourses')->name('getcourses');
+  Route::get('account/sft/course_img/{course_id}', 'Lmscontroller@getcourse_img')->name('getcourse_img');
+
 
 
 });

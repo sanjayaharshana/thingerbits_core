@@ -6,7 +6,7 @@
                         <a href=""><i class="menu-icon fa fa-laptop"></i>Course Explorer </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-book"></i>Get Courses </a>
+                        <a href=""> <i class="menu-icon fa fa-book"></i>My Courses </a>
                     </li>
                     <li class="menu-title">Features</li>
                     <li>
@@ -26,10 +26,10 @@
                         <a href="widgets.html"> <i class="menu-icon fa fa-users"></i>Join our community </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Events and Workshop </a>
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Products </a>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Blog </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

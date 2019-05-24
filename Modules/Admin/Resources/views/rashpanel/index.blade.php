@@ -10,15 +10,15 @@
 </style>
 
 @section('content')
-<h3>LMS Management</h3><br>
+
 
 
 <div class="row">
-        <div class="container">
-
+        <div class="container" style="padding-right: 70px;">
+            <h3>LMS Management</h3><br>
 @foreach ($data as $value)
 <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="dashboard-panel"><br>
+        <div class="dashboard-panel" style="height: 300px;"><br>
                <h4>{{ $value->course_title }}</h4><br>
                <div class="" style="background-image:url('admin/courseuser_image/{{ $value->course_id }}');background-size: cover; height:100px; background-position:center;">
                </div>
