@@ -18,6 +18,7 @@
     } );
     </script>
 
+
     <div class="row">
         <div class="container" style="width: 1100px;">
             <h3>Purchase Orders</h3></h3><br><br>
@@ -38,6 +39,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
                     @foreach ($data as $hcl)
                         <tr>
                             <td>{{ $hcl->po_id }}</td>
