@@ -72,21 +72,29 @@ class Lmscontroller extends Controller
     public function course_open($id)
     {
         
-        $les_data['les_data'] = DB::table('lessons')->where('course_id', $id)->get();
+        $les_data = DB::table('lessons')->where('course_id', $id)->get();
 
-        $course_data['course_data'] = DB::table('course_list')->where('course_id', $id)->first();       
+        $course_data = DB::table('course_list')->where('course_id', $id)->first(); 
+        $lesbody= 'Welcome to Row';
+        $lestype= '0';
 
-        return view('public.account.lms.open_course',$les_data,$course_data);
+        
+
+        return view('public.account.lms.open_course',['course_data' =>  $course_data,'les_data' =>  $les_data,'lesbody' =>  $lesbody,'lestype' =>  $lestype]);
     }
 
     public function lesson_iol($course_id,$les_id) 
     {
-        $les_data['les_data'] = DB::table('lessons')->where('course_id', $course_id)->get();
-        $course_data['course_data'] = DB::table('course_list')->where('course_id', $course_id)->first();    
-        $les_magnet['lesrab'] = DB::table('lessons')->where('lesson_id', $les_id)->first();
-       
-        //echo $les_magnet;
-        return view('public.account.lms.open_course',$les_data,$course_data,$les_magnet);
+        $les_data = DB::table('lessons')->where('course_id', $course_id)->get();
+        $course_data = DB::table('course_list')->where('course_id', $course_id)->first();    
+        $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
+        $lesbody= $les_magnet->lesson_body;
+        $lestype= $les_magnet->lesson_type;
+
+        
+       // return view('public.account.lms.open_course',$les_data,$course_data,['rll' =>  $lesbody]);
+
+        return view('public.account.lms.open_course',['course_data' =>  $course_data,'les_data' =>  $les_data,'lesbody' =>  $lesbody,'lestype' =>  $lestype]);
 
     }
 
