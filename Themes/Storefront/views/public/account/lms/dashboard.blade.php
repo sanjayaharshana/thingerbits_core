@@ -34,7 +34,13 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Get this Course</button>
+                                  <form id="" action="{{ route('add_my_course') }}" method="post">
+                                      {{ csrf_field() }}
+                                      <input type="text" name="course_id" value="{{ $item->course_id }}" style="display:none;">                                      
+                                      <input type="text" name="payed" value="1" style="display:none;">
+
+                                      <button type="add_my_course" class="btn btn-primary">Get this Course</button>
+                                  </form>
                                 </div>
                               </div>
                             </div>

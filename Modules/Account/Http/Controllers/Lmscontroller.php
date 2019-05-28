@@ -84,20 +84,25 @@ class Lmscontroller extends Controller
         $les_data['les_data'] = DB::table('lessons')->where('course_id', $course_id)->get();
         $course_data['course_data'] = DB::table('course_list')->where('course_id', $course_id)->first();    
         $les_magnet['lesrab'] = DB::table('lessons')->where('lesson_id', $les_id)->first();
-
+       
+        //echo $les_magnet;
         return view('public.account.lms.open_course',$les_data,$course_data,$les_magnet);
 
     }
 
-    public function add_my_course(Request $request)
+    public function add_my_course(Request $roll)
     {
-        $data = array(
-            "po_id"=>$request->po_id,
-            "product_id"=> $request->product_id,
-            "qty"=> $request->qty            
+        $id = DB::table('my_courses')->insertGetId(
+            array(
+                "course_id"=>$roll->course_id,
+                "user_id"=> auth()->user()->id,
+                "payed"=> $roll->payed,
+                "date"=> '1' 
+            )
         );
-        \Log::info( $data);
-        
-        $id = DB::table('sol_po_items')->insertGetId($data);
+
+        //return view('admin::purches_order.purches_order');
+        return redirect()->route('getcourses',['mycourse_id' => $id]); 
+
     }
 }

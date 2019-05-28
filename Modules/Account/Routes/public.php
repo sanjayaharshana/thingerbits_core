@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
   
   Route::get('account/lms/my_courses/course_open/lesson/{course_id}/{les_id}', 'Lmscontroller@lesson_iol')->name('lesson');
  
-  Route::post('account/lms/my_course/insert', 'ProductController@add_my_course')->name('add_my_course');
+  Route::post('account/lms/my_course/insert', 'Lmscontroller@add_my_course')->name('add_my_course');
 
   
 });
