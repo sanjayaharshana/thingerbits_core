@@ -25,20 +25,41 @@
     <input type="text" class="form-control" placeholder="Title" name="lesson_title" value="" >
   </div>
   <div class="form-group">
+      <label for="exampleInputEmail1">Lesson Type</label>
+      <select class="form-control" id="select_type" name="lestype">
+          <option value="1">Video Content</option>
+          <option value="2">Documenet Content</option>
+          <option value="0">Files</option>
+      </select>
+  </div>
+  <div class="form-group">
       <label for="exampleFormControlTextarea1">Lesson Body</label>
       <textarea class="form-control" id="tinymce" rows="3" name="lesson_body" ></textarea>
   </div>
   <input type="text" class="form-control" placeholder="Title" name="user_id" style="display:none;" value="1">
   <input type="text" class="form-control" placeholder="Title" name="l_order" style="display:none;" value="1">
   <input type="text" class="form-control" placeholder="Title" name="is_ok" style="display:none;" value="1">
+
   
-  <input type="text" class="form-control" placeholder="Title" name="apple" style="" value="{{ $course_id }}">
+ 
+
+  <input type="text" class="form-control" placeholder="Title" name="apple" style="display:none;" value="{{ $course_id }}">
 
 
 
 
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
+<script>
+$(function() {
+  $('#select_type').change(function(){
+    $('.colors').hide();
+    //$('#' + $(this).val()).show();
+    console.log('apple');
+  });
+});
+</script>
 
 <script>
  CKEDITOR.replace( 'lesson_body' );

@@ -113,6 +113,11 @@ class lms extends Controller
         $l_order = $reql->input('l_order');
         $is_ok = $reql->input('is_ok');
 
+        $lesson_type = $reql->input('lestype');
+        $video_url = $reql->input('video_url');
+        $video_description = $reql->input('video_description');
+
+
         $data = array(
             'course_id' => $course_id,
             'lesson_title'=>$lesson_title,
@@ -120,6 +125,9 @@ class lms extends Controller
             'user_id'=>$user_id,
             'l_order'=>$l_order,
             'is_ok' => $is_ok,
+            'lesson_type' => $lesson_type,
+            'video_url' => $video_url,
+            'video_description' => $video_description
         );
 
         DB::table('lessons')->insert($data);

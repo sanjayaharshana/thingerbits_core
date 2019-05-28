@@ -2,6 +2,7 @@
 <style>
     html {scroll-behavior: smooth;}
 </style>
+<h3>Welcome Back</h3><br>
 <div class="row">
         @if ($lestype == 1)
         <video width="100%" controls style="height: -webkit-fill-available;">
@@ -9,12 +10,25 @@
                 <source src="mov_bbb.ogg" type="video/ogg">
                 Your browser does not support HTML5 video.
         </video>
+</div> <br><br>
+        <div class="" style="">
+            <div class="container"> <br> 
+                <h2>Video Description</h2>          
+                Get the more info with LMS<br><br>
+                <p>
+                    {{$video_description}}
+                </p>
+                <button type="button" class="btn btn-success">Complete Lesson</button><br><br>
+                <br>
+            </div>
+        </div>
+
         @elseif ($lestype == 0) 
         <div class="container">            
             {!!$lesbody !!}
         </div>
         @endif                           
-</div>    
+   
 <script>
     window.scroll({
   top: 10, 

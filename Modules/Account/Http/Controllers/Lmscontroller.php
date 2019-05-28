@@ -90,11 +90,19 @@ class Lmscontroller extends Controller
         $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
         $lesbody= $les_magnet->lesson_body;
         $lestype= $les_magnet->lesson_type;
-
+        $video_url= $les_magnet->video_url;
+        $video_description= $les_magnet->video_description;
         
        // return view('public.account.lms.open_course',$les_data,$course_data,['rll' =>  $lesbody]);
 
-        return view('public.account.lms.open_course',['course_data' =>  $course_data,'les_data' =>  $les_data,'lesbody' =>  $lesbody,'lestype' =>  $lestype]);
+        return view('public.account.lms.open_course',
+        ['course_data' =>  $course_data,
+        'les_data' =>  $les_data,
+        'lesbody' =>  $lesbody,
+        'lestype' =>  $lestype,
+        'video_url' =>  $video_url,
+        'video_description' =>  $video_description,
+        ]);
 
     }
 
