@@ -77,14 +77,18 @@ class Lmscontroller extends Controller
         $course_data = DB::table('course_list')->where('course_id', $id)->first(); 
         $lesbody= 'Welcome to Row';
         $lestype= '0';
-
-        
+        $video_url = '0';
+        $video_description = '0';
+        $lesson_id = '0';
 
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
         'les_data' =>  $les_data,
         'lesbody' =>  $lesbody,
-        'lestype' =>  $lestype
+        'lestype' =>  $lestype,
+        'video_url' =>  $video_url,
+        'video_description' =>  $video_description,
+        'lesson_id' =>  $lesson_id,
         ]);
     }
 
