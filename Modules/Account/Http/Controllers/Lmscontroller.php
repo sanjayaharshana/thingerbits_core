@@ -75,7 +75,7 @@ class Lmscontroller extends Controller
     public function course_open($id)
     {
         
-        $les_data = DB::table('lessons')->where('course_id', $id)->get();
+        $les_data = DB::table('lessons')->where('course_id', $id)->orderBy('l_order', 'ASC')->get();
 
         $course_data = DB::table('course_list')->where('course_id', $id)->first(); 
         $lesbody= 'Welcome to Row';
@@ -97,7 +97,7 @@ class Lmscontroller extends Controller
 
     public function lesson_iol($course_id,$les_id) 
     {
-        $les_data = DB::table('lessons')->where('course_id', $course_id)->get();
+        $les_data = DB::table('lessons')->where('course_id', $course_id)->orderBy('l_order', 'ASC')->get();
         $course_data = DB::table('course_list')->where('course_id', $course_id)->first();    
         $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
         $lesbody= $les_magnet->lesson_body;

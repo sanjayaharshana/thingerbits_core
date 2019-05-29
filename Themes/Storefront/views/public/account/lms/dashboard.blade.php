@@ -11,7 +11,7 @@
                                     <small style="font-size: 70%; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; /* line-height: 16px; */ /* fallback */ max-height: 702px; /* fallback */ -webkit-line-clamp: 5; /* number of lines to show */ -webkit-box-orient: vertical;">
                                         {{ $item->course_discription }}
                                     </small><br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_{{ $item->course_id }}">Get the Course</button>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_{{ $item->course_id }}">Move to My Courses</button>
                                 </div>                           
                             </div>
                         </div>  
