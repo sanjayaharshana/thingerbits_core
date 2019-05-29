@@ -11,6 +11,10 @@
 
 <head>
 <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 
 </head>
 
@@ -18,28 +22,44 @@
 
 
 
-<form method="POST" action="{{ route('adleson') }}">
+<form method="POST" action="{{ route('adleson') }}" enctype="multipart/form-data">
   {{ csrf_field() }}
   <div class="form-group">
     <label for="exampleInputEmail1">Lesson Name</label>
-    <input type="text" class="form-control" placeholder="Title" name="lesson_title" value="" >
+    <input type="text" class="form-control" placeholder="Title" name="lesson_title" value="no_content" >
   </div>
   <div class="form-group">
       <label for="exampleInputEmail1">Lesson Type</label>
       <select class="form-control" id="select_type" name="lestype">
           <option value="1">Video Content</option>
           <option value="2">Documenet Content</option>
-          <option value="0">Files</option>
+          
       </select>
   </div>
-  <div class="form-group">
+  <div class="form-group" id="doc_body" style="">
       <label for="exampleFormControlTextarea1">Lesson Body</label>
-      <textarea class="form-control" id="tinymce" rows="3" name="lesson_body" ></textarea>
+      <textarea class="form-control" id="tinymce" rows="3" name="lesson_body"  ></textarea>
   </div>
   <input type="text" class="form-control" placeholder="Title" name="user_id" style="display:none;" value="1">
   <input type="text" class="form-control" placeholder="Title" name="l_order" style="display:none;" value="1">
   <input type="text" class="form-control" placeholder="Title" name="is_ok" style="display:none;" value="1">
 
+  
+  <div class="video_crpt" id="video_crpt" style="">
+      <div class="form-group" style="background-color: #e1e1e1;padding: 10px;border-style: hidden;border-radius: 10px;">
+          <div class="form-group-prepend">
+            <span class="form-group-text" id="inputGroupFileAddon01">Add Video Lesson</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="btn btn-primary" id="inputGroupFile01" name="video_url"
+              aria-describedby="inputGroupFileAddon01">
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="exampleFormControlTextarea1">Video Description</label>
+          <textarea class="form-control" id="see" rows="3" name="video_description"></textarea>
+      </div>
+  </div>
   
  
 
@@ -53,10 +73,39 @@
 
 <script>
 $(function() {
-  $('#select_type').change(function(){
-    $('.colors').hide();
+  $( document ).ready(function() {
+    var r = $( "#select_type" ).val();
+    if (r == 1 ) {
+    $("#video_crpt").show();
+    $("#doc_body").hide();
+    console.log(r);
+    } else if (r == 2) {
+    $("#video_crpt").hide();
+    $("#doc_body").show();
+    } else if (r == 3) {
+      console.log('seeee');
+    } else {
+      console.log('fsdfsdf');
+    }
+  });
+  $('#select_type').change(function(){    
     //$('#' + $(this).val()).show();
-    console.log('apple');
+   var r = $( "#select_type" ).val();
+
+   if (r == 1 ) {
+    $("#video_crpt").show();
+    $("#doc_body").hide();
+    console.log(r);
+   } else if (r == 2) {
+    $("#video_crpt").hide();
+    $("#doc_body").show();
+   } else if (r == 3) {
+     console.log('seeee');
+   } else {
+     console.log('fsdfsdf');
+   }
+
+   
   });
 });
 </script>

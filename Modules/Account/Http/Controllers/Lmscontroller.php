@@ -80,7 +80,12 @@ class Lmscontroller extends Controller
 
         
 
-        return view('public.account.lms.open_course',['course_data' =>  $course_data,'les_data' =>  $les_data,'lesbody' =>  $lesbody,'lestype' =>  $lestype]);
+        return view('public.account.lms.open_course',
+        ['course_data' =>  $course_data,
+        'les_data' =>  $les_data,
+        'lesbody' =>  $lesbody,
+        'lestype' =>  $lestype
+        ]);
     }
 
     public function lesson_iol($course_id,$les_id) 
@@ -91,6 +96,7 @@ class Lmscontroller extends Controller
         $lesbody= $les_magnet->lesson_body;
         $lestype= $les_magnet->lesson_type;
         $video_url= $les_magnet->video_url;
+        $lesson_id= $les_magnet->lesson_id;
         $video_description= $les_magnet->video_description;
         
        // return view('public.account.lms.open_course',$les_data,$course_data,['rll' =>  $lesbody]);
@@ -102,6 +108,7 @@ class Lmscontroller extends Controller
         'lestype' =>  $lestype,
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
+        'lesson_id' =>  $lesson_id,
         ]);
 
     }
@@ -120,5 +127,18 @@ class Lmscontroller extends Controller
         //return view('admin::purches_order.purches_order');
         return redirect()->route('getcourses',['mycourse_id' => $id]); 
 
+    }
+
+    function getles_vid($les_id)
+    {
+        $data = DB::table('lessons')->where('lesson_id', $les_id)->first();
+        $path = storage_path('app/public/video_url/') . $data->video_url;    
+        if(!File::exists($path)) 
+            $path = storage_path('app/public/video_url/') . 'default.png';
+            $file = File::get($path);
+            $type = File::mimeType($path);
+            $response = Response::make($file, 200);
+            $response->header("Content-Type", $type);
+        return $response;
     }
 }

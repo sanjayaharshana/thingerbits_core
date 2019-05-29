@@ -28,13 +28,14 @@ Route::middleware('auth')->group(function () {
 
  
 
-  
+  Route::get('account/sft/course_img/{course_id}', 'Lmscontroller@getcourse_img')->name('getcourse_img');
+  Route::get('account/sft/les_vid/{les_id}', 'Lmscontroller@getles_vid')->name('getles_vid');
+
 
   //LMS Hadling Pacmargin 
   //The besthing controller csharp
 
   Route::get('account/lms', 'Lmscontroller@getcourses')->name('getcourses');
-  Route::get('account/sft/course_img/{course_id}', 'Lmscontroller@getcourse_img')->name('getcourse_img');
   Route::get('account/lms/my_courses_getdata/', 'Lmscontroller@my_courses_getdata')->name('my_courses_getdata');
   Route::get('account/lms/my_courses/', 'Lmscontroller@my_courses')->name('my_courses');
 

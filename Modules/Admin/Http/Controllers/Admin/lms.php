@@ -114,8 +114,18 @@ class lms extends Controller
         $is_ok = $reql->input('is_ok');
 
         $lesson_type = $reql->input('lestype');
-        $video_url = $reql->input('video_url');
+        $video_url = $reql->file('video_url');
         $video_description = $reql->input('video_description');
+
+        if($reql->hasFile('video_url')) {
+            $filenameWithExt = $reql->file('video_url')->getClientOriginalName();          
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);                       
+            $extension = $reql->file('video_url')->getClientOriginalExtension();            
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
+            $path = $reql->file('video_url')->    storeAs('video_url', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }      
 
 
         $data = array(
@@ -126,7 +136,7 @@ class lms extends Controller
             'l_order'=>$l_order,
             'is_ok' => $is_ok,
             'lesson_type' => $lesson_type,
-            'video_url' => $video_url,
+            'video_url' => $fileNameToStore,
             'video_description' => $video_description
         );
 
@@ -213,6 +223,11 @@ class lms extends Controller
             $response = Response::make($file, 200);
             $response->header("Content-Type", $type);
         return $response;
+    }
+
+    function getles_vid($les_id)
+    {
+        echo $les_id;
     }
 
     
