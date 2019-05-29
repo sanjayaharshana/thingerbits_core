@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use DB;
 use Log;
 use Response;
+use URL;
 
 
 class Lmscontroller extends Controller
@@ -65,8 +66,10 @@ class Lmscontroller extends Controller
     }
 
     public function my_courses(){
-        
-        return view('public.account.lms.mycourse');
+
+        $url = URL::to("/");
+        //dd($url);
+        return view('public.account.lms.mycourse', ['url' =>  $url]);
     }
 
     public function course_open($id)
