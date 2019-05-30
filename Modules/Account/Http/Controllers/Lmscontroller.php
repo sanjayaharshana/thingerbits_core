@@ -83,10 +83,12 @@ class Lmscontroller extends Controller
         $video_url = '0';
         $video_description = '0';
         $lesson_id = '0';
+        $lesson_title ='Welcome Page';
 
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
         'les_data' =>  $les_data,
+        'lesson_title' => $lesson_title, 
         'lesbody' =>  $lesbody,
         'lestype' =>  $lestype,
         'video_url' =>  $video_url,
@@ -100,6 +102,8 @@ class Lmscontroller extends Controller
         $les_data = DB::table('lessons')->where('course_id', $course_id)->orderBy('l_order', 'ASC')->get();
         $course_data = DB::table('course_list')->where('course_id', $course_id)->first();    
         $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
+
+        $lesson_title = $les_magnet->lesson_title;
         $lesbody= $les_magnet->lesson_body;
         $lestype= $les_magnet->lesson_type;
         $video_url= $les_magnet->video_url;
@@ -111,6 +115,7 @@ class Lmscontroller extends Controller
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
         'les_data' =>  $les_data,
+        'lesson_title'=> $lesson_title,
         'lesbody' =>  $lesbody,
         'lestype' =>  $lestype,
         'video_url' =>  $video_url,

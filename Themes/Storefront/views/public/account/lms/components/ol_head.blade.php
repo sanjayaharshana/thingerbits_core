@@ -4,6 +4,11 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
+    <style>
+        .body{
+            background: white;
+             }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Thingerbits Stuff Admin</title>
@@ -66,6 +71,7 @@
     </style>
 </head>
 
+
 <body>
     <!-- Left Panel -->
     @include('public.account.lms.components.ol_sidebar')
@@ -81,8 +87,9 @@
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
+               
+
             </div>
-            
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
@@ -93,10 +100,12 @@
                
         @include('public.account.lms..components.notify_items')
 
+        
 
                 </div>
             </div>
         </header>
+        <h2 style="background: #009688;color: aliceblue;padding: 20px;margin: 10px 100px;border-radius:0px 0px 30px 30px;">{{ $lesson_title }}</h2>
         <div class="content" style="background: #f4f4f4;height: 561px;">
                 <!-- Animated -->
                 <div class="animated fadeIn">

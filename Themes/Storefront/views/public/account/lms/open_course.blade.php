@@ -3,10 +3,10 @@
     html {scroll-behavior: smooth;}
 </style>
 <br>
+
 <div class="row">
-        @if ($lestype == 1)
-        <video width="100%" controls style="height: -webkit-fill-available;">
-          
+        @if ($lestype == 1)        
+        <video width="100%" controls style="height: -webkit-fill-available;">          
                 <source src="{{ URL::to('/')}}/account/sft/les_vid/{{ $lesson_id }}" type="video/mp4">
                 <source src="mov_bbb.ogg" type="video/ogg">
                 Your browser does not support HTML5 video.
@@ -15,10 +15,10 @@
         <div class="" style="">
             <div class="container"> <br> 
                 <h2>Video Description</h2>          
-                Get the more info with LMS<br><br>
+                <br>
                 <p>
-                    {{$video_description}}
-                </p>
+                  {{$video_description}}
+                </p><br><br>
                 <button type="button" class="btn btn-success">Complete Lesson</button><br><br>
                 <br>
             </div>
