@@ -71,6 +71,14 @@ class lms extends Controller
 
     }
 
+    public function update_course (Request $req)
+    {
+        $lesson_id = $req->input('lesson_id');
+        $course_id = $req->input('course_id');
+        $lesson_title = $req->input('lesson_title');
+        $lesson_body = $req->input('lesson_body');  
+    }
+
     public function updatelesson (Request $req) 
     {
         
