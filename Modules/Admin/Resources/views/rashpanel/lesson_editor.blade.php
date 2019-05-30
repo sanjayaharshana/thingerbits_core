@@ -11,35 +11,107 @@
 
 <head>
 <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 
 </head>
 
 @section('content')
 
+
 @foreach ($data as $rool)
 
-<form method="POST" action="{{ route('lesupdate') }}">
+<form method="POST" action="{{ route('lesupdate') }}" enctype="multipart/form-data">
   {{ csrf_field() }}
   <div class="form-group">
     <label for="exampleInputEmail1">Lesson Name</label>
-    <input type="text" class="form-control" placeholder="Title" name="lesson_title" value="{{ $rool->lesson_title }}" >
+    <input type="text" class="form-control" placeholder="Title" name="lesson_title" value="{{$rool->lesson_title}}" >
   </div>
   <div class="form-group">
-      <label for="exampleFormControlTextarea1">Lesson Body</label>
-      <textarea class="form-control" id="tinymce" rows="3" name="lesson_body" >{{ $rool->lesson_body }}</textarea>
+      <label for="exampleInputEmail1">Order</label>
+      <input type="number" class="form-control" placeholder="Title" name="l_order" style="" value="{{$rool->l_order}}">
   </div>
-  <input type="text" class="form-control" placeholder="Title" name="lesson_id" style="display:none;" value="{{ $rool->lesson_id }}">
-  <input type="text" class="form-control" placeholder="Title" name="course_id" style="display:none;" value="{{ $rool->course_id }}">
-
+  <div class="form-group">
+      <label for="exampleInputEmail1">Lesson Type</label>
+  <select class="form-control" id="select_type" name="lestype" value="{{$rool->lesson_type}}">
+          <option value="1">Video Content</option>
+          <option value="2">Documenet Content</option>          
+  </select>
+  </div>
+  <div class="form-group" id="doc_body" style="">
+      <label for="exampleFormControlTextarea1">Lesson Body</label>
+      <textarea class="form-control" id="tinymce" rows="3" name="lesson_body">{{$rool->lesson_body}}</textarea>
+  </div>
+  <input type="text" class="form-control" placeholder="Title" name="lesson_id" style="display:none;" value="{{$rool->lesson_id}}">
+  <input type="text" class="form-control" placeholder="Title" name="course_id" style="display:none;" value="{{$rool->course_id}}">
+  <input type="text" class="form-control" placeholder="Title" name="user_id" style="display:none;" value="{{$rool->user_id}}">
+  <input type="text" class="form-control" placeholder="Title" name="is_ok" style="display:none;" value="{{$rool->is_ok}}">
+  <div class="video_crpt" id="video_crpt" style="">
+      <div class="form-group" style="background-color: #e1e1e1;padding: 10px;border-style: hidden;border-radius: 10px;">
+          <div class="form-group-prepend">
+            <span class="form-group-text" id="inputGroupFileAddon01">Add Video Lesson</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="btn btn-primary" id="inputGroupFile01" name="video_url"
+              aria-describedby="inputGroupFileAddon01" value="{{$rool->video_url}}">
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="exampleFormControlTextarea1">Video Description</label>
+          <textarea class="form-control" id="see" rows="3" name="video_description">{{$rool->video_description}}</textarea>
+      </div>
+  </div> 
+  <input type="text" class="form-control" placeholder="Title" name="apple" style="display:none;" value="1">
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
+@endforeach
+
+
+<script>
+$(function() {
+  $( document ).ready(function() {
+    var r = $( "#select_type" ).val();
+    if (r == 1 ) {
+    $("#video_crpt").show();
+    $("#doc_body").hide();
+    console.log(r);
+    } else if (r == 2) {
+    $("#video_crpt").hide();
+    $("#doc_body").show();
+    } else if (r == 3) {
+      console.log('seeee');
+    } else {
+      console.log('fsdfsdf');
+    }
+  });
+  $('#select_type').change(function(){    
+    //$('#' + $(this).val()).show();
+   var r = $( "#select_type" ).val();
+
+   if (r == 1 ) {
+    $("#video_crpt").show();
+    $("#doc_body").hide();
+    console.log(r);
+   } else if (r == 2) {
+    $("#video_crpt").hide();
+    $("#doc_body").show();
+   } else if (r == 3) {
+     console.log('seeee');
+   } else {
+     console.log('fsdfsdf');
+   }
+
+   
+  });
+});
+</script>
 
 <script>
  CKEDITOR.replace( 'lesson_body' );
 </script>
-
-
-@endforeach
 
 
 

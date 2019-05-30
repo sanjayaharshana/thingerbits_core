@@ -35,3 +35,9 @@ Route::delete('products/{ids}', [
     'uses' => 'ProductController@destroy',
     'middleware' => 'can:admin.products.destroy',
 ]);
+
+//Purches Order
+
+
+
+

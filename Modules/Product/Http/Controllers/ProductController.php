@@ -92,4 +92,11 @@ class ProductController extends Controller
 
         return $product->reviews()->paginate(15, ['*'], 'reviews');
     }
+
+    function poengine()
+    {
+        echo "apple";
+    }
+
+   
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace Modules\Page\Http\Controllers;
+Use Redirect;
 
 use Illuminate\Routing\Controller;
 
@@ -15,6 +16,7 @@ class HomeController extends Controller
     {   
         //Homapage Manager
         return view('public.home_land.index');
+
     }
 
     public function shopfunction() 

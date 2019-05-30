@@ -91,7 +91,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="unity-link" href="resellershosting.html">
+                                                <a class="unity-link" href="account/lms">
                                                     <div class="unity-box">
                                                         <div class="unity-icon">
                                                             <img src="{{ (Theme::url('public/HomeLand/images/service-icon2.svg')) }}" alt="">

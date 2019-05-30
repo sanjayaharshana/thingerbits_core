@@ -38,4 +38,6 @@ class ProductController extends Controller
      * @var array|string
      */
     protected $validation = SaveProductRequest::class;
+
+  
 }

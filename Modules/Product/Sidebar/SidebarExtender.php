@@ -37,7 +37,7 @@ class SidebarExtender extends BaseSidebarExtender
                 //Adding Engine
                 $item->item('Purchase Order', function (Item $item) {
                     $item->weight(5);
-                    $item->route('admin.products.index');
+                    $item->route('purchase_oder');
                     $item->authorize(
                         $this->auth->hasAccess('admin.products.purchesoder')
                     );
