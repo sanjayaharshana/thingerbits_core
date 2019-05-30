@@ -93,6 +93,7 @@
                 </div>
             </div>
         </header>
+
         <div class="content" style="background: #f4f4f4;height: 561px;">
                 <!-- Animated -->
                 <div class="animated fadeIn">
