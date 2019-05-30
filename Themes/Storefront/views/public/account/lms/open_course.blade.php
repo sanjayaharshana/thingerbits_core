@@ -2,7 +2,7 @@
 <style>
     html {scroll-behavior: smooth;}
 </style>
-<h3>Welcome Back</h3><br>
+<br>
 <div class="row">
         @if ($lestype == 1)
         <video width="100%" controls style="height: -webkit-fill-available;">
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        @elseif ($lestype == 0) 
+        @elseif ($lestype == 2) 
         <div class="container">            
             {!!$lesbody !!}
         </div>
