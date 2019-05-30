@@ -39,7 +39,7 @@ class lms extends Controller
 
     public function courseopener($courseid) 
     {
-        $data['data'] = DB::table('lessons')->where('course_id', $courseid)->get();
+        $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
 
         if(count($data) > 0)
         {
@@ -55,7 +55,7 @@ class lms extends Controller
 
     public function lessoneditor( $lessonid) {
        // return view('admin::rashpanel.lesson_editor');
-        $data['data'] = DB::table('lessons')->where('lesson_id', $lessonid)->get();
+        $data['data'] = DB::table('lessons')->where('lesson_id', $lessonid)->orderBy('l_order', 'ASC')->get();
         $this->x = $lessonid;
 
         if(count($data) > 0)
@@ -78,9 +78,36 @@ class lms extends Controller
         $course_id = $req->input('course_id');
         $lesson_title = $req->input('lesson_title');
         $lesson_body = $req->input('lesson_body');
+
+        $user_id = $req->input('user_id');
+        $l_order = $req->input('l_order');
+        $is_ok = $req->input('is_ok');
+
+        $lesson_type = $req->input('lestype');
+        $video_url = $req->file('video_url');
+        $video_description = $req->input('video_description');
+
+        if($req->hasFile('video_url')) {
+            $filenameWithExt = $req->file('video_url')->getClientOriginalName();          
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);                       
+            $extension = $req->file('video_url')->getClientOriginalExtension();            
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
+            $path = $req->file('video_url')->    storeAs('video_url', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }      
         
        // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
-       DB::table('lessons')->where('lesson_id', $lesson_id )->update(['lesson_title' => $lesson_title,'lesson_body' => $lesson_body,]);
+       DB::table('lessons')->where('lesson_id', $lesson_id )->update([
+           'lesson_title' => $lesson_title,
+           'lesson_body' => $lesson_body,
+           'user_id'=>$user_id,
+           'l_order'=>$l_order,
+           'is_ok' => $is_ok,
+           'lesson_type' => $lesson_type,
+           'video_url' => $fileNameToStore,
+           'video_description' => $video_description           
+           ]);
 
         //echo $lesson_id;
         return redirect()->route('courseopenerrc',$course_id);        
@@ -225,10 +252,7 @@ class lms extends Controller
         return $response;
     }
 
-    function getles_vid($les_id)
-    {
-        echo $les_id;
-    }
+   
 
     
 

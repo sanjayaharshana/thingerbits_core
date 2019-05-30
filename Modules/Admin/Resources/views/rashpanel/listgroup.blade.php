@@ -16,7 +16,8 @@
     @endforeach
 </ul>
 
-<a href="admin/addles/add/{{ $lesson->course_id }}" style="float: right;" class="btn btn-primary">Add Lesson</a><br><br>
+<a href="admin/addles/add/{{ $lesson->course_id }}" style="float: right;margin: 0px 10px;" class="btn btn-primary"><i class="fa fa-bars"></i> &nbsp; Add Lesson</a>
+<a href="admin/addles/add/{{ $lesson->course_id }}" style="float: right;margin: 0px 0px;" class="btn btn-primary"><i class="fa fa-cogs"></i> &nbsp; Edit Course Attrib</a><br><br>
 
 
 <h2>Exam</h2><br>
