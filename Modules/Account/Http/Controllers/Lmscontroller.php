@@ -109,6 +109,7 @@ class Lmscontroller extends Controller
         $video_url= $les_magnet->video_url;
         $lesson_id= $les_magnet->lesson_id;
         $video_description= $les_magnet->video_description;
+        $video_url = $les_magnet->video_url;
         
        // return view('public.account.lms.open_course',$les_data,$course_data,['rll' =>  $lesbody]);
 
@@ -121,6 +122,7 @@ class Lmscontroller extends Controller
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
+        'video_url' => $video_url,
         ]);
 
     }

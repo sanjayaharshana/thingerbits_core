@@ -149,7 +149,7 @@ class lms extends Controller
         $is_ok = $reql->input('is_ok');
 
         $lesson_type = $reql->input('lestype');
-        $video_url = $reql->file('video_url');
+        $video_url = $reql->input('filepath');
         $video_description = $reql->input('video_description');
 
         if($reql->hasFile('video_url')) {
@@ -159,7 +159,7 @@ class lms extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
             $path = $reql->file('video_url')->    storeAs('video_url', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = $reql->input('filepath');
         }      
 
 

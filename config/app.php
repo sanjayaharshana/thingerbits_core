@@ -171,6 +171,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Notifications\NotificationServiceProvider::class,
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -228,5 +230,7 @@ return [
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'FleetCart' => FleetCart\Facades\FleetCart::class,
         'Module' => \Nwidart\Modules\Facades\Module::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+
     ],
 ];

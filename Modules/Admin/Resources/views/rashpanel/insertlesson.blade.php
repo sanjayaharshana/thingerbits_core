@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
 
 <head>
+<link rel="shortcut icon" type="image/png" href="{{ asset('vendor/laravel-filemanager/img/folder.png') }}">
 <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
 <script
@@ -56,18 +57,21 @@
           <div class="form-group-prepend">
             <span class="form-group-text" id="inputGroupFileAddon01">Add Video Lesson</span>
           </div>
-          <div class="custom-file">
-            <input type="file" class="btn btn-primary" id="inputGroupFile01" name="video_url"
-              aria-describedby="inputGroupFileAddon01">
+          <div class="input-group">
+              <span class="input-group-btn">
+                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                  <i class="fa fa-picture-o"></i> Choose
+                </a>
+              </span>
+          <input id="thumbnail" class="form-control" type="text" name="filepath">
           </div>
+         
       </div>
       <div class="form-group">
           <label for="exampleFormControlTextarea1">Video Description</label>
           <textarea class="form-control" id="see" rows="3" name="video_description"></textarea>
       </div>
   </div>
-  
- 
 
   <input type="text" class="form-control" placeholder="Title" name="apple" style="display:none;" value="{{ $course_id }}">
 
@@ -117,9 +121,35 @@ $(function() {
 </script>
 
 <script>
- CKEDITOR.replace( 'lesson_body' );
+    var options = {
+      filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+      filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+      filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+      filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
 </script>
 
+<script>
+ CKEDITOR.replace( 'lesson_body',options );
+</script>
+
+
+
+
+
+
+
+<script>
+    var route_prefix = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
+</script>
+
+<script>
+    {!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/js/lfm.js')) !!}
+</script>
+<script>
+    $('#lfm').filemanager('file', {prefix: route_prefix});
+    $('#lfm2').filemanager('file', {prefix: route_prefix});
+</script>
 
 
 @endsection

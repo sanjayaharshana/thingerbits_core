@@ -17,6 +17,9 @@
         .footer{
             display: none;
         }
+        .main, .wrapper {
+            position: unset;
+        }
 </style>
 <head>
     <meta charset="UTF-8">
@@ -30,14 +33,7 @@
     <link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/custom.css')) }}">
 </head>
 
-<body class="fullpage">
-        <div id="form-section" class="container-fluid signin">
-            <div class="website-logo">
-                <a href="index.html">
-
-                </a>
-            </div>
-            <div class="row">
+<body class="fullpage">            
                 <div class="info-slider-holder" style="min-height:0px">
                     <div class="info-holder">
                         <h6>A Service you can anytime modify.</h6>
@@ -59,7 +55,7 @@
                 <div class="form-holder">
                     <div class="menu-holder">
                         <ul class="main-links">
-                            <li><a class="normal-link" href="signup.html">Don’t have an account?</a></li>
+                            <li><a class="normal-link" href="/register">Don’t have an account?</a></li>
                             <li><a class="sign-button" href="/register">Sign up</a></li>
                         </ul>
                     </div>

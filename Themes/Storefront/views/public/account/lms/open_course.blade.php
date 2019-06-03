@@ -7,7 +7,7 @@
 <div class="row">
         @if ($lestype == 1)        
         <video width="100%" controls style="height: -webkit-fill-available;">          
-                <source src="{{ URL::to('/')}}/account/sft/les_vid/{{ $lesson_id }}" type="video/mp4">
+                <source src="{{ $video_url }}" type="video/mp4">
                 <source src="mov_bbb.ogg" type="video/ogg">
                 Your browser does not support HTML5 video.
         </video>
