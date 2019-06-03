@@ -72,7 +72,7 @@
 </head>
 
 
-<body>
+<body  style="background: #f1f2f7;">
     <!-- Left Panel -->
     @include('public.account.lms.components.ol_sidebar')
 
