@@ -47,17 +47,21 @@
   <input type="text" class="form-control" placeholder="Title" name="lesson_id" style="display:none;" value="{{$rool->lesson_id}}">
   <input type="text" class="form-control" placeholder="Title" name="course_id" style="display:none;" value="{{$rool->course_id}}">
   <input type="text" class="form-control" placeholder="Title" name="user_id" style="display:none;" value="{{$rool->user_id}}">
-  <input type="text" class="form-control" placeholder="Title" name="is_ok" style="display:none;" value="{{$rool->is_ok}}">
+  <input type="text" class="form-control" placeholder="Title" name="is_ok" style="display:none;" value="{{ $rool->is_ok }}">
   <div class="video_crpt" id="video_crpt" style="">
-      <div class="form-group" style="background-color: #e1e1e1;padding: 10px;border-style: hidden;border-radius: 10px;">
-          <div class="form-group-prepend">
-            <span class="form-group-text" id="inputGroupFileAddon01">Add Video Lesson</span>
-          </div>
-          <div class="custom-file">
-            <input type="file" class="btn btn-primary" id="inputGroupFile01" name="video_url"
-              aria-describedby="inputGroupFileAddon01" value="{{$rool->video_url}}">
-          </div>
+    <div class="form-group" style="background-color: #e1e1e1;padding: 10px;border-style: hidden;border-radius: 10px;">
+      <div class="form-group-prepend">
+        <span class="form-group-text" id="inputGroupFileAddon01">Add Video Lesson</span>
       </div>
+      <div class="input-group">
+          <span class="input-group-btn">
+            <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+              <i class="fa fa-picture-o"></i> Choose
+            </a>
+          </span>
+      <input id="thumbnail" class="form-control" type="text" name="filepath" value="{{ $rool->video_url }}">
+    </div>         
+  </div>
       <div class="form-group">
           <label for="exampleFormControlTextarea1">Video Description</label>
           <textarea class="form-control" id="see" rows="3" name="video_description">{{$rool->video_description}}</textarea>
@@ -113,6 +117,26 @@ $(function() {
  CKEDITOR.replace( 'lesson_body' );
 </script>
 
+<script>
+  var options = {
+    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+  };
+</script>
+
+<script>
+  var route_prefix = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
+</script>
+
+<script>
+  {!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/js/lfm.js')) !!}
+</script>
+<script>
+  $('#lfm').filemanager('file', {prefix: route_prefix});
+  $('#lfm2').filemanager('file', {prefix: route_prefix});
+</script>
 
 
 @endsection

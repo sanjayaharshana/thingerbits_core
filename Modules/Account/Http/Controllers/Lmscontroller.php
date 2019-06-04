@@ -84,6 +84,7 @@ class Lmscontroller extends Controller
         $video_description = '0';
         $lesson_id = '0';
         $lesson_title ='Welcome Page';
+        $video_url = 'SDFSLO';
 
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
@@ -94,6 +95,7 @@ class Lmscontroller extends Controller
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
+        'video_url' => $video_url,
         ]);
     }
 
