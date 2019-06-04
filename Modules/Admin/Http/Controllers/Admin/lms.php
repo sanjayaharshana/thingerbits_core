@@ -92,7 +92,7 @@ class lms extends Controller
         $is_ok = $req->input('is_ok');
 
         $lesson_type = $req->input('lestype');
-        $video_url = $req->file('video_url');
+        $video_url = $req->input('video_url');
         $video_description = $req->input('video_description');
 
         if($req->hasFile('video_url')) {
@@ -102,7 +102,7 @@ class lms extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
             $path = $req->file('video_url')->    storeAs('video_url', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = $req->input('filepath');
         }      
         
        // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
