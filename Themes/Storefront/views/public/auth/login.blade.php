@@ -36,17 +36,13 @@
 <body class="fullpage">            
                 <div class="info-slider-holder" style="min-height:0px">
                     <div class="info-holder">
-                        <h6>A Service you can anytime modify.</h6>
-                        <div class="bold-title">Bestway to learn<br>
-                            Arduino <span> {{ setting('store_name') }}</span></div>
+                        <h6></h6>
+                        <div class="bold-title">Endless Learning Resources<br>
+                            <span> {{ setting('store_name') }}</span></div>
                         <div class="mini-testimonials-slider">
                             <div>
-                                <div class="details-holder">
-                                    <h4>Chris Walker</h4>
-                                    <h5>CEO & CO-Founder @HelloBrandio</h5>
-                                    <p>“In hostify we trust. I am with them for over
-            7 years now. It always felt like home!
-            Loved their customer support”</p>
+                                <div class="details-holder">                                   
+                                    <p>“An ever growing global network of STEM enthusiasts”</p>
                                 </div>
                             </div>                            
                         </div>
