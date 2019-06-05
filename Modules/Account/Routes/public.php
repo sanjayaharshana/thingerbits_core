@@ -46,5 +46,8 @@ Route::middleware('auth')->group(function () {
  
   Route::post('account/lms/my_course/insert', 'Lmscontroller@add_my_course')->name('add_my_course');
 
+  Route::get('account/lms/my_courses/ajax/jsongetles/{lg_id}', 'Lmscontroller@jsongetles')->name('jsongetles');
+
+
   
 });

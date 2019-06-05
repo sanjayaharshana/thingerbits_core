@@ -75,7 +75,11 @@ class Lmscontroller extends Controller
     public function course_open($id)
     {
         
-        $les_data = DB::table('lessons')->where('course_id', $id)->orderBy('l_order', 'ASC')->get();
+
+        //$les_group = DB::table('les_group')->where('course_id', $id)->get();
+
+        $les_group = DB::table('les_group')->where('course_id', $id)->orderBy('lg_order', 'ASC')->get();
+
 
         $course_data = DB::table('course_list')->where('course_id', $id)->first(); 
         $lesbody= 'Welcome to Row';
@@ -88,7 +92,7 @@ class Lmscontroller extends Controller
 
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
-        'les_data' =>  $les_data,
+        'les_group' =>  $les_group,
         'lesson_title' => $lesson_title, 
         'lesbody' =>  $lesbody,
         'lestype' =>  $lestype,
@@ -156,5 +160,11 @@ class Lmscontroller extends Controller
             $response = Response::make($file, 200);
             $response->header("Content-Type", $type);
         return $response;
+    }
+
+    function jsongetles($lg_id)
+    {
+        $data = DB::table('lessons')->where('group_id', $lg_id)->get();
+        return Response::json($data);
     }
 }

@@ -64,8 +64,7 @@
                 </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="filepath">
-          </div>
-         
+        </div>         
       </div>
       <div class="form-group">
           <label for="exampleFormControlTextarea1">Video Description</label>
