@@ -41,7 +41,12 @@
                 var len = 0;               
                 for (i = 0; i < response.length; i++) {
                     console.log(response[i].lesson_title); 
-                    $('#'+ tagname).append('<li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">'+ response[i].lesson_title + '</a></li>');                           
+                    var lesid = response[i].lesson_id;
+                    var course_id = response[i].course_id; 
+                    
+                 
+
+                    $('#'+ tagname).append('<li><i class="fa fa-puzzle-piece"></i><a href="{{ url('/') }}/account/lms/my_courses/course_open/lesson/'+ course_id +'/'+ lesid + '">'+ response[i].lesson_title + '</a>');                           
                         }
                     }  
                 }); 

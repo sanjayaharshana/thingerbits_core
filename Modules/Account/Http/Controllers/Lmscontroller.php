@@ -108,6 +108,8 @@ class Lmscontroller extends Controller
         $les_data = DB::table('lessons')->where('course_id', $course_id)->orderBy('l_order', 'ASC')->get();
         $course_data = DB::table('course_list')->where('course_id', $course_id)->first();    
         $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
+        $les_group = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
+
 
         $lesson_title = $les_magnet->lesson_title;
         $lesbody= $les_magnet->lesson_body;
@@ -121,6 +123,7 @@ class Lmscontroller extends Controller
 
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
+        'les_group' =>  $les_group,
         'les_data' =>  $les_data,
         'lesson_title'=> $lesson_title,
         'lesbody' =>  $lesbody,
