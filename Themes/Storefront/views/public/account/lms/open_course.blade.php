@@ -8,9 +8,7 @@
 
 <div class="row">
 
-    <div class="container">
-      
-    </div>
+   
 
   
         @if ($lestype == 1)        
@@ -35,6 +33,10 @@
         @elseif ($lestype == 2) 
         <div class="container">            
             {!!$lesbody !!}
+        </div>
+        @else 
+        <div class="container"><br><br><br><br>
+            @include('public.account.lms.components.roller_menu')
         </div>
         @endif                           
    
