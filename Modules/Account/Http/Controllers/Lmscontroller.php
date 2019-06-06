@@ -110,6 +110,7 @@ class Lmscontroller extends Controller
         $course_data = DB::table('course_list')->where('course_id', $course_id)->first();    
         $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
         $les_group = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
+        $board_lesson = DB::table('lessons')->where('intro_board', '1')->get();
 
 
         $lesson_title = $les_magnet->lesson_title;
@@ -132,6 +133,8 @@ class Lmscontroller extends Controller
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
+        'board_lesson'=>$board_lesson,
+
         ]);
 
     }

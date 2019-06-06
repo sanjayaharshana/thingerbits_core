@@ -6,7 +6,7 @@
                 <ul class="nav navbar-nav">                  
                     <li class="menu-title">Lessons</li>
                     @foreach ($board_lesson as $iertem)
-                    <li class=""> <a href="http://localhost:8000/account/lms"><i class="menu-icon fa fa-laptop"></i> {{ $iertem->lesson_title }}  </a> </li>
+                    <li class=""> <a href="{{ url('/') }}/account/lms/my_courses/course_open/lesson/{{ $iertem->course_id }}/{{ $iertem->lesson_id }}"><i class="menu-icon fa fa-laptop"></i> {{ $iertem->lesson_title }}  </a> </li>
                    
                     @endforeach
                     

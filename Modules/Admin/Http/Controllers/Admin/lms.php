@@ -95,7 +95,7 @@ class lms extends Controller
         $l_order = $req->input('l_order');
         $is_ok = $req->input('is_ok');
 
-        $section = $reql->input('section');
+        $section = $req->input('section');
 
         $lesson_type = $req->input('lestype');
         $video_url = $req->input('video_url');
