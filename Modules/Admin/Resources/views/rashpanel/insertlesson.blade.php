@@ -42,6 +42,15 @@
           <option value="2">Documenet Content</option>          
       </select>
   </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Sections</label>
+    <select class="form-control" id="select_section" name="section">
+      @foreach ($group_section as $item)
+       <option value="{{ $item->les_group_id }}"> {{ $item->les_group_name }}</option>         
+      @endforeach            
+    </select>
+  </div>
   
   <div class="form-group" id="doc_body" style="">
       <label for="exampleFormControlTextarea1">Lesson Body</label>

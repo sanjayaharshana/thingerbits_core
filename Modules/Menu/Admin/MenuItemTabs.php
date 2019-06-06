@@ -35,6 +35,8 @@ class MenuItemTabs extends Tabs
         });
     }
 
+   
+
     private function categories()
     {
         $categories = Category::where('parent_id', null)->get()->sortBy('name')->pluck('name', 'id');

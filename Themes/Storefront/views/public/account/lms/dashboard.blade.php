@@ -1,5 +1,8 @@
 @include('public.account.lms.components.head')
-  
+
+
+
+
                 <div class="row">
                     @foreach ($data as $item)
                     <div class="col-lg-3">
@@ -11,7 +14,9 @@
                                     <small style="font-size: 70%; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; /* line-height: 16px; */ /* fallback */ max-height: 702px; /* fallback */ -webkit-line-clamp: 5; /* number of lines to show */ -webkit-box-orient: vertical;">
                                         {{ $item->course_discription }}
                                     </small><br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_{{ $item->course_id }}">Move to My Courses</button>
+                                    <div poplo="popover" title="{{ $item->course_title }}" data-content="Spacial offer">
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_{{ $item->course_id }}">Move to My Courses</button>
+                                    </div>
                                 </div>                           
                             </div>
                         </div>  
@@ -48,8 +53,11 @@
                     @endforeach                    
                 </div>
 
-              
+                
+
+             
                   
                   
 
 @include('public.account.lms.components.footer')
+

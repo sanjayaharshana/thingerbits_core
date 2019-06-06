@@ -24,6 +24,7 @@ class lms extends Controller
     public function lessionpan()
     {   
         $data['data'] = DB::table('course_list')->get(); 
+
         return view('admin::rashpanel.index',$data); 
     }
 
@@ -134,8 +135,9 @@ class lms extends Controller
 
     public function addlesson ($cour_id) 
     {
-    
-        return view('admin::rashpanel.insertlesson',['course_id' => $cour_id]);
+        $group_section['group_section'] = DB::table('les_group')->where('course_id',$cour_id)->get(); 
+
+        return view('admin::rashpanel.insertlesson',['course_id' => $cour_id],$group_section);
     }
 
     public function insertles(Request $reql) 
@@ -147,8 +149,11 @@ class lms extends Controller
         $user_id = $reql->input('user_id');
         $l_order = $reql->input('l_order');
         $is_ok = $reql->input('is_ok');
+        
+
 
         $lesson_type = $reql->input('lestype');
+        $section = $reql->input('section');
         $video_url = $reql->input('filepath');
         $video_description = $reql->input('video_description');
 
@@ -171,6 +176,7 @@ class lms extends Controller
             'l_order'=>$l_order,
             'is_ok' => $is_ok,
             'lesson_type' => $lesson_type,
+            'group_id' => $section,
             'video_url' => $fileNameToStore,
             'video_description' => $video_description
         );
