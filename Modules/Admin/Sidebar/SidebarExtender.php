@@ -32,6 +32,17 @@ class SidebarExtender extends BaseSidebarExtender
                 );
             });
         });
+
+        $menu->group('LMS', function (Group $group) {
+            $group->weight(10);
+
+            $group->item('Course Management', function (Item $item) {
+                $item->icon('fa fa-book');
+                $item->weight(15);
+                $item->route('lessonrout');   
+                $item->isActiveWhen(route('admin.dashboard.index', null, false));             
+            });
+        });
         
     }
 }
