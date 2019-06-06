@@ -39,8 +39,11 @@ class SidebarExtender extends BaseSidebarExtender
             $group->item('Course Management', function (Item $item) {
                 $item->icon('fa fa-book');
                 $item->weight(15);
-                $item->route('lessonrout');   
-                $item->isActiveWhen(route('admin.dashboard.index', null, false));             
+                $item->authorize(
+                    $this->auth->hasAnyAccess(['admin.sliders.index',''])
+                );
+                //$item->route('lessonrout');   
+               // $item->isActiveWhen(route('admin.dashboard.index', null, false));             
             });
         });
         
