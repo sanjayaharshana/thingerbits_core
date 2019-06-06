@@ -35,9 +35,34 @@
             {!!$lesbody !!}
         </div>
         @else 
-        <div class="container"><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="col-lg-4">
+            <div class="card" style="height: 350px;">
+                <div class="card-body">                               
+                    <h6 style="text-align: center;font-weight: bold;"><br>Thingerbits Example</h6>
+                    <br>
+                    <small style="font-size: 85%; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; /* line-height: 16px; */ /* fallback */ max-height: 702px; /* fallback */ -webkit-line-clamp: 5; /* number of lines to show */ -webkit-box-orient: vertical;">
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    </small><br>   
+                    <div class="" style="background-image:url(sdfsd.pg);"></div>
+                  
+                </div>                           
+            </div>
+        </div>
+        <div class="col-sm">
             @include('public.account.lms.components.roller_menu')
         </div>
+        <div class="col-lg-4">
+            <div class="card" style="height: 350px;">
+                <div class="card-body">                               
+                    <h6 style="text-align: center;font-weight: bold;"><br>Thingerbits Example</h6>
+                    <br>
+                    <small style="font-size: 85%; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; /* line-height: 16px; */ /* fallback */ max-height: 702px; /* fallback */ -webkit-line-clamp: 5; /* number of lines to show */ -webkit-box-orient: vertical;">
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    </small><br>
+                </div>                           
+            </div>
+        </div>       
         @endif                           
    
 <script>
