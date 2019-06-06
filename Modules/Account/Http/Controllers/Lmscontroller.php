@@ -80,6 +80,7 @@ class Lmscontroller extends Controller
 
         $les_group = DB::table('les_group')->where('course_id', $id)->orderBy('lg_order', 'ASC')->get();
 
+        $board_lesson = DB::table('lessons')->where('intro_board', '1')->get();
 
         $course_data = DB::table('course_list')->where('course_id', $id)->first(); 
         $lesbody= 'Welcome to Row';
@@ -89,7 +90,6 @@ class Lmscontroller extends Controller
         $lesson_id = '0';
         $lesson_title ='Welcome Page';
         $video_url = 'SDFSLO';
-
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
         'les_group' =>  $les_group,
@@ -100,6 +100,7 @@ class Lmscontroller extends Controller
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
         'video_url' => $video_url,
+        'board_lesson'=>$board_lesson,
         ]);
     }
 
@@ -131,7 +132,6 @@ class Lmscontroller extends Controller
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
-        'video_url' => $video_url,
         ]);
 
     }

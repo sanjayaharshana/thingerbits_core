@@ -14,7 +14,7 @@ Route::get('/lessonpanel', 'lms@lessionpan')->name('lessonrout');
 Route::get('/addlesson', 'lms@addles')->name('addlesson');
 Route::post('/intertlesson', 'lms@insertlesson')->name('lessoninsert');
 Route::get('/lessonpanel/{courseid}', 'lms@courseopener')->name('courseopenerrc');
-Route::get('/parellel/{lessonid}', 'lms@lessoneditor')->name('lessonedit');
+Route::get('/parellel/{courseid}/{lessonid}', 'lms@lessoneditor')->name('lessonedit');
 Route::post('/parellel/update', 'lms@updatelesson')->name('lesupdate');
 Route::get('/parellel/delete/{valueid}', 'lms@deletelesson')->name('lesdelete');
 Route::get('/addles/add/{cour_id}', 'lms@addlesson')->name('addlesadd');

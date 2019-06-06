@@ -36,15 +36,16 @@ class SidebarExtender extends BaseSidebarExtender
         $menu->group('LMS', function (Group $group) {
             $group->weight(10);
 
-            $group->item('Course Management', function (Item $item) {
+            $group->item('Course Management', function (item $item) {
                 $item->icon('fa fa-book');
                 $item->weight(15);
                 $item->authorize(
-                    $this->auth->hasAnyAccess(['admin.lms.index','lessonrout'])
+                    $this->auth->hasAnyAccess(['admin.lms.index','lessonrout',null, false])
                 );
-                $item->route('lessonrout');   
-               // $item->isActiveWhen(route('admin.dashboard.index', null, false));             
+                $item->route('lessonrout');                   
+                // $item->isActiveWhen(route('admin.dashboard.index', null, false));
             });
+           
         });
         
     }

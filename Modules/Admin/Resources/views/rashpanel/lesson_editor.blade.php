@@ -34,6 +34,14 @@
       <input type="number" class="form-control" placeholder="Title" name="l_order" style="" value="{{$rool->l_order}}">
   </div>
   <div class="form-group">
+      <label for="exampleInputEmail1">Sections</label>
+      <select class="form-control" id="select_section" name="section">
+        @foreach ($group_section as $item)
+         <option value="{{ $item->les_group_id }}"> {{ $item->les_group_name }}</option>         
+        @endforeach            
+      </select>
+  </div>
+  <div class="form-group">
       <label for="exampleInputEmail1">Lesson Type</label>
   <select class="form-control" id="select_type" name="lestype" value="{{$rool->lesson_type}}">
           <option value="1">Video Content</option>

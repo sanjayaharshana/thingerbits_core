@@ -5,6 +5,11 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">                  
                     <li class="menu-title">Lessons</li>
+                    @foreach ($board_lesson as $iertem)
+                    <li class=""> <a href="http://localhost:8000/account/lms"><i class="menu-icon fa fa-laptop"></i> {{ $iertem->lesson_title }}  </a> </li>
+                   
+                    @endforeach
+                    
                     @foreach($les_group as $lg_data)
                     <li class="menu-item-has-children dropdown">
                     <a href="#" id="apple" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>{{ $lg_data->les_group_name }}</a>

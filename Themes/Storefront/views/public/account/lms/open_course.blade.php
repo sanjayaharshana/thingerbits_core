@@ -4,7 +4,15 @@
 </style>
 <br>
 
+
+
 <div class="row">
+
+    <div class="container">
+      
+    </div>
+
+  
         @if ($lestype == 1)        
         <video width="100%" controls style="height: -webkit-fill-available;">          
                 <source src="{{ $video_url }}" type="video/mp4">

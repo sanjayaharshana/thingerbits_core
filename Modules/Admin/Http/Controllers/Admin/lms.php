@@ -54,9 +54,11 @@ class lms extends Controller
        // return view('admin::rashpanel.listgroup');
     }
 
-    public function lessoneditor( $lessonid) {
+    public function lessoneditor( $courseid,$lessonid) {
        // return view('admin::rashpanel.lesson_editor');
         $data['data'] = DB::table('lessons')->where('lesson_id', $lessonid)->orderBy('l_order', 'ASC')->get();
+        $data['group_section'] = DB::table('les_group')->where('course_id', $courseid)->get();
+
         $this->x = $lessonid;
 
         if(count($data) > 0)
@@ -88,9 +90,12 @@ class lms extends Controller
         $lesson_title = $req->input('lesson_title');
         $lesson_body = $req->input('lesson_body');
 
+      
         $user_id = $req->input('user_id');
         $l_order = $req->input('l_order');
         $is_ok = $req->input('is_ok');
+
+        $section = $reql->input('section');
 
         $lesson_type = $req->input('lestype');
         $video_url = $req->input('video_url');
@@ -111,6 +116,7 @@ class lms extends Controller
            'lesson_title' => $lesson_title,
            'lesson_body' => $lesson_body,
            'user_id'=>$user_id,
+           'group_id'=>$section,
            'l_order'=>$l_order,
            'is_ok' => $is_ok,
            'lesson_type' => $lesson_type,
@@ -247,6 +253,9 @@ class lms extends Controller
     {
         DB::table('lessons')->where('course_id', $course_id )->delete();
         DB::table('course_list')->where('course_id', $course_id )->delete();
+        DB::table('les_group')->where('course_id', $course_id )->delete();
+        DB::table('my_courses')->where('course_id', $course_id )->delete();
+
 
         return back(); 
     }
