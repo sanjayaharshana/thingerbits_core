@@ -24,6 +24,7 @@ class lms extends Controller
     public function lessionpan()
     {   
         $data['data'] = DB::table('course_list')->get(); 
+
         return view('admin::rashpanel.index',$data); 
     }
 
@@ -53,9 +54,11 @@ class lms extends Controller
        // return view('admin::rashpanel.listgroup');
     }
 
-    public function lessoneditor( $lessonid) {
+    public function lessoneditor( $courseid,$lessonid) {
        // return view('admin::rashpanel.lesson_editor');
         $data['data'] = DB::table('lessons')->where('lesson_id', $lessonid)->orderBy('l_order', 'ASC')->get();
+        $data['group_section'] = DB::table('les_group')->where('course_id', $courseid)->get();
+
         $this->x = $lessonid;
 
         if(count($data) > 0)
@@ -87,12 +90,15 @@ class lms extends Controller
         $lesson_title = $req->input('lesson_title');
         $lesson_body = $req->input('lesson_body');
 
+      
         $user_id = $req->input('user_id');
         $l_order = $req->input('l_order');
         $is_ok = $req->input('is_ok');
 
+        $section = $req->input('section');
+
         $lesson_type = $req->input('lestype');
-        $video_url = $req->file('video_url');
+        $video_url = $req->input('video_url');
         $video_description = $req->input('video_description');
 
         if($req->hasFile('video_url')) {
@@ -102,7 +108,7 @@ class lms extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
             $path = $req->file('video_url')->    storeAs('video_url', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = $req->input('filepath');
         }      
         
        // $data = array('lesson_title'->$lesson_title,'lesson_body'->$lesson_body);
@@ -110,6 +116,7 @@ class lms extends Controller
            'lesson_title' => $lesson_title,
            'lesson_body' => $lesson_body,
            'user_id'=>$user_id,
+           'group_id'=>$section,
            'l_order'=>$l_order,
            'is_ok' => $is_ok,
            'lesson_type' => $lesson_type,
@@ -134,8 +141,9 @@ class lms extends Controller
 
     public function addlesson ($cour_id) 
     {
-    
-        return view('admin::rashpanel.insertlesson',['course_id' => $cour_id]);
+        $group_section['group_section'] = DB::table('les_group')->where('course_id',$cour_id)->get(); 
+
+        return view('admin::rashpanel.insertlesson',['course_id' => $cour_id],$group_section);
     }
 
     public function insertles(Request $reql) 
@@ -147,9 +155,12 @@ class lms extends Controller
         $user_id = $reql->input('user_id');
         $l_order = $reql->input('l_order');
         $is_ok = $reql->input('is_ok');
+        
+
 
         $lesson_type = $reql->input('lestype');
-        $video_url = $reql->file('video_url');
+        $section = $reql->input('section');
+        $video_url = $reql->input('filepath');
         $video_description = $reql->input('video_description');
 
         if($reql->hasFile('video_url')) {
@@ -159,7 +170,7 @@ class lms extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
             $path = $reql->file('video_url')->    storeAs('video_url', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = $reql->input('filepath');
         }      
 
 
@@ -171,6 +182,7 @@ class lms extends Controller
             'l_order'=>$l_order,
             'is_ok' => $is_ok,
             'lesson_type' => $lesson_type,
+            'group_id' => $section,
             'video_url' => $fileNameToStore,
             'video_description' => $video_description
         );
@@ -241,6 +253,9 @@ class lms extends Controller
     {
         DB::table('lessons')->where('course_id', $course_id )->delete();
         DB::table('course_list')->where('course_id', $course_id )->delete();
+        DB::table('les_group')->where('course_id', $course_id )->delete();
+        DB::table('my_courses')->where('course_id', $course_id )->delete();
+
 
         return back(); 
     }
@@ -260,6 +275,10 @@ class lms extends Controller
         return $response;
     }
 
+    function course_group() 
+    {
+        echo 'sfsdf';
+    }
    
 
     

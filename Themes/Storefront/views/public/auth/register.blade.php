@@ -59,8 +59,8 @@
                 <div class="form-holder">
                     <div class="menu-holder">
                         <ul class="main-links">
-                            <li><a class="normal-link" href="signin.html">You have an account?</a></li>
-                            <li><a class="sign-button" href="signin.html">Sign in</a></li>
+                            <li><a class="normal-link" href="/login">You have an account?</a></li>
+                            <li><a class="sign-button" href="/login">Sign in</a></li>
                         </ul>
                     </div>
                     <div class="signin-signup-form">
@@ -109,4 +109,6 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 @endsection

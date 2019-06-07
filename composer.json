@@ -19,6 +19,7 @@
         "nwidart/laravel-modules": "^3.0",
         "swayok/alternative-laravel-cache": "^5.4",
         "symfony/intl": "^4.1",
+        "unisharp/laravel-filemanager": "~1.8",
         "wikimedia/composer-merge-plugin": "^1.4"
     },
     "require-dev": {

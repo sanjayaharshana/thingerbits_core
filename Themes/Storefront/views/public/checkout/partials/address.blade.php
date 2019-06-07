@@ -13,7 +13,7 @@
                         {{ trans('storefront::checkout.tabs.attributes.customer_email') }}<span>*</span>
                     </label>
 
-                    <input type="text" name="customer_email" class="form-control" id="customer-email" value="{{ old('customer_email') }}">
+                    <input type="text" name="customer_email" class="form-control" id="customer-email" value="{{ old('customer_email') }}" required>
 
                     {!! $errors->first('customer_email','<span class="error-message">:message</span>') !!}
                 </div>
@@ -76,8 +76,49 @@
 
         @include('public.checkout.partials.shipping_address')
 
-        <button type="button" class="btn btn-primary next-step continue-button pull-right">
-            {{ trans('storefront::checkout.continue') }}
+        <button type="button" class="btn btn-primary continue-button pull-right" id="confirm" onclick="packman()">
+           Check Details
+        </button>
+        <button type="button" class="btn btn-primary next-step continue-button pull-right" style="display:none;" id="confirm_ori">
+          Conform Details
         </button>
     </div>
 </div>
+
+
+  <!-- Modal -->
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+
+<script>
+
+function packman(){
+   var customermail = document.getElementById("customer-email").value;
+   var customerphone = document.getElementById("customer-phone").value;
+   var billingfirstname = document.getElementById("billing-first-name").value;
+   var billinglastname = document.getElementById("billing-last-name").value;
+   var billingaddress1 = document.getElementById("billing-address-1").value;
+   var billingcity = document.getElementById("billing-city").value;
+   var billingzip = document.getElementById("billing-zip").value;   
+   var billingstate = document.getElementById("billing-state").value;
+   var billingcountry = document.getElementById("billing-country").value;
+
+   
+ 
+
+    if ((customermail == "")||(customerphone == "")||(billingfirstname == "")||(billinglastname == "")||(billingaddress1 == "") ||(billingcity == "") ||(billingzip == "")||(billingstate == "")||(billingcountry == "")) {
+        alert('Please fill your details');       
+    } else {
+        $("#confirm").hide(); 
+        $("#confirm_ori").show();               
+        console.log('Fuck')
+    }   
+
+
+
+}
+</script>

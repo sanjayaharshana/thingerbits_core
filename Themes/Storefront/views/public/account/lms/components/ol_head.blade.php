@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="{{ (Theme::url('public/HousePan/css/cs-skin-elastic.css')) }}">
     <link rel="stylesheet" href="{{ (Theme::url('public/HousePan/css/style.css')) }}">
+    <link rel="stylesheet" href="{{ (Theme::url('public/HousePan/css/rotate_menu.css')) }}">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
@@ -72,7 +73,7 @@
 </head>
 
 
-<body>
+<body  style="background: #f1f2f7;">
     <!-- Left Panel -->
     @include('public.account.lms.components.ol_sidebar')
 

@@ -28,6 +28,28 @@
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .bs-example{
+            margin: 150px 50px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('[poplo="popover"]').popover({
+                trigger: 'hover'
+            });
+        });
+    </script>
+
+    <script>
+    $( "#rockland" ).mouseover(function() {
+       console.log('rock');
+    });
+    </script>
    <style>
     #weatherWidget .currentDesc {
         color: #ffffff!important;
@@ -66,7 +88,7 @@
     </style>
 </head>
 
-<body>
+<body style="background: #f1f2f7;">
     <!-- Left Panel -->
     @include('public.account.lms.components.sidebar')
 

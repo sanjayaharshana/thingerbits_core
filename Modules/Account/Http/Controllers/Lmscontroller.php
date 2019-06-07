@@ -75,7 +75,12 @@ class Lmscontroller extends Controller
     public function course_open($id)
     {
         
-        $les_data = DB::table('lessons')->where('course_id', $id)->orderBy('l_order', 'ASC')->get();
+
+        //$les_group = DB::table('les_group')->where('course_id', $id)->get();
+
+        $les_group = DB::table('les_group')->where('course_id', $id)->orderBy('lg_order', 'ASC')->get();
+
+        $board_lesson = DB::table('lessons')->where('intro_board', '1')->get();
 
         $course_data = DB::table('course_list')->where('course_id', $id)->first(); 
         $lesbody= 'Welcome to Row';
@@ -84,16 +89,18 @@ class Lmscontroller extends Controller
         $video_description = '0';
         $lesson_id = '0';
         $lesson_title ='Welcome Page';
-
+        $video_url = 'SDFSLO';
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
-        'les_data' =>  $les_data,
+        'les_group' =>  $les_group,
         'lesson_title' => $lesson_title, 
         'lesbody' =>  $lesbody,
         'lestype' =>  $lestype,
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
+        'video_url' => $video_url,
+        'board_lesson'=>$board_lesson,
         ]);
     }
 
@@ -102,6 +109,9 @@ class Lmscontroller extends Controller
         $les_data = DB::table('lessons')->where('course_id', $course_id)->orderBy('l_order', 'ASC')->get();
         $course_data = DB::table('course_list')->where('course_id', $course_id)->first();    
         $les_magnet = DB::table('lessons')->where('lesson_id', $les_id)->first();
+        $les_group = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
+        $board_lesson = DB::table('lessons')->where('intro_board', '1')->get();
+
 
         $lesson_title = $les_magnet->lesson_title;
         $lesbody= $les_magnet->lesson_body;
@@ -109,11 +119,13 @@ class Lmscontroller extends Controller
         $video_url= $les_magnet->video_url;
         $lesson_id= $les_magnet->lesson_id;
         $video_description= $les_magnet->video_description;
+        $video_url = $les_magnet->video_url;
         
        // return view('public.account.lms.open_course',$les_data,$course_data,['rll' =>  $lesbody]);
 
         return view('public.account.lms.open_course',
         ['course_data' =>  $course_data,
+        'les_group' =>  $les_group,
         'les_data' =>  $les_data,
         'lesson_title'=> $lesson_title,
         'lesbody' =>  $lesbody,
@@ -121,6 +133,8 @@ class Lmscontroller extends Controller
         'video_url' =>  $video_url,
         'video_description' =>  $video_description,
         'lesson_id' =>  $lesson_id,
+        'board_lesson'=>$board_lesson,
+
         ]);
 
     }
@@ -152,5 +166,11 @@ class Lmscontroller extends Controller
             $response = Response::make($file, 200);
             $response->header("Content-Type", $type);
         return $response;
+    }
+
+    function jsongetles($lg_id)
+    {
+        $data = DB::table('lessons')->where('group_id', $lg_id)->get();
+        return Response::json($data);
     }
 }

@@ -13,4 +13,10 @@ return [
         'edit' => 'attribute::permissions.attribute_sets.edit',
         'destroy' => 'attribute::permissions.attribute_sets.destroy',
     ],
+    'admin.lms' => [
+        'index' => 'attribute::permissions.lms.index',
+        'create' => 'attribute::permissions.lms.create',
+        'edit' => 'attribute::permissions.lms.edit',
+        'destroy' => 'attribute::permissions.lms.destroy',
+    ],
 ];
