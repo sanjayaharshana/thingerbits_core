@@ -3,6 +3,11 @@
 @section('title', trans('storefront::account.links.dashboard'))
 
 @section('content_right')
+<style>
+.megamenu-wrapper{
+    display: none;
+}
+</style>
     <div class="my-dashboard">
         <div class="recent-orders index-table">
             <h4 class="section-header">
