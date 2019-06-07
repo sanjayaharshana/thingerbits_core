@@ -55,7 +55,7 @@
                             <li><a class="sign-button" href="/register">Sign up</a></li>
                         </ul>
                     </div>
-                    <div class="signin-signup-form">
+                    <div class="signin-signup-form" style="padding-bottom: 0px;">
                         <div class="form-items">
                             <div class="form-title">Sign in to your account</div>
                             <form id="signinform" method="POST" action="{{ route('login.post') }}">
@@ -73,35 +73,36 @@
                             </form>
                         </div>
                     </div>
+                    <div class="form-wrapper" style="margin-top: 0px;">
+                        @include('public.partials.notification')    
+                        
+                
+                        <div class="social-login-buttons text-center">
+                            @if (count(app('enabled_social_login_providers')) !== 0)
+                                <span>{{ trans('user::auth.or') }}</span>
+                            @endif
+                
+                            @if (setting('facebook_login_enabled'))
+                                <a href="{{ route('login.redirect', ['provider' => 'facebook']) }}" class="btn btn-facebook">
+                                    {{ Theme::image('public/images/facebook.png') }}
+                                    {{ trans('user::auth.log_in_with_facebook') }}
+                                </a>
+                            @endif
+                
+                            @if (setting('google_login_enabled'))
+                                <a href="{{ route('login.redirect', ['provider' => 'google']) }}" class="btn btn-google">
+                                    {{ Theme::image('public/images/google.png') }}
+                                    {{ trans('user::auth.log_in_with_google') }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
 
-    <div class="form-wrapper">
-        @include('public.partials.notification')    
-        
-
-        <div class="social-login-buttons text-center">
-            @if (count(app('enabled_social_login_providers')) !== 0)
-                <span>{{ trans('user::auth.or') }}</span>
-            @endif
-
-            @if (setting('facebook_login_enabled'))
-                <a href="{{ route('login.redirect', ['provider' => 'facebook']) }}" class="btn btn-facebook">
-                    {{ Theme::image('public/images/facebook.png') }}
-                    {{ trans('user::auth.log_in_with_facebook') }}
-                </a>
-            @endif
-
-            @if (setting('google_login_enabled'))
-                <a href="{{ route('login.redirect', ['provider' => 'google']) }}" class="btn btn-google">
-                    {{ Theme::image('public/images/google.png') }}
-                    {{ trans('user::auth.log_in_with_google') }}
-                </a>
-            @endif
-        </div>
-    </div>
+   
 @endsection
 
 <script>
