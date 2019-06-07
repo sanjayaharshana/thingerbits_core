@@ -11,6 +11,9 @@
         .footer{
             display: none;
         }
+        .megamenu-wrapper{
+            display: none;
+        }
 </style>
 
 <head>

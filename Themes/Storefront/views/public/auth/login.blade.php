@@ -20,6 +20,9 @@
         .main, .wrapper {
             position: unset;
         }
+        .megamenu-wrapper{
+            display: none;
+        }
 </style>
 <head>
     <meta charset="UTF-8">
