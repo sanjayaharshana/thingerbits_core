@@ -275,6 +275,10 @@ class lms extends Controller
         return $response;
     }
 
+    function course_group() 
+    {
+        echo 'sfsdf';
+    }
    
 
     

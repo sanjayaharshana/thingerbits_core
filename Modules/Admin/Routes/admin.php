@@ -27,6 +27,9 @@ Route::get('courseuser_image/{course_id}', 'lms@courseuser_image');
 Route::get('/course/img-upload', 'lms@imageUpload')->name('image.upload');
 Route::post('/course/img-upload-post', 'lms@imageUploadPost')->name('image.upload.post');
 
+Route::get('course_group/', 'lms@course_group')->name('course_group');;
+
+
 
 
 //Pack Production Generation Route
