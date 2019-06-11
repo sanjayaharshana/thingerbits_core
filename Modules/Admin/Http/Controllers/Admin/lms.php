@@ -42,15 +42,18 @@ class lms extends Controller
     {
         $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
         $les_group ['linco'] = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
+        
+        $les_details['les_details'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->frist();
+
 
 
         if(count($data) > 0)
         {
-            return view('admin::rashpanel.listgroup',$data,$les_group);
+            return view('admin::rashpanel.listgroup',$data,$les_group,$les_details);
         }
         else
         {
-            return view('admin::rashpanel.listgroup',$data,$les_group);
+            return view('admin::rashpanel.listgroup',$data,$les_group,$les_details);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -283,46 +286,18 @@ class lms extends Controller
     }
    
     function adsection() {
-        $user_id =  '1';
-        $course_title = $reql->input('course_title');
-        $slag = $reql->input('slg');
-        $course_image = $reql->file('course_img');
-        $course_intro = $reql->input('course_intros');
-        $course_discription = $reql->input('cours_discrip');
-        $reccomandproduct_id = $reql->input('Recommand_Products');     
-        
-        if($reql->hasFile('course_img')) {
-            $filenameWithExt = $reql->file('course_img')->getClientOriginalName();          
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);                       
-            $extension = $reql->file('course_img')->getClientOriginalExtension();            
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
-            $path = $reql->file('course_img')->    storeAs('course_img', $fileNameToStore);
-        } else {
-            $fileNameToStore = 'noimage.jpg';
-        }      
 
-        $id = DB::table('course_list')->insertGetId(
-            array(
-                'user_id' => $user_id,
-                'course_title'=>$course_title,
-                'slag'=>$slag,
-                'course_image'=>$fileNameToStore,
-                'course_intro'=>$course_intro,
-                'course_discription' => $course_discription,
-                'reccomandproduct_id' => $reccomandproduct_id,
-            )
-        );
+        $section_name = $reql->input('section_name');
+        $c_id = $reql->input('c_id');
+        $order = $reql->file('order');       
 
         $lesdata = array(
-            'user_id' => '1',
-            'lesson_title'=>'Example Lesson',
-            'lesson_body'=>'Hellow WOrd',
-            'l_order'=>'1',
-            'course_id'=> $id,
-            'is_ok' => '1',
+            'les_group_name' => $section_name,
+            'course_id'=> $c_id,
+            'lg_order'=> $order,           
         );
 
-       DB::table('lessons')->insert($lesdata);       
+       DB::table('les_group')->insert($lesdata);       
        
        return redirect()->route('courseopenerrc',$id);
     }

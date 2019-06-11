@@ -109,9 +109,9 @@
                             <label for="exampleFormControlTextarea1">Section Name</label>
                             <input type="text" pattern=".{12,}" required title="3 characters minimum" id="ctitle" class="form-control" placeholder="Course Title" name="section_name" style="" value="" required>
                         </div>                  
-                        <div class="form-group" style="display:none;">
+                        <div class="form-group" style="">
                             <label for="exampleFormControlTextarea1">Course ID</label>
-                            <input type="text" class="form-control" id="slugg" placeholder="Slugg" name="c_id" style="" value="" required>
+                            <input type="text" class="form-control" id="slugg" placeholder="Slugg" name="c_id" style="" value="{{ $lg_data->lesson_id }}" required>
                         </div>                    
                          
                         <div class="form-group">
