@@ -42,18 +42,18 @@ class lms extends Controller
     {
         $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
         $les_group ['linco'] = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
-        
-        $les_details['les_details'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->frist();
+      
+
 
 
 
         if(count($data) > 0)
         {
-            return view('admin::rashpanel.listgroup',$data,$les_group,$les_details);
+            return view('admin::rashpanel.listgroup',$data,$les_group);
         }
         else
         {
-            return view('admin::rashpanel.listgroup',$data,$les_group,$les_details);
+            return view('admin::rashpanel.listgroup',$data,$les_group);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -285,11 +285,11 @@ class lms extends Controller
         echo 'sfsdf';
     }
    
-    function adsection() {
+    function adsection(Request $reql) {
 
         $section_name = $reql->input('section_name');
         $c_id = $reql->input('c_id');
-        $order = $reql->file('order');       
+        $order = $reql->input('order');       
 
         $lesdata = array(
             'les_group_name' => $section_name,
@@ -299,7 +299,7 @@ class lms extends Controller
 
        DB::table('les_group')->insert($lesdata);       
        
-       return redirect()->route('courseopenerrc',$id);
+       return back(); 
     }
     
 

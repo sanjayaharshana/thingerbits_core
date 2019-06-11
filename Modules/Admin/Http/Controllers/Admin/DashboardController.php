@@ -99,8 +99,7 @@ class DashboardController extends Controller
 
     function createpackage()
     {
-        //Tempory Deativated This code
-      
+        //Tempory Deativated This code      
         $data['data'] = DB::table('products')->where('is_pack', '0')->get();
 
         if(count($data) > 0)
@@ -358,7 +357,6 @@ class DashboardController extends Controller
     {
         DB::table('sol_po_table')->where('po_id', $id )->delete();
         DB::table('sol_po_items')->where('po_id', $id )->delete();
-
         return redirect()->route('purchase_oder'); 
     }
 
