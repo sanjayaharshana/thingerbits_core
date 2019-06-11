@@ -41,14 +41,16 @@ class lms extends Controller
     public function courseopener($courseid) 
     {
         $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
+        $les_group ['linco'] = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
+
 
         if(count($data) > 0)
         {
-            return view('admin::rashpanel.listgroup',$data);
+            return view('admin::rashpanel.listgroup',$data,$les_group);
         }
         else
         {
-            return view('admin::rashpanel.listgroup',$data);
+            return view('admin::rashpanel.listgroup',$data,$les_group);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -134,7 +136,7 @@ class lms extends Controller
     public function deletelesson($valueid)
     {
         DB::table('lessons')->where('lesson_id', $valueid )->delete();
-
+       // echo 'asda';
         return back(); 
 
     } 
@@ -280,7 +282,9 @@ class lms extends Controller
         echo 'sfsdf';
     }
    
-
+    function adsection() {
+        echo 'fdsdf';
+    }
     
 
 }
