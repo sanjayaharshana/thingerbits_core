@@ -31,7 +31,7 @@ Route::post('/course/img-upload-post', 'lms@imageUploadPost')->name('image.uploa
 
 Route::get('course_group/', 'lms@course_group')->name('course_group');;
 
-Route::post('/addsection/insert', 'lms@insertles')->name('adsection');
+Route::post('/addsection/insert', 'lms@adsection')->name('adsection');
 
 
 
