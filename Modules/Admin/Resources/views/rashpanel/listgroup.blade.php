@@ -116,7 +116,7 @@
                          
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Order</label>
-                            <input type="text" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Course Intro" name="order" style="" value="" required>
+                            <input type="number" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Course Intro" name="order" style="" value="" required>
                         </div>
                         <br>                      
                          </div>

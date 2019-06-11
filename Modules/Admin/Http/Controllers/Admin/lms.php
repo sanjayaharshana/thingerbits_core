@@ -283,7 +283,48 @@ class lms extends Controller
     }
    
     function adsection() {
-        echo 'fdsdf';
+        $user_id =  '1';
+        $course_title = $reql->input('course_title');
+        $slag = $reql->input('slg');
+        $course_image = $reql->file('course_img');
+        $course_intro = $reql->input('course_intros');
+        $course_discription = $reql->input('cours_discrip');
+        $reccomandproduct_id = $reql->input('Recommand_Products');     
+        
+        if($reql->hasFile('course_img')) {
+            $filenameWithExt = $reql->file('course_img')->getClientOriginalName();          
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);                       
+            $extension = $reql->file('course_img')->getClientOriginalExtension();            
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;                    
+            $path = $reql->file('course_img')->    storeAs('course_img', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }      
+
+        $id = DB::table('course_list')->insertGetId(
+            array(
+                'user_id' => $user_id,
+                'course_title'=>$course_title,
+                'slag'=>$slag,
+                'course_image'=>$fileNameToStore,
+                'course_intro'=>$course_intro,
+                'course_discription' => $course_discription,
+                'reccomandproduct_id' => $reccomandproduct_id,
+            )
+        );
+
+        $lesdata = array(
+            'user_id' => '1',
+            'lesson_title'=>'Example Lesson',
+            'lesson_body'=>'Hellow WOrd',
+            'l_order'=>'1',
+            'course_id'=> $id,
+            'is_ok' => '1',
+        );
+
+       DB::table('lessons')->insert($lesdata);       
+       
+       return redirect()->route('courseopenerrc',$id);
     }
     
 
