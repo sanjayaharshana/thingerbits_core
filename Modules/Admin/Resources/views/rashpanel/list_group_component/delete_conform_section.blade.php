@@ -10,7 +10,7 @@
               <p>Are you really want to delete this section? {{ $lg_data->les_group_name }} </p>                 
         </div>
         <div class="modal-footer">
-            <button type="submit" value="Validate!" class="btn btn-danger">Delete</button>
+            <a href="admin/grouples/delete/{{ $lg_data->les_group_id }}" value="Validate!" class="btn btn-danger">Delete</a>
         </form>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>

@@ -301,6 +301,12 @@ class lms extends Controller
        
        return back(); 
     }
+
+    function group_delete($g_id) {
+        DB::table('les_group')->where('les_group_id', $g_id )->delete();
+        return back(); 
+
+    }
     
 
 }

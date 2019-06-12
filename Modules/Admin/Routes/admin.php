@@ -16,6 +16,10 @@ Route::post('/intertlesson', 'lms@insertlesson')->name('lessoninsert');
 Route::get('/lessonpanel/{courseid}', 'lms@courseopener')->name('courseopenerrc');
 Route::get('/parellel/{courseid}/{lessonid}', 'lms@lessoneditor')->name('lessonedit');
 Route::post('/parellel/update', 'lms@updatelesson')->name('lesupdate');
+Route::get('grouples/delete/{g_id}', 'lms@group_delete')->name('group_delete');
+
+
+
 
 Route::get('deletecore/delete/{valueid}', 'lms@deletelesson')->name('lesdelete');
 
