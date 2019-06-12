@@ -11,15 +11,17 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
 
 <h2>Lessons</h2><br>
-deletesec
+
 
 @foreach($linco as $lg_data)
 <li class="list-group" style="padding: 10px;list-style: none;">
-<a href="#" id="apple" class="list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <button href="asda/asd" class="btn btn-primary menu-icon fa fa-edit" style="float:right; margin: 0px 10px;"></button>    <i class="btn btn-danger menu-icon fa fa-trash" style="float:right;"> </i><i class="menu-icon fa fa-book"></i>&nbsp &nbsp{{ $lg_data->les_group_name }}<br><br></a> 
+<a href="#" id="apple" class="list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <button class="btn btn-primary menu-icon fa fa-edit" style="float:right; margin: 0px 10px;"></button>    <button  data-toggle="modal" data-target="#deletesec{{ $lg_data->les_group_id }}" class="btn btn-danger menu-icon fa fa-trash" style="float:right;"> </button><i class="menu-icon fa fa-book"></i>&nbsp &nbsp{{ $lg_data->les_group_name }}<br><br></a> 
     <ul class="sub-menu children dropdown-menu" style="display: contents;" id="palmon{{ $lg_data->les_group_id }}">                                                               
       
     </ul>
 </li>
+@include('admin::rashpanel.list_group_component.delete_conform_section')
+
 @endforeach
 
 
@@ -42,7 +44,6 @@ deletesec
 @include('admin::rashpanel.list_group_component.edit_course_attrib')
 
 
-@include('admin::rashpanel.list_group_component.delete_conform_section')
 
 @include('admin::rashpanel.list_group_component.add_section')
 
