@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
 
 <h2>Lessons</h2><br>
-
+deletesec
 
 @foreach($linco as $lg_data)
 <li class="list-group" style="padding: 10px;list-style: none;">
@@ -40,6 +40,9 @@
 
 
 @include('admin::rashpanel.list_group_component.edit_course_attrib')
+
+
+@include('admin::rashpanel.list_group_component.delete_conform_section')
 
 @include('admin::rashpanel.list_group_component.add_section')
 
