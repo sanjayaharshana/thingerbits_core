@@ -15,12 +15,14 @@
 
 @foreach($linco as $lg_data)
 <li class="list-group" style="padding: 10px;list-style: none;">
-<a href="#" id="apple" class="list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <button class="btn btn-primary menu-icon fa fa-edit" style="float:right; margin: 0px 10px;"></button>    <button  data-toggle="modal" data-target="#deletesec{{ $lg_data->les_group_id }}" class="btn btn-danger menu-icon fa fa-trash" style="float:right;"> </button><i class="menu-icon fa fa-book"></i>&nbsp &nbsp{{ $lg_data->les_group_name }}<br><br></a> 
+<a href="#" id="apple" class="list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <button class="btn btn-primary menu-icon fa fa-edit" data-toggle="modal" data-target="#editsec{{ $lg_data->les_group_id }}" style="float:right; margin: 0px 10px;"></button>    <button  data-toggle="modal" data-target="#deletesec{{ $lg_data->les_group_id }}" class="btn btn-danger menu-icon fa fa-trash" style="float:right;"> </button><i class="menu-icon fa fa-book"></i>&nbsp &nbsp{{ $lg_data->les_group_name }}<br><br></a> 
     <ul class="sub-menu children dropdown-menu" style="display: contents;" id="palmon{{ $lg_data->les_group_id }}">                                                               
       
     </ul>
 </li>
 @include('admin::rashpanel.list_group_component.delete_conform_section')
+@include('admin::rashpanel.list_group_component.edit_group')
+
 
 @endforeach
 

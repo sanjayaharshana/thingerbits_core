@@ -307,6 +307,22 @@ class lms extends Controller
         return back(); 
 
     }
+
+    function grouples_update(Request $reql)
+    {
+        $section_id = $reql->input('section_id');
+        $section_name = $reql->input('section_name');
+        $c_id = $reql->input('c_id');
+        $order = $reql->input('order');  
+
+        DB::table('les_group')->where('les_group_id', $section_id )->update([
+            'les_group_name' => $section_name,
+            'course_id'=> $c_id,
+            'lg_order'=> $order,   
+            ]);
+
+        return back(); 
+    }
     
 
 }

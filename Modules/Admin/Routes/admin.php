@@ -18,6 +18,9 @@ Route::get('/parellel/{courseid}/{lessonid}', 'lms@lessoneditor')->name('lessone
 Route::post('/parellel/update', 'lms@updatelesson')->name('lesupdate');
 Route::get('grouples/delete/{g_id}', 'lms@group_delete')->name('group_delete');
 
+Route::post('/grouples/update', 'lms@grouples_update')->name('grouples_update');
+
+
 
 
 
