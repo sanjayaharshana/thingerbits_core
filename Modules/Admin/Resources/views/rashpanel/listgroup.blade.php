@@ -32,6 +32,7 @@
 
 <ul class="list-group">
     @foreach ($data as $lesson)  
+    {{ $lesson->lesson_title }}
     @endforeach
 </ul>
 
