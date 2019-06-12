@@ -41,14 +41,19 @@ class lms extends Controller
     public function courseopener($courseid) 
     {
         $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
+        $les_group ['linco'] = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
+      
+
+
+
 
         if(count($data) > 0)
         {
-            return view('admin::rashpanel.listgroup',$data);
+            return view('admin::rashpanel.listgroup',$data,$les_group);
         }
         else
         {
-            return view('admin::rashpanel.listgroup',$data);
+            return view('admin::rashpanel.listgroup',$data,$les_group);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -134,7 +139,7 @@ class lms extends Controller
     public function deletelesson($valueid)
     {
         DB::table('lessons')->where('lesson_id', $valueid )->delete();
-
+       // echo 'asda';
         return back(); 
 
     } 
@@ -280,7 +285,44 @@ class lms extends Controller
         echo 'sfsdf';
     }
    
+    function adsection(Request $reql) {
 
+        $section_name = $reql->input('section_name');
+        $c_id = $reql->input('c_id');
+        $order = $reql->input('order');       
+
+        $lesdata = array(
+            'les_group_name' => $section_name,
+            'course_id'=> $c_id,
+            'lg_order'=> $order,           
+        );
+
+       DB::table('les_group')->insert($lesdata);       
+       
+       return back(); 
+    }
+
+    function group_delete($g_id) {
+        DB::table('les_group')->where('les_group_id', $g_id )->delete();
+        return back(); 
+
+    }
+
+    function grouples_update(Request $reql)
+    {
+        $section_id = $reql->input('section_id');
+        $section_name = $reql->input('section_name');
+        $c_id = $reql->input('c_id');
+        $order = $reql->input('order');  
+
+        DB::table('les_group')->where('les_group_id', $section_id )->update([
+            'les_group_name' => $section_name,
+            'course_id'=> $c_id,
+            'lg_order'=> $order,   
+            ]);
+
+        return back(); 
+    }
     
 
 }

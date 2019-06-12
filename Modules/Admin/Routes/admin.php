@@ -16,7 +16,16 @@ Route::post('/intertlesson', 'lms@insertlesson')->name('lessoninsert');
 Route::get('/lessonpanel/{courseid}', 'lms@courseopener')->name('courseopenerrc');
 Route::get('/parellel/{courseid}/{lessonid}', 'lms@lessoneditor')->name('lessonedit');
 Route::post('/parellel/update', 'lms@updatelesson')->name('lesupdate');
-Route::get('/parellel/delete/{valueid}', 'lms@deletelesson')->name('lesdelete');
+Route::get('grouples/delete/{g_id}', 'lms@group_delete')->name('group_delete');
+
+Route::post('/grouples/update', 'lms@grouples_update')->name('grouples_update');
+
+
+
+
+
+Route::get('deletecore/delete/{valueid}', 'lms@deletelesson')->name('lesdelete');
+
 Route::get('/addles/add/{cour_id}', 'lms@addlesson')->name('addlesadd');
 Route::post('/addles/insert', 'lms@insertles')->name('adleson');
 Route::get('/createcourse', 'lms@createcourse')->name('createcourserout');
@@ -28,6 +37,10 @@ Route::get('/course/img-upload', 'lms@imageUpload')->name('image.upload');
 Route::post('/course/img-upload-post', 'lms@imageUploadPost')->name('image.upload.post');
 
 Route::get('course_group/', 'lms@course_group')->name('course_group');;
+
+Route::post('/addsection/insert', 'lms@adsection')->name('adsection');
+
+
 
 
 
