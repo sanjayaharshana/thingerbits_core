@@ -15,7 +15,7 @@
 
 @foreach($linco as $lg_data)
 <li class="list-group" style="padding: 10px;list-style: none;">
-<a href="#" id="apple" class="list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>&nbsp &nbsp{{ $lg_data->les_group_name }}</a>
+<a href="#" id="apple" class="list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <button href="asda/asd" class="btn btn-primary menu-icon fa fa-edit" style="float:right; margin: 0px 10px;"></button>    <i class="btn btn-danger menu-icon fa fa-trash" style="float:right;"> </i><i class="menu-icon fa fa-book"></i>&nbsp &nbsp{{ $lg_data->les_group_name }}<br><br></a> 
     <ul class="sub-menu children dropdown-menu" style="display: contents;" id="palmon{{ $lg_data->les_group_id }}">                                                               
       
     </ul>
