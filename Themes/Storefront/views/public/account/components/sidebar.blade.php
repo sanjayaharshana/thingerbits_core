@@ -22,27 +22,27 @@
         <div class="sidebar-wrapper">
           <ul class="nav">
             <li class="active ">
-              <a href="./dashboard.html">
+              <a href="{{ route('account.dashboard.index') }}">
                 <i class="nc-icon nc-bank"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li>
-              <a href="./icons.html">
+              <a href="{{ route('skillpane') }}">
                 <i class="nc-icon nc-diamond"></i>
-                <p>Icons</p>
+                <p>Hows your Skill</p>
               </a>
             </li>
             <li>
-              <a href="./map.html">
+              <a href="{{ route('coursexp') }}">
                 <i class="nc-icon nc-pin-3"></i>
-                <p>Maps</p>
+                <p>Course Explorer</p>
               </a>
             </li>
             <li>
-              <a href="./notifications.html">
+              <a href="{{ route('account.orders.index') }}">
                 <i class="nc-icon nc-bell-55"></i>
-                <p>Notifications</p>
+                <p>{{ trans('storefront::account.links.my_orders') }}</p>
               </a>
             </li>
             <li>
@@ -72,3 +72,14 @@
           </ul>
         </div>
       </div>
+
+      
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%"><br><br><br>                                                 
+  <a href="" li class="w3-bar-item w3-button" > </a>                                             
+  <a href="" li class="w3-bar-item w3-button" > </a>                                             
+  <a href="" li class="w3-bar-item w3-button" > Course Explorer</a>                                      
+  <a href="" li class="w3-bar-item w3-button" ></a>
+  <a href="{{ route('account.wishlist.index') }}" li class="w3-bar-item w3-button" >Product Wishlist</a>
+  <a href="{{ route('account.reviews.index') }}" li class="w3-bar-item w3-button" > {{ trans('storefront::account.links.my_reviews') }}</a>
+  <a href="{{ route('account.profile.edit') }}" li class="w3-bar-item w3-button" >Profile</a>
+</div>
