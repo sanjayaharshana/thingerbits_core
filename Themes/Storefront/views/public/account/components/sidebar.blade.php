@@ -13,7 +13,7 @@
             </div>
           </a>
           <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Thingerbits
+           Thingerbits
             <!-- <div class="logo-image-big">
               <img src="../assets/img/logo-big.png">
             </div> -->
