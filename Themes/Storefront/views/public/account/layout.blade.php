@@ -22,16 +22,18 @@
     display: none;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/style.css')) }}">
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/fontawesome-all.min.css')) }}">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/paper_dash/css/bootstrap.min.css')) }}">
+
+@include('public.account.components.head')
 
 
 
     
     
 
-@extends('public.layout')
+
 
 @section('breadcrumb')
     @if (request()->routeIs('account.dashboard.index'))

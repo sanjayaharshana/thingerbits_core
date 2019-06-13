@@ -42,10 +42,6 @@ class lms extends Controller
     {
         $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
         $les_group ['linco'] = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
-      
-
-
-
 
         if(count($data) > 0)
         {
