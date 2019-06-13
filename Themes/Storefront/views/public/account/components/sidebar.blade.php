@@ -9,11 +9,11 @@
         <div class="logo">
           <a href="http://www.creative-tim.com" class="simple-text logo-mini">
             <div class="logo-image-small">
-              <img src="../assets/img/logo-small.png">
+             
             </div>
           </a>
           <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Creative Tim
+            Thingerbits
             <!-- <div class="logo-image-big">
               <img src="../assets/img/logo-big.png">
             </div> -->
@@ -46,27 +46,27 @@
               </a>
             </li>
             <li>
-              <a href="./user.html">
+              <a href="{{ route('account.wishlist.index') }}">
                 <i class="nc-icon nc-single-02"></i>
-                <p>User Profile</p>
+                <p>Product Wishlist</p>
               </a>
             </li>
             <li>
-              <a href="./tables.html">
+              <a href="{{ route('account.profile.edit') }}">
                 <i class="nc-icon nc-tile-56"></i>
-                <p>Table List</p>
+                <p>Profile</p>
               </a>
             </li>
             <li>
-              <a href="./typography.html">
+              <a href="{{ route('account.reviews.index') }}">
                 <i class="nc-icon nc-caps-small"></i>
-                <p>Typography</p>
+                <p>{{ trans('storefront::account.links.my_reviews') }}</p>
               </a>
             </li>
             <li class="active-pro">
-              <a href="./upgrade.html">
+              <a href="http://shop.thingerbits.com">
                 <i class="nc-icon nc-spaceship"></i>
-                <p>Upgrade to PRO</p>
+                <p>Shop</p>
               </a>
             </li>
           </ul>
@@ -74,12 +74,3 @@
       </div>
 
       
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%"><br><br><br>                                                 
-  <a href="" li class="w3-bar-item w3-button" > </a>                                             
-  <a href="" li class="w3-bar-item w3-button" > </a>                                             
-  <a href="" li class="w3-bar-item w3-button" > Course Explorer</a>                                      
-  <a href="" li class="w3-bar-item w3-button" ></a>
-  <a href="{{ route('account.wishlist.index') }}" li class="w3-bar-item w3-button" >Product Wishlist</a>
-  <a href="{{ route('account.reviews.index') }}" li class="w3-bar-item w3-button" > {{ trans('storefront::account.links.my_reviews') }}</a>
-  <a href="{{ route('account.profile.edit') }}" li class="w3-bar-item w3-button" >Profile</a>
-</div>
