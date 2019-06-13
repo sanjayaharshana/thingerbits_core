@@ -21,7 +21,7 @@
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
-            <li class="active ">
+            <li class="active">
               <a href="{{ route('account.dashboard.index') }}">
                 <i class="nc-icon nc-bank"></i>
                 <p>Dashboard</p>
