@@ -96,16 +96,17 @@
                       <div class="col-md-6 pr-1">
                         <div class="form-group">
                           <label>New Password</label>
-                          <input type="password" name="password" class="form-control" placeholder="Company" value="">
+                          <input type="password" name="password" class="form-control" placeholder="Password" value="">
                         </div>
                       </div>
                       <div class="col-md-6 pl-1">
                         <div class="form-group">
                           <label>Comform Password</label>
-                          <input type="password" name="password_confirmation" class="form-control" placeholder="Last Name" value="">
+                          <input type="password" name="password_confirmation" class="form-control" placeholder="New Password" value="">
                         </div>
                       </div>
-                    </div>
+                </div>
+
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
@@ -114,25 +115,29 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-4 pr-1">
                     <div class="form-group">
                       <label>City</label>
                       <input type="text" class="form-control" placeholder="City" value="Melbourne">
                     </div>
-                  </div>
-                  <div class="col-md-4 px-1">
+                </div>
+
+                <div class="col-md-4 px-1">
                     <div class="form-group">
                       <label>Country</label>
                       <input type="text" class="form-control" placeholder="Country" value="Australia">
                     </div>
-                  </div>
-                  <div class="col-md-4 pl-1">
-                    <div class="form-group">
+                </div>
+
+                <div class="col-md-4 pl-1">
+                  <div class="form-group">
                       <label>Postal Code</label>
                       <input type="number" class="form-control" placeholder="ZIP Code">
-                    </div>
                   </div>
+                </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-12">
