@@ -147,7 +147,7 @@
                             <div class="col-md-6 pl-1">
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" placeholder="Email" value="{{ old('first_name', $my->email) }}">
+                                <input type="email" class="form-control" placeholder="Email" value="{{ old('email', $my->email) }}">
                               </div>
                             </div>
                           </div>
@@ -161,7 +161,7 @@
                             <div class="col-md-6 pl-1">
                               <div class="form-group">
                                 <label>Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last Name" value="{{ old('first_name', $my->last_name) }}">
+                                <input type="text" class="form-control" placeholder="Last Name" value="{{ old('last_name', $my->last_name) }}">
                               </div>
                             </div>
                           </div>
