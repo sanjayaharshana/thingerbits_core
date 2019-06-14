@@ -1,3 +1,7 @@
+<form method="POST" action="{{ route('account.profile.update') }}">
+        {{ csrf_field() }}
+        {{ method_field('put') }}
+        <div class="content">
 <div class="row">
         <div class="col-md-4">
           <div class="card card-user">
@@ -208,3 +212,4 @@
           </div>
         </div>
       </div>
+    </div>
