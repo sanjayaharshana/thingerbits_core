@@ -14,7 +14,7 @@
                 {{ trans('storefront::account.dashboard.recent_orders') }}
             </h4>
                 @if ($recentOrders->isNotEmpty())
-                    <a href="{{ route('account.orders.index') }}" class="btn btn-info btn-round pull-right" style="color:white;">
+                    <a href="{{ route('account.orders.index') }}" class="btn btn-info btn-round pull-right" style="color:white">
                         {{ trans('storefront::account.dashboard.view_all') }}
                     </a>
                 @endif

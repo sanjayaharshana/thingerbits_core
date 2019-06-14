@@ -25,7 +25,7 @@
                         <div class="author">
                           <a href="#">
                             <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                            <h5 class="title">Chet Faker</h5>
+                            <h5 class="title">{{ $my->full_name }}</h5>
                           </a>
                           <p class="description">
                             @chetfaker
@@ -264,38 +264,5 @@
                     </div>
                 </div>
             </div>
-
-            <div class="password">
-                <h4>{{ trans('storefront::account.profile.password') }}</h4>
-
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="form-group {{ $errors->has('password') ? 'has-error': '' }}">
-                            <label for="new-password">
-                                {{ trans('storefront::account.profile.new_password') }}
-                            </label>
-
-                            <input type="password" name="password" id="new-password" class="form-control">
-
-                            {!! $errors->first('password', '<span class="error-message">:message</span>') !!}
-                        </div>
-
-                        <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error': '' }}">
-                            <label for="confirm-password">
-                                {{ trans('storefront::account.profile.confirm_password') }}
-                            </label>
-
-                            <input type="password" name="password_confirmation" id="confirm-password" class="form-control">
-
-                            {!! $errors->first('password_confirmation', '<span class="error-message">:message</span>') !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary" data-loading>
-            {{ trans('storefront::account.profile.save_changes') }}
-        </button>
-    </form>
+         
 @endsection
