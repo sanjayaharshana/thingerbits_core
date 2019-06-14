@@ -50,73 +50,13 @@
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Team Members</h4>
-            </div>
-            <div class="card-body">
-              <ul class="list-unstyled team-members">
-                <li>
-                  <div class="row">
-                    <div class="col-md-2 col-2">
-                      <div class="avatar">
-                        <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                      </div>
-                    </div>
-                    <div class="col-md-7 col-7">
-                      DJ Khaled
-                      <br>
-                      <span class="text-muted">
-                        <small>Offline</small>
-                      </span>
-                    </div>
-                    <div class="col-md-3 col-3 text-right">
-                      <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="row">
-                    <div class="col-md-2 col-2">
-                      <div class="avatar">
-                        <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                      </div>
-                    </div>
-                    <div class="col-md-7 col-7">
-                      Creative Tim
-                      <br>
-                      <span class="text-success">
-                        <small>Available</small>
-                      </span>
-                    </div>
-                    <div class="col-md-3 col-3 text-right">
-                      <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="row">
-                    <div class="col-md-2 col-2">
-                      <div class="avatar">
-                        <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                      </div>
-                    </div>
-                    <div class="col-ms-7 col-7">
-                      Flume
-                      <br>
-                      <span class="text-danger">
-                        <small>Busy</small>
-                      </span>
-                    </div>
-                    <div class="col-md-3 col-3 text-right">
-                      <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
+
+
+
+
+
+
         <div class="col-md-8">
           <div class="card card-user">
             <div class="card-header">
@@ -134,7 +74,7 @@
                   <div class="col-md-6 pl-1">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" placeholder="Email" value="{{ old('email', $my->email) }}">
+                      <input type="email"  name="email" class="form-control" placeholder="Email" value="{{ old('email', $my->email) }}">
                     </div>
                   </div>
                 </div>
@@ -142,13 +82,13 @@
                   <div class="col-md-6 pr-1">
                     <div class="form-group">
                       <label>First Name</label>
-                      <input type="text" class="form-control" placeholder="Company" value="{{ old('first_name', $my->first_name) }}">
+                      <input type="text" name="first_name" class="form-control" placeholder="Company" value="{{ old('first_name', $my->first_name) }}">
                     </div>
                   </div>
                   <div class="col-md-6 pl-1">
                     <div class="form-group">
                       <label>Last Name</label>
-                      <input type="text" class="form-control" placeholder="Last Name" value="{{ old('last_name', $my->last_name) }}">
+                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" value="{{ old('last_name', $my->last_name) }}">
                     </div>
                   </div>
                 </div>
@@ -156,13 +96,13 @@
                       <div class="col-md-6 pr-1">
                         <div class="form-group">
                           <label>New Password</label>
-                          <input type="password" class="form-control" placeholder="Company" value="{{ old('first_name', $my->first_name) }}">
+                          <input type="password" name="password" class="form-control" placeholder="Company" value="">
                         </div>
                       </div>
                       <div class="col-md-6 pl-1">
                         <div class="form-group">
                           <label>Comform Password</label>
-                          <input type="password" class="form-control" placeholder="Last Name" value="{{ old('first_name', $my->last_name) }}">
+                          <input type="password" name="password_confirmation" class="form-control" placeholder="Last Name" value="">
                         </div>
                       </div>
                     </div>
