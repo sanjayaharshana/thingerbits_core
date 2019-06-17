@@ -25,6 +25,9 @@
 
 
 <link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/paper_dash/css/bootstrap.min.css')) }}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
 @include('public.account.components.head')
 
@@ -86,3 +89,16 @@
       </div>
     </div>
   </div>
+
+  <link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/paper_dash/css/bootstrap.min.css')) }}">
+
+  <script src="{{ (Theme::url('public/paper_dash/js/core/jquery.min.js')) }}"></script>
+  <script src="{{ (Theme::url('public/paper_dash/js/core/popper.min.js')) }}"></script>
+  <script src="{{ (Theme::url('public/paper_dash/js/plugins/perfect-scrollbar.jquery.min.js')) }}"></script>
+
+  <script src="{{ (Theme::url('public/paper_dash/js/plugins/chartjs.min.js')) }}"></script>
+  <script src="{{ (Theme::url('public/paper_dash/js/plugins/bootstrap-notify.js')) }}"></script>
+  <script src="{{ (Theme::url('public/paper_dash/js/paper-dashboard.min.js?v=2.0.0')) }}"></script>
+  <script src="{{ (Theme::url('public/paper_dash/demo/demo.js')) }}"></script>
+
+

@@ -6,12 +6,13 @@
         <div class="col-md-4">
           <div class="card card-user">
             <div class="image">
-              <img src="../assets/img/damir-bosnjak.jpg" alt="...">
+              <img src="{{ (Theme::url('public/paper_dash/img/damir-bosnjak.jpg')) }}" alt="...">
             </div>
+            
             <div class="card-body">
               <div class="author">
                 <a href="#">
-                  <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+                  <img class="avatar border-gray" src="{{ (Theme::url('public/paper_dash/img/mike.jpg')) }}" alt="...">
                   <h5 class="title">{{ $my->full_name }}</h5>
                 </a>
                 <p class="description">
@@ -96,65 +97,104 @@
                       <div class="col-md-6 pr-1">
                         <div class="form-group">
                           <label>New Password</label>
-                          <input type="password" name="password" class="form-control" placeholder="Password" value="">
+                          <input type="password" name="password" class="form-control" placeholder="" value="">
+                          {!! $errors->first('password', '<span class="error-message">:message</span>') !!}
+
                         </div>
                       </div>
                       <div class="col-md-6 pl-1">
                         <div class="form-group">
                           <label>Comform Password</label>
                           <input type="password" name="password_confirmation" class="form-control" placeholder="New Password" value="">
+                          {!! $errors->first('password_confirmation', '<span class="error-message">:message</span>') !!}
+
                         </div>
                       </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Address</label>
-                      <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4 pr-1">
-                    <div class="form-group">
-                      <label>City</label>
-                      <input type="text" class="form-control" placeholder="City" value="Melbourne">
-                    </div>
-                </div>
-
-                <div class="col-md-4 px-1">
-                    <div class="form-group">
-                      <label>Country</label>
-                      <input type="text" class="form-control" placeholder="Country" value="Australia">
-                    </div>
-                </div>
-
-                <div class="col-md-4 pl-1">
-                  <div class="form-group">
-                      <label>Postal Code</label>
-                      <input type="number" class="form-control" placeholder="ZIP Code">
-                  </div>
-                </div>
-
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label>About Me</label>
-                      <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
-                    </div>
-                  </div>
-                </div>
+                
                 <div class="row">
                   <div class="update ml-auto mr-auto">
                     <button type="submit" class="btn btn-primary btn-round">{{ trans('storefront::account.profile.save_changes') }}</button>
-                  </div>
-                </div>
+                </div>                
               </form>
             </div>
+
+            <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" name="adress" placeholder="Home Address" value="{{ old('last_name', $my->adress) }}">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" placeholder="City" value="Melbourne">
+                      </div>
+                  </div>
+  
+                  <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" class="form-control" placeholder="Country" value="Australia">
+                      </div>
+                  </div>
+  
+                  <div class="col-md-4 pl-1">
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="number" class="form-control" placeholder="ZIP Code">
+                    </div>
+                  </div>
+  
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>About Me</label>
+                        <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
+                      </div>
+                    </div>
+                  </div>
           </div>
         </div>
       </div>
+      
     </div>
+
+   <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eee"> Launch demo modal </button>
+      
+   <!-- Modal -->
+  
+
+   <script>
+    Swal.mixin({
+        input: 'text',
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+        progressSteps: ['1', '2', '3']
+        }).queue([
+        {
+            title: 'Question 1',
+            text: 'Chaining swal2 modals is easy'
+        },
+        'Question 2',
+
+        'Question 3'
+        ]).then((result) => {
+        if (result.value) {
+            Swal.fire({
+            title: 'All done!',
+            html:
+                'Your answers: <pre><code>' +
+                JSON.stringify(result.value) +
+                '</code></pre>',
+            confirmButtonText: 'Lovely!'
+            })
+        }
+    })
+   </script>

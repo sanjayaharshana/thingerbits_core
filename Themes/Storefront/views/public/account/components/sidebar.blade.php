@@ -21,43 +21,43 @@
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
-            <li class="active">
+            <li class="{{ Request::is('account') ? 'active' : '' }}">
               <a href="{{ route('account.dashboard.index') }}">
                 <i class="nc-icon nc-bank"></i>
                 <p>Dashboard</p>
               </a>
             </li>
-            <li>
+            <li class="{{ Request::is('account/skill') ? 'active' : '' }}">
               <a href="{{ route('skillpane') }}">
                 <i class="nc-icon nc-diamond"></i>
                 <p>Hows your Skill</p>
               </a>
             </li>
-            <li>
-              <a href="{{ route('coursexp') }}">
+            <li class="{{ Request::is('account/coursexp') ? 'active' : '' }}">
+              <a href="{{ route('lms') }}">
                 <i class="nc-icon nc-pin-3"></i>
                 <p>Course Explorer</p>
               </a>
             </li>
-            <li>
+            <li class="{{ Request::is('account/orders') ? 'active' : '' }}">
               <a href="{{ route('account.orders.index') }}">
                 <i class="nc-icon nc-bell-55"></i>
                 <p>{{ trans('storefront::account.links.my_orders') }}</p>
               </a>
             </li>
-            <li>
+            <li class="{{ Request::is('account/wishlist') ? 'active' : '' }}">
               <a href="{{ route('account.wishlist.index') }}">
                 <i class="nc-icon nc-single-02"></i>
                 <p>Product Wishlist</p>
               </a>
             </li>
-            <li>
+            <li class="{{ Request::is('account/profile') ? 'active' : '' }}">
               <a href="{{ route('account.profile.edit') }}">
                 <i class="nc-icon nc-tile-56"></i>
                 <p>Profile</p>
               </a>
             </li>
-            <li>
+            <li class="{{ Request::is('account/reviews') ? 'active' : '' }}">
               <a href="{{ route('account.reviews.index') }}">
                 <i class="nc-icon nc-caps-small"></i>
                 <p>{{ trans('storefront::account.links.my_reviews') }}</p>

@@ -27,7 +27,8 @@ class UpdateProfileRequest extends Request
             'email' => ['required', 'email', Rule::unique('users')->ignore(auth()->id())],
             'first_name' => 'required',
             'last_name' => 'required',
-            'password' => 'confirmed',
+            'password' => 'confirmed',            
+
         ];
     }
 }
