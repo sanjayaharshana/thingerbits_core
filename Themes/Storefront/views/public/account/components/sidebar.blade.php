@@ -27,12 +27,7 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="{{ Request::is('account/skill') ? 'active' : '' }}">
-              <a href="{{ route('skillpane') }}">
-                <i class="nc-icon nc-diamond"></i>
-                <p>Hows your Skill</p>
-              </a>
-            </li>
+
             <li class="{{ Request::is('account/coursexp') ? 'active' : '' }}">
               <a href="{{ route('getcourses') }}">
                 <i class="nc-icon nc-pin-3"></i>
@@ -65,7 +60,7 @@
             </li>
             <li class="active-pro">
               <a href="http://shop.thingerbits.com">
-                <i class="nc-icon nc-spaceship"></i>
+                <i class="nc-icon nc-shop"></i>
                 <p>Shop</p>
               </a>
             </li>

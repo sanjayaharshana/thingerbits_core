@@ -1,7 +1,7 @@
 <div class="top-right">
     <div class="header-menu">
         <div class="header-left">
-            <a class="btn btn-success" style="color:white;"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;Back to Dashboard</a>
+            <a href="{{ route('account.dashboard.index') }}" class="btn btn-success" style="color:white;"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;Back to Dashboard</a>
             <button class="search-trigger"><i class="fa fa-search"></i></button>
             <div class="form-inline">
                 <form class="search-form">
