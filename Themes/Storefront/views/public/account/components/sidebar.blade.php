@@ -34,7 +34,7 @@
               </a>
             </li>
             <li class="{{ Request::is('account/coursexp') ? 'active' : '' }}">
-              <a href="{{ route('lms') }}">
+              <a href="{{ route('getcourses') }}">
                 <i class="nc-icon nc-pin-3"></i>
                 <p>Course Explorer</p>
               </a>
