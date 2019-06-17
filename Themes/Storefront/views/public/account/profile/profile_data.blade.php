@@ -6,13 +6,13 @@
         <div class="col-md-4">
           <div class="card card-user">
             <div class="image">
-              <img src="{{ (Theme::url('public/paper_dash/img/damir-bosnjak.jpg')) }}" alt="...">
+              <img src="{{ (Theme::url('public/paper_dash/img/sanjayacover.jpg')) }}" alt="...">
             </div>
             
             <div class="card-body">
               <div class="author">
                 <a href="#">
-                  <img class="avatar border-gray" src="{{ (Theme::url('public/paper_dash/img/mike.jpg')) }}" alt="...">
+                  <img class="avatar border-gray" src="{{ (Theme::url('public/paper_dash/img/sanjaya.png')) }}" alt="...">
                   <h5 class="title">{{ $my->full_name }}</h5>
                 </a>
                 <p class="description">
@@ -171,30 +171,23 @@
    <!-- Modal -->
   
 
+   @if ($my->adress === null)
    <script>
-    Swal.mixin({
-        input: 'text',
-        confirmButtonText: 'Next &rarr;',
-        showCancelButton: true,
-        progressSteps: ['1', '2', '3']
-        }).queue([
-        {
-            title: 'Question 1',
-            text: 'Chaining swal2 modals is easy'
-        },
-        'Question 2',
-
-        'Question 3'
-        ]).then((result) => {
-        if (result.value) {
-            Swal.fire({
-            title: 'All done!',
+        Swal.fire({
+            title: '<p>What is your address</p>',
+            type: 'question',
+            showConfirmButton: false,
             html:
-                'Your answers: <pre><code>' +
-                JSON.stringify(result.value) +
-                '</code></pre>',
-            confirmButtonText: 'Lovely!'
-            })
-        }
-    })
+              '<form method="post" action=""> {{ csrf_field() }}' +
+              '<div class="form-group">' +
+              '<input type="text" name="adress" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">' +
+              '</div>'+'</div><button type="submit" class="btn btn-primary">Submit my address</button></form> ',       
+      })
    </script>
+   @elseif($my->adress === 1)
+   I have multiple records!
+   @else
+   I don't have any records!
+   @endif
+
+   
