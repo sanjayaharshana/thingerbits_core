@@ -59,11 +59,17 @@
               </a>
             </li>
             <li class="active-pro">
-              <a href="http://shop.thingerbits.com">
-                <i class="nc-icon nc-shop"></i>
+              <a href="/shop">
+                <i class="fa fa-shopping-cart"></i>
                 <p>Shop</p>
               </a>
             </li>
+            <li class="active-pro" style="bottom: 60px;">
+                <a href="{{ route('home') }}">
+                  <i class="fa fa-home"></i>
+                  <p>Go Home</p>
+                </a>
+              </li>
           </ul>
         </div>
       </div>

@@ -134,8 +134,8 @@
                 <div class="footer-top-content">
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 footer-info">
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="{{ (Theme::url('public/visual_style/images/logo-white.png')) }}" alt="SmartEdu"></a>
+                            <div class="{{ (Theme::url('public/visual_style/images/logo.png')) }}">
+                                <a href="index.html"><img src="{{ (Theme::url('public/visual_style/images/logo.png')) }}" alt="SmartEdu"></a>
                             </div>
                             <p class="footer-intro">
                                 Proin libero nunc conseq interdum varius sit amet. Metus ali elei mi in nulla posuere. Tortor preti viverra suspendisse potenti nul ac.

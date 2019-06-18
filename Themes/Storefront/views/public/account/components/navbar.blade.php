@@ -11,7 +11,7 @@
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="#pablo">Thingerbits User Dash</a>
+              <a class="navbar-brand" href="#pablo">Hello {{  $my->full_name }},</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -43,8 +43,8 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link btn-rotate" href="#pablo">
-                    <i class="nc-icon nc-settings-gear-65"></i>
+                  <a class="nav-link btn-rotate" href="{{ route('logout') }}">
+                    <i class="fa fa-sign-out"></i> Logout
                     <p>
                       <span class="d-lg-none d-md-block">Account</span>
                     </p>
