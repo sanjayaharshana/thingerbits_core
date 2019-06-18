@@ -4,6 +4,7 @@
 
 @include('public.home_land.components.head')
 @include('public.home_land.components.ajaxpageloader')
+@include('public.home_land.components.header')
 
     <!-- Header page -->
     
