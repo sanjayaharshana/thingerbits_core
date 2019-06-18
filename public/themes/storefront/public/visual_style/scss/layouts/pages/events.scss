@@ -1,0 +1,272 @@
+/* 16. Events Page  ------------------------------------------*/
+.search-event {
+    input {
+        @include border-radius(25px);
+        border: none;
+        margin-right: 17px;
+        margin-bottom: 30px;
+    }
+    .event-input {
+        background: #f2f2f2;
+        font-size: 15px;
+        padding: 13px 35px;
+        max-width: 270px;
+        width: 100%;
+        &::-webkit-input-placeholder {
+            color: #666;
+            font-size: 15px;
+        }
+        &::-moz-placeholder {
+            color: #666;
+            font-size: 15px;
+        }
+        &:-ms-input-placeholder {
+            color: #666;
+            font-size: 15px;
+        }
+        &:-moz-placeholder {
+            color: #666;
+            font-size: 15px;
+        }
+    }
+    .submit {
+        background: $yellow-primary;
+        color: #fff;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 2px solid transparent;
+        display: inline-block;
+        padding: 12px 58px;
+        width: auto;
+        margin-bottom: 0px;
+        @include border-radius(25px);
+        cursor: pointer;
+    }
+}
+#calendar {
+    .fc-scroller {
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box;
+    }
+    .fc-header-toolbar {
+         margin-bottom: 5px;
+         margin-top: 20px;
+         padding: 36px 55px;
+         color: #fff;
+         @extend display-flex;
+         @include justify-content(space-between);
+         @include align-items(center);
+         .fc-left, .fc-right {
+            position: relative;
+            z-index: 99;
+            float: none;
+         }
+         .fc-left {
+            h2 {
+                color: #fff;
+                font-family: 'Montserrat'; 
+                font-weight: bold;
+                font-size: 40px;
+                text-transform: uppercase;
+            }
+        }
+        .fc-right {
+            .fc-today-button {
+                display: none;
+            }
+            .fc-button-group {
+                .fc-button {
+                    background: transparent;
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid #fff;
+                    @include border-radius(50%);
+                    margin-left: 10px;
+                    outline: none;
+                    &:hover {
+                        background: $yellow-primary;
+                        border: 1px solid transparent;
+                    }
+                    .fc-icon {
+                        color: #fff;
+                        font-family: LineAwesome;
+                        &:after {
+                            font-size: 20px;
+                            font-weight: normal;
+                            top: 0;
+                        }
+                    }
+                    .fc-icon-left-single-arrow {
+                        &:after {
+                            content: "\f111";
+                        }
+                    }
+                    .fc-icon-right-single-arrow {
+                        &:after {
+                            content: "\f112";
+                        }
+                    }
+                }
+            }
+        }
+        .fc-center, .fc-clear {
+            display: none;
+        }
+    }
+    table {
+        .fc-content-skeleton {
+            table {
+                thead {
+                    .fc-day-top {
+                        .fc-day-number {
+                            float: left;
+                        }
+                    }
+                    .fc-future {
+                        .fc-day-number {
+                            color: #999;
+                        }
+                    }
+                    .fc-other-month {
+                        opacity: 1;
+                        .fc-day-number {
+                            color: #ccc;
+                        }
+                    }
+                    .event-date {
+                        .fc-day-number {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .fc-event-container {
+            .fc-day-grid-event {
+                height: 100%;
+                /* width: 100%; */
+                margin: 0px;
+                padding: 0px;
+                border: none;
+                .fc-title {
+                    white-space: normal;
+                    font-size: 14px;
+                    line-height: 1.57;
+                }
+            }
+        }
+    }
+    .fc-view-container {
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        .fc-widget-content {
+            border: none;
+            .fc-row {
+                height: 165px !important;
+            }
+        }
+        table {
+            .fc-body {
+                border: none;
+                .fc-day-grid {
+                    .fc-bg {
+                        tbody {
+                            border: 1px solid transparent;
+                            .fc-today, .fc-day {
+                                background: $grey-background;
+                            }
+                            .fc-other-month {
+                                background: #ededed;
+                            }
+                            tr {
+                                
+                            }
+                        }
+                        .fc-today {
+                            position: relative;
+                            &:before {
+                                position: absolute;
+                                right: 15px;
+                                bottom: 15px;
+                                font-family: FontAwesome;
+                                content: '\f111';
+                                color: $yellow-primary;
+                                font-size: 9px;
+                            }
+                        }
+                    }
+                    .fc-day {
+                        position: relative;
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            width: calc(100% - 2px);
+                            height: calc(100% - 2px);
+                            border: 1px solid #e5e5e5;
+                        }       
+                    }
+                    td {
+                        border: 2px solid #fff;
+                        overflow: hidden;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        white-space: normal;
+                    }
+                    .event-date-other {
+                        opacity: 0.7;
+                    }
+                    .fc-content-skeleton {
+                        thead {
+                            td {
+                                border-bottom: 2px solid transparent;
+                            }
+                        }
+                        .fc-day-top {
+                            .fc-day-number {
+                                font-family: 'Montserrat'; 
+                                font-size: 34px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+            .fc-head {
+                .fc-day-header {
+                    background: #ededed;
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: $black-title;
+                        display: block;
+                        padding: 12px 0;
+                    }
+                }
+                .fc-sat, .fc-sun {
+                    background: #d9d9d9;
+                }
+                .fc-head-container {
+                    border-bottom: 2px solid #fff;
+                    border-left: none;
+                    border-top: none;
+                    thead {
+                        
+                        th {
+                            border: 2px solid #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,441 +1,303 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-<title> {{ setting('store_name') }}</title>
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/bootstrap.min.css')) }}">
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/bootstrap-slider.min.css')) }}">
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/fontawesome-all.min.css')) }}">
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/slick.css')) }}">
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/style.css')) }}">
-<link rel="stylesheet" type="text/css" href="{{ (Theme::url('public/HomeLand/css/custom.css')) }}">
-</head>
 
-@extends('public.layout')
+<!DOCTYPE html>
+<html lang="en">
 
-<style>
-.sidebar {
-    display: none;
-}
-.header-inner {
-    display: none;
-}
-.header-wrapper {
-    display: none;
-}
-.top-nav {
-    display: none;
-}
-</style>
+@include('public.home_land.components.head')
+@include('public.home_land.components.ajaxpageloader')
+@include('public.home_land.components.header')
 
-<body>
-<div id="header-holder" class="main-header">
-    <div class="bg-animation">
-        <div class="graphic-show">
-            <img class="fix-size" src="{{ (Theme::url('public/HomeLand/images/graphic1.png')) }}" alt="">
-            <img class="img img1" src="{{ (Theme::url('public/HomeLand/images/graphic1.png')) }}" alt="">
-            <img class="img img2" src="{{ (Theme::url('public/HomeLand/images/graphic2.png')) }}" alt="">
-            <img class="img img3" src="{{ (Theme::url('public/HomeLand/images/graphic3.png')) }}" alt="">
-        </div>
-    </div>
+    <!-- Header page -->
     
-    <nav id="nav" class="navbar navbar-default navbar-full">
-        <div class="container-fluid">
-            <div class="container container-nav">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="navbar-header">
-                            <button aria-expanded="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="logo-holder" href="index.html">
-                                <div>{{ setting('store_name') }}</div>
-                            </a>
-                        </div>
-                        <div style="height: 1px;" role="main" aria-expanded="false" class="navbar-collapse collapse" id="bs">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="dropdown unity-menu">
-                                    <a href="#pricing">Traning</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="about.html">Arduino Workshop</a></li>
-                                        <li><a href="blog.html">Arduino Course</a></li>                                        
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#">Learning Kits </a>                                    
-                                </li>
-                                <li><a href="../../whmcs/index.php?systpl=hostify">Programmes</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
 
-                                @auth
-                                <li class="dropdown unity-menu">
-                                        <a href="#pricing">Account<i class="fas fa-caret-down"></i></a>
-                                        <ul class="dropdown-menu dropdown-unity">
-                                            <li>
-                                                <a class="unity-link" href="{{ route('account.dashboard.index') }}">
-                                                    <div class="unity-box">
-                                                        <div class="unity-icon">
-                                                            <img src="{{ (Theme::url('public/HomeLand/images/service-icon1.svg')) }}" alt="">
-                                                        </div>
-                                                        <div class="unity-title">
-                                                            Dashboard
-                                                        </div>
-                                                        <div class="unity-details">
-                                                            Browse you self
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="unity-link" href="account/lms">
-                                                    <div class="unity-box">
-                                                        <div class="unity-icon">
-                                                            <img src="{{ (Theme::url('public/HomeLand/images/service-icon2.svg')) }}" alt="">
-                                                        </div>
-                                                        <div class="unity-title">
-                                                           LMS
-                                                        </div>
-                                                        <div class="unity-details">
-                                                            Let's Learn Arduino 
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="unity-link" href="cloudhosting.html">
-                                                    <div class="unity-box">
-                                                        <div class="unity-icon">
-                                                            <img src="{{ (Theme::url('public/HomeLand/images/service-icon3.svg')) }}" alt="">
-                                                        </div>
-                                                        <div class="unity-title">
-                                                            Cloud Hosting
-                                                        </div>
-                                                        <div class="unity-details">
-                                                            Fast as rocket
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="unity-link" href="vpshosting.html">
-                                                    <div class="unity-box">
-                                                        <div class="unity-icon">
-                                                            <img src="{{ (Theme::url('public/HomeLand/images/service-icon4.svg')) }}" alt="">
-                                                        </div>
-                                                        <div class="unity-title">
-                                                            VPS Servers
-                                                        </div>
-                                                        <div class="unity-details">
-                                                            Scalable hosting
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>                                            
-                                            <li><a class="login" href="{{ route('logout') }}">Sign Out</a></li>
-                                        </ul>
-                                        
-                                    </li>                                   
-                                @else
-                                     <li><a class="login-button" href="{{ route('login') }}">Login</a></li>
-                                 @endauth
-                               
-                                <li class="support-button-holder support-dropdown">
-                                    <a class="support-button" href="/shop">Shop</a>                                   
-                                </li>                                
+    <main>
+        <!-- Slide show -->
+        @include('public.home_land.components.slideshow')
+        @include('public.home_land.components.our_tem')
+        @include('public.home_land.components.features_list')
+        @include('public.home_land.components.course_list')
+
+        <!-- Our Team -->
+        
+      
+
+        <!-- Pricing Table -->
+        
+
+        <!-- Lastest news -->
+        <section class="blog section-padding-large background-grey">
+            <div class="container">
+                <div class="section-title section-title-left">
+                    <h2>Latest News</h2>
+                </div>
+                <div class="blog-content">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                            <article class="item hover-scale">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{ (Theme::url('public/visual_style/images/home1-blog-1.jpg')) }}" alt="">
+                                    </a>
+                                    <div class="hover-border">
+                                        <a href="single.html">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </figure>
+                                <div class="info">
+                                    <h3 class="title">
+                                        <a href="single.html">
+                                            Technologies Driving Digital Transformation
+                                        </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Lobortis scelerisque fermentum  faucibus in ornare quam. Fringilla est ullamcorper eget nulla facilisi etiam dignissim.
+                                    </p>
+                                    <div class="meta">
+                                        <span class="date"><i class="far fa-calendar"></i>24 June,2018</span>
+                                        <span class="likes">
+                                            <i class="fas fa-heart"></i>22 Likes
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                            <article class="item hover-scale">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{ (Theme::url('public/visual_style/images/home1-blog-2.jpg')) }}" alt="">
+                                    </a>
+                                    <div class="hover-border">
+                                        <a href="single.html">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </figure>
+                                <div class="info">
+                                    <h3 class="title">
+                                        <a href="single.html">
+                                            Skills Training: The Fuel for Great Performance Reviews
+                                        </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Fringilla scelerisque fermentum  faucibus in ornare quam. Fringilla est ullamcorper eget nulla facilisi etiam dignissim.
+                                    </p>
+                                    <div class="meta">
+                                        <span class="date"><i class="far fa-calendar"></i>26 June,2018</span>
+                                        <span class="likes">
+                                            <i class="fas fa-heart"></i>25 Likes
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                            <article class="item hover-scale">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{ (Theme::url('public/visual_style/images/home1-blog-3.jpg')) }}" alt="">
+                                    </a>
+                                    <div class="hover-border">
+                                        <a href="single.html">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </figure>
+                                <div class="info">
+                                    <h3 class="title">
+                                        <a href="single.html">
+                                            Free eBook: 2019's Top 8 IT Certifications
+                                        </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Volutpat lacus laoreet non curabitr. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus massa placera.
+                                    </p>
+                                    <div class="meta">
+                                        <span class="date"><i class="far fa-calendar"></i>26 June,2018</span>
+                                        <span class="likes">
+                                            <i class="fas fa-heart"></i>15 Likes
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer page -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-content">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 footer-info">
+                            <div class="{{ (Theme::url('public/visual_style/images/logo.png')) }}">
+                                <a href="index.html"><img src="{{ (Theme::url('public/visual_style/images/logo.png')) }}" alt="SmartEdu"></a>
+                            </div>
+                            <p class="footer-intro">
+                                Proin libero nunc conseq interdum varius sit amet. Metus ali elei mi in nulla posuere. Tortor preti viverra suspendisse potenti nul ac.
+                            </p>
+                            <div class="socials">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 footer-menu">
+                            <div class="footer-title">
+                                <h4>Link Useful</h4>
+                            </div>
+                            <div class="footer-link-menu">
+                                <ul>
+                                    <li><a href="#"><i class="la la-angle-right"></i>Courses</a></li>
+                                    <li><a href=""><i class="la la-angle-right"></i>Teacher</a></li>
+                                    <li><a href=""><i class="la la-angle-right"></i>Graduation</a></li>
+                                    <li><a href="#"><i class="la la-angle-right"></i>International</a></li>
+                                    <li><a href="#"><i class="la la-angle-right"></i>Support</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#"><i class="la la-angle-right"></i>About Us</a></li>
+                                    <li><a href="#"><i class="la la-angle-right"></i>Partner</a></li>
+                                    <li><a href="#"><i class="la la-angle-right"></i>Blog Post</a></li>
+                                    <li><a href="#"><i class="la la-angle-right"></i>Events</a></li>
+                                    <li><a href="#"><i class="la la-angle-right"></i>Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 footer-gallery">
+                            <div class="footer-title">
+                                <h4>Gallery</h4>
+                            </div>
+                            <div class="footer-gallery-content">
+                                <figure>
+                                    <a href="{{ (Theme::url('public/visual_style/images/footer-gallery-1.jpg')) }}" class="grouped_elements" data-fancybox="gallery">
+                                        <img src="{{ (Theme::url('public/visual_style/images/footer-gallery-1.jpg')) }}" alt="">
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="{{ (Theme::url('public/visual_style/images/footer-gallery-2.jpg')) }}" class="grouped_elements" data-fancybox="gallery">
+                                        <img src="{{ (Theme::url('public/visual_style/images/footer-gallery-2.jpg')) }}" alt="">
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="{{ (Theme::url('public/visual_style/images/footer-gallery-3.jpg')) }}" class="grouped_elements" data-fancybox="gallery">
+                                        <img src="{{ (Theme::url('public/visual_style/images/footer-gallery-3.jpg')) }}" alt="">
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="{{ (Theme::url('public/visual_style/images/footer-gallery-4.jpg')) }}" class="grouped_elements" data-fancybox="gallery">
+                                        <img src="{{ (Theme::url('public/visual_style/images/footer-gallery-4.jpg')) }}" alt="">
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="{{ (Theme::url('public/visual_style/images/footer-gallery-5.jpg')) }}" class="grouped_elements" data-fancybox="gallery">
+                                        <img src="{{ (Theme::url('public/visual_style/images/footer-gallery-5.jpg')) }}" alt="">
+                                    </a>
+                                </figure>
+                                <figure>
+                                    <a href="{{ (Theme::url('public/visual_style/images/footer-gallery-6.jpg')) }}" class="grouped_elements" data-fancybox="gallery">
+                                        <img src="{{ (Theme::url('public/visual_style/images/footer-gallery-6.jpg')) }}" alt="">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 footer-contact">
+                            <div class="footer-title">
+                                <h4>Infomation</h4>
+                            </div>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>SmartEdu, 20th St, New York, NY 10003</span>
+                                </li>
+                                <li class="footer-phone">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>+1 333-444-5555</span>
+                                </li>
+                                <li class="footer-fax">
+                                    <i class="fas fa-fax"></i>
+                                    <span>+1 333-444-5555</span>
+                                </li>
+                                <li>
+                                    <i class="far fa-envelope"></i>
+                                    <span>info@smartedu.com</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
-    <div id="top-content" class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="main-slider">
-                        <div class="slide">
-                            <div class="noti-holder">
-                                <a href="#">
-                                    <div class="noti">
-                                        <span class="badge">New</span><span class="text">Added new packages in cloud hosting.</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="spacer"></div>
-                            <div class="big-title">Your very <span>own space,</span><br>anywhere, anytime.</div>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis atque corrupti quos dolores et quas molestias.</p>
-                            <div class="btn-holder">
-                                <a href="signup.html" class="ybtn ybtn-header-color">Register</a><a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img class="header-graphic" src="{{ (Theme::url('public/HomeLand/images/graphic1.png')) }}" alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="info" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="info-text">adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</div>
-                
-                <a href="signup.html" class="ybtn ybtn-accent-color ybtn-shadow">Create Your Account</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="services" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row-title">Our Services</div>
-                <div class="row-subtitle">Designed to satisfy your creative needs.</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="service-box">
-                    <div class="service-icon">
-                        <img src="{{ (Theme::url('public/HomeLand/images/service-icon1.svg')) }}" alt="">
-                    </div>
-                    <div class="service-title"><a href="webhosting.html">Web Hosting</a></div>
-                    <div class="service-details">
-                        <p>At vero eos et accusamus et iusto odio dignissimos
-ducimus qui blanditiis praesentium voluptatum div
-atque corrupti quos dolores et quas molestias.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="service-box">
-                    <div class="service-icon">
-                        <img src="{{ (Theme::url('public/HomeLand/images/service-icon2.svg')) }}" alt="">
-                    </div>
-                    <div class="service-title"><a href="#">Resellers</a></div>
-                    <div class="service-details">
-                        <p>At vero eos et accusamus et iusto odio dignissimos
-ducimus qui blanditiis praesentium voluptatum div
-atque corrupti quos dolores et quas molestias.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="service-box">
-                    <div class="service-icon">
-                        <img src="{{ (Theme::url('public/HomeLand/images/service-icon3.svg')) }}" alt="">
-                    </div>
-                    <div class="service-title"><a href="vpshosting.html">VPS Hosting</a></div>
-                    <div class="service-details">
-                        <p>At vero eos et accusamus et iusto odio dignissimos
-ducimus qui blanditiis praesentium voluptatum div
-atque corrupti quos dolores et quas molestias.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="service-box">
-                    <div class="service-icon">
-                        <img src="{{ (Theme::url('public/HomeLand/images/service-icon4.svg')) }}" alt="">
-                    </div>
-                    <div class="service-title"><a href="cloudhosting.html">Cloud Hosting</a></div>
-                    <div class="service-details">
-                        <p>At vero eos et accusamus et iusto odio dignissimos
-ducimus qui blanditiis praesentium voluptatum div
-atque corrupti quos dolores et quas molestias.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="message1" class="container-fluid message-area">
-    <div class="bg-color"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="text-other-color1">Are you ready?</div>
-                <div class="text-other-color2">create an account, or contact us.</div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="buttons-holder">
-                    <a href="signup.html" class="ybtn ybtn-accent-color">Create Your Account</a><a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="pricing" class="container-fluid">
-    <div class="bg-color"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row-title">Web Hosting Plans</div>
-                <div class="row-subtitle">Choose what's best</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="pricing-box pricing-unity pricing-color1">
-                    <div class="pricing-content">
-                        <div class="pricing-icon">
-                            <img src="{{ (Theme::url('public/HomeLand/images/service-icon1.svg')) }}" alt="">
-                        </div>
-                        <div class="pricing-title">Web Hosting</div>
-                        <div class="price-title">Starting from</div>
-                        <div class="pricing-price">$4.8</div>
-                        <div class="pricing-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus.<br>
-                                Blanditiis praesentium voludiv.</p>
-                        </div>
-                        <div class="pricing-link">
-                            <a class="ybtn" href="webhosting.html">See web hosting plans</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="pricing-box pricing-unity pricing-color2 featured">
-                    <div class="pricing-content">
-                        <div class="pricing-icon">
-                            <img src="images/service-icon4.svg" alt="">
-                        </div>
-                        <div class="pricing-title">Cloud Server</div>
-                        <div class="price-title">Starting from</div>
-                        <div class="pricing-price">$10.8</div>
-                        <div class="pricing-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus.<br>
-                                Blanditiis praesentium voludiv.</p>
-                        </div>
-                        <div class="pricing-link">
-                            <a class="ybtn" href="cloudhosting.html">See cloud servers plans</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="pricing-box pricing-unity pricing-color3">
-                    <div class="pricing-content">
-                        <div class="pricing-icon">
-                            <img src="images/service-icon3.svg" alt="">
-                        </div>
-                        <div class="pricing-title">VPS Server</div>
-                        <div class="price-title">Starting from</div>
-                        <div class="pricing-price">$18.8</div>
-                        <div class="pricing-details">
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus.<br>
-                                Blanditiis praesentium voludiv.</p>
-                        </div>
-                        <div class="pricing-link">
-                            <a class="ybtn" href="vpshosting.html">See vps servers plans</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">Copyright @ 2019 <span>SmartEdu</span>. <a class="au-btn-buy" href="https://themeforest.net/cart/add_items?item_ids=23218895">Get The Template</a></p>
 
-<div id="testimonials" class="container-fluid">
-    <div class="bg-color"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row-title">Testimonials</div>
-                <div class="row-subtitle">What others said about us?</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div id="testimonials-slider">
-                    <div>
-                        <div class="details-holder">
-                            <img class="photo" src="images/person1.jpg" alt="">
-                            <h4>Chris Walker</h4>
-                            <h5>CEO & CO-Founder @HelloBrandio</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas non ante non consequat. Aenean accumsan eros vel elit tristique, non sodales nunc luctus. Etiam vitae odio eget orci finibus auctor ut eget magna.</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="details-holder">
-                            <img class="photo" src="images/person2.jpg" alt="">
-                            <h4>Chris Walker</h4>
-                            <h5>CEO & CO-Founder @HelloBrandio</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas non ante non consequat. Aenean accumsan eros vel elit tristique, non sodales nunc luctus. Etiam vitae odio eget orci finibus auctor ut eget magna.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div id="more-features" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row-title">Our Promise</div>
-                <div class="row-subtitle">Your satisfaction is guaranteed. Indeed.</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="mfeature-box">
-                    <div class="mfeature-icon">
-                        <i class="htfy htfy-trophy"></i>
-                    </div>
-                    <div class="mfeature-title">%99.9 Uptime</div>
-                    <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="mfeature-box">
-                    <div class="mfeature-icon">
-                        <i class="htfy htfy-like"></i>
-                    </div>
-                    <div class="mfeature-title">Money Back Guarantee</div>
-                    <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mfeature-box">
-                    <div class="mfeature-icon">
-                        <i class="htfy htfy-cogwheel"></i>
-                    </div>
-                    <div class="mfeature-title">Best Support</div>
-                    <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="message2" class="container-fluid message-area normal-bg boxed">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="text-other-color1">Are you ready?</div>
-                <div class="text-other-color2">create an account, or contact us.</div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="buttons-holder">
-                    <a href="signup.html" class="ybtn ybtn-accent-color">Create Your Account</a><a href="contact.html" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </footer>
 
-<script src="{{ (Theme::url('public/HomeLand/js/jquery.min.js')) }}"></script>
-<script src="{{ (Theme::url('public/HomeLand/js/bootstrap.min.js')) }}"></script>
-<script src="{{ (Theme::url('public/HomeLand/js/bootstrap-slider.min.js')) }}"></script>
-<script src="{{ (Theme::url('public/HomeLand/js/slick.min.js')) }}"></script>
-<script src="{{ (Theme::url('public/HomeLand/js/main.js')) }}"></script>
+    <!-- Back to top -->
+    <div id="back-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- JS -->
+
+    <!-- Jquery and Boostrap library -->
+    <script src="{{ (Theme::url('public/visual_style/vendor/bootstrap/js/popper.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/jquery/jquery.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/bootstrap/js/bootstrap.min.js')) }}"></script>
+
+    <!-- Other js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmXgQ65zpsjsEAfNPP9mBAz-5zjnIZBw"></script>
+    <script src="{{ (Theme::url('public/visual_style/js/theme-map.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/js/jquery.countdown.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/js/masonry.pkgd.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/js/imagesloaded.pkgd.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/js/isotope-docs.min.js')) }}"></script>
+
+    <!-- Vendor JS -->
+    <script src="{{ (Theme::url('public/visual_style/vendor/slick/slick.min.js')) }}"></script>
+    <script src='{{ (Theme::url('public/visual_style/vendor/jquery-ui/jquery-ui.min.js')) }}'></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/waypoints/lib/jquery.waypoints.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/jquery-validation/dist/jquery.validate.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/sweetalert/sweetalert.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/fancybox/dist/jquery.fancybox.min.js')) }}"></script>
+    <script src='{{ (Theme::url('public/visual_style/vendor/fullcalendar/lib/moment.min.js')) }}'></script>
+    <script src='{{ (Theme::url('public/visual_style/vendor/fullcalendar/fullcalendar.min.js')) }}'></script>
+    <script src='{{ (Theme::url('public/visual_style/vendor/wow/dist/wow.min.js')) }}'></script>
+
+    <!-- REVOLUTION JS FILES -->
+    <script src="{{ (Theme::url('public/visual_style/vendor/revolution/js/jquery.themepunch.tools.min.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/vendor/revolution/js/jquery.themepunch.revolution.min.js')) }}"></script>
+
+    <!-- Form JS -->
+    <script src="{{ (Theme::url('public/visual_style/js/validate-form.js')) }}"></script>
+    <script src="{{ (Theme::url('public/visual_style/js/config-contact.js')) }}"></script>
+
+    <!-- Main JS -->
+    <script src="{{ (Theme::url('public/visual_style/js/main.js')) }}"></script> 
+
 </body>
+
 </html>

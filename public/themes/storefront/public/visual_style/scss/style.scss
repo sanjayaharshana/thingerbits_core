@@ -1,0 +1,62 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Extend
+2. Global
+3. Arrows
+4. Breadcrumb 
+5. Dots 
+6. Fonts
+7. Pagination
+8. Footer
+9. Header
+10. Sidebar
+11. 404 Page 
+12. About us Page 
+13. Blog Page
+14. Contact Page
+15. Course Page
+16. Events Page
+17. Home Page
+18. Gallery Page
+19. Single Course Page
+20. Single Event Page
+21. Single Post Page
+22. Standard List Post Page
+23. Responsive
+-------------------------------------------------------------------*/
+//Common
+@import 'common/extend.scss';
+@import 'common/minxi.scss';
+@import 'common/variables.scss';
+@import 'common/global.scss';
+
+//components
+@import 'components/arrows.scss';
+@import 'components/breadcrumb.scss';
+@import 'components/dots.scss';
+@import 'components/fonts.scss';
+@import 'components/pagination.scss';
+
+//layout
+@import 'layouts/footer.scss';
+@import 'layouts/header.scss';
+@import 'layouts/right-sidebar.scss';
+
+
+//Pages
+@import 'layouts/pages/404.scss';
+@import 'layouts/pages/aboutus.scss';
+@import 'layouts/pages/blog.scss';
+@import 'layouts/pages/contact.scss';
+@import 'layouts/pages/course.scss';
+@import 'layouts/pages/events.scss';
+@import 'layouts/pages/front-page.scss';
+@import 'layouts/pages/gallery.scss';
+@import 'layouts/pages/single-course.scss';
+@import 'layouts/pages/single-event.scss';
+@import 'layouts/pages/single.scss';
+@import 'layouts/pages/standard-list.scss';
+
+// Responsive
+@import 'layouts/responsive.scss';

@@ -1,0 +1,239 @@
+/* 14. Conatct Page  ------------------------------------------*/
+.contact-map-1 {
+    .js-google-map {
+        .js-map-holder {
+            height: 400px;
+        }
+    }
+}
+.contact-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 34px;
+}
+.contact-us-info {
+    .item {
+        @extend display-flex;
+        margin-bottom: 22px;
+        i {
+            color: $blue-primary;
+            font-size: 20px;
+            padding-right: 23px;
+            margin-top: 7px;
+        }
+        span {
+            display: block;
+            padding-right: 80px;
+            font-size: 16px;
+        }
+        .contact-phone {
+            font-family: 'Montserrat';
+            font-size: 18px;
+            color: $black-title;
+            font-weight: 500;
+        }
+    }
+    .phone-item {
+        margin-bottom: 35px;
+        i {
+            padding-right: 33px;
+        }
+    }
+}
+.contact-form {
+    overflow: hidden;
+    form {
+        margin-top: -15px;
+        .form-input {
+            margin: 0 -5px;
+            .wrap-group {
+                padding: 0 5px;
+                overflow: hidden;
+            }
+
+        }
+        .wrap-group {
+            overflow: hidden;
+            input, textarea {
+                background: transparent;
+                padding: 18px 20px;
+                border: none;
+                font-size: 16px;
+                border-bottom : 1px solid #e5e5e5;
+                width: 100%;
+                &::-webkit-input-placeholder {
+                    color: #666;
+                    font-size: 14px;
+                }
+                &::-moz-placeholder {
+                    color: #666;
+                    font-size: 14px;
+                }
+                &:-ms-input-placeholder {
+                    color: #666;
+                    font-size: 14px;
+                }
+                &:-moz-placeholder {
+                    color: #666;
+                    font-size: 14px;
+                }
+            }
+            input {
+                margin-bottom: 15px;
+                float: left;
+                height: 50px;
+            }
+            textarea {
+                width: 100%;
+                margin-bottom: 43px;
+                height: 150px;
+            }
+            .btn-submit {
+                background: $yellow-primary;
+                color: #fff;
+                font-family: 'Montserrat';
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: bold;
+                border: 2px solid transparent;
+                display: inline-block;
+                padding: 10px 60px;
+                width: auto;
+                margin-bottom: 0px;
+                @include border-radius(25px);
+                cursor: pointer;
+            }
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    }
+}
+
+.contact-us-content {
+    .js-google-map {
+        .js-map-holder {
+            height: 500px;
+        }
+        margin-bottom: 60px;
+    }
+}
+.contact-us-two {
+    overflow: hidden;
+    .contact-us-content {
+        .contact-form {
+            padding-left: 360px;
+            padding-right: 45px;
+            padding-top: 75px;
+            background: #fff url('../images/contactus-form-bg.jpg') no-repeat scroll center center;
+            @include background-size(cover);
+            height: 100%;
+            .contact-title {
+                text-transform: none;
+                font-size: 32px;
+                color: #fff;
+            }
+            .form-input {
+                margin: 0px;
+                .wrap-group {
+                    padding: 0px;
+                }
+            }
+            form {
+                .wrap-group {
+                    input, textarea  {
+                        color: #fff;
+                        border-bottom : 1px solid #ccc;
+                        &::-webkit-input-placeholder {
+                            color: #fff;
+                        }
+                        &::-moz-placeholder {
+                            color: #fff;
+                        }
+                        &:-ms-input-placeholder {
+                            color: #fff;
+                        }
+                        &:-moz-placeholder {
+                            color: #fff;
+                        }
+                    }
+                    textarea {
+                        height: 120px;
+                        margin-bottom: 38px;
+                    }
+                    .btn-submit  {
+                        background: $yellow-primary;
+                        border-bottom : none;
+                        &:hover {
+                            background-color: darken($yellow-primary, 10%);
+                            color: #fff;
+                        }
+                    }
+                    .error {
+                        color: red;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .js-google-map {
+            .js-map-holder {
+                height: 596px;
+            }
+            margin-bottom: 0px;
+        }
+    }
+}
+  
+.contact-info-two-content {
+    margin-bottom: -15px;
+    .item {
+        text-align: center;
+        .icon {
+            padding-bottom: 28px;
+            i {
+                width: 110px;
+                height: 110px;
+                @include box-shadow(0px 3px 10px 0px rgba(0, 0, 0, 0.1));
+                @include border-radius(50%);
+                @extend display-flex;
+                @include justify-content(center);
+                @include align-items(center);
+                font-size: 35px;
+                margin: 0 auto;
+                color: $blue-primary;
+                cursor: pointer;
+            }
+        }
+        .info {
+            .title {
+                font-size: 22px;
+                padding-bottom: 5px;
+            }
+            .contact-phone {
+                font-size: 20px;
+                color: #555;
+            }
+            .address {
+                font-size: 16px;
+                padding: 0 20px;
+            }
+        }
+        span, a {
+            display: block;
+            font-size: 18px;
+            color: #666;
+        }
+        &:hover {
+            .icon {
+                i {
+                    background: $yellow-primary;
+                    @include box-shadow(none);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+  

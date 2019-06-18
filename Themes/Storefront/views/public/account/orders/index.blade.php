@@ -6,19 +6,41 @@
     <li class="active">{{ trans('storefront::account.links.my_orders') }}</li>
 @endsection
 
+
+      
+
+
+
+
 @section('content_right')
     <div class="index-table">
         @if ($orders->isEmpty())
             <h3 class="text-center">{{ trans('storefront::account.orders.no_orders') }}</h3>
         @else
+        <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <tr><th>
+                    {{ trans('storefront::account.orders.order_id') }}
+                </th>
+                <th>
+                    {{ trans('storefront::account.orders.date') }}
+                </th>
+                <th>
+                    {{ trans('storefront::account.orders.status') }}
+                </th>
+                <th class="text-right">
+                    {{ trans('storefront::account.orders.total') }}
+                </th>
+              </tr></thead>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>{{ trans('storefront::account.orders.order_id') }}</th>
-                            <th>{{ trans('storefront::account.orders.date') }}</th>
-                            <th>{{ trans('storefront::account.orders.status') }}</th>
-                            <th>{{ trans('storefront::account.orders.total') }}</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>

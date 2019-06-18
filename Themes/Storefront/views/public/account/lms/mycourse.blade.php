@@ -1,10 +1,10 @@
 @include('public.account.lms.components.head')
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 
-  
+
 <div class="row" id="myList">
                     
-                  
+          
 
 </div>
 

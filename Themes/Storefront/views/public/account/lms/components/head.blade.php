@@ -102,6 +102,7 @@
                     <a class="navbar-brand" href="./"><img src="{{ (Theme::url('public/HousePan/images/logo.png')) }}" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                   
                 </div>
             </div>
             

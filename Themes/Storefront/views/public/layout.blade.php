@@ -50,12 +50,17 @@
             <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+       
+
         <div class="main">
             <div class="wrapper">
                 @include('public.partials.sidebar')
                 @include('public.partials.top_nav')
                 @include('public.partials.header')
+                @if(\Request::is('shop'))
                 @include('public.partials.navbar')
+                @endif
+              
 
                 <div class="content-wrapper clearfix {{ request()->routeIs('cart.index') ? 'cart-page' : '' }}">
                     <div class="container">

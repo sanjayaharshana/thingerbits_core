@@ -44,8 +44,8 @@
   <div class="form-group">
       <label for="exampleInputEmail1">Lesson Type</label>
   <select class="form-control" id="select_type" name="lestype" value="{{$rool->lesson_type}}">
-          <option value="1">Video Content</option>
-          <option value="2">Documenet Content</option>          
+          <option {{ ($rool->lesson_type=="1"?"selected":"") }} value="1">Video Content</option>
+          <option {{ ($rool->lesson_type=="2"?"selected":"") }} value="2">Documenet Content</option>          
   </select>
   </div>
   <div class="form-group" id="doc_body" style="">
