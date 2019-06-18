@@ -13,8 +13,7 @@
         <!-- Slide show -->
         @include('public.home_land.components.slideshow')
         @include('public.home_land.components.features_list')
-
-        
+        @include('public.home_land.components.course_list')
 
         <!-- Our Team -->
         <section class="our-team section-padding-large">
