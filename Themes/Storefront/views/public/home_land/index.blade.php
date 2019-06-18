@@ -12,11 +12,12 @@
     <main>
         <!-- Slide show -->
         @include('public.home_land.components.slideshow')
+        @include('public.home_land.components.our_tem')
         @include('public.home_land.components.features_list')
         @include('public.home_land.components.course_list')
 
         <!-- Our Team -->
-        @include('public.home_land.components.course_list')
+        
         <!-- Testimonials -->
         <section class="testimonials background-grey section-padding-large">
             <div class="container">
