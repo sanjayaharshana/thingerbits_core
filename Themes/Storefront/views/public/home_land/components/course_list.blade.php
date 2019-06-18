@@ -7,7 +7,7 @@
                     Tempus egestas sed sed risus pretium quam vulputate. Sit amet est placerat in id nibh tortor egestas erat imperdiet sed.
                 </p>
             </div>
-            <div class="courses-content featured-course-slider">
+            <div class="courses-content featured-course-slider" style="background:brown;">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <article class="item wow fadeIn" data-wow-delay="0.1s">
