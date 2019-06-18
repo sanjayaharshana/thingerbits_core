@@ -8,7 +8,24 @@
     display: none;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+
+<link href="">
+
     <div class="my-dashboard">
+
+            <div class="slider demo">
+                <div> Slide  1 </div>                   
+                <div> Slide  2 </div>
+                <div> Slide  3 </div>
+            </div>
+                    
+
+
+
+
         <div class="recent-orders index-table">
             <h4 class="section-header">
                 {{ trans('storefront::account.dashboard.recent_orders') }}
@@ -75,8 +92,16 @@
         </div>
     </div>
     @if ($threeColumnCarouselProducts['column_2']->isNotEmpty())
-            <div class="col-md-4">
+            <div class="col-md-3">
                 @include('public.home.sections.partials.vertical_products', ['title' => setting("storefront_three_column_vertical_product_carousel_section_column_2_title"), 'products' => $threeColumnCarouselProducts['column_2']])
             </div>
     @endif
 @endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+    $('.multiple-items').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+    });
+</script>

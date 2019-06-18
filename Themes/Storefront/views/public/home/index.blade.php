@@ -2,7 +2,12 @@
 
 @section('title', setting('store_tagline'))
 
+
 @section('content')
+
+
+
+
     @unless (is_null($slider))
         @if (storefront_layout() === 'default')
             <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3">

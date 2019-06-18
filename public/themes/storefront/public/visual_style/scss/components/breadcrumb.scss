@@ -1,0 +1,26 @@
+/* 4. Breadcrumb ------------------------------------------*/
+.breadcrumb {
+    background-color: transparent;
+    @include border-radius(0px);
+    padding: 0px;
+    // @include justify-content(center);
+    .breadcrumb-item {
+        font-size: 16px;
+        font-weight: 300;
+        a {
+            color: #fff;
+            
+        }
+    }
+    &:before {
+        content: "";
+    }
+    .active {
+        color: #fff;
+    }
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "/";
+    font-size: 16px;
+    color: #fff;
+}

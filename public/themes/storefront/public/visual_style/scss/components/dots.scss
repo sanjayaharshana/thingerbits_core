@@ -1,0 +1,52 @@
+/* 5. Dots ------------------------------------------*/
+.slick-dots {
+    bottom: -45px;
+    li {
+        width: 20px;
+        margin-right: 5px;
+        margin-left: -5px;
+        &:last-child {
+            margin-right: 0px;
+        }
+        button {
+            &:before {
+                color: #fff;
+                opacity: 0.2;
+                font-size: 11px;
+            }
+        }
+    }
+    li.slick-active {
+        button {
+            &:before {
+                color: #fff;
+                opacity: 1;
+            }
+        }
+    }
+}
+.testimonials-content, .home2-testimonials-content {
+    .slick-dots {
+        bottom: -75px;
+        li {
+            button {
+                &:before {
+                    color: #000;
+                    opacity: 0.102;
+                    font-size: 11px;
+                }
+            }
+        }
+        li.slick-active {
+            button {
+                &:before {
+                    color: $blue-primary;
+                    opacity: 1;
+                }
+            }
+        }
+    } 
+}
+  
+  
+  

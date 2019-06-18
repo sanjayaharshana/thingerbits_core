@@ -1,0 +1,119 @@
+/* 20. Single Event Page  ------------------------------------------*/
+.event-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 33px;
+}
+.single-event-content {
+    .js-google-map {
+        height: 100%;
+        position: relative;
+        padding-bottom: 55px;
+        .js-map-holder {
+            height: 100%;
+        }
+    }
+    .events-image {
+        padding-bottom: 55px;
+    }
+    .event-info {
+        margin-bottom: 72px;
+        ul {
+            @extend list-type-ulli;
+            li {
+                font-size: 16px;
+                margin-bottom: 15px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                span {
+                    color: $black-title;
+                }
+                &:hover {
+                    color: $yellow-primary;
+                    span {
+                        color: $yellow-primary;
+                    }
+                    i {
+                        -webkit-transform: scale(1.3) translateZ(0);
+                        transform: scale(1.3) translateZ(0); 
+                    }
+                }
+                i {
+                    
+                    font-weight: medium;
+                    color: $blue-primary;
+                    padding-right: 15px;
+                    padding-top: 3px;
+                    @include transform(translateZ(0));
+                    -webkit-transition-duration: 0.3s;
+                    transition-duration: 0.3s;
+                    -webkit-transition-property: transform;
+                    transition-property: transform;
+                    -webkit-transition-timing-function: ease-out;
+                    transition-timing-function: ease-out;
+                }
+            }
+        }
+    }
+    .event-desc {
+        margin-bottom: 72px;
+        p {
+            margin-bottom: 11px;
+            padding-right: 20px;
+        }
+    }
+    .events-related {
+        padding: 25px 22px;
+        .item {
+            @extend display-flex;
+            @include align-items(center);
+            figure {
+                width: 85px;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            .info {
+                .desc {
+                    font-size: 15px;
+                    margin-bottom: 8px;
+                }
+                .title {
+                    
+                    font-family: 'Bitter';
+                    font-weight: 400;
+                    font-size: 16px;
+                    a {
+                        color: $grey-primary;
+                    }
+                }
+                &:hover {
+                    .desc {
+                        color: $yellow-primary;
+                    }
+                    .title {
+                        a {
+                            color: $yellow-primary;
+                        }
+                    }
+                }
+            }
+        }
+        .item-prev {
+            figure {
+                margin-right: 20px;
+            }
+        }
+        .item-next {
+            figure {
+                margin-left: 20px;
+                @include order(2);
+            }
+            .info {
+                text-align: right;
+                @include order(1);
+            }
+        }
+    }
+}

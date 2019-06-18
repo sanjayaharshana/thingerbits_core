@@ -1,0 +1,354 @@
+/* 23. Responsive ------------------------------------------*/
+//end 1200px
+@media screen and (max-width: 1600px) {
+    .contact-us-two .contact-us-content .contact-form {
+        padding-left: 45px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    .slide-categories {
+        width: 60%;
+    }
+    .categories-content .cat-1 figure {
+        width: 420px;
+        height: 100%;
+    }
+    .categories-content .cat-1  {
+        padding-bottom: 30px;
+    }
+    .courses-page .courses-content .listing {
+        @include flex-direction(column);
+    }
+    .courses-page .courses-content .listing .item-thumb, .courses-page .courses-content .listing .info {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+//end 1200px
+@media screen and (max-width: 1024px) {
+    .hidden-tablet-landscape {
+        display: none;
+    }
+    .hidden-tablet-landscape-up {
+        display: block;
+    }
+    .header-home2 {
+        position: relative;
+    }
+    .testimonials-content .item .info {
+        padding: 40px 20px;
+    }
+}
+
+//end 1024px
+@media screen and (max-width: 992px) {
+    .sign-up-content .sign-up-form {
+        margin-right: 0px;
+    }
+    .pricing-table-content .item, .blog-content .item {
+        margin-bottom: 30px;
+    }
+    .footer-info, .footer-menu, .footer-gallery, .footer-contact {
+        margin-bottom: 50px;
+    }
+    .categories-content .cat-1 figure {
+        width: 315px;
+    }
+    .item {
+        margin-bottom: 30px;
+    }
+    .categories-2 {
+        margin-top: 30px;
+    }
+    .heading-page {
+        img {
+            height: 200px;
+        }
+    }
+    .courses-content {
+        margin-bottom: 30px;
+    }
+
+    .single-course-content {
+        margin-bottom: 40px;
+    }
+    .single-course-content .single-course-info .course-teacher-cat {
+        display: block;
+        text-align: center;
+    }
+    .single-course-content .single-course-info .course-teacher-cat .teacher-cat {
+        margin-bottom: 30px;
+    }
+    .single-course-content .single-course-info .course-teacher-cat .teacher-cat ul li {
+        text-align: center;
+        width: 100%;
+    }
+    .review-content .rating-breakdown .progress-bar .progress-box .au-progress {
+        max-width: 300px;
+    }
+    .contact-us-two .contact-us-content .contact-form {
+        margin-bottom: 40px;
+    }
+    .courses-page .courses-content .listing {
+        @include flex-direction(row);
+    }
+    .courses-page .courses-content .listing .item-thumb {
+        width: 40%;
+    }
+    .courses-page .courses-content .listing .info {
+        width: 60%;
+    }
+}
+
+//end 992px
+@media screen and (max-width: 768px) {
+    .slide-categories {
+        bottom: 0px;
+    }
+    .our-team-content .item .info .desc {
+        padding: 16px 0px 10px;
+    }
+    .categories-content, .events-content .item {
+        display: block;
+    }
+    .categories-content .cat-1 figure {
+        width: 100%;
+    }
+    .categories-content .categories-group-2 {
+        padding-left: 0px;
+    }
+    .events-content .item .info {
+        width: 100%;
+    }
+    .events-content .item {
+        padding: 20px 20px 20px 150px;
+    }
+    .events-content .item .post-date {
+        height: 50%;
+    }
+    .events-content .item  figure {
+        text-align: center;
+        padding-top: 20px;
+    }
+    .events-content .item figure img {
+        width: 180px;
+        height: 180px;
+    }
+    .courses-2 .section-title-white .title-desc {
+        width: 100%;
+    }
+    .team-group-content .arrow-right {
+        right: 15px;
+    }
+    .our-skillls-content .our-skillls-image figure {
+        text-align: center;
+    }
+    .our-skillls-content .our-skillls-image {
+        padding-right: 0px;
+    }
+    .home2-testimonials-content {
+        width: 95%;
+    }
+    .home2-testimonials-content .arrow-left {
+        left: 15px;
+    }
+    .home2-testimonials-content .arrow-right {
+        right: 15px;
+    }
+    .home2-testimonials-content .arrow {
+        top: -8px;
+    }
+    .error-page-content .error-content {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .error-page-content .error-content .desc {
+        padding-right: 0px;
+    }
+    .review-content, .single-event-content .events-related {
+        display: block;
+    }
+    .review-content .average-rating {
+        width: 100%;
+        border-right: 1px solid transparent;
+        padding-bottom: 0px;
+    }
+    .single-course-content .single-course-info .course-teacher-cat .teacher-cat ul li {
+        margin-right: 0px;
+    }
+    .single-course-tab .nav-tabs .nav-link {
+        padding: 16px;
+    }
+    .review-content .rating-breakdown .progress-bar .progress-box .au-progress {
+        max-width: 80%;
+    }
+    .aboutus-skillls .our-skillls-content .list-skills {
+        margin-bottom: 30px;
+    }
+    .aboutus-skillls .our-skillls-content .list-skills .desc {
+        padding-right: 0px;
+    }
+    .grid-sizer,
+    .gallery-item {
+        width: 50%;
+    }
+    .single-event-content .events-related .item figure {
+        width: 30%;
+    }
+    .single-event-content .events-related .item-next figure {
+        @include order(1);
+        margin-left: 0px;
+        margin-right: 20px;
+        
+    }
+    .single-event-content .events-related .item-next .info {
+        @include order(2);
+        text-align: left;
+    }
+    .single-content .comments .media .media-body .info .btn-reply {
+        position: relative;
+        margin-top: 10px;
+    }
+    #calendar .fc-view-container .fc-widget-content .fc-row {
+        position: relative;
+    }
+    #calendar .fc-view-container .fc-widget-content .fc-row .fc-content-skeleton {
+        top: 50%;
+        @include transform(translateY(-50%));
+        text-align: center;
+    }
+    #calendar table .fc-event-container .fc-day-grid-event .fc-title {
+        font-size: 16px;
+    }
+    #calendar .fc-header-toolbar {
+        @include flex-direction(column);
+    }
+    #calendar .fc-header-toolbar .fc-left, #calendar .fc-header-toolbar .fc-right {
+        padding: 15px 0;
+    }
+    .courses-page .courses-content .listing {
+        @include flex-direction(column);
+    }
+    .courses-page .courses-content .listing .item-thumb, .courses-page .courses-content .listing .info {
+        width: 100%;
+    }
+}
+
+//end 767px
+@media screen and (max-width: 575px) {
+    .search-box {
+        padding-left: 20px;
+    }
+    .events-content .item .info .course-title, .single-course-tab ul, .instructor-content{
+        display: block;
+    }
+    .events-content .item .info .course-title .title {
+        padding-bottom: 12px;
+    }
+    .events-content .item .post-date {
+        height: 20%;
+        width: 85px;
+    }
+    .events-content .item .post-date .date {
+        font-size: 45px;
+    }
+    .events-content .item {
+        padding: 20px 20px 20px 100px;
+    }
+    .instructor-content, .single-content .instructor-content {
+        padding: 20px;
+    }
+    .instructor-content .instructor-info {
+        padding-left: 0px;
+        text-align: center;
+    }
+    .single-course-content .single-course-info .course-teacher-cat .teacher-cat ul, .single-course-content .single-course-info .course-teacher-cat .teacher-cat ul li {
+        display: inline-block;
+    }
+    .single-course-content .single-course-info .course-teacher-cat .teacher-cat ul li {
+        padding-right: 0px;
+        margin-bottom: 20px;
+    }
+    .single-course-content .single-course-info .course-teacher-cat .teacher-cat ul li:after {
+        width: 0px;
+    }
+    .review-content .rating-breakdown {
+        padding: 30px 20px;
+    }
+    .review-content .rating-breakdown .progress-bar .progress-box .au-progress {
+        max-width: 65%;
+    }
+    .fqa-content ul li .card-header .title {
+        width: 100%;
+    }
+    .instructor-thumb {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .single-content .instructor-content .instructor-info{
+        padding-left: 0px;
+    }
+}
+
+//end 575px
+@media screen and (max-width: 480px) {
+    .gallery-content .row {
+        display: block;
+    }
+    .courses-page .au-sorting, .single-content .tags-socials {
+        display: block;
+        text-align: center;
+    }
+    .courses-page .au-sorting .filter-layout {
+        @include justify-content(center);
+        margin-bottom: 20px;
+    }
+    .single-content .tags-socials .tags {
+        padding-bottom: 20px;
+    }
+    .single-content .tags-socials .tags a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .single-content .tags-socials .socials {
+        @include justify-content(center);
+    }
+    .contact-us-info .item span {
+        padding-right: 0px;
+    }
+    .search-event {
+        text-align: center;
+    }
+    .search-event input {
+        margin-right: 0px;
+    }
+}
+
+//end 480px
+@media screen and (max-width: 400px) {
+    .header-mobile .header-top .header-top-content {
+        display: block;
+    }
+    .header-mobile .header-top .header-top-content .header-top-info {
+        margin-bottom: 30px;
+    }
+    .header-mobile .header-top .header-top-content .header-top-info a {
+        @include justify-content(center);
+    }
+    .header-mobile .header-top-mobile .logo {
+        width: 45%;
+    }
+}
+
+//end 400px
+@media screen and (max-width: 320px) {}

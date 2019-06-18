@@ -1,0 +1,80 @@
+/* 3. Arrows ------------------------------------------*/
+.slide-categories-content {
+    .arrow {
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        color: #fff;font-size: 18px;
+        width: 45px;
+        height: 45px;
+        border: 1px solid #fff;
+        @include border-radius(50%);
+        &:hover {
+            background: $yellow-primary;
+            border: 1px solid transparent;
+        }
+    }
+    .arrow-left {
+        left: -75px;
+    }
+    .arrow-right {
+        right: -75px;
+    }
+}
+.arrow {
+    position: absolute;
+    top: -110px;
+    font-size: 22px;
+    color: #666;
+    cursor: pointer;
+    z-index: 99;
+}
+.arrow-left {
+    right: 47px;
+}
+.arrow-right {
+    right: 15px;
+}
+.home2-testimonials-content {
+    .arrow {
+        position: absolute;
+        top: 35%;
+        @include transform(translateY(-50%));
+        font-size: 18px;
+        width: 45px;
+        height: 45px;
+        border: 1px solid #e5e5e5;
+        @include border-radius(50%);
+        &:hover {
+            background: $yellow-primary;
+            border: 1px solid transparent;
+            color: #fff;
+        }
+    }
+    .arrow-left {
+        left: -75px;
+    }
+    .arrow-right {
+        right: -75px;
+    } 
+}
+.team-group-content {
+    .arrow {
+        top: -48px;
+        color: #999;
+        font-size: 20px;
+    }
+    .arrow-left{
+        display: none;
+    }
+    .arrow-right {
+        right: 135px;
+    }
+}
+.home3-testimonials {
+    .home2-testimonials-content {
+        .arrow {
+            color: #fff;
+        }
+    } 
+}

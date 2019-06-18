@@ -1,0 +1,113 @@
+/* 8. Footer ------------------------------------------*/
+
+.footer-title {
+    h4 {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 45px;
+        font-weight: 500;
+    }
+}
+.footer-top {
+    background: $black-title;
+}
+.footer-top-content {
+    padding-top: 80px;
+    padding-bottom: 65px;
+    color: $grey-background;
+    font-size: 15px;
+    .footer-link-menu {
+        ul {
+            @extend list-type-ulli;
+            width: 50%;
+            float: left;
+            li {
+                margin-bottom: 12px;
+                a {
+                    color: $grey-background;
+                    font-family: 'Bitter';
+                    i {
+                        color: $blue-primary;
+                        padding-right: 10px;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                &:hover {
+                    a {
+                        color: $yellow-primary;
+                    }
+                }
+            }
+            &:last-child {
+                padding-left: 15px;
+            }
+        }
+    }
+    .footer-gallery-content {
+        margin: 0 -5px;
+        overflow: hidden;
+        figure {
+            width: 33.33%;
+            float: left;
+            padding: 5px;
+            &:hover {
+                img {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .footer-contact {
+        ul {
+            @extend list-type-ulli;
+            li {
+                @extend display-flex;
+                // @include align-items(center);
+                margin-bottom: 12px;
+                i {
+                    width: 35px;
+                    font-size: 16px;
+                    padding-top: 5px;
+                    color: $blue-primary;
+                }
+                span {
+                    margin-right: 15px;
+                }
+            }
+            .footer-phone , .footer-fax {
+                span {
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .footer-info {
+        .footer-logo {
+            margin-top: -24px;
+            margin-bottom: 22px;
+        }
+        .footer-intro {
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+    }
+}
+
+.footer-bottom {
+    background: #292929;
+    .footer-bottom-content {
+        padding: 18px 0;
+        .copyright {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            span {
+                color: $yellow-primary;
+                font-weight: bold;
+            }
+        }
+    }
+}

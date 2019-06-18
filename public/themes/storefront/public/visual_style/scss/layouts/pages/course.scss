@@ -1,0 +1,128 @@
+/* 15. Course Page  ------------------------------------------*/
+.filter {
+    @extend list-type-ulli;
+}
+.filter-layout {
+    .filter-courses {
+        border: none;
+      li {
+          margin-right: 15px;
+          margin-bottom: 0px;
+          &:last-child {
+              margin-right: 0px;
+          }
+          .active {
+              border: none;
+              color: $blue-primary;
+          }
+          a {
+              color: $black-title;
+              font-size: 20px;
+              padding: 0px;
+              border: none;
+          }
+      }
+    }
+}
+
+.courses-page {
+    .au-sorting {
+        padding-bottom: 25px;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 65px;
+        .filter-layout {
+            @extend display-flex;
+            @include align-items(center);
+            .woocommerce-result-count {
+                color: #999;
+                padding-left: 32px;
+            }
+        }
+        .woocommerce-ordering {
+            select {
+                border: none;
+                cursor: pointer;
+                color: #fff;
+                background: $yellow-primary url('../images/icon/icon-dropdown.png') no-repeat scroll;
+                background-position: right 20px center;
+                padding: 11px 43px 11px 27px;
+                @include border-radius(23px);
+            }
+        }
+    }
+    .courses-content {
+        .item {
+            @include box-shadow(0px 3px 10px 0px rgba(0, 0, 0, 0.1));
+            @include transition(transform 0.5s ease);
+            .item-thumb {
+                .feadtured-course-small {
+                    left: 30px;
+                }
+            }
+            .info {
+                border: 1px solid #e5e5e5;
+                padding: 42px 30px 11px 30px;
+            }
+            &:hover {
+                @include transform(translateY(-10px));
+            }
+        }
+        #list {
+            margin-top: -25px;
+            margin-bottom: -5px;
+        }
+        .listing {
+            @extend display-flex;
+            @include flex-wrap(wrap);
+            @include flex-direction(row);
+            margin-bottom: 40px;
+            &:hover {
+                @include transform(translateY(0px));
+                .item-thumb {
+                    img {
+                        @include transform( scale(1.2, 1.2) );
+                    }
+                }
+            }
+            .item-thumb {
+                width: 440px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 0px;
+                    border-bottom-left-radius: 4px;
+                    @include transition( all 0.8s ease 0s );
+                }
+            }
+            .info {
+                width: calc(100% - 440px);
+                padding: 22px 30px 11px 30px;
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 4px;
+                border-top-right-radius: 4px;
+                // border: none;
+                .feadtured-course-small {
+                    padding-bottom: 20px;
+                    img {
+                        width: 50px;
+                        @include border-radius(50%);
+                    }
+                    .teacher {
+                        font-size: 15px;
+                        
+                        span {
+                            padding-left: 10px;
+                        }
+                    }
+                }
+                .course-desc {
+                    padding-bottom: 6px;
+                }
+                .desc {
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+/* 13. Blog Page  ------------------------------------------*/
+.blog-grid {
+    .blog-content {
+        .item {
+            .info {
+                .desc {
+                    padding-bottom: 18px;
+                }
+            }
+        }
+    }
+}
+.blog-sidebar {
+    .blog-content {
+        .item {
+            .info {
+                .desc {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+.blog-list {
+    margin-bottom: -30px;
+}
+.blog-list-content {
+    margin-bottom: 30px;
+    .item {
+        margin-bottom: 60px;
+        padding-bottom: 65px;
+        border-bottom: 1px solid #e5e5e5;
+        figure {
+            img {
+                width: 100%;
+            }
+        }
+        .info {
+            text-align: left;
+            .title {
+                padding: 55px 0 0px 0;
+                font-size: 26px;
+                font-weight: bold;
+            }
+            .desc {
+                margin-bottom: 43px;
+            }
+        }
+        .btn-read-more {
+            .au-readmore {
+                padding: 14px 52px;
+                background: $blue-primary;
+                @include border-radius(25px);
+                font-size: 14px;
+            }
+        }
+        &:last-child {
+            border-bottom: 1px solid transparent;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+.entry {
+    padding: 10px 0;
+    margin: 7px 0;
+    font-size: 15px;
+    span {
+        margin-right: 20px;
+        i {
+            margin-right: 10px;
+            color: $blue-primary;
+        }
+        a {
+            color: #666;
+        }
+    }
+}

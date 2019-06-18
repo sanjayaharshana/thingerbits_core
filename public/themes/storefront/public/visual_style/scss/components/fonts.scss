@@ -1,0 +1,64 @@
+/* 6. Fonts ------------------------------------------*/
+
+/* Montserrat-300 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/montserrat/Montserrat-Light.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat/Montserrat-Regular.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/montserrat/Montserrat-Italic.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/montserrat/Montserrat-Medium.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/montserrat/Montserrat-SemiBold.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/montserrat/Montserrat-BoldItalic.ttf'); /* IE9 Compat Modes */
+}
+// Bitter
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/bitter/Bitter-Regular.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/bitter/Bitter-Italic.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/bitter/Bitter-Bold.ttf'); /* IE9 Compat Modes */
+}
