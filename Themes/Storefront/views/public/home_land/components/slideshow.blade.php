@@ -3,9 +3,9 @@
         <div id="au_rev_slider2" class="rev_slider fullscreenbanner slide-content" style="display:none;" data-version="5.4.1">
             <ul>
                 <!-- SLIDE  -->
-                <li data-index="rs-82" data-transition="papercut" data-thumb="images/home2-slideshow1.jpg">
+                <li data-index="rs-82" data-transition="papercut" data-thumb="{{ (Theme::url('public/visual_style/images/home2-slideshow1.jpg')) }}">
                     <!-- MAIN IMAGE -->
-                    <img src="images/home2-slideshow2.jpg" alt="">
+                    <img src="{{ (Theme::url('public/visual_style/images/home2-slideshow2.jpg')) }} " alt="">
 
                     <!-- LAYERS -->
                     <div class="tp-caption tp-resizeme slide-title slide-title-uppercase" data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":1000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -26,9 +26,9 @@
                     </a>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-83" data-transition="cube-horizontal" data-thumb="images/home2-slideshow2.jpg">
+                <li data-index="rs-83" data-transition="cube-horizontal" data-thumb="{{ (Theme::url('public/visual_style/images/home2-slideshow2.jpg')) }}">
                     <!-- MAIN IMAGE -->
-                    <img src="images/home2-slideshow1.jpg" alt="">
+                    <img src="{{ (Theme::url('public/visual_style/images/home2-slideshow1.jpg')) }} " alt="">
 
                     <!-- LAYERS -->
                     <div class="tp-caption tp-resizeme slide-title slide-title-uppercase" data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"y:bottom;rZ:90deg;sX:2;sY:2;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -49,9 +49,9 @@
                     </a>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-84" data-transition="flyin" data-thumb="images/home2-slideshow3.jpg">
+                <li data-index="rs-84" data-transition="flyin" data-thumb="{{ (Theme::url('public/visual_style/images/home2-slideshow3.jpg')) }}">
                     <!-- MAIN IMAGE -->
-                    <img src="images/home2-slideshow3.jpg" alt="">
+                    <img src="{{ (Theme::url('public/visual_style/images/home2-slideshow3.jpg')) }}" alt="">
 
                     <!-- LAYERS -->
                     <div class="tp-caption tp-resizeme slide-title slide-title-uppercase" data-frames='[{"delay":0,"speed":1000,"frame":"0","from":"z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'

@@ -5,18 +5,22 @@
                     <div class="header-top-info">
                         <div class="header-socials">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://www.facebook.com/thingerbits/"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/thingerbits"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCqHeZLPI-ImB2_bU3yWT6PQ"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
                         <a href="mailto:info@smartedu.com" class="email"><i class="far fa-envelope"></i>info@smartedu.com</a>
                         <a href="#" class="telephone"><i class="fas fa-mobile-alt"></i>+1 222-333-9999</a>
                     </div>
                     <div class="header-top-account">
-                        <a href="{{ route('register') }}" class="signup"><i class="fas fa-edit"></i>Sign Up</a>
-                        <a href="{{ route('login') }}" class="login">Sign In</a>
+                            @auth                            
+                            <a href="{{ route('login') }}" class="signup">My Acccount</a>
+                            @else 
+                            <a href="{{ route('register') }}" class="signup"><i class="fas fa-edit"></i>Sign Up</a>
+                            <a href="{{ route('login') }}" class="login">Sign In</a>
+                            @endauth
+                      
                     </div>
                 </div>
             </div>
