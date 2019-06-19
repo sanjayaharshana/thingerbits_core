@@ -2,8 +2,8 @@
 
 namespace Modules\Page\Http\Controllers;
 Use Redirect;
-
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -15,8 +15,9 @@ class HomeController extends Controller
     public function index()
     {   
         //Homapage Manager
-        
-        return view('public.home_land.index');
+        $course_data['coursedata']= DB::table('course_list')->get();     
+       
+        return view('public.home_land.index',$course_data);
 
     }
 
