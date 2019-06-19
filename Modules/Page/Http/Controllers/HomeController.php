@@ -21,8 +21,17 @@ class HomeController extends Controller
 
     }
 
+    public function course_list(){
+        return view('public.home_land.course_list');
+    }
+
     public function shopfunction() 
     {
+        
        return view('public.home.index');
     }
+
+    
+
+  
 }
