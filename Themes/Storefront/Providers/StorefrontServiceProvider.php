@@ -27,6 +27,7 @@ class StorefrontServiceProvider extends ServiceProvider
 
         View::composer('public.layout', LayoutComposer::class);
         View::composer('public.home.index', HomePageComposer::class);
+        
         //confi cousme
         View::composer('public.account.dashboard.index', HomePageComposer::class);
 

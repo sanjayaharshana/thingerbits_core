@@ -15,12 +15,13 @@ class HomeController extends Controller
     public function index()
     {   
         //Homapage Manager
+        
         return view('public.home_land.index');
 
     }
 
     public function shopfunction() 
     {
-        return view('public.home.index');
+       return view('public.home.index');
     }
 }
