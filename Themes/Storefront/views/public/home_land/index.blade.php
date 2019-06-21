@@ -25,4 +25,4 @@
 
       
     <!-- Footer page -->
-  @include('public.home_land.components.footer')
+@include('public.home_land.components.footer')
