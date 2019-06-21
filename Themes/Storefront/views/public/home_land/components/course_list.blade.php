@@ -7,7 +7,7 @@
                             <article class="item wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
                                     <div class="item-thumb">
                                         <a href="single-course.html" tabindex="0">
-                                            <img src="account/sft/course_img/{{ $item->course_id }}" style="height: 200px;width: fit-content;" alt="">
+                                            <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 200px;width: fit-content;" alt="">
                                             <span class="overlay"></span>
                                         </a>
                                         <div class="feadtured-course-small">

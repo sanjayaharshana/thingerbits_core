@@ -16,37 +16,11 @@
                     </div>
                     <div class="single-course-info">
                         <figure class="single-course-images">
-                            <img src="{{ url('/') }}/account/sft/course_img/{{ $item->course_id }}" alt="Content Marketing">
+                            <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 500px;" alt="Content Marketing">
                         </figure>
                         <div class="course-teacher-cat display-flex">
                             <div class="teacher-cat">
-                                <ul class="display-flex">
-                                    <li class="display-flex">
-                                        <a href="#">
-                                            <img src="images/home3-tutor-1.jpg" alt="Sofia Robinson">
-                                        </a>
-                                        <div class="teacher-cat-item">
-                                            <span>Instructor:</span>
-                                            <a href="#">Sofia Robinson</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="teacher-cat-item">
-                                            <span>Caregories</span>
-                                            <a href="#">Marketing</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="teacher-cat-item">
-                                            <span>Reviews</span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </li>
-                                </ul>
+                               
                             </div>
                             <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
                         </div>
@@ -72,13 +46,9 @@
                                     <div class="course-desc">
                                         <h4 class="course-tab-title">Courses Information</h4>
                                         <p class="course-desc-content">
-                                            In massa tempor nec feugiat. Eu scelerisque felis imperdiet proin fermentum leo vel. Cras adipiscing eni egestas. Quam pellentesque nec nam aliquam sem et. Ante in nibh mauris cursus mattis. 
-                                            Morbi quis commodo odio aenean sed adipiscing. Viverra maecenas accumsan lacus vel facilisis volutpat. Est ullamcorper eget nulla facilisi etiam. Id cursus metus aliquam eleifend mi. Metus dictum at tempor commodo. 
-                                            Arcu cursus vitae congue mauris. Integer feugiat srisque varius morbi enim nunc faucibus. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Magna ac placerat vestibulum lectus nec nam aliquam sem. Ante in nibh mauris cursus mattis.
+                                            {{ $item->course_discription }}
                                         </p>
-                                        <p class="course-desc-content">
-                                            Arcu cursus vitae congue mauris. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Magna ac placerat vestibulum lectus. Eget lorem dolor sed viverra
-                                        </p>
+                                       
                                     </div>
                                 </div>
                                 <!-- FQA -->
