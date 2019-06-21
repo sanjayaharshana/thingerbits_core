@@ -78,26 +78,38 @@
                     </div>
                     <div class="form-wrapper" style="margin-top: 0px;">
                         @include('public.partials.notification')    
-                        
+                      
+                        @if (count(app('enabled_social_login_providers')) !== 0)
+                        <span class="text-center">{{ trans('user::auth.or') }}</span>
+                        <div class="row"> 
+                           <div class="social-login-buttons text-center" style="max-width: 1000px;width: 500px;">                 
+                            <div class="col-md-6">
+                                @if (setting('facebook_login_enabled'))
+                                    <a href="{{ route('login.redirect', ['provider' => 'facebook']) }}" class="btn btn-facebook">
+                                        {{ Theme::image('public/images/facebook.png') }}
+                                        {{ trans('user::auth.log_in_with_facebook') }}
+                                    </a>
+                                @endif
+                            </div>
+                            <div class="col-md-6">
+                                @if (setting('google_login_enabled'))
+                                    <a href="{{ route('login.redirect', ['provider' => 'google']) }}" class="btn btn-google" style="margin-top: auto;">
+                                        {{ Theme::image('public/images/google.png') }}
+                                        {{ trans('user::auth.log_in_with_google') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                        @endif    
+
+
+
                 
-                        <div class="social-login-buttons text-center">
-                            @if (count(app('enabled_social_login_providers')) !== 0)
-                                <span>{{ trans('user::auth.or') }}</span>
-                            @endif
+                           
                 
-                            @if (setting('facebook_login_enabled'))
-                                <a href="{{ route('login.redirect', ['provider' => 'facebook']) }}" class="btn btn-facebook">
-                                    {{ Theme::image('public/images/facebook.png') }}
-                                    {{ trans('user::auth.log_in_with_facebook') }}
-                                </a>
-                            @endif
+                          
                 
-                            @if (setting('google_login_enabled'))
-                                <a href="{{ route('login.redirect', ['provider' => 'google']) }}" class="btn btn-google">
-                                    {{ Theme::image('public/images/google.png') }}
-                                    {{ trans('user::auth.log_in_with_google') }}
-                                </a>
-                            @endif
+                           
                         </div>
                     </div>
                 </div>

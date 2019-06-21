@@ -30,7 +30,7 @@
                 <div class="header-bottom">
                     <div class="header-bottom-content display-flex">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ (Theme::url('public/visual_style/images/logo.png')) }}" alt="SmartEdu">
                             </a>
                         </div>
@@ -39,7 +39,7 @@
                                 <div>
                                     <ul class="menu-primary">
                                         <li class="menu-item curent-menu-item">
-                                            <a href="index.html">Home</a>
+                                            <a href="{{ route('home') }}">Home</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item"><a href="index.html">Home 1</a></li>
                                                 <li class="menu-item"><a href="index2.html">Home 2</a></li>
@@ -47,16 +47,7 @@
                                             </ul>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="courses.html">Courses</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="courses.html">Courses</a>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item"><a href="single-course.html">Course Detail</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item"><a href="standardlist.html">Standard List</a></li>
-                                            </ul>
+                                            <a href="courses">Courses</a>                                            
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Pages</a>
@@ -142,7 +133,7 @@
                     <div>
                         <ul class="au-navbar-menu">
                             <li class="menu-item curent-menu-item">
-                                <a href="index.html">Home</a>
+                                <a href="{{ route('home') }}">Home</a>
                                 <span class="arrow">
                                     <i></i>
                                 </span>
