@@ -279,5 +279,34 @@
 
 @endforeach
 
+@include('public.home_land.components.footer')
 
-    @include('public.home_land.components.footer')
+<script>
+  window.onload = function () { 
+            @foreach($les_group as $lg_map)
+            fetchRecords({{$lg_map->les_group_id}},'palmon{{ $lg_map->les_group_id }}')
+            @endforeach
+        }
+    
+        function fetchRecords(group_id,tagname){
+            var menuItem = $('#apple');                
+                $.ajax({
+                url: '{{ url('/') }}/public_json/'+ group_id ,
+                type: 'get',
+                dataType: 'json',
+                success: function(response){
+                var len = 0;               
+                for (i = 0; i < response.length; i++) {
+                    console.log(response[i].lesson_title); 
+                    var lesid = response[i].lesson_id;
+                    var course_id = response[i].course_id; 
+                    
+                 
+
+                    $('#'+ tagname).append('<li><i class="fa fa-puzzle-piece"></i><a href="{{ url('/') }}/account/lms/my_courses/course_open/lesson/'+ course_id +'/'+ lesid + '">'+ response[i].lesson_title + '</a>');                           
+                        }
+                    }  
+                }); 
+            console.log('sdfsdfsdfsdfsdf sdfsdf');                                        
+        }
+</script>

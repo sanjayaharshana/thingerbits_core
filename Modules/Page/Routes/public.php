@@ -9,3 +9,4 @@ Route::get('{slug}', 'PageController@show');
 //course_redirection
 Route::get('get_data_reqst_java/{course_id}', 'HomeController@getcourse_img')->name('get_img');
 
+Route::get('public_json/{lg_id}', 'HomeController@jsonles')->name('jsonles');

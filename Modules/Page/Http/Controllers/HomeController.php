@@ -28,9 +28,15 @@ class HomeController extends Controller
     }
 
     public function course_list($course_id){
-        $course_data['coursedata']= DB::table('course_list')->where('course_id',$course_id)->get();
-     
-        return view('public.home_land.course_list',$course_data);
+        $course_data = DB::table('course_list')->where('course_id',$course_id)->get();
+        $les_group  = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
+       
+
+        return view('public.home_land.course_list',
+         ['coursedata' =>  $course_data,
+        'les_group' =>  $les_group,
+        'id' => $course_id, 
+        ]);
     }
 
     public function shopfunction() 
@@ -50,7 +56,12 @@ class HomeController extends Controller
             $response->header("Content-Type", $type);
         return $response;
     }
-    
+
+    function jsonles($lg_id)
+    {
+        $data = DB::table('lessons')->where('group_id', $lg_id)->get();
+        return Response::json($data);
+    }
 
   
 }
