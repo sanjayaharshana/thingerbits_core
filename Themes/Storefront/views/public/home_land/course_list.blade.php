@@ -45,144 +45,30 @@
                                     </div>
                                 </div>                                
                             </div>
+                            @foreach($les_group as $lg_data)
                             <div class="tab-pane fade active show" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
-                                <ul id="curriculum-content" class="curriculum-content">
-                                    <li class="card active">
-                                        <div class="card-header" id="headingcurriculumOne">
-                                            <div class="title" data-toggle="collapse" data-target="#curriculumOne" aria-expanded="true" aria-controls="curriculumOne" role="button">
-                                                Section 1: Getting Started
+                                    <ul id="curriculum-content" class="curriculum-content">
+                                        <li class="card active">
+                                            <div class="card-header" id="headingcurriculumOne">
+                                                <div class="title" id="apple" data-toggle="collapse" data-target="#curriculumOne" aria-expanded="true" aria-controls="curriculumOne" role="button">
+                                                    {{ $lg_data->les_group_name }}
+                                                </div>
+                                                <span>0/5</span>
                                             </div>
-                                            <span>0/5</span>
-                                        </div>
+    
+                                            <div id="curriculumOne" class="collapse show" aria-labelledby="headingcurriculumOne" data-parent="#curriculum-content">
+                                                <div class="card-body content">
+                                                    <ul id="palmon{{ $lg_data->les_group_id }}">
+                                                                                                            
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>                                   
+                                </div> 
 
-                                        <div id="curriculumOne" class="collapse show" aria-labelledby="headingcurriculumOne" data-parent="#curriculum-content">
-                                            <div class="card-body content">
-                                                <ul>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>Welcome To Course Content Marketing! <span class="price">Free</span>
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>05:20</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>What is Content Writing?
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>02:00</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>What Does it Take to Become a Content Writer?
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>04:10</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="far fa-file"></i>Brainstorming Checklist
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>03:20</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>Understanding Your Audience
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>06:30</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card-header" id="headingcurriculumTwo">
-                                            <div class="title" data-toggle="collapse" data-target="#curriculumTwo" aria-expanded="true" aria-controls="curriculumTwo" role="button">
-                                                Section 2: Creative Content Ideas 
-                                            </div>
-                                            <span>0/8</span>
-                                        </div>
-
-                                        <div id="curriculumTwo" class="collapse show" aria-labelledby="headingcurriculumTwo" data-parent="#curriculum-content">
-                                            <div class="card-body content">
-                                                <ul>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="far fa-file"></i>Powerful Keyword Research Tools
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>02:00</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>How to Create Valuable Content?
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>04:00</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>Examples of How to Use Tone in Your Writing
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>06:25</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="far fa-file"></i>How to Improve Flow in Your Content
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>04:20</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>Webmaster Guidelines
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>05:40</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-play-circle"></i>Generalist vs. Specialist
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>04:00</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="far fa-file"></i>Proximity Research
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>02:15</span>
-                                                    </li>
-                                                    <li class="display-flex">
-                                                        <a href="#">
-                                                            <span>
-                                                                <i class="fas fa-puzzle-piece"></i>The Course Quiz
-                                                            </span>
-                                                        </a>
-                                                        <span class="lesson-time"><i class="far fa-clock"></i>6 Question</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>                                                  
+                            @endforeach
+                                                                             
                                                
                         </div>
                     </div>
@@ -277,6 +163,14 @@
         </div>
     </section>
 
+    @foreach($les_group as $lg_data)
+    <li class="menu-item-has-children dropdown">
+    <a href="#" id="apple" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>{{ $lg_data->les_group_name }}</a>
+        <ul class="sub-menu children dropdown-menu" id="palmon{{ $lg_data->les_group_id }}">                                                               
+        </ul>
+    </li>
+    @endforeach
+
 @endforeach
 
 @include('public.home_land.components.footer')
@@ -303,7 +197,7 @@
                     
                  
 
-                    $('#'+ tagname).append('<li><i class="fa fa-puzzle-piece"></i><a href="{{ url('/') }}/account/lms/my_courses/course_open/lesson/'+ course_id +'/'+ lesid + '">'+ response[i].lesson_title + '</a>');                           
+                    $('#'+ tagname).append('<li class="display-flex"><a href="#"><span><i class="fas fa-play-circle"></i>' + response[i].lesson_title + '<span class="price">Free</span></span></a><span class="lesson-time"><i class="far fa-clock"></i>05:20</span></li>');                           
                         }
                     }  
                 }); 
