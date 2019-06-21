@@ -47,10 +47,7 @@
                 for (i = 0; i < response.length; i++) {
                     console.log(response[i].lesson_title); 
                     var lesid = response[i].lesson_id;
-                    var course_id = response[i].course_id; 
-                    
-                 
-
+                    var course_id = response[i].course_id;                
                     $('#'+ tagname).append('<li><i class="fa fa-puzzle-piece"></i><a href="{{ url('/') }}/account/lms/my_courses/course_open/lesson/'+ course_id +'/'+ lesid + '">'+ response[i].lesson_title + '</a>');                           
                         }
                     }  

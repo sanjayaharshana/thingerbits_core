@@ -39,7 +39,7 @@
                                 <div>
                                     <ul class="menu-primary">
                                         <li class="menu-item curent-menu-item">
-                                            <a href="index.html">Home</a>
+                                            <a href="{{ route('home') }}">Home</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item"><a href="index.html">Home 1</a></li>
                                                 <li class="menu-item"><a href="index2.html">Home 2</a></li>
@@ -133,7 +133,7 @@
                     <div>
                         <ul class="au-navbar-menu">
                             <li class="menu-item curent-menu-item">
-                                <a href="index.html">Home</a>
+                                <a href="{{ route('home') }}">Home</a>
                                 <span class="arrow">
                                     <i></i>
                                 </span>

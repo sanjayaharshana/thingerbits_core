@@ -75,38 +75,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="right-sidebar">
-                        <div class="widget-featured-course">
-                            <div class="widget-title">
-                                <h2>Featured Course</h2>
-                            </div>
-                            <ul>
-                                <li class="display-flex">
-                                    <span><i class="fas fa-clock"></i>Duration</span>
-                                    <span>2 Section</span>
-                                </li>
-                                <li class="display-flex">
-                                    <span><i class="fas fa-book"></i>Lessons</span>
-                                    <span>08</span>
-                                </li>
-                                <li class="display-flex">
-                                    <span><i class="fas fa-signal"></i>Levels</span>
-                                    <span>Beginner</span>
-                                </li>
-                                <li class="display-flex">
-                                    <span><i class="fas fa-puzzle-piece"></i>Quizzes</span>
-                                    <span>01</span>
-                                </li>
-                                <li class="display-flex">
-                                    <span><i class="fas fa-users"></i>Students</span>
-                                    <span>42</span>
-                                </li>
-                                <li class="display-flex">
-                                    <span><i class="fas fa-check-square"></i>Assessments</span>
-                                    <span>Yes</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="right-sidebar">                        
                         <div class="widget_lastest_entries">
                             <div class="widget-title">
                                 <h2>Recent Courses</h2>
@@ -162,15 +131,7 @@
             </div>
         </div>
     </section>
-
-    @foreach($les_group as $lg_data)
-    <li class="menu-item-has-children dropdown">
-    <a href="#" id="apple" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>{{ $lg_data->les_group_name }}</a>
-        <ul class="sub-menu children dropdown-menu" id="palmon{{ $lg_data->les_group_id }}">                                                               
-        </ul>
-    </li>
-    @endforeach
-
+  
 @endforeach
 
 @include('public.home_land.components.footer')
@@ -197,7 +158,7 @@
                     
                  
 
-                    $('#'+ tagname).append('<li class="display-flex"><a href="#"><span><i class="fas fa-play-circle"></i>' + response[i].lesson_title + '<span class="price">Free</span></span></a><span class="lesson-time"><i class="far fa-clock"></i>05:20</span></li>');                           
+                    $('#'+ tagname).append('<li class="display-flex"><a href="#"><span><i class="fas fa-play-circle"></i>' + response[i].lesson_title + '<span class="price">Free</span></span></a></li>');                           
                         }
                     }  
                 }); 
