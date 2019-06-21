@@ -18,18 +18,16 @@ class HomeController extends Controller
         $course_data['coursedata']= DB::table('course_list')->get();   
        
         return view('public.home_land.index',$course_data);
-
     }
 
     public function course_list($course_id){
-        $course_data['coursedata']= DB::table('course_list')->where('course_id',$course_id)->first(); 
-
+        $course_data['coursedata']= DB::table('course_list')->where('course_id',$course_id)->get();
+     
         return view('public.home_land.course_list',$course_data);
     }
 
     public function shopfunction() 
-    {
-        
+    {       
        return view('public.home.index');
     }
 

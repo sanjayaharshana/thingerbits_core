@@ -6,17 +6,17 @@
 @include('public.home_land.components.ajaxpageloader')
 @include('public.home_land.components.header')
 
-
+@foreach ($coursedata as $item)
 <section class="single-course section-padding-large">
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 single-course-content">
                     <div class="single-title">
-                        <h1>{{ $coursedata->slag }}</h1>                       
+                        <h1>{{ $item->course_title }}</h1>                       
                     </div>
                     <div class="single-course-info">
                         <figure class="single-course-images">
-                            <img src="images/single-course-full.jpg" alt="Content Marketing">
+                            <img src="{{ url('/') }}/account/sft/course_img/{{ $item->course_id }}" alt="Content Marketing">
                         </figure>
                         <div class="course-teacher-cat display-flex">
                             <div class="teacher-cat">
@@ -518,5 +518,8 @@
             </div>
         </div>
     </section>
+
+@endforeach
+
 
     @include('public.home_land.components.footer')
