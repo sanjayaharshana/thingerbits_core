@@ -47,16 +47,7 @@
                                             </ul>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="courses.html">Courses</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="courses.html">Courses</a>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item"><a href="single-course.html">Course Detail</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item"><a href="standardlist.html">Standard List</a></li>
-                                            </ul>
+                                            <a href="courses">Courses</a>                                            
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Pages</a>

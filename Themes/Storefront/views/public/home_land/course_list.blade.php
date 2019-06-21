@@ -12,8 +12,7 @@
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 single-course-content">
                     <div class="single-title">
-                        <h1>Content Marketing</h1>
-                        <span class="price notfree">$24.00</span>
+                        <h1>{{ $coursedata->slag }}</h1>                       
                     </div>
                     <div class="single-course-info">
                         <figure class="single-course-images">
