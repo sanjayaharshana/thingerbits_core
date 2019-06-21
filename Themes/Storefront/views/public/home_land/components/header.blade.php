@@ -30,7 +30,7 @@
                 <div class="header-bottom">
                     <div class="header-bottom-content display-flex">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ (Theme::url('public/visual_style/images/logo.png')) }}" alt="SmartEdu">
                             </a>
                         </div>

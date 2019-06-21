@@ -32,13 +32,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active show" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false"><i class="fas fa-star"></i>Review</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false"><i class="fas fa-graduation-cap"></i>Instructor</a>
-                            </li>
+                            </li>                         
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
@@ -47,67 +41,9 @@
                                         <h4 class="course-tab-title">Courses Information</h4>
                                         <p class="course-desc-content">
                                             {{ $item->course_discription }}
-                                        </p>
-                                       
+                                        </p>                                       
                                     </div>
-                                </div>
-                                <!-- FQA -->
-                                <div class="fqa">
-                                    <h4 class="title">FAQ</h4>
-                                    <div class="fqa-content">
-                                            <ul id="accordion">
-                                                <li class="card">
-                                                    <div class="card-header" id="headingOne">
-                                                        <div class="title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                                                            What Is The Content Marketing?
-                                                        </div>
-                                                    </div>
-
-                                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                                        <div class="card-body content">
-                                                            Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Aliquet lectus proin nibh nisl condimentum id venenatis
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="card">
-                                                    <div class="card-header" id="headingTwo">
-                                                        <div class="title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                                                            Who Is This Courses For?
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                        <div class="card-body content">
-                                                            Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Aliquet lectus proin nibh nisl condimentum id venenatis
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="card">
-                                                    <div class="card-header" id="headingThree">
-                                                        <div class="title collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
-                                                            Who can I contact for more information about a particular class?
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                        <div class="card-body content">
-                                                            Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Aliquet lectus proin nibh nisl condimentum id venenatis
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="card active">
-                                                    <div class="card-header" id="headingFour">
-                                                        <div class="title collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" role="button">
-                                                            Terms and Conditions.
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
-                                                        <div class="card-body content">
-                                                            Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Aliquet lectus proin nibh nisl condimentum id venenatis
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                </div>
+                                </div>                                
                             </div>
                             <div class="tab-pane fade active show" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                                 <ul id="curriculum-content" class="curriculum-content">
@@ -246,156 +182,8 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                <div class="review-content">
-                                    <div class="average-rating">
-                                        <span class="total-rating">5</span>
-                                        <div class="rating-star">
-                                            <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                            <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                            <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                            <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                            <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                        </div>
-                                        <p class="desc">Average Rating</p>
-                                    </div>
-                                    <div class="rating-breakdown js-waypoint">
-                                        <div class="progress-bar">
-                                            <div class="progress-box">
-                                                <div class="au-progress au-progress-2">
-                                                    <div class="au-progress-bar" role="progressbar" data-transitiongoal="100" aria-valuenow="100" style="width: 100%;">
-                                                        <span class="au-progress-star">5 Stars</span>
-                                                        <span class="au-progress-total">100%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-box">
-                                                <div class="au-progress au-progress-2">
-                                                    <div class="au-progress-bar" role="progressbar" data-transitiongoal="0" aria-valuenow="0" style="width: 0%;">
-                                                        <span class="au-progress-star">3 Stars</span>
-                                                        <span class="au-progress-total">0%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-box">
-                                                <div class="au-progress au-progress-2">
-                                                    <div class="au-progress-bar" role="progressbar" data-transitiongoal="0" aria-valuenow="0" style="width: 0%;">
-                                                        <span class="au-progress-star">3 Stars</span>
-                                                        <span class="au-progress-total">0%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-box">
-                                                <div class="au-progress au-progress-2">
-                                                    <div class="au-progress-bar" role="progressbar" data-transitiongoal="0" aria-valuenow="0" style="width: 0%;">
-                                                        <span class="au-progress-star">2 Stars</span>
-                                                        <span class="au-progress-total">0%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="progress-box">
-                                                <div class="au-progress au-progress-2">
-                                                    <div class="au-progress-bar" role="progressbar" data-transitiongoal="0" aria-valuenow="0" style="width: 0%;">
-                                                        <span class="au-progress-star">1 Stars</span>
-                                                        <span class="au-progress-total">0%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-comments">
-                                    <h3 class="title">
-                                        Our Students Said:
-                                    </h3>
-                                    <div class="media">
-                                        <a class="mr-20" href="#">
-                                            <img src="images/testimonials-6.jpg" alt="Generic placeholder image">
-                                        </a>
-                                        <div class="media-body">
-                                            <div class="info">
-                                                <div class="title-desc">
-                                                    <h5 class="mt-0 title">
-                                                        Lauren Goodwin  -  <span> Great Course</span>
-                                                    </h5>
-                                                    <div class="rating-star">
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                    </div>
-                                                    <p class="desc">
-                                                        Lulla pharetra diam sit amet. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidu ornare. At imperdiet dui accumsan sit amet nulla facilisi. Dui vivamus arcu felis biben.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <a class="mr-20" href="#">
-                                            <img src="images/home3-tutor-5.jpg" alt="Generic placeholder image">
-                                        </a>
-                                        <div class="media-body">
-                                            <div class="info">
-                                                <div class="title-desc">
-                                                    <h5 class="mt-0 title">
-                                                        Monica Morgan  -  <span>Customer Support  </span>
-                                                    </h5>
-                                                    <div class="rating-star">
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                        <span class="star-rate rated"><i class="fas fa-star"></i></span>
-                                                    </div>
-                                                    <p class="desc">
-                                                        Praesent tristique magna sit amet purus gravida quis. Enim neque volutpat ac tincidunt. Eget alique nibh praesent tristique magna sit amet purus.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
-                                <div class="instructor-content">
-                                    <div class="instructor-thumb">
-                                        <a href="#">
-                                            <img src="images/intructor-1.jpg" alt="Sofia Robinson">
-                                        </a>
-                                    </div>
-                                    <div class="instructor-info">
-                                        <h4 class="title">
-                                            <a href="#">Sofia Robinson</a>
-                                        </h4>
-                                        <div class="categories">
-                                            <a href="#">Marketing </a>
-                                            <a href="#">&amp; Language</a>
-                                        </div>
-                                        <p class="desc">
-                                            Ullamcorper eget nulla facilisi etiam dignissim diam. Vitae ultri integer malesuada nunc vel risus. Cursus mattis molestie a iaculis at. Augue eget arcu dictum varius. Vulputate ut pharetra sit amet aliquam id diam maecenas hendrerit dolor.
-                                        </p>
-                                        <div class="socials">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                                                  
+                                               
                         </div>
                     </div>
                     <div class="clearfix"></div>
