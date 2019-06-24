@@ -49,7 +49,7 @@ class HomePageComposer
             'tabProducts' => $this->getTabProducts(),
             'twoColumnCarouselProducts' => $this->getTwoColumnCarouselProducts(),
             'recentlyViewedProducts' => $this->getRecentlyViewedProducts(),
-            'getproduct_by_id' => $this->zugeme(),                        
+           // 'getproduct_by_id' => $this->zugeme(),                        
         ]);
     }
 
@@ -57,8 +57,7 @@ class HomePageComposer
     private function zugeme()
     {
         return collect();
-        return $this->getProductsForCardByIds(setting('storefront_product_carousel_section_products'));
-
+        return $this->getproduct_by_id(1);
     }
 
 
@@ -184,6 +183,13 @@ class HomePageComposer
     {
         return Product::forCard()
             ->whereIn('id', $ids ?: [])
+            ->get();
+    }
+
+    //get product by
+    private function getproduct_by_id($ids) {
+        return Product::forCard()
+            ->whereIn('id', $ids)
             ->get();
     }
 
