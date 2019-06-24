@@ -88,8 +88,8 @@
                                     <h5 class="title" style="text-align:center;">                                            
                                             <a href="#">{{ $product_reccomand->name }}</a>
                                     </h5><br>
-                                    <p>
-                                        {{$product_reccomand->description}}  
+                                    <p style="height: 200px;">
+                                       {{$product_reccomand->description}}  
                                     </p>
                                                                      
                                 </li>                                
