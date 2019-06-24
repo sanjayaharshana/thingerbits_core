@@ -77,19 +77,21 @@
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="right-sidebar">                        
-                        <div class="widget_lastest_entries">
-                            <div class="widget-title">
-                                <h2>Recommand Product</h2>
+                        <div class="widget_lastest_entries" style="-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 3px 0px rgba(183, 183, 183, 0.75);padding: 10px;">
+                            <div class="widget-title" style="text-align: center;padding: 10px;background: #0390cf;color: white;border-radius: 10px 10px 0px 0px;">
+                                <h5 style="text-align: center; color:white;">Recommand Product</h5>
                              
-                            </div>
+                            </div><br>
                             <ul>
                                 <li>
-                                    <a href="#"><img src=" {{ $product_img }}" alt="Web Design For Usability"></a>
-                                    <h3 class="title">
-                                            
+                                    <a href="#"><img src=" {{ $product_img }}" style="border-radius: 10px;border-style: solid;border-color: white;" alt="Web Design For Usability"></a>
+                                    <h5 class="title" style="text-align:center;">                                            
                                             <a href="#">{{ $product_reccomand->name }}</a>
-                                        </h3>
-                                        <span class="price free">Free</span>                                    
+                                    </h5><br>
+                                    <p>
+                                        {{$product_reccomand->description}}  
+                                    </p>
+                                                                     
                                 </li>                                
                             </ul>
                         </div> <br><br><br><br>
