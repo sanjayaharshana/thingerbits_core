@@ -14,14 +14,7 @@
 
 <link href="">
 
-    <div class="my-dashboard">
-
-            <div class="slider demo">
-                <div> Slide  1 </div>                   
-                <div> Slide  2 </div>
-                <div> Slide  3 </div>
-            </div>
-                    
+    <div class="my-dashboard">                  
 
 
 
@@ -91,11 +84,12 @@
             </div>
         </div>
     </div>
-    @if ($threeColumnCarouselProducts['column_2']->isNotEmpty())
+   
             <div class="col-md-3">
-                @include('public.home.sections.partials.vertical_products', ['title' => setting("storefront_three_column_vertical_product_carousel_section_column_2_title"), 'products' => $threeColumnCarouselProducts['column_2']])
+                @include('public.home.sections.partials.vertical_products', ['title' => 'Apple', 'products' => $threeColumnCarouselProducts['column_2']])
             </div>
-    @endif
+            
+  
 @endsection
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script>
