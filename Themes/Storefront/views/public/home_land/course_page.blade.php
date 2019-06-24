@@ -79,7 +79,7 @@
                     <div class="right-sidebar">                        
                         <div class="widget_lastest_entries">
                             <div class="widget-title">
-                                <h2>Recommand Product {{ $product_reccomand->path }}</h2>
+                                <h2>Recommand Product </h2>
                             </div>
                             <ul>
                                 <li>
