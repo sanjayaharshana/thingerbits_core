@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 use Log;
 use Response;
 use URL;
+use Modules\Product\Entities\Product;
+
 
 class HomeController extends Controller
 {
@@ -31,12 +33,25 @@ class HomeController extends Controller
         $course_data = DB::table('course_list')->where('course_id',$course_id)->get();
         $les_group  = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
        
+        $course_info = DB::table('course_list')->where('course_id',$course_id)->first();
+
+        $recorn_id = $course_info->reccomandproduct_id;
+
+        $course_product = DB::table('products')->where('id',$recorn_id)->first();
+
+        $recommand_product_slug = $course_product->slug;        
+
+        $product = Product::findBySlug($recommand_product_slug);
+
+       // echo $product->name;
+
 
         return view('public.home_land.course_page',
-         ['coursedata' =>  $course_data,
-        'les_group' =>  $les_group,
-        'id' => $course_id, 
-        ]);
+        ['coursedata' =>  $course_data,
+         'les_group' =>  $les_group,
+         'id' => $course_id, 
+         'product_reccomand' => $product,
+       ]);
     }
 
     public function shopfunction() 
@@ -46,6 +61,11 @@ class HomeController extends Controller
 
     public function getcourse_img($course_id)
     {
+
+
+        
+
+
         $data = DB::table('course_list')->where('course_id', $course_id)->first();
         $path = storage_path('app/public/course_img/') . $data->course_image;    
         if(!File::exists($path)) 
@@ -64,7 +84,12 @@ class HomeController extends Controller
     }
 
     public function getcourses($core_id){
+
         $course_data['coursedata']= DB::table('course_list')->get(); 
+
+        
+
+      // echo $product;
 
         //$lesson_count = DB::table('lessons')->where('course_id', $lg_id)->count();
 

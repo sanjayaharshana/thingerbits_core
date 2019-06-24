@@ -6,6 +6,8 @@
 @include('public.home_land.components.ajaxpageloader')
 @include('public.home_land.components.header')
 
+
+
 @foreach ($coursedata as $item)
 <section class="single-course section-padding-large">
         <div class="container">
@@ -77,44 +79,19 @@
                     <div class="right-sidebar">                        
                         <div class="widget_lastest_entries">
                             <div class="widget-title">
-                                <h2>Recent Courses</h2>
+                                <h2>Recommand Product {{ $product_reccomand->path }}</h2>
                             </div>
                             <ul>
                                 <li>
-                                    <figure>
-                                        <a href="#"><img src="images/popular-courses-1.jpg" alt="Web Design For Usability"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="#">Web Design For Usability</a>
+                                    <a href="#"><img src="" alt="Web Design For Usability"></a>
+                                    <h3 class="title">
+                                            
+                                            <a href="#">{{ $product_reccomand->name }}</a>
                                         </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="#"><img src="images/popular-courses-2.jpg" alt="Essential Blogging Tools"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="#">Essential Blogging Tools</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="#"><img src="images/popular-courses-3.jpg" alt="Advanced: UI Design"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="#">Advanced: UI Design</a>
-                                        </h3>
-                                        <span class="price notfree">$65.00</span>
-                                    </div>
-                                </li>
+                                        <span class="price free">Free</span>                                    
+                                </li>                                
                             </ul>
-                        </div>
+                        </div> <br><br><br><br>
 
                         <div class="banner">
                             <img src="images/sidebar-banner.jpg" alt="">

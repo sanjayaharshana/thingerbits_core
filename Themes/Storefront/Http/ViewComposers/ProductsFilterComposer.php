@@ -42,10 +42,7 @@ class ProductsFilterComposer
 
     private function getProductsCategoryIds($view)
     {
-        return DB::table('product_categories')
-            ->whereIn('product_id', $view['productIds'])
-            ->distinct()
-            ->pluck('category_id');
+        return DB::table('product_categories')->whereIn('product_id', $view['productIds'])->distinct()->pluck('category_id');
     }
 
     private function maxPrice()
