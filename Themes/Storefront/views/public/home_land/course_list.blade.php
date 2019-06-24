@@ -43,15 +43,12 @@
                                 <h3 class="title">
                                     <a href="single-course.html">{{ $item->course_title }}</a>
                                 </h3>
-                                <p class="course-desc">
+                                <p class="course-desc" style="overflow: hidden;text-overflow: ellipsis;height: 100px;">
                                     {{ $item->course_discription }}
                                 </p>
                                 <div class="desc display-flex">
-                                    <div class="comments-students">
-                                        <a href="#" class="comments"><i class="fas fa-user"></i>20 Students</a>
-                                        <a href="#" class="students"><i class="fas fa-book"></i>05 Lessons</a>
-                                    </div>
-                                    <span class="price free">Free</span>
+                                   
+                                    <span class="price free">Get it now</span>
                                 </div>
                             </div>
                         </article>
