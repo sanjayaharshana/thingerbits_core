@@ -86,8 +86,7 @@
     </div>
    
             <div class="col-md-3">
-                @include('public.home.sections.partials.vertical_products', ['title' => 'Apple', 'products' => 'a:1:{i:0;s:1:"1";}'['column_3']])
-              
+                @include('public.home.sections.partials.vertical_products', ['title' => 'Apple', 'products' => $threeColumnCarouselProducts['column_3']])
             </div>
             
   
