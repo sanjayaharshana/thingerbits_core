@@ -34,14 +34,14 @@
                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <article class="item">
                             <div class="item-thumb">
-                                <a href="single-course.html">
+                                <a href="{{ url('/') }}/courses/{{ $item->course_id }}">
                                     <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 200px;width: -webkit-fill-available;" alt="Steven Boyd">
                                 </a>                               
                             </div>
                             <div class="info">
                                 <a href="#" class="teacher">Steven Boyd</a>
                                 <h3 class="title">
-                                    <a href="single-course.html">{{ $item->course_title }}</a>
+                                    <a href="{{ url('/') }}/courses/{{ $item->course_id }}">{{ $item->course_title }}</a>
                                 </h3>
                                 <p class="course-desc" style="overflow: hidden;text-overflow: ellipsis;height: 100px;">
                                     {{ $item->course_discription }}
