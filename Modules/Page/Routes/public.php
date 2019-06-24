@@ -10,3 +10,7 @@ Route::get('{slug}', 'PageController@show');
 Route::get('get_data_reqst_java/{course_id}', 'HomeController@getcourse_img')->name('get_img');
 
 Route::get('public_json/{lg_id}', 'HomeController@jsonles')->name('jsonles');
+
+Route::get('/getcourse_lim/{core_id}', 'HomeController@getcourses')->name('getcourses');
+
+

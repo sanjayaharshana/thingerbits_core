@@ -7,12 +7,12 @@
           Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
         <div class="logo">
-          <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+          <a href="" class="simple-text logo-mini">
             <div class="logo-image-small">
              
             </div>
           </a>
-          <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          <a href="" class="simple-text logo-normal">
            Thingerbits
             <!-- <div class="logo-image-big">
               <img src="../assets/img/logo-big.png">
@@ -28,8 +28,8 @@
               </a>
             </li>
 
-            <li class="{{ Request::is('account/coursexp') ? 'active' : '' }}">
-              <a href="{{ route('getcourses') }}">
+            <li class="">
+              <a href="">
                 <i class="nc-icon nc-pin-3"></i>
                 <p>Course Explorer</p>
               </a>

@@ -32,7 +32,7 @@ class HomeController extends Controller
         $les_group  = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
        
 
-        return view('public.home_land.course_list',
+        return view('public.home_land.course_page',
          ['coursedata' =>  $course_data,
         'les_group' =>  $les_group,
         'id' => $course_id, 
@@ -61,6 +61,14 @@ class HomeController extends Controller
     {
         $data = DB::table('lessons')->where('group_id', $lg_id)->get();
         return Response::json($data);
+    }
+
+    public function getcourses($core_id){
+        $course_data['coursedata']= DB::table('course_list')->get(); 
+
+        //$lesson_count = DB::table('lessons')->where('course_id', $lg_id)->count();
+
+        return view('public.home_land.course_list',$course_data);
     }
 
   

@@ -50,13 +50,12 @@
                                     <ul id="curriculum-content" class="curriculum-content">
                                         <li class="card active">
                                             <div class="card-header" id="headingcurriculumOne">
-                                                <div class="title" id="apple" data-toggle="collapse" data-target="#curriculumOne" aria-expanded="true" aria-controls="curriculumOne" role="button">
+                                                <div class="title" id="apple{{ $lg_data->les_group_id }}" data-toggle="collapse" data-target="#curriculumOne{{ $lg_data->les_group_id }}" aria-expanded="true" aria-controls="curriculumOne" role="button">
                                                     {{ $lg_data->les_group_name }}
-                                                </div>
-                                                <span>0/5</span>
+                                                </div>                                               
                                             </div>
     
-                                            <div id="curriculumOne" class="collapse show" aria-labelledby="headingcurriculumOne" data-parent="#curriculum-content">
+                                            <div id="curriculumOne{{ $lg_data->les_group_id }}" class="collapse show" aria-labelledby="headingcurriculumOne" data-parent="#curriculum-content">
                                                 <div class="card-body content">
                                                     <ul id="palmon{{ $lg_data->les_group_id }}">
                                                                                                             
@@ -144,7 +143,7 @@
         }
     
         function fetchRecords(group_id,tagname){
-            var menuItem = $('#apple');                
+            var menuItem = $('#apple'+ group_id );                
                 $.ajax({
                 url: '{{ url('/') }}/public_json/'+ group_id ,
                 type: 'get',
