@@ -64,7 +64,7 @@ class HomeController extends Controller
     }
 
     public function getcourses($core_id){
-       echo 'apple';
+        return view('public.home_land.course_list');
     }
 
   
