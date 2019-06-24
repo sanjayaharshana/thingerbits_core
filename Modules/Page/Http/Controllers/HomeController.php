@@ -64,7 +64,9 @@ class HomeController extends Controller
     }
 
     public function getcourses($core_id){
-        return view('public.home_land.course_list');
+        $course_data['coursedata']= DB::table('course_list')->get();  
+
+        return view('public.home_land.course_list',$course_data);
     }
 
   
