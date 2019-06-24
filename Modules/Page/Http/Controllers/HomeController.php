@@ -43,15 +43,24 @@ class HomeController extends Controller
 
         $product = Product::findBySlug($recommand_product_slug);
 
-       // echo $product->name;
+        //$uri = ltrim($uri, '/');
 
+       
 
-        return view('public.home_land.course_page',
-        ['coursedata' =>  $course_data,
-         'les_group' =>  $les_group,
-         'id' => $course_id, 
-         'product_reccomand' => $product,
+        $product_image = $product->baseimage->path;
+
+       return view('public.home_land.course_page',
+       ['coursedata' =>  $course_data,
+       'les_group' =>  $les_group,
+        'id' => $course_id, 
+        'product_reccomand' => $product,
+        'product_img' => $product_image,
        ]);
+         
+      
+        
+        
+        
     }
 
     public function shopfunction() 

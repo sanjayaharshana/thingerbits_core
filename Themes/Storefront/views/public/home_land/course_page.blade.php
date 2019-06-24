@@ -79,11 +79,12 @@
                     <div class="right-sidebar">                        
                         <div class="widget_lastest_entries">
                             <div class="widget-title">
-                                <h2>Recommand Product </h2>
+                                <h2>Recommand Product</h2>
+                             
                             </div>
                             <ul>
                                 <li>
-                                    <a href="#"><img src="" alt="Web Design For Usability"></a>
+                                    <a href="#"><img src=" {{ $product_img }}" alt="Web Design For Usability"></a>
                                     <h3 class="title">
                                             
                                             <a href="#">{{ $product_reccomand->name }}</a>
