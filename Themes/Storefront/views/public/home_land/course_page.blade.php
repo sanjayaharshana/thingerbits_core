@@ -52,8 +52,7 @@
                                             <div class="card-header" id="headingcurriculumOne">
                                                 <div class="title" id="apple" data-toggle="collapse" data-target="#curriculumOne" aria-expanded="true" aria-controls="curriculumOne" role="button">
                                                     {{ $lg_data->les_group_name }}
-                                                </div>
-                                                <span>0/5</span>
+                                                </div>                                               
                                             </div>
     
                                             <div id="curriculumOne" class="collapse show" aria-labelledby="headingcurriculumOne" data-parent="#curriculum-content">
