@@ -13,12 +13,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 single-course-content">
-                    <div class="single-title">
-                        <h1>{{ $item->course_title }}</h1>                       
-                    </div>
+                    <div class="single-title" style="padding:unset;">
+                        <h1>{{ $item->course_title }}</h1>                                     
+                    </div> <p style="padding: 10px;font-size: 15px;/* background: #f9f9f9; */ ">By {{ $teacher_data->first_name }} {{ $teacher_data->last_name }} </p> <br><br>
+                            
                     <div class="single-course-info">
-                        <figure class="single-course-images">
-                            <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 500px;" alt="Content Marketing">
+                        <figure class="single-course-images" style="">
+                            <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 500px; height: 500px;-webkit-box-shadow: 2px 4px 15px -5px rgba(0,0,0,0.75);-moz-box-shadow: 2px 4px 15px -5px rgba(0,0,0,0.75);box-shadow: 2px 4px 15px -5px rgba(0,0,0,0.75);border-style: solid;border-width: 10px;border-color: white;" alt="Content Marketing">
                         </figure>
                         <div class="course-teacher-cat display-flex">
                             <div class="teacher-cat">
@@ -29,23 +30,19 @@
                                         </a>
                                         <div class="teacher-cat-item">
                                             <span>Instructor:</span>
-                                            <a href="#">Sofia Robinson</a>
+                                            <a href="#" style="font-size: 15px;">{{ $teacher_data->first_name }} {{ $teacher_data->last_name }}</a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="teacher-cat-item">
                                             <span>Caregories</span>
-                                            <a href="#">Marketing</a>
+                                            <a href="#" style="font-size: 10px;background: #03A9F4;color: white;padding: 5px;border-radius: 5px;">{{ $cat_data->category_name }}</a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="teacher-cat-item">
-                                            <span>Reviews</span>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                            <span>Lavel</span>
+                                            {{ $item->level }}
                                         </div>
                                     </li>
                                 </ul>  
@@ -123,9 +120,9 @@
                             <a href="{{ url('/') }}/shop/products/{{ $product_reccomand->slug }}" class="btn-light" style="padding: 0px 10px;background: border-box;">LKR {{$product_reccomand->price}}</a> 
                             <a href="{{ url('/') }}/shop/products/{{ $product_reccomand->slug }}" style="" class="btn btn-primary">Buy Now</a>                              
                             </ul>
-                        </div> <br><br><br><br>
+                        </div>
 
-                        <div class="banner">
+                        <div class="banner" style="height: -webkit-fill-available;">
                             <img src="images/sidebar-banner.jpg" alt="">
                             <div class="banner-content position-center">
                                 <h5 class="title">
@@ -141,7 +138,7 @@
     </section>
   
 @endforeach
-{{ $product_reccomand }} 
+
 @include('public.home_land.components.footer')
 
 <script>

@@ -32,29 +32,31 @@ class HomeController extends Controller
     public function course_list($course_id){
         $course_data = DB::table('course_list')->where('course_id',$course_id)->get();
         $les_group  = DB::table('les_group')->where('course_id', $course_id)->orderBy('lg_order', 'ASC')->get();
-       
         $course_info = DB::table('course_list')->where('course_id',$course_id)->first();
-
         $recorn_id = $course_info->reccomandproduct_id;
-
         $course_product = DB::table('products')->where('id',$recorn_id)->first();
-
-        $recommand_product_slug = $course_product->slug;        
-
+        $recommand_product_slug = $course_product->slug;      
         $product = Product::findBySlug($recommand_product_slug);
+        $product_image = $product->baseimage->path;
+        $cat_id_data = $course_info->cat_id;
+        $cat_data = DB::table('course_cat')->where('category_id',$cat_id_data)->first();
 
-        //$uri = ltrim($uri, '/');
+        $user_id_data = $course_info->user_id;
+        $cat_get_user_data = DB::table('users')->where('id',$user_id_data)->first();
+
 
        
-
-        $product_image = $product->baseimage->path;
-
+        //dd($cat_get_user_data);
+       
+       
        return view('public.home_land.course_page',
        ['coursedata' =>  $course_data,
        'les_group' =>  $les_group,
         'id' => $course_id, 
         'product_reccomand' => $product,
         'product_img' => $product_image,
+        'cat_data' => $cat_data,
+        'teacher_data' => $cat_get_user_data,
        ]);
          
       
