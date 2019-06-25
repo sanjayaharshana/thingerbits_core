@@ -57,6 +57,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active show" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Panigation</a>
                             </li>                         
                         </ul>
                         <div class="tab-content" id="myTabContent">
