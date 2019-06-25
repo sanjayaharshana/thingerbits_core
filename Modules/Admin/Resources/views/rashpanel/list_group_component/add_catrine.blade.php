@@ -21,7 +21,7 @@
                      
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Ctrine Body</label>
-                        <input type="text" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Catrine Description" name="catrine_body" style="" value="0" required>
+                        <input type="text" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Catrine Description" name="catrine_body" style="" value="" required>
                     </div>
                     <br>                      
                      </div>
