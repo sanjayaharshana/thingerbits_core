@@ -36,6 +36,7 @@
     @endforeach
 </ul>
 
+
 <a href="admin/addles/add/{{ $lesson->course_id }}" style="float: right;margin: 0px 10px;" class="btn btn-primary"><i class="fa fa-book"></i> &nbsp; Add Lesson</a>
 <button type="button" style="float: right;margin: 0px 0px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-cogs"></i> &nbsp;Edit Attrib</button> &nbsp;
 
@@ -65,11 +66,16 @@
 
 
 
-<h2>Exam</h2><br>
+<h2>Catrine List</h2><br>
 
 <script src="//localhost:8000/modules/media/admin/js/media.js?v=1.1.2"></script>
 <ul class="list-group">
-<li class="list-group-item active">Coming Soon</li>        
+    <div class="">
+        @foreach ($cartrine_data as $Catrineitem)
+        <li class="list-group-item" style="width: 500px;"> <i class="fa fa-check"></i>&nbsp; {{ $Catrineitem->title }}</li>
+        <div style="padding:10px;border-style: double;border-width: 1px;width: 500px;background: #efefef;border-color: #dddddd;"> {{ $Catrineitem->catrine_body }}<a href="admin/deletecore/delete/111" class="btn-xs" style="float: right;">Delete</a><a href="admin/parellel/61/111" class="btn-xs" style="float: right;">Edit</a></div>           
+        @endforeach
+    </div>    
 </ul>
 
 @endsection

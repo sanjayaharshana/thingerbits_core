@@ -43,6 +43,8 @@ Route::get('course_group/', 'lms@course_group')->name('course_group');;
 Route::post('/addsection/insert', 'lms@adsection')->name('adsection');
 Route::post('/insert_course_catrine/insert', 'lms@insert_course_catrine')->name('insert_course_catrine');
 
+Route::get('course_catrine/{id}', 'lms@deletecantrine')->name('deletecantrine');
+
 
 
 

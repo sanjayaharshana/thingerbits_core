@@ -40,16 +40,29 @@ class lms extends Controller
 
     public function courseopener($courseid) 
     {
-        $data['data'] = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
-        $les_group ['linco'] = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
+        $data = DB::table('lessons')->where('course_id', $courseid)->orderBy('l_order', 'ASC')->get();
+        $les_group = DB::table('les_group')->where('course_id', $courseid)->orderBy('lg_order', 'ASC')->get();
+
+
+        $cartrine_data = DB::table('course_catrine')->where('course_id', $courseid)->get();
+
+      
 
         if(count($data) > 0)
         {
-            return view('admin::rashpanel.listgroup',$data,$les_group);
+            return view('admin::rashpanel.listgroup',
+            ['data' =>  $data,
+             'linco' =>  $les_group,
+             'cartrine_data' => $cartrine_data,             
+            ]);
         }
         else
         {
-            return view('admin::rashpanel.listgroup',$data,$les_group);
+            return view('admin::rashpanel.listgroup',
+            ['data' =>  $data,
+             'linco' =>  $les_group,
+             'cartrine_data' => $cartrine_data,             
+            ]);
         }
 
        // return view('admin::rashpanel.listgroup');
@@ -261,6 +274,7 @@ class lms extends Controller
         DB::table('course_list')->where('course_id', $course_id )->delete();
         DB::table('les_group')->where('course_id', $course_id )->delete();
         DB::table('my_courses')->where('course_id', $course_id )->delete();
+        DB::table('course_catrine')->where('course_id', $course_id )->delete();
 
 
         return back(); 
@@ -343,5 +357,10 @@ class lms extends Controller
        return back(); 
     }
     
+    function deletecantrine ($id) {
+        DB::table('course_catrine')->where('course_id', $id )->delete();
+        // echo 'asda';
+         return back();
+    }
 
 }
