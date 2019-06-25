@@ -104,8 +104,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                         <div class="widget-title" style="text-align: center;padding: 10px;background: #0390cf;color: white;border-radius: 10px 10px 0px 0px;">
                                 <h5 style="text-align: center; color:white;">Recommand Product</h5>
-                             
-                            </div>
+                        </div>
                     <div class="right-sidebar">                        
                         <div class="widget_lastest_entries" style="-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 3px 0px rgba(183, 183, 183, 0.75);padding: 10px;">
                             <br>
