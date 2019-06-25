@@ -25,6 +25,7 @@
                                
                             </div>
                             <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
+                            <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
                         </div>
                     </div>
                     <div class="single-course-tab">
@@ -76,23 +77,26 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="right-sidebar">                        
-                        <div class="widget_lastest_entries" style="-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 3px 0px rgba(183, 183, 183, 0.75);padding: 10px;">
-                            <div class="widget-title" style="text-align: center;padding: 10px;background: #0390cf;color: white;border-radius: 10px 10px 0px 0px;">
+                        <div class="widget-title" style="text-align: center;padding: 10px;background: #0390cf;color: white;border-radius: 10px 10px 0px 0px;">
                                 <h5 style="text-align: center; color:white;">Recommand Product</h5>
                              
-                            </div><br>
+                            </div>
+                    <div class="right-sidebar">                        
+                        <div class="widget_lastest_entries" style="-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 3px 0px rgba(183, 183, 183, 0.75);padding: 10px;">
+                            <br>
                             <ul>
                                 <li>
                                     <a href="#"><img src=" {{ $product_img }}" style="border-radius: 10px;border-style: solid;border-color: white;" alt="Web Design For Usability"></a>
                                     <h5 class="title" style="text-align:center;">                                            
-                                            <a href="#">{{ $product_reccomand->name }}</a>
+                                        <a href="#">{{ $product_reccomand->name }}</a>
                                     </h5><br>
-                                    <p style="height: 200px;">
-                                       {{$product_reccomand->description}}  
+                                    <p style="height: 200px;"> 
+                                       {!!$product_reccomand->short_description!!}  
                                     </p>
-                                                                     
-                                </li>                                
+                                                                                                  
+                                </li>  
+                            <a href="{{ url('/') }}/shop/products/{{ $product_reccomand->slug }}" class="btn-light" style="padding: 0px 10px;background: border-box;">LKR {{$product_reccomand->price}}</a> 
+                            <a href="{{ url('/') }}/shop/products/{{ $product_reccomand->slug }}" style="" class="btn btn-primary">Buy Now</a>                              
                             </ul>
                         </div> <br><br><br><br>
 
@@ -112,7 +116,7 @@
     </section>
   
 @endforeach
-
+{{ $product_reccomand }} 
 @include('public.home_land.components.footer')
 
 <script>
