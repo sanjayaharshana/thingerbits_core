@@ -22,9 +22,34 @@
                         </figure>
                         <div class="course-teacher-cat display-flex">
                             <div class="teacher-cat">
-                               
+                                <ul class="display-flex">
+                                    <li class="display-flex">
+                                        <a href="#">
+                                            <img src="images/home3-tutor-1.jpg" alt="Sofia Robinson">
+                                        </a>
+                                        <div class="teacher-cat-item">
+                                            <span>Instructor:</span>
+                                            <a href="#">Sofia Robinson</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="teacher-cat-item">
+                                            <span>Caregories</span>
+                                            <a href="#">Marketing</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="teacher-cat-item">
+                                            <span>Reviews</span>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </li>
+                                </ul>  
                             </div>
-                            <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
                             <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
                         </div>
                     </div>

@@ -197,7 +197,10 @@ class lms extends Controller
     }
 
     function createcourse() {
-        return view('admin::rashpanel.createcourse');
+
+        $cat_data['cat_data']  = DB::table('course_cat')->get();
+        $product_data['product_data']  = DB::table('products')->get();
+        return view('admin::rashpanel.createcourse',$cat_data,$product_data);
 
         //echo 'appe';
     }
@@ -210,7 +213,8 @@ class lms extends Controller
         $course_image = $reql->file('course_img');
         $course_intro = $reql->input('course_intros');
         $course_discription = $reql->input('cours_discrip');
-        $reccomandproduct_id = $reql->input('Recommand_Products');     
+        $reccomandproduct_id = $reql->input('Recommand_Products'); 
+        $cat_id = $reql->input('cat_id');     
         
         if($reql->hasFile('course_img')) {
             $filenameWithExt = $reql->file('course_img')->getClientOriginalName();          
@@ -231,6 +235,7 @@ class lms extends Controller
                 'course_intro'=>$course_intro,
                 'course_discription' => $course_discription,
                 'reccomandproduct_id' => $reccomandproduct_id,
+                'cat_id' => $cat_id,
             )
         );
 
@@ -318,6 +323,10 @@ class lms extends Controller
             ]);
 
         return back(); 
+    }
+
+    function config_servles () {
+
     }
     
 
