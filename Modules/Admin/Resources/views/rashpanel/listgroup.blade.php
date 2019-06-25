@@ -41,11 +41,12 @@
 
 <button type="button" style="float: right;margin: 0px 10px;" class="btn btn-primary" data-toggle="modal" data-target="#addsec"><i class="fa fa-list"></i> &nbsp;Add Section</button>
 
+<button type="button" style="float: right;margin: 0px 10px;" class="btn btn-primary" data-toggle="modal" data-target="#catrine"><i class="fa fa-list"></i> &nbsp;Add Catrine</button>
 
 
 
 @include('admin::rashpanel.list_group_component.edit_course_attrib')
-
+@include('admin::rashpanel.list_group_component.add_catrine')
 
 
 @include('admin::rashpanel.list_group_component.add_section')

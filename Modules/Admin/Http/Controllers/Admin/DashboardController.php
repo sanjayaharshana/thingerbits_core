@@ -11,10 +11,7 @@ use Modules\Product\Entities\SearchTerm;
 use Illuminate\Http\Request; 
 use File;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-
-
 use Illuminate\Support\Facades\Storage;
-
 use DB;
 use Log;
 use Response;

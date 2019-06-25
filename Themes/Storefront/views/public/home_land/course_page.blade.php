@@ -6,21 +6,46 @@
 @include('public.home_land.components.ajaxpageloader')
 @include('public.home_land.components.header')
 
+
+
 @foreach ($coursedata as $item)
 <section class="single-course section-padding-large">
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 single-course-content">
-                    <div class="single-title">
-                        <h1>{{ $item->course_title }}</h1>                       
-                    </div>
+                    <div class="single-title" style="padding:unset;">
+                        <h1>{{ $item->course_title }}</h1>                                     
+                    </div> <p style="padding: 10px;font-size: 15px;/* background: #f9f9f9; */ ">By {{ $teacher_data->first_name }} {{ $teacher_data->last_name }} </p> <br><br>
+                            
                     <div class="single-course-info">
-                        <figure class="single-course-images">
-                            <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 500px;" alt="Content Marketing">
+                        <figure class="single-course-images" style="">
+                            <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" style="height: 500px; height: 500px;-webkit-box-shadow: 2px 4px 15px -5px rgba(0,0,0,0.75);-moz-box-shadow: 2px 4px 15px -5px rgba(0,0,0,0.75);box-shadow: 2px 4px 15px -5px rgba(0,0,0,0.75);border-style: solid;border-width: 10px;border-color: white;" alt="Content Marketing">
                         </figure>
                         <div class="course-teacher-cat display-flex">
                             <div class="teacher-cat">
-                               
+                                <ul class="display-flex">
+                                    <li class="display-flex">
+                                        <a href="#">
+                                            <img src="images/home3-tutor-1.jpg" alt="Sofia Robinson">
+                                        </a>
+                                        <div class="teacher-cat-item">
+                                            <span>Instructor:</span>
+                                            <a href="#" style="font-size: 15px;">{{ $teacher_data->first_name }} {{ $teacher_data->last_name }}</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="teacher-cat-item">
+                                            <span>Caregories</span>
+                                            <a href="#" style="font-size: 10px;background: #03A9F4;color: white;padding: 5px;border-radius: 5px;">{{ $cat_data->category_name }}</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="teacher-cat-item">
+                                            <span>Lavel</span>
+                                            {{ $item->level }}
+                                        </div>
+                                    </li>
+                                </ul>  
                             </div>
                             <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
                         </div>
@@ -74,49 +99,30 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                    <div class="right-sidebar">                        
-                        <div class="widget_lastest_entries">
-                            <div class="widget-title">
-                                <h2>Recent Courses</h2>
+                        <div class="widget-title" style="text-align: center;padding: 10px;background: #0390cf;color: white;border-radius: 10px 10px 0px 0px;">
+                                <h5 style="text-align: center; color:white;">Recommand Product</h5>
+                             
                             </div>
+                    <div class="right-sidebar">                        
+                        <div class="widget_lastest_entries" style="-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 3px 0px rgba(183, 183, 183, 0.75);padding: 10px;">
+                            <br>
                             <ul>
                                 <li>
-                                    <figure>
-                                        <a href="#"><img src="images/popular-courses-1.jpg" alt="Web Design For Usability"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="#">Web Design For Usability</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="#"><img src="images/popular-courses-2.jpg" alt="Essential Blogging Tools"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="#">Essential Blogging Tools</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="#"><img src="images/popular-courses-3.jpg" alt="Advanced: UI Design"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="#">Advanced: UI Design</a>
-                                        </h3>
-                                        <span class="price notfree">$65.00</span>
-                                    </div>
-                                </li>
+                                    <a href="#"><img src=" {{ $product_img }}" style="border-radius: 10px;border-style: solid;border-color: white;" alt="Web Design For Usability"></a>
+                                    <h5 class="title" style="text-align:center;">                                            
+                                        <a href="#">{{ $product_reccomand->name }}</a>
+                                    </h5><br>
+                                    <p style="height: 200px;"> 
+                                       {!!$product_reccomand->short_description!!}  
+                                    </p>
+                                                                                                  
+                                </li>  
+                            <a href="{{ url('/') }}/shop/products/{{ $product_reccomand->slug }}" class="btn-light" style="padding: 0px 10px;background: border-box;">LKR {{$product_reccomand->price}}</a> 
+                            <a href="{{ url('/') }}/shop/products/{{ $product_reccomand->slug }}" style="" class="btn btn-primary">Buy Now</a>                              
                             </ul>
                         </div>
 
-                        <div class="banner">
+                        <div class="banner" style="height: -webkit-fill-available;">
                             <img src="images/sidebar-banner.jpg" alt="">
                             <div class="banner-content position-center">
                                 <h5 class="title">

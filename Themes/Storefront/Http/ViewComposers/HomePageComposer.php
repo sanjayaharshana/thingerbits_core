@@ -49,8 +49,19 @@ class HomePageComposer
             'tabProducts' => $this->getTabProducts(),
             'twoColumnCarouselProducts' => $this->getTwoColumnCarouselProducts(),
             'recentlyViewedProducts' => $this->getRecentlyViewedProducts(),
+           // 'getproduct_by_id' => $this->zugeme(),                        
         ]);
     }
+
+
+    private function zugeme()
+    {
+        return collect();
+        return $this->getproduct_by_id(1);
+    }
+
+
+
 
     private function getBannerSectionOneBanners()
     {
@@ -143,6 +154,10 @@ class HomePageComposer
         ];
     }
 
+    //Weline_Server Dashe
+
+
+
     private function getLandscapeProducts()
     {
         if (! setting('storefront_landscape_products_section_enabled')) {
@@ -168,6 +183,13 @@ class HomePageComposer
     {
         return Product::forCard()
             ->whereIn('id', $ids ?: [])
+            ->get();
+    }
+
+    //get product by
+    private function getproduct_by_id($ids) {
+        return Product::forCard()
+            ->whereIn('id', $ids)
             ->get();
     }
 

@@ -83,10 +83,31 @@
         <input type="text"  pattern=".{160,}" required title="160 characters minimum"  class="form-control" placeholder="Course Discription" name="cours_discrip" style="" value="" required>
     </div>
 
-    <div class="form-group autocomplete" style="width:300px;">
-        <label for="exampleFormControlTextarea1">Recommand Products</label>
-        <input id="myInput" type="text" class="form-control" placeholder="Title" name="Recommand Products" style="" value="" required>
+    <div class="form-group">     
+      <div class="form-group">
+        <label for="exampleInputEmail1">Category</label>
+        <select class="form-control" id="select_section" name="cat_id">  
+          @foreach ($cat_data as $cat_item)
+          <option value="{{ $cat_item->category_id }}"> {{ $cat_item->category_name }}</option>        
+              
+          @endforeach      
+          
+        </select>
+      </div>
     </div>
+
+    <div class="form-group">     
+        <div class="form-group">
+          <label for="exampleInputEmail1">Reccomand Product</label>
+          <select class="form-control" id="select_section" name="Recommand_Products">  
+            @foreach ($product_data as $productdata)
+            <option value="{{ $productdata->id }}"> {{ $productdata->slug }}</option>        
+                
+            @endforeach      
+            
+          </select>
+        </div>
+      </div>
     <br>
     <button type="submit" value="Validate!" class="btn btn-primary">Save</button>
   </form>
