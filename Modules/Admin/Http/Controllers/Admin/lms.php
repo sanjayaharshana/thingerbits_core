@@ -325,8 +325,22 @@ class lms extends Controller
         return back(); 
     }
 
-    function config_servles () {
+    function  insert_course_catrine (Request $reql) {
 
+
+        $Catrine_Title = $reql->input('Catrine_Title');
+        $course_id = $reql->input('course_id');
+        $catrine_body = $reql->input('catrine_body');       
+
+        $catrine_data = array(
+            'title' => $Catrine_Title,
+            'catrine_body'=> $catrine_body,
+            'course_id'=> $course_id,                      
+        );
+
+       DB::table('course_catrine')->insert($catrine_data);       
+       
+       return back(); 
     }
     
 

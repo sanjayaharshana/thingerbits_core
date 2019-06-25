@@ -8,11 +8,11 @@
           <h4 class="modal-title">Add Catrine</h4>
         </div>
         <div class="modal-body">
-                <form autocomplete="off" method="POST" action="{{ route('adsection') }}" enctype="multipart/form-data" id="commentForm">
+                <form autocomplete="off" method="POST" action="{{ route('insert_course_catrine') }}" enctype="multipart/form-data" id="commentForm">
                     {{ csrf_field() }}    
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Catrine Title</label>
-                        <input type="text" pattern=".{12,}" required title="3 characters minimum" id="ctitle" class="form-control" placeholder="Course Title" name="section_name" style="" value="" required>
+                        <input type="text" pattern=".{12,}" required title="3 characters minimum" id="ctitle" class="form-control" placeholder="Course Title" name="Catrine_Title" style="" value="" required>
                     </div>                  
                     <div class="form-group" style="display:none;">
                         <label for="exampleFormControlTextarea1">Course ID</label>
@@ -21,7 +21,7 @@
                      
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Ctrine Body</label>
-                        <input type="number" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Catrine Description" name="catrine_body" style="" value="0" required>
+                        <input type="text" pattern=".{160,}" required title="160 characters minimum" class="form-control" placeholder="Catrine Description" name="catrine_body" style="" value="0" required>
                     </div>
                     <br>                      
                      </div>
