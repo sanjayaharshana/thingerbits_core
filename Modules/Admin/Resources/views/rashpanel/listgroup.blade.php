@@ -46,7 +46,7 @@
 
 
 @include('admin::rashpanel.list_group_component.edit_course_attrib')
-
+@include('admin::rashpanel.list_group_component.add_catrine')
 
 
 @include('admin::rashpanel.list_group_component.add_section')
