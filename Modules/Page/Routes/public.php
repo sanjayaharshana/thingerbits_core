@@ -14,3 +14,6 @@ Route::get('public_json/{lg_id}', 'HomeController@jsonles')->name('jsonles');
 Route::get('/getcourse_lim/{core_id}', 'HomeController@getcourses')->name('getcourses');
 
 
+Route::get('/getcourse_cat/{cat}', 'HomeController@getcourse_cat')->name('getcourse_cat');
+
+

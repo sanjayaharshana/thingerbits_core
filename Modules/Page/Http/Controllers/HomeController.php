@@ -109,5 +109,9 @@ class HomeController extends Controller
         return view('public.home_land.course_list',$course_data);
     }
 
+    public function getcourse_cat() {
+        
+    }
+
   
 }
