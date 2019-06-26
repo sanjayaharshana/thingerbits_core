@@ -59,7 +59,7 @@
                                 <a class="nav-link active show" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" id="panigation-tab" data-toggle="tab" href="#panigation" role="tab" aria-controls="panigation" aria-selected="true"><i class="fas fa-bookmark"></i>Panigation</a>
+                                <a class="nav-link" id="panigation-tab" data-toggle="tab" href="#panigation" role="tab" aria-controls="panigation" aria-selected="true"><i class="fas fa-bars"></i>Panigation</a>
                             </li>                         
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -77,8 +77,8 @@
                                 <div class="course-overview">
                                     <div class="course-desc">
                                         @foreach ($course_penigration as $course_penigrationitem)                                           
-                                        <h4 class="course-tab-title">{{ $course_penigrationitem->title }}</h4>
-                                        <p class="course-desc-content">{{ $course_penigrationitem->catrine_body }}</p>    
+                                        <h4 class="course-tab-title" style="padding: 10px;color: white;background: #88cc75;margin: 0px;border-radius: 10px 0px 0px;" >{{ $course_penigrationitem->title }}</h4>
+                                        <p class="course-desc-content" style="padding: 10px;background:#e4e4e4">{{ $course_penigrationitem->catrine_body }}</p>    
                                         @endforeach                                   
                                     </div>
                                 </div>                                
