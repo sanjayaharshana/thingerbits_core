@@ -109,8 +109,15 @@ class HomeController extends Controller
         return view('public.home_land.course_list',$course_data);
     }
 
-    public function getcourse_cat() {
-        
+    public function getcourse_cat($cat) {
+
+        $data = DB::table('course_list')->where('cat_id', $cat)->get();
+
+
+        return view('public.home_land.category_list',$data);
+
+        return view('public.home_land.category_list',
+        ['data' =>  $data]);
     }
 
   

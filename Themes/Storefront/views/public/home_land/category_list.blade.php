@@ -30,7 +30,7 @@
         <div class="container">
             <div class="courses-content">
                 <div class="row">
-                   @foreach($coursedata as $item ) 
+                   @foreach($data as $item ) 
                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <article class="item">
                             <div class="item-thumb">
