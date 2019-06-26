@@ -85,7 +85,7 @@
                                                                 </div>
                                                             </div>
                                                         </article>
-                                                    </div> 
+                                                </div> 
                                     @endforeach                                
                                 </div>
                             </div>
@@ -93,118 +93,36 @@
 
 
                             <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
-                                <article class="item listing">
-                                    <div class="item-thumb">
-                                        <a href="single-course.html">
-                                            <img src="images/courses-list-1.jpg" alt="Web Design For Usability">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Web Design For Usability</a>
-                                        </h3>
-                                        <div class="feadtured-course-small">
-                                            <a href="#" class="teacher">
-                                                <img src="images/home3-tutor-2.jpg" alt="Charles Russell">
-                                                <span>Charles Russell</span>
-                                            </a>
-                                        </div>
-                                        <p class="course-desc">
-                                            Lobortis mattis aliquam faucibus purus in tempor nec. Iaculis urna id volutpat lacus laoreet non rabitur faucibus vitae aliquet.
-                                        </p>
-                                        <div class="desc display-flex">
-                                            <div class="comments-students">
-                                                <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
-                                                <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
+                                @foreach ($data as $item_l)
+                                    <article class="item listing">
+                                            <div class="item-thumb">
+                                                <a href="single-course.html">
+                                                    <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" alt="Web Design For Usability">
+                                                </a>
                                             </div>
-                                            <span class="price notfree">$65.00</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="item listing">
-                                    <div class="item-thumb">
-                                        <a href="single-course.html">
-                                            <img src="images/courses-list-2.jpg" alt="Advanced: UI Design">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Advanced: UI Design</a>
-                                        </h3>
-                                        <div class="feadtured-course-small">
-                                            <a href="#" class="teacher">
-                                                <img src="images/our-team-7.jpg" alt="Daniel Hardy">
-                                                <span>Daniel Hardy</span>
-                                            </a>
-                                        </div>
-                                        <p class="course-desc">
-                                            Amet aliquam id diam maecenas ultricies mi eget mauris pharetra. Tempus iaculis urna id volutp. Nulla pharetra diam sit amet.
-                                        </p>
-                                        <div class="desc display-flex">
-                                            <div class="comments-students">
-                                                <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
-                                                <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
+                                            <div class="info">
+                                                <h3 class="title">
+                                                    <a href="single-course.html">{{ $item->course_title }}</a>
+                                                </h3>
+                                                <div class="feadtured-course-small">
+                                                    <a href="#" class="teacher">
+                                                        <img src="images/home3-tutor-2.jpg" alt="Charles Russell">
+                                                        <span>Charles Russell</span>
+                                                    </a>
+                                                </div>
+                                                <p class="course-desc">
+                                                    Lobortis mattis aliquam faucibus purus in tempor nec. Iaculis urna id volutpat lacus laoreet non rabitur faucibus vitae aliquet.
+                                                </p>
+                                                <div class="desc display-flex">
+                                                    <div class="comments-students">
+                                                        <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
+                                                        <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
+                                                    </div>
+                                                    <span class="price notfree">$65.00</span>
+                                                </div>
                                             </div>
-                                            <span class="price notfree">$65.00</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="item listing">
-                                    <div class="item-thumb">
-                                        <a href="single-course.html">
-                                            <img src="images/courses-list-3.jpg" alt="Input And Interaction">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Input And Interaction</a>
-                                        </h3>
-                                        <div class="feadtured-course-small">
-                                            <a href="#" class="teacher">
-                                                <img src="images/course-small-1.jpg" alt="Lucas Murray">
-                                                <span>Lucas Murray</span>
-                                            </a>
-                                        </div>
-                                        <p class="course-desc">
-                                            Fames ac turpis egestas integer eget aliquet nibh praesent tristique. Leo in vitae turpis massa. Pharetra vel turpis nunc eget lorem dolor.
-                                        </p>
-                                        <div class="desc display-flex">
-                                            <div class="comments-students">
-                                                <a href="#" class="comments"><i class="fas fa-user"></i>20 Students</a>
-                                                <a href="#" class="students"><i class="fas fa-book"></i>06 Lessons</a>
-                                            </div>
-                                            <span class="price free">Free</span>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="item listing">
-                                    <div class="item-thumb">
-                                        <a href="single-course.html">
-                                            <img src="images/courses-list-4.jpg" alt="Content Marketing">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Content Marketing</a>
-                                        </h3>
-                                        <div class="feadtured-course-small">
-                                            <a href="#" class="teacher">
-                                                <img src="images/home3-tutor-1.jpg" alt="Andrea Russell">
-                                                <span>Andrea Russell</span>
-                                            </a>
-                                        </div>
-                                        <p class="course-desc">
-                                            Iaculis urna id volutpat lacus laoreet non curaitur. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit ultricies mi eget.
-                                        </p>
-                                        <div class="desc display-flex">
-                                            <div class="comments-students">
-                                                <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
-                                                <a href="#" class="students"><i class="fas fa-book"></i>08 Lessons</a>
-                                            </div>
-                                            <span class="price notfree">$25.00</span>
-                                        </div>
-                                    </div>
-                                </article>
+                                    </article>  
+                                @endforeach                                                             
                             </div>
                         </div>
                         <div class="pagination">
