@@ -97,12 +97,12 @@
                                     <article class="item listing">
                                             <div class="item-thumb">
                                                 <a href="single-course.html">
-                                                    <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" alt="Web Design For Usability">
+                                                    <img src="{{ url('/') }}/get_data_reqst_java/{{ $item_l->course_id }}" alt="Web Design For Usability">
                                                 </a>
                                             </div>
                                             <div class="info">
                                                 <h3 class="title">
-                                                    <a href="single-course.html">{{ $item->course_title }}</a>
+                                                    <a href="single-course.html">{{ $item_l->course_title }}</a>
                                                 </h3>
                                                 <div class="feadtured-course-small">
                                                     <a href="#" class="teacher">
