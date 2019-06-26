@@ -59,7 +59,7 @@
                                 <a class="nav-link active show" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Panigation</a>
+                                <a class="nav-link" id="panigation-tab" data-toggle="tab" href="#panigation" role="tab" aria-controls="panigation" aria-selected="true"><i class="fas fa-bookmark"></i>Panigation</a>
                             </li>                         
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -73,9 +73,20 @@
                                     </div>
                                 </div>                                
                             </div>
-                            @foreach($les_group as $lg_data)
+                            <div class="tab-pane fade" id="panigation" role="tabpanel" aria-labelledby="overview-tab">
+                                <div class="course-overview">
+                                    <div class="course-desc">
+                                        @foreach ($course_penigration as $course_penigrationitem)                                           
+                                        <h4 class="course-tab-title">{{ $course_penigrationitem->title }}</h4>
+                                        <p class="course-desc-content">{{ $course_penigrationitem->catrine_body }}</p>    
+                                        @endforeach                                   
+                                    </div>
+                                </div>                                
+                            </div>
+                            
                             <div class="tab-pane fade active show" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                                     <ul id="curriculum-content" class="curriculum-content">
+                                        @foreach($les_group as $lg_data)
                                         <li class="card active">
                                             <div class="card-header" id="headingcurriculumOne">
                                                 <div class="title" id="apple{{ $lg_data->les_group_id }}" data-toggle="collapse" data-target="#curriculumOne{{ $lg_data->les_group_id }}" aria-expanded="true" aria-controls="curriculumOne" role="button">
@@ -91,12 +102,10 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        @endforeach  
                                     </ul>                                   
                                 </div> 
-
-                            @endforeach
-                                                                             
-                                               
+                                                                                 
                         </div>
                     </div>
                     <div class="clearfix"></div>

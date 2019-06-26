@@ -44,6 +44,7 @@ class HomeController extends Controller
         $user_id_data = $course_info->user_id;
         $cat_get_user_data = DB::table('users')->where('id',$user_id_data)->first();
 
+        $course_penigration = DB::table('course_catrine')->where('course_id',$course_id)->get();
 
        
         //dd($cat_get_user_data);
@@ -57,6 +58,7 @@ class HomeController extends Controller
         'product_img' => $product_image,
         'cat_data' => $cat_data,
         'teacher_data' => $cat_get_user_data,
+        'course_penigration' => $course_penigration,
        ]);
          
       
