@@ -44,11 +44,11 @@
                                         <li class="menu-item">
                                             <a href="{{ route('getcourses','micro_service_pal') }}">Courses</a> 
                                             <ul class="sub-menu">
-                                                <li class="menu-item"><a href="Wordls Mart">Arduino</a></li>
-                                                <li class="menu-item"><a href="index2.html">Raspberry Pi</a></li>
-                                                <li class="menu-item"><a href="index3.html">MicroBits</a></li>
-                                                <li class="menu-item"><a href="index3.html">Internet of Things</a></li>
-                                                <li class="menu-item"><a href="index3.html">Robotics</a></li>
+                                                <li class="menu-item"><a href="/getcourse_cat/1">Arduino</a></li>
+                                                <li class="menu-item"><a href="/getcourse_cat/2">Raspberry Pi</a></li>
+                                                <li class="menu-item"><a href="/getcourse_cat/3">MicroBits</a></li>
+                                                <li class="menu-item"><a href="/getcourse_cat/4">Internet of Things</a></li>
+                                                <li class="menu-item"><a href="/getcourse_cat/5">Robotics</a></li>
                                             </ul>                                           
                                         </li>
                                         <li class="menu-item">

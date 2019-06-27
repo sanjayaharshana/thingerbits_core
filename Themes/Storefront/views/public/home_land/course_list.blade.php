@@ -5,15 +5,6 @@
 @include('public.home_land.components.head')
 @include('public.home_land.components.ajaxpageloader')
 @include('public.home_land.components.header')
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-@include('public.home_land.components.head')
-@include('public.home_land.components.ajaxpageloader')
-@include('public.home_land.components.header')
-
 <main>
     <!-- Heading Page -->
     <section class="heading-page">
@@ -63,7 +54,7 @@
                             <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="gid-tab">
                                 <div class="row">
 
-                                    @foreach ($data as $item)
+                                    @foreach ($coursedata as $item)
                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                                         <article class="item">
                                                             <div class="item-thumb">
@@ -101,7 +92,7 @@
 
 
                             <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
-                                @foreach ($data as $item_l)
+                                @foreach ($coursedata as $item_l)
                                     <article class="item listing">
                                             <div class="item-thumb">
                                                 <a href="single-course.html">
