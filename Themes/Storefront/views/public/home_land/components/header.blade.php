@@ -15,7 +15,8 @@
                     </div>
                     <div class="header-top-account">
                             @auth                            
-                            <a href="{{ route('login') }}" class="signup">My Acccount</a>                            
+                            <a href="{{ route('login') }}" class="signup">  {{ Auth::user()->email }}</a>  
+                                                    
                             @else 
                             <a href="{{ route('register') }}" class="signup"><i class="fas fa-edit"></i>Sign Up</a>
                             <a href="{{ route('login') }}" class="login">Sign In</a>

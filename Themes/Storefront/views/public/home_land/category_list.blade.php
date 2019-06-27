@@ -42,14 +42,7 @@
                                     </li>
                                 </ul>
                                 <p class="woocommerce-result-count">Showing 1 – 8 of 20</p>
-                            </div>
-                            <form class="woocommerce-ordering" method="GET">
-                                <select name="orderby" class="orderby">
-                                    <option value="latest">Latest Courses</option>
-                                    <option value="popular">Popular Courses</option>
-                                    <option value="lessons">Lessons</option>
-                                </select>
-                            </form>
+                            </div>                            
                         </div>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="gid-tab">

@@ -28,7 +28,7 @@
 
         @include('admin::partials.sidebar')
 
-        <div class="wrapper">
+        <div class="wrapper" style="width:min-content;">
             <div class="content-wrapper">
                 @include('admin::partials.top_nav')
 
