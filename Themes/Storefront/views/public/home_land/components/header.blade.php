@@ -42,14 +42,7 @@
                                             <a href="{{ route('home') }}">Home</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="{{ route('getcourses','micro_service_pal') }}">Courses</a> 
-                                            <ul class="sub-menu">
-                                                <li class="menu-item"><a href="/getcourse_cat/1">Arduino</a></li>
-                                                <li class="menu-item"><a href="/getcourse_cat/2">Raspberry Pi</a></li>
-                                                <li class="menu-item"><a href="/getcourse_cat/3">MicroBits</a></li>
-                                                <li class="menu-item"><a href="/getcourse_cat/4">Internet of Things</a></li>
-                                                <li class="menu-item"><a href="/getcourse_cat/5">Robotics</a></li>
-                                            </ul>                                           
+                                            <a href="{{ route('getcourses','micro_service_pal') }}">Courses</a>                                                                                  
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Pages</a>
@@ -135,15 +128,7 @@
                     <div>
                         <ul class="au-navbar-menu">
                             <li class="menu-item curent-menu-item">
-                                <a href="{{ route('home') }}">Home</a>
-                                <span class="arrow">
-                                    <i></i>
-                                </span>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="index.html">Home 1</a></li>
-                                    <li class="menu-item"><a href="index2.html">Home 2</a></li>
-                                    <li class="menu-item"><a href="index3.html">Home 3</a></li>
-                                </ul>
+                                <a href="{{ route('home') }}">Home</a>                                
                             </li>
                             <li class="menu-item">
                                 <a href="">Courses</a>                              

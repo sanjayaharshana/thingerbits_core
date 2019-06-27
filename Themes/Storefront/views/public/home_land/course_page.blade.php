@@ -47,7 +47,7 @@
                                     </li>
                                 </ul>  
                             </div>
-                            <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
+                            <a href="#" class="au-btn au-btn-hover">Get More Info</a>
                         </div>
                     </div>
                     <div class="single-course-tab">
