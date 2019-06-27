@@ -47,20 +47,23 @@
                                     </li>
                                 </ul>  
                             </div>
-                            <a href="#" class="au-btn au-btn-hover">Buy This Courses</a>
+                            <a href="#" class="au-btn au-btn-hover">Get More Info</a>
                         </div>
                     </div>
                     <div class="single-course-tab">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false"><i class="fas fa-user"></i>Description</a>
+                                <a class="nav-link active show" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false"><i class="fas fa-user"></i>Description</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active show" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
+                                <a class="nav-link" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" id="panigation-tab" data-toggle="tab" href="#panigation" role="tab" aria-controls="panigation" aria-selected="true"><i class="fas fa-bars"></i>Panigation</a>
                             </li>                         
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                            <div class="tab-pane fade active show" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <div class="course-overview">
                                     <div class="course-desc">
                                         <h4 class="course-tab-title">Courses Information</h4>
@@ -70,9 +73,20 @@
                                     </div>
                                 </div>                                
                             </div>
-                            @foreach($les_group as $lg_data)
-                            <div class="tab-pane fade active show" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
+                            <div class="tab-pane fade" id="panigation" role="tabpanel" aria-labelledby="overview-tab">
+                                <div class="course-overview">
+                                    <div class="course-desc">
+                                        @foreach ($course_penigration as $course_penigrationitem)                                           
+                                        <h4 class="course-tab-title" style="padding: 10px;color: white;background: #88cc75;margin: 0px;border-radius: 10px 0px 0px;" >{{ $course_penigrationitem->title }}</h4>
+                                        <p class="course-desc-content" style="padding: 10px;background:#e4e4e4">{{ $course_penigrationitem->catrine_body }}</p>    
+                                        @endforeach                                   
+                                    </div>
+                                </div>                                
+                            </div>
+                            
+                            <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                                     <ul id="curriculum-content" class="curriculum-content">
+                                        @foreach($les_group as $lg_data)
                                         <li class="card active">
                                             <div class="card-header" id="headingcurriculumOne">
                                                 <div class="title" id="apple{{ $lg_data->les_group_id }}" data-toggle="collapse" data-target="#curriculumOne{{ $lg_data->les_group_id }}" aria-expanded="true" aria-controls="curriculumOne" role="button">
@@ -88,12 +102,10 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        @endforeach  
                                     </ul>                                   
                                 </div> 
-
-                            @endforeach
-                                                                             
-                                               
+                                                                                 
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -101,8 +113,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                         <div class="widget-title" style="text-align: center;padding: 10px;background: #0390cf;color: white;border-radius: 10px 10px 0px 0px;">
                                 <h5 style="text-align: center; color:white;">Recommand Product</h5>
-                             
-                            </div>
+                        </div>
                     <div class="right-sidebar">                        
                         <div class="widget_lastest_entries" style="-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 3px 0px rgba(183, 183, 183, 0.75);padding: 10px;">
                             <br>

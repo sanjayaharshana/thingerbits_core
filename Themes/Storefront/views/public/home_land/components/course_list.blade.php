@@ -1,4 +1,4 @@
-<section class="courses courses-2 section-padding-large" style="max-height: none; height:-webkit-fill-available;background-image: url('{{ (Theme::url('public/visual_style/images/home2-courses-bg.jpg')) }}');">
+<section class="courses courses-2 section-padding-large" style="max-height: none; height:-webkit-fill-available;background-image: url('{{ (Theme::url('public/visual_style/images/home2-courses-bg.jpg')) }}'); padding-top: 10px;">
     <div class="container">       
         <div class="courses-content featured-course-slider">
             <div class="row slick-initialized slick-slider slick-dotted">

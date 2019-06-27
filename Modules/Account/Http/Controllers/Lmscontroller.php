@@ -151,7 +151,7 @@ class Lmscontroller extends Controller
         );
 
         //return view('admin::purches_order.purches_order');
-        return redirect()->route('getcourses',['mycourse_id' => $id]); 
+        return redirect()->route('getcourses_r',['mycourse_id' => $id]); 
 
     }
 

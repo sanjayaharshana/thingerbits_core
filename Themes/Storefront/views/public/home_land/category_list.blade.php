@@ -5,10 +5,11 @@
 @include('public.home_land.components.head')
 @include('public.home_land.components.ajaxpageloader')
 @include('public.home_land.components.header')
+
 <main>
     <!-- Heading Page -->
     <section class="heading-page">
-        <img src="" alt="">
+        <img src="images/bloggrid-heading-bg.jpg" alt="">
         <div class="container">
             <div class="heading-page-content">
                 <div class="au-page-title">
@@ -47,16 +48,16 @@
                             <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="gid-tab">
                                 <div class="row">
 
-                                    @foreach ($coursedata as $item)
+                                    @foreach ($data as $item)
                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                                         <article class="item">
                                                             <div class="item-thumb">
-                                                                <a href="{{ url('/') }}/courses/{{ $item->course_id }}">
+                                                                <a href="single-course.html">
                                                                     <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" alt="Content Marketing">
                                                                 </a>
                                                                 <div class="feadtured-course-small">
                                                                     <a href="#">
-                                                                        <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" alt="Lucas Coleman">
+                                                                        <img src="/get_data_reqst_java/{{ $item->course_id }}" alt="Lucas Coleman">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -85,32 +86,32 @@
 
 
                             <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
-                                @foreach ($coursedata as $item_l)
+                                @foreach ($data as $item_l)
                                     <article class="item listing">
                                             <div class="item-thumb">
-                                                <a href="{{ url('/') }}/courses/{{ $item_l->course_id }}">
+                                                <a href="single-course.html">
                                                     <img src="{{ url('/') }}/get_data_reqst_java/{{ $item_l->course_id }}" alt="Web Design For Usability">
                                                 </a>
                                             </div>
                                             <div class="info">
                                                 <h3 class="title">
-                                                    <a href="{{ url('/') }}/courses/{{ $item_l->course_id }}">{{ $item_l->course_title }}</a>
+                                                    <a href="single-course.html">{{ $item->course_title }}</a>
                                                 </h3>
                                                 <div class="feadtured-course-small">
-                                                    <a href="#" class="teacher">                                                       
-                                                        <span>{{ $item_l->level }}</span>
-                                                      
+                                                    <a href="#" class="teacher">
+                                                        <img src="images/home3-tutor-2.jpg" alt="Charles Russell">
+                                                        <span>Charles Russell</span>
                                                     </a>
                                                 </div>
                                                 <p class="course-desc">
-                                                    {{ $item_l->course_discription }}
+                                                    Lobortis mattis aliquam faucibus purus in tempor nec. Iaculis urna id volutpat lacus laoreet non rabitur faucibus vitae aliquet.
                                                 </p>
                                                 <div class="desc display-flex">
                                                     <div class="comments-students">
                                                         <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
                                                         <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
                                                     </div>
-                                                    <span class="price">More Info</span>
+                                                    <span class="price notfree">$65.00</span>
                                                 </div>
                                             </div>
                                     </article>  
@@ -139,10 +140,9 @@
                                 <h2>Categories</h2>
                             </div>
                             <ul>
-                                @foreach ($course_cat as $cat_data)
-                                <li><a href="{{ url('/') }}/getcourse_cat/{{ $cat_data->category_id }}"><i class="la la-codepen"></i>UI &amp; {{ $cat_data->category_name }}</a></li>                               
-                                @endforeach
-                               
+                                    @foreach ($course_cat as $cat_data)
+                                    <li><a href="{{ url('/') }}/getcourse_cat/{{ $cat_data->category_id }}"><i class="la la-codepen"></i>UI &amp; {{ $cat_data->category_name }}</a></li>                               
+                                    @endforeach
                             </ul>
                         </div>
                         <div class="widget_signupform">
@@ -172,6 +172,5 @@
         </div>
     </section>
 </main>
-
 
 @include('public.home_land.components.footer')

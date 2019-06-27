@@ -3,7 +3,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="{{ Request::is('account/lms') ? 'active' : '' }}">
-                        <a href="{{ route('getcourses') }}"><i class="menu-icon fa fa-laptop"></i>Course Explorer </a>
+                        <a href="{{ route('getcourses_r') }}"><i class="menu-icon fa fa-laptop"></i>Course Explorer </a>
                     </li>
                     <li class="{{ Request::is('account/lms/my_courses') ? 'active' : '' }}">
                         <a href="{{ route('my_courses') }}"> <i class="menu-icon fa fa-book"></i>My Courses </a>

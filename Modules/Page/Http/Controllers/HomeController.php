@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {   
         //Homapage Manager
-        $course_data['coursedata']= DB::table('course_list')->get();   
+        $course_data['coursedata']= DB::table('course_list')->limit(3)->get();   
        
         return view('public.home_land.index',$course_data);
     }
@@ -44,6 +44,7 @@ class HomeController extends Controller
         $user_id_data = $course_info->user_id;
         $cat_get_user_data = DB::table('users')->where('id',$user_id_data)->first();
 
+        $course_penigration = DB::table('course_catrine')->where('course_id',$course_id)->get();
 
        
         //dd($cat_get_user_data);
@@ -57,8 +58,9 @@ class HomeController extends Controller
         'product_img' => $product_image,
         'cat_data' => $cat_data,
         'teacher_data' => $cat_get_user_data,
+        'course_penigration' => $course_penigration,
        ]);
-         
+        
       
         
         
@@ -95,16 +97,29 @@ class HomeController extends Controller
     }
 
     public function getcourses($core_id){
+        $course_data = DB::table('course_list')->get(); 
+        $course_cat = DB::table('course_cat')->get();
 
-        $course_data['coursedata']= DB::table('course_list')->get(); 
 
-        
+    // echo $product;
+    //$lesson_count = DB::table('lessons')->where('course_id', $lg_id)->count();
+    return view('public.home_land.course_list',
+        ['coursedata' =>  $course_data,
+         'course_cat' =>  $course_cat]);
+    //return view('public.home_land.course_list',$course_data);
+    }
 
-      // echo $product;
+    public function getcourse_cat($cat) {
 
-        //$lesson_count = DB::table('lessons')->where('course_id', $lg_id)->count();
+        $data = DB::table('course_list')->where('cat_id', $cat)->get();
+        $course_cat = DB::table('course_cat')->get();
 
-        return view('public.home_land.course_list',$course_data);
+
+       // return view('public.home_land.category_list',$data);
+
+        return view('public.home_land.category_list',
+        ['data' =>  $data,
+         'course_cat' =>  $course_cat]);
     }
 
   
