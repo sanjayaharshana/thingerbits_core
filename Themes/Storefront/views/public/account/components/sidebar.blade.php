@@ -31,7 +31,7 @@
             <li class="">
               <a href="">
                 <i class="nc-icon nc-pin-3"></i>
-                <p>Course Explorer</p>
+                <p>My Courses</p>
               </a>
             </li>
             <li class="{{ Request::is('account/orders') ? 'active' : '' }}">
