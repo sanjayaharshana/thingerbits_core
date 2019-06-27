@@ -29,7 +29,7 @@
             </li>
 
             <li class="">
-              <a href="">
+              <a href="account/lms/my_courses">
                 <i class="nc-icon nc-pin-3"></i>
                 <p>My Courses</p>
               </a>
