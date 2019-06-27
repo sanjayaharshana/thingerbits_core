@@ -64,14 +64,14 @@
                                                                 </a>
                                                                 <div class="feadtured-course-small">
                                                                     <a href="#">
-                                                                        <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" alt="Lucas Coleman">
+                                                                        <img src="/get_data_reqst_java/{{ $item->course_id }}" alt="Lucas Coleman">
                                                                     </a>
                                                                 </div>
                                                             </div>
                                                             <div class="info">
                                                                 <a href="#" class="teacher">{{ $item->level }}</a>
                                                                 <h3 class="title">
-                                                                    <a href="single-course.html">{{ $item->course_title }}</a>
+                                                                    <a href="{{ url('/') }}/courses/{{ $item->course_id }}">{{ $item->course_title }}</a>
                                                                 </h3>
                                                                 <p class="course-desc">
                                                                         {{ $item->course_discription }}   
