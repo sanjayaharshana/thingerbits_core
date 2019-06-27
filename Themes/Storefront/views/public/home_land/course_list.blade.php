@@ -139,11 +139,10 @@
                                 <h2>Categories</h2>
                             </div>
                             <ul>
-                                <li><a href="#"><i class="la la-pencil"></i>UI &amp; UX Design</a></li>
-                                <li><a href="#"><i class="la la-codepen"></i>Web Developer</a></li>
-                                <li><a href="#"><i class="la la-signal"></i>Marketing</a></li>
-                                <li><a href="#"><i class="la la-language"></i>Language</a></li>
-                                <li><a href="#"><i class="la la-wordpress"></i>Wordpress</a></li>
+                                @foreach ($course_cat as $cat_data)
+                                <li><a href="#"><i class="la la-codepen"></i>UI &amp; {{ $cat_data->category_name }}</a></li>                               
+                                @endforeach
+                               
                             </ul>
                         </div>
                         <div class="widget_signupform">
