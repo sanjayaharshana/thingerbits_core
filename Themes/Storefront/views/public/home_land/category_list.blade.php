@@ -172,47 +172,7 @@
                                     <input type="submit" class="submit au-btn-hover" value="Get It Now">
                                 </form>
                             </div>
-                        </div>
-                        <div class="widget_lastest_entries">
-                            <div class="widget-title">
-                                <h2>Popular Courses</h2>
-                            </div>
-                            <ul>
-                                <li>
-                                    <figure>
-                                        <a href="single-course.html"><img src="images/popular-courses-1.jpg" alt="Web Design For Usability"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Web Design For Usability</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="single-course.html"><img src="images/popular-courses-2.jpg" alt="Essential Blogging Tools"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Essential Blogging Tools</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="single-course.html"><img src="images/popular-courses-3.jpg" alt="Advanced: UI Design"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Advanced: UI Design</a>
-                                        </h3>
-                                        <span class="price notfree">Get More Info</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
             </div>

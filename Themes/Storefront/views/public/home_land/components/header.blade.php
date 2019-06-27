@@ -10,12 +10,15 @@
                                 <li><a href="https://www.youtube.com/channel/UCqHeZLPI-ImB2_bU3yWT6PQ"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
-                        <a href="mailto:info@smartedu.com" class="email"><i class="far fa-envelope"></i>info@smartedu.com</a>
-                        <a href="#" class="telephone"><i class="fas fa-mobile-alt"></i>+1 222-333-9999</a>
+                        <a href="info@thingerbits.com" class="email"><i class="far fa-envelope"></i>info@thingerbits.com</a>
+                        <a href="#" class="telephone"><i class="fas fa-mobile-alt"></i>+94 703-577-680</a>
                     </div>
                     <div class="header-top-account">
                             @auth                            
-                            <a href="{{ route('login') }}" class="signup">My Acccount</a>
+                            <a href="{{ route('login') }}" class="signup">My Acccount</a> 
+                            <ul>
+                                
+                            </ul>
                             @else 
                             <a href="{{ route('register') }}" class="signup"><i class="fas fa-edit"></i>Sign Up</a>
                             <a href="{{ route('login') }}" class="login">Sign In</a>
@@ -44,45 +47,20 @@
                                             <a href="{{ route('getcourses','micro_service_pal') }}">Courses</a>                                                                                  
                                         </li>
                                         <li class="menu-item">
-                                            <a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item"><a href="aboutus.html">About us </a></li>
-                                                <li class="menu-item"><a href="gallery1.html">Gallery 1</a></li>
-                                                <li class="menu-item"><a href="gallery2.html">Gallery 2</a></li>
-                                                <li class="menu-item"><a href="404.html">404</a></li>
-                                                <li class="menu-item"><a href="pricing.html">Pricing Table</a></li>
-                                            </ul>
+                                            <a href="{{ route('shops') }}">Products</a>                                           
                                         </li>
                                         <li class="menu-item">
-                                            <a href="events.html">Events</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item"><a href="events.html">Events</a>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item"><a href="single-event.html">Event Detail</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                            <a href="events.html">Events</a>                                            
                                         </li>
                                         <li class="menu-item">
-                                            <a href="blog1.html">News</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item"><a href="blog1.html">Blog 1</a>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item"><a href="single.html">Blog detail</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item"><a href="blog2.html">Blog 2</a></li>
-                                                <li class="menu-item"><a href="blog3.html">Blog 3</a>
-                                            </ul>
+                                            <a href="blog1.html">Blog</a>                                        
+                                        </li>
+                                        <li class="menu-item">
+                                                <a href="blog1.html">Contact</a>                                        
                                             </li>
-                                            <li class="menu-item">
-                                                <a href="contact1.html">Contact</a>
-                                                <ul class="sub-menu">
-                                                    <li class="menu-item"><a href="contact1.html">Contact 1</a></li>
-                                                    <li class="menu-item"><a href="contact2.html">Contact 2</a></li>
-                                                    <li class="menu-item"><a href="contact3.html">Contact 3</a></li>
-                                                </ul>
-                                            </li>
+                                        <li class="menu-item">
+                                                <a href="contact1.html">About</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </nav>
