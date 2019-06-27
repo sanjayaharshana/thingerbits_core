@@ -73,7 +73,7 @@
                                                                         <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
                                                                         <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
                                                                     </div>
-                                                                    <span class="price notfree">$65.00</span>
+                                                                    <span class="price notfree">Get More Info</span>
                                                                 </div>
                                                             </div>
                                                         </article>
@@ -140,7 +140,7 @@
                             </div>
                             <ul>
                                 @foreach ($course_cat as $cat_data)
-                                <li><a href="#"><i class="la la-codepen"></i>UI &amp; {{ $cat_data->category_name }}</a></li>                               
+                                <li><a href="{{ url('/') }}/getcourse_cat/{{ $cat_data->category_id }}"><i class="la la-codepen"></i>UI &amp; {{ $cat_data->category_name }}</a></li>                               
                                 @endforeach
                                
                             </ul>

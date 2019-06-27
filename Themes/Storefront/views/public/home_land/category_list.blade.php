@@ -81,7 +81,7 @@
                                                                         <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
                                                                         <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
                                                                     </div>
-                                                                    <span class="price notfree">$65.00</span>
+                                                                    <span class="price notfree">Get More Info</span>
                                                                 </div>
                                                             </div>
                                                         </article>
@@ -147,11 +147,9 @@
                                 <h2>Categories</h2>
                             </div>
                             <ul>
-                                <li><a href="#"><i class="la la-pencil"></i>UI &amp; UX Design</a></li>
-                                <li><a href="#"><i class="la la-codepen"></i>Web Developer</a></li>
-                                <li><a href="#"><i class="la la-signal"></i>Marketing</a></li>
-                                <li><a href="#"><i class="la la-language"></i>Language</a></li>
-                                <li><a href="#"><i class="la la-wordpress"></i>Wordpress</a></li>
+                                    @foreach ($course_cat as $cat_data)
+                                    <li><a href="{{ url('/') }}/getcourse_cat/{{ $cat_data->category_id }}"><i class="la la-codepen"></i>UI &amp; {{ $cat_data->category_name }}</a></li>                               
+                                    @endforeach
                             </ul>
                         </div>
                         <div class="widget_signupform">
@@ -210,7 +208,7 @@
                                         <h3 class="title">
                                             <a href="single-course.html">Advanced: UI Design</a>
                                         </h3>
-                                        <span class="price notfree">$65.00</span>
+                                        <span class="price notfree">Get More Info</span>
                                     </div>
                                 </li>
                             </ul>

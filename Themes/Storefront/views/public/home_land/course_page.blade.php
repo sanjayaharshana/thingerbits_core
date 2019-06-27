@@ -53,17 +53,17 @@
                     <div class="single-course-tab">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false"><i class="fas fa-user"></i>Description</a>
+                                <a class="nav-link active show" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="false"><i class="fas fa-user"></i>Description</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active show" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
+                                <a class="nav-link" id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="true"><i class="fas fa-bookmark"></i>Curriculum</a>
                             </li>  
                             <li class="nav-item">
                                 <a class="nav-link" id="panigation-tab" data-toggle="tab" href="#panigation" role="tab" aria-controls="panigation" aria-selected="true"><i class="fas fa-bars"></i>Panigation</a>
                             </li>                         
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                            <div class="tab-pane fade active show" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <div class="course-overview">
                                     <div class="course-desc">
                                         <h4 class="course-tab-title">Courses Information</h4>
@@ -84,7 +84,7 @@
                                 </div>                                
                             </div>
                             
-                            <div class="tab-pane fade active show" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
+                            <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                                     <ul id="curriculum-content" class="curriculum-content">
                                         @foreach($les_group as $lg_data)
                                         <li class="card active">

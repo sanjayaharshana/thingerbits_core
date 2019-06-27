@@ -19,8 +19,7 @@
                             @else 
                             <a href="{{ route('register') }}" class="signup"><i class="fas fa-edit"></i>Sign Up</a>
                             <a href="{{ route('login') }}" class="login">Sign In</a>
-                            @endauth
-                      
+                            @endauth                      
                     </div>
                 </div>
             </div>
