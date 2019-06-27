@@ -101,7 +101,7 @@
                                             </div>
                                             <div class="info">
                                                 <h3 class="title">
-                                                    <a href="single-course.html">{{ $item->course_title }}</a>
+                                                    <a href="single-course.html">{{ $item_l->course_title }}</a>
                                                 </h3>
                                                 <div class="feadtured-course-small">
                                                     <a href="#" class="teacher">
