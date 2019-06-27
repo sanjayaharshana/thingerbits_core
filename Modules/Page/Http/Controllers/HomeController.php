@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {   
         //Homapage Manager
-        $course_data['coursedata']= DB::table('course_list')->get();   
+        $course_data['coursedata']= DB::table('course_list')->limit(3)->get();   
        
         return view('public.home_land.index',$course_data);
     }
@@ -60,7 +60,7 @@ class HomeController extends Controller
         'teacher_data' => $cat_get_user_data,
         'course_penigration' => $course_penigration,
        ]);
-         
+        
       
         
         
