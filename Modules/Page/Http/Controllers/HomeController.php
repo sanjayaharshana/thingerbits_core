@@ -98,21 +98,23 @@ class HomeController extends Controller
 
     public function getcourses($core_id){
         $course_data['coursedata']= DB::table('course_list')->get(); 
+
     // echo $product;
     //$lesson_count = DB::table('lessons')->where('course_id', $lg_id)->count();
-
-        return view('public.home_land.course_list',$course_data);
+    return view('public.home_land.course_list',$course_data);
     }
 
     public function getcourse_cat($cat) {
 
         $data = DB::table('course_list')->where('cat_id', $cat)->get();
+        $course_cat = DB::table('course_cat')->get();
 
 
        // return view('public.home_land.category_list',$data);
 
         return view('public.home_land.category_list',
-        ['data' =>  $data]);
+        ['data' =>  $data,
+         'course_cat' =>  $course_cat]);
     }
 
   

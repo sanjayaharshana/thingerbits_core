@@ -8,7 +8,7 @@
 <main>
     <!-- Heading Page -->
     <section class="heading-page">
-        <img src="images/bloggrid-heading-bg.jpg" alt="">
+        <img src="" alt="">
         <div class="container">
             <div class="heading-page-content">
                 <div class="au-page-title">
@@ -41,14 +41,7 @@
                                     </li>
                                 </ul>
                                 <p class="woocommerce-result-count">Showing 1 – 8 of 20</p>
-                            </div>
-                            <form class="woocommerce-ordering" method="GET">
-                                <select name="orderby" class="orderby">
-                                    <option value="latest">Latest Courses</option>
-                                    <option value="popular">Popular Courses</option>
-                                    <option value="lessons">Lessons</option>
-                                </select>
-                            </form>
+                            </div>                            
                         </div>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="gid-tab">
@@ -58,7 +51,7 @@
                                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                                         <article class="item">
                                                             <div class="item-thumb">
-                                                                <a href="single-course.html">
+                                                                <a href="{{ url('/') }}/courses/{{ $item->course_id }}">
                                                                     <img src="{{ url('/') }}/get_data_reqst_java/{{ $item->course_id }}" alt="Content Marketing">
                                                                 </a>
                                                                 <div class="feadtured-course-small">
@@ -70,7 +63,7 @@
                                                             <div class="info">
                                                                 <a href="#" class="teacher">{{ $item->level }}</a>
                                                                 <h3 class="title">
-                                                                    <a href="single-course.html">{{ $item->course_title }}</a>
+                                                                    <a href="{{ url('/') }}/courses/{{ $item->course_id }}">{{ $item->course_title }}</a>
                                                                 </h3>
                                                                 <p class="course-desc">
                                                                         {{ $item->course_discription }}   
@@ -95,29 +88,29 @@
                                 @foreach ($coursedata as $item_l)
                                     <article class="item listing">
                                             <div class="item-thumb">
-                                                <a href="single-course.html">
+                                                <a href="{{ url('/') }}/courses/{{ $item_l->course_id }}">
                                                     <img src="{{ url('/') }}/get_data_reqst_java/{{ $item_l->course_id }}" alt="Web Design For Usability">
                                                 </a>
                                             </div>
                                             <div class="info">
                                                 <h3 class="title">
-                                                    <a href="single-course.html">{{ $item_l->course_title }}</a>
+                                                    <a href="{{ url('/') }}/courses/{{ $item_l->course_id }}">{{ $item_l->course_title }}</a>
                                                 </h3>
                                                 <div class="feadtured-course-small">
-                                                    <a href="#" class="teacher">
-                                                        <img src="images/home3-tutor-2.jpg" alt="Charles Russell">
-                                                        <span>Charles Russell</span>
+                                                    <a href="#" class="teacher">                                                       
+                                                        <span>{{ $item_l->level }}</span>
+                                                      
                                                     </a>
                                                 </div>
                                                 <p class="course-desc">
-                                                    Lobortis mattis aliquam faucibus purus in tempor nec. Iaculis urna id volutpat lacus laoreet non rabitur faucibus vitae aliquet.
+                                                    {{ $item_l->course_discription }}
                                                 </p>
                                                 <div class="desc display-flex">
                                                     <div class="comments-students">
                                                         <a href="#" class="comments"><i class="fas fa-user"></i>35 Students</a>
                                                         <a href="#" class="students"><i class="fas fa-book"></i>20 Lessons</a>
                                                     </div>
-                                                    <span class="price notfree">$65.00</span>
+                                                    <span class="price">More Info</span>
                                                 </div>
                                             </div>
                                     </article>  
@@ -173,47 +166,7 @@
                                     <input type="submit" class="submit au-btn-hover" value="Get It Now">
                                 </form>
                             </div>
-                        </div>
-                        <div class="widget_lastest_entries">
-                            <div class="widget-title">
-                                <h2>Popular Courses</h2>
-                            </div>
-                            <ul>
-                                <li>
-                                    <figure>
-                                        <a href="single-course.html"><img src="images/popular-courses-1.jpg" alt="Web Design For Usability"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Web Design For Usability</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="single-course.html"><img src="images/popular-courses-2.jpg" alt="Essential Blogging Tools"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Essential Blogging Tools</a>
-                                        </h3>
-                                        <span class="price free">Free</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <a href="single-course.html"><img src="images/popular-courses-3.jpg" alt="Advanced: UI Design"></a>
-                                    </figure>
-                                    <div class="info">
-                                        <h3 class="title">
-                                            <a href="single-course.html">Advanced: UI Design</a>
-                                        </h3>
-                                        <span class="price notfree">$65.00</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
