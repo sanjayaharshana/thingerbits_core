@@ -80,7 +80,7 @@
                         @include('public.partials.notification')    
                       
                         @if (count(app('enabled_social_login_providers')) !== 0)
-                        <span class="text-center">{{ trans('user::auth.or') }}</span>
+                      
                         <div class="row"> 
                            <div class="social-login-buttons text-center" style="max-width: 1000px;width: 500px;">                 
                             <div class="col-md-6">
