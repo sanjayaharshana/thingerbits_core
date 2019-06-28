@@ -142,9 +142,11 @@ class Cart extends DarryldecodeCart
            // $cartItem->product->decrement('qty', $cartItem->qty);
            // $query = DB::table('sol_packitem')->select('product_id');
            $contra = $cartItem->product->id;
-
+           
+            
            $get_course_details = DB::table('course_list')->where('reccomandproduct_id', $contra)->first();   
            
+
             
            $prod = DB::table('products')->where('id', $contra)->first();          
 
