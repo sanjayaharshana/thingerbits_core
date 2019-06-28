@@ -141,17 +141,28 @@ class Lmscontroller extends Controller
 
     public function add_my_course(Request $roll)
     {
-        $id = DB::table('my_courses')->insertGetId(
-            array(
-                "course_id"=>$roll->course_id,
-                "user_id"=> auth()->user()->id,
-                "payed"=> $roll->payed,
-                "date"=> '1' 
-            )
-        );
+
+        $validateCourse = DB::table('my_courses')
+                        ->where('course_id',$roll->course_id)->get();
+
+        if($validateCourse == null){
+            $id = DB::table('my_courses')->insertGetId(
+                array(
+                    "course_id"=>$roll->course_id,
+                    "user_id"=> auth()->user()->id,
+                    "payed"=> $roll->payed,
+                    "date"=> '1' 
+                )
+            );
+        }else{
+            return redirect()->route('getcourses_r',['mycourse_id' => "sad"]); 
+
+        }
+
+       
 
         //return view('admin::purches_order.purches_order');
-        return redirect()->route('getcourses_r',['mycourse_id' => $id]); 
+       // return redirect()->route('getcourses_r',['mycourse_id' => $id]); 
 
     }
 
