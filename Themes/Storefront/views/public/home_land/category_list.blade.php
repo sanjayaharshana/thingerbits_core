@@ -9,19 +9,9 @@
 <main>
     <!-- Heading Page -->
     <section class="heading-page">
-        <img src="images/bloggrid-heading-bg.jpg" alt="">
+        <img src="{{ (Theme::url('public/visual_style/images/bloggrid-heading-bg.jpg'))}}" alt="">
         <div class="container">
-            <div class="heading-page-content">
-                <div class="au-page-title">
-                    <h1>All Courses</h1>
-                </div>
-                <nav aria-label="breadcrumb">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">All Courses</li>
-                    </ul>
-                </nav>
-            </div>
+            
         </div>
     </section>
 

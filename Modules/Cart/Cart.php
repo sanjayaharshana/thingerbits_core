@@ -145,13 +145,29 @@ class Cart extends DarryldecodeCart
                 
            $get_course_details = DB::table('course_list')->where('reccomandproduct_id', $contra)->first();   
            
-           DB::table('my_courses')->insert([
-            ['course_id' => $get_course_details->course_id,
-             'user_id' => 1,
-             'payed' => 1,
-             'date' => 1],
-             ]);
-            
+
+
+           if($get_course_details == null){
+
+
+
+               
+            }else{   
+                
+                $token_generate_key1 = rand(1000,10000);
+                $token_generate_key2 = rand(1000,10000); 
+                $token_generate_key3 = rand(1000,10000); 
+                $full_token = $token_generate_key1.$token_generate_key2.$token_generate_key3;
+
+                $id = DB::table('course_token')->insertGetId(
+                    array(
+                        "course_id"=>$get_course_details->course_id,
+                        "user_id"=> auth()->user()->id,
+                        "token"=> $full_token,                     
+                    )
+                );
+                }
+                // return redirect()->route('getcourses_r',['mycourse_id' => "sad"]); 
            $prod = DB::table('products')->where('id', $contra)->first();          
 
 

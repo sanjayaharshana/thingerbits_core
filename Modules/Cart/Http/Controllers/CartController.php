@@ -17,7 +17,10 @@ class CartController extends Controller
     {
         $cart = Cart::instance();
         $countries = Country::supported();
+        $number1 = rand(10,100);
+        $number2 = rand(10,100);
+        $number = $number1.$number2;
 
-        return view('public.cart.index', compact('cart', 'countries'));
+        return view('public.cart.index', compact('cart', 'countries', 'number'));
     }
 }

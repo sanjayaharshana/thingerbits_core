@@ -98,7 +98,7 @@
 
     <div class="form-group">     
         <div class="form-group">
-          <label for="exampleInputEmail1">Reccomand Product</label>
+          <label for="exampleInputEmail1">Attach Product</label>
           <select class="form-control" id="select_section" name="Recommand_Products">  
             @foreach ($product_data as $productdata)
             <option value="{{ $productdata->id }}"> {{ $productdata->slug }}</option>        

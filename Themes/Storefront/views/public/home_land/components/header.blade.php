@@ -12,11 +12,12 @@
                         </div>
                         <a href="info@thingerbits.com" class="email"><i class="far fa-envelope"></i>info@thingerbits.com</a>
                         <a href="#" class="telephone"><i class="fas fa-mobile-alt"></i>+94 703-577-680</a>
+                        <a href="{{ route('login') }}" class="signup">Shop</a> 
                     </div>
                     <div class="header-top-account">
                             @auth                            
                             <a href="{{ route('login') }}" class="signup">  {{ Auth::user()->email }}</a>  
-                                                    
+                                           
                             @else 
                             <a href="{{ route('register') }}" class="signup"><i class="fas fa-edit"></i>Sign Up</a>
                             <a href="{{ route('login') }}" class="login">Sign In</a>
