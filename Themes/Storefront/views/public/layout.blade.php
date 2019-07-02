@@ -45,6 +45,10 @@
         @routes
     </head>
 
+    <style>
+  
+    </style>
+
     <body class="{{ $theme }} {{ storefront_layout() }} {{ is_rtl() ? 'rtl' : 'ltr' }}">
         <!--[if lt IE 8]>
             <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -55,8 +59,8 @@
         <div class="main">
             <div class="wrapper">
                 @include('public.partials.sidebar')
-                @include('public.partials.top_nav')
-                @include('public.partials.header')
+                @include('public.home_land.components.head')
+                @include('public.home_land.components.header')
                 @if(\Request::is('shop'))
                 @include('public.partials.navbar')
                 @endif
@@ -104,5 +108,7 @@
         @stack('scripts')
 
         {!! setting('custom_footer_assets') !!}
+        @include('public.home_land.components.footer')
+
     </body>
 </html>

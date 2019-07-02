@@ -12,7 +12,7 @@
                         </div>
                         <a href="info@thingerbits.com" class="email"><i class="far fa-envelope"></i>info@thingerbits.com</a>
                         <a href="#" class="telephone"><i class="fas fa-mobile-alt"></i>+94 703-577-680</a>
-                        <a href="{{ route('login') }}" class="signup">Shop</a> 
+                        <a href="{{ route('shops') }}" class="signup">Shop</a> 
                     </div>
                     <div class="header-top-account">
                             @auth                            
@@ -38,7 +38,7 @@
                         <div class="menu-search display-flex">
                             <nav class="menu">
                                 <div>
-                                    <ul class="menu-primary">
+                                    <ul class="menu-primary" style="flex-wrap:unset; -webkit-flex-wrap:unset;">
                                         <li class="menu-item curent-menu-item">
                                             <a href="{{ route('home') }}">Home</a>
                                         </li>
@@ -46,7 +46,7 @@
                                             <a href="{{ route('getcourses','micro_service_pal') }}">Courses</a>                                                                                  
                                         </li>
                                         <li class="menu-item">
-                                            <a href="{{ route('shops') }}">Products</a>                                           
+                                            <a href="{{ route('shops') }}">Shop</a>                                           
                                         </li>
                                         <li class="menu-item">
                                             <a href="events.html">Events</a>                                            
