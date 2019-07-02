@@ -7,7 +7,7 @@
                 <span class="bottom-bar icon-bar"></span>
             </button>
 
-            <a href="{{ route('home') }}" class="website-logo pull-left">
+            <a href="{{ route('home') }}/shop" class="website-logo pull-left">
                 @if (is_null($headerLogo))
                     <h2>{{ setting('store_name') }}</h2>
                 @else

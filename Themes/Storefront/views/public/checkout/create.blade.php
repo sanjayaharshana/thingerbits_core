@@ -1,5 +1,7 @@
 @extends('public.layout')
 
+@auth                            
+    
 @section('title', trans('storefront::checkout.checkout'))
 
 @push('meta')
@@ -153,3 +155,30 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="{{ v(Theme::url('public/js/stripe.js')) }}"></script>
 @endpush
+           
+@else 
+    @section('title', trans('storefront::checkout.checkout'))
+
+    @push('meta')
+        <meta name="cart-has-shipping-method" content="{{ $cart->hasShippingMethod() }}">
+    @endpush
+
+    @push('globals')
+        <script>
+            FleetCart.langs['storefront::checkout.please_select'] = '{{ trans("storefront::checkout.please_select") }}';
+        </script>
+    @endpush
+
+    @section('content')
+    <h2 style="text-align: center; padding-top:50px;">You must login account </h2>
+    <div class="" style="background:url('http://localhost:8000/themes/storefront/public/visual_style/images/icon/robitc_bash.png');height: 400px;background-position: center;background-repeat: no-repeat;"></div>
+    
+    <div class="" style="text-align:center;">
+        <a href="{{ route('login') }}" class="btn btn-primary center" style="">Login</a> <span style="padding:0px 10px;">Or</span> 
+        <a href="{{ route('register') }}" class="btn btn-primary center" style="">Register</a>
+    </div> 
+    @endsection
+@endauth           
+
+
+
