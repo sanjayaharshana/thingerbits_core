@@ -180,10 +180,10 @@ sifter@^0.5.1:
   version "1.7.0"
   resolved "https://github.com/RubaXa/Sortable#96a5fec870ec6faa1bf167da2c3dddb465166461"
 
-tinymce@^4.6.4:
-  version "4.7.13"
-  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-4.7.13.tgz#3b139fd95c0b78e3959b2064f043ccb7459bebcb"
-  integrity sha512-6QbNYGV4VExH+p7+o/5km6jOnVSD5mO7aw0s+eKByKnpyG8gZfajxXPhwBM57r7SIravrCI6LFj8DARNe31qPw==
+tinymce@^4.9.7:
+  version "4.9.7"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-4.9.7.tgz#74ce54f07cfc0268a5ac5e34f610044658c92f47"
+  integrity sha512-cj0HvUuniTuIjOAJdRt5BUfeQqM5yHjbA2NOub9HUHXlCrT9OwD9WBPU6tGlaPC2l2I4eGoOnT8llosZRdQU5Q==
 
 wordwrap@~0.0.2:
   version "0.0.3"
