@@ -15,6 +15,6 @@
         "nprogress": "^0.2.0",
         "selectize": "^0.12.6",
         "sortablejs": "https://github.com/RubaXa/Sortable",
-        "tinymce": "^4.6.4"
+        "tinymce": "^5.6.0"
     }
 }
