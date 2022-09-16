@@ -2,7 +2,7 @@
     "name": "admin-module",
     "private": true,
     "devDependencies": {
-        "bootstrap": "^3.3.7",
+        "bootstrap": "^3.4.1",
         "chart.js": "^2.7.3",
         "datatables.net": "^1.10.15",
         "datatables.net-bs": "^1.10.15",
